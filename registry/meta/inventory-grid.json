@@ -1,0 +1,8 @@
+{ "name": "inventory-grid", "title": "Inventory Grid", "category": "Lantern",
+  "description": "TurtleDeck's inventory: square slots on a faint grid with beveled item swatches, short names and stack counts. The selected slot gets an orange border and the arrow keys move it.",
+  "examples": [{ "name": "inventory-grid-demo" }, { "name": "inventory-grid-chest", "title": "Compact 9 by 3 chest" }],
+  "usage": "<InventoryGrid aria-label=\"Turtle inventory\" defaultValue={0}>\n  <InventorySlot name=\"Cobble\" count={64} color=\"#8b8f88\" />\n  <InventorySlot />\n</InventoryGrid>",
+  "notes": [
+    "The grid uses role=grid with one tab stop. Arrow keys move the selection, Home and End jump to the ends of a row, and Ctrl+Home or Ctrl+End jump to the first or last slot.",
+    "Set columns to change the width, for example columns={9} for a chest, and size=\"sm\" to hide item names for tight layouts. Use value and onValueChange to control the selection."
+  ] }

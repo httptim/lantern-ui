@@ -1,0 +1,13 @@
+{
+  "name": "navigation-menu",
+  "title": "Navigation Menu",
+  "category": "Navigation",
+  "description": "A header menu whose triggers open panels of links in a shared viewport, with an orange indicator under the open trigger.",
+  "dependencies": ["radix-ui", "class-variance-authority", "lucide-react"],
+  "examples": [{ "name": "navigation-menu-demo" }],
+  "usage": "<NavigationMenu>\n  <NavigationMenuList>\n    <NavigationMenuItem>\n      <NavigationMenuTrigger>Hubs</NavigationMenuTrigger>\n      <NavigationMenuContent>\n        <NavigationMenuLink href=\"/hubs\">Directory</NavigationMenuLink>\n      </NavigationMenuContent>\n    </NavigationMenuItem>\n    <NavigationMenuItem>\n      <NavigationMenuLink href=\"/guestbook\" className={navigationMenuTriggerStyle()}>\n        Guestbook\n      </NavigationMenuLink>\n    </NavigationMenuItem>\n  </NavigationMenuList>\n</NavigationMenu>",
+  "notes": [
+    "Below 768px the panel fills the width of the menu and links stack in one column; give panel contents md: widths for the wide layout.",
+    "Pass viewport={false} to render each panel under its own trigger instead of in the shared viewport. Put NavigationMenuIndicator last inside the list."
+  ]
+}

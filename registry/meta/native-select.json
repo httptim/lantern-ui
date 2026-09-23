@@ -1,0 +1,27 @@
+{
+  "name": "native-select",
+  "title": "Native Select",
+  "category": "Forms",
+  "description": "A styled native select element with the Input look, a chevron, options and option groups.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "examples": [
+    {
+      "name": "native-select-demo"
+    },
+    {
+      "name": "native-select-groups",
+      "title": "Groups"
+    },
+    {
+      "name": "native-select-states",
+      "title": "Invalid, disabled and small"
+    }
+  ],
+  "usage": "<NativeSelect defaultValue=\"overworld\">\n  <NativeSelectOption value=\"overworld\">Overworld</NativeSelectOption>\n  <NativeSelectOption value=\"deepstone\">Deepstone</NativeSelectOption>\n</NativeSelect>",
+  "notes": [
+    "Use Native Select when you want the platform picker, especially on phones, or need the value to work in a plain form post. Use Select for a fully styled dropdown with icons.",
+    "The wrapper is w-fit by default. Pass className=\"w-full\" to stretch the select; the open list is drawn by the browser."
+  ]
+}

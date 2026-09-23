@@ -1,0 +1,32 @@
+{
+  "name": "carousel",
+  "title": "Carousel",
+  "category": "Display",
+  "description": "A swipeable row of slides with previous and next buttons and dot indicators. Built on Embla.",
+  "dependencies": [
+    "embla-carousel-react",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "examples": [
+    {
+      "name": "carousel-demo"
+    },
+    {
+      "name": "carousel-sizes",
+      "title": "Sizes"
+    },
+    {
+      "name": "carousel-vertical",
+      "title": "Vertical"
+    }
+  ],
+  "usage": "<Carousel>\n  <CarouselContent>\n    <CarouselItem>North hub</CarouselItem>\n    <CarouselItem>Relay tower</CarouselItem>\n  </CarouselContent>\n  <CarouselPrevious />\n  <CarouselNext />\n  <CarouselDots />\n</Carousel>",
+  "notes": [
+    "Set a basis class on CarouselItem, such as basis-1/3, to show several slides at once.",
+    "The previous and next buttons sit outside the slides, 3rem to each side. Leave room for them with padding on the parent, or move them with className.",
+    "Arrow keys move between slides when focus is inside the carousel. Use setApi to reach the Embla API."
+  ]
+}

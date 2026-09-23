@@ -1,0 +1,21 @@
+{
+  "name": "signup",
+  "type": "block",
+  "title": "Signup",
+  "category": "Blocks",
+  "description": "A create-account page with name, email and a password strength meter, a terms checkbox and inline validation errors, beside a short list of what the account includes.",
+  "files": [
+    "blocks/signup/signup.tsx"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button",
+    "checkbox",
+    "eyebrow",
+    "field",
+    "input",
+    "input-group"
+  ]
+}

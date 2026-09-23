@@ -1,0 +1,28 @@
+{
+  "name": "resizable",
+  "title": "Resizable",
+  "category": "Layout",
+  "description": "Panels split by draggable handles, for editors and dashboards. Built on react-resizable-panels.",
+  "dependencies": [
+    "react-resizable-panels",
+    "lucide-react"
+  ],
+  "examples": [
+    {
+      "name": "resizable-demo"
+    },
+    {
+      "name": "resizable-vertical",
+      "title": "Vertical"
+    },
+    {
+      "name": "resizable-editor",
+      "title": "Nested editor"
+    }
+  ],
+  "usage": "<ResizablePanelGroup orientation=\"horizontal\">\n  <ResizablePanel defaultSize=\"40%\">Monitor</ResizablePanel>\n  <ResizableHandle withHandle />\n  <ResizablePanel defaultSize=\"60%\">Terminal</ResizablePanel>\n</ResizablePanelGroup>",
+  "notes": [
+    "This uses react-resizable-panels v4. The group takes orientation (not direction). Sizes given as numbers are pixels; use strings like \"40%\" for percentages.",
+    "Handles are keyboard accessible: focus one with Tab and use the arrow keys. Double-click a handle to reset its panel."
+  ]
+}

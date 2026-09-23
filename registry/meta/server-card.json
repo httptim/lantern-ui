@@ -1,0 +1,6 @@
+{ "name": "server-card", "title": "Server Card", "category": "Lantern",
+  "description": "A Minecraft server status card with a copyable address, online state, a player bar, version badge, MOTD and an initials stack of who is on.",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["avatar", "badge", "copy-button", "status-pill"],
+  "examples": [{ "name": "server-card-demo" }, { "name": "server-card-offline", "title": "Offline" }, { "name": "server-card-grid", "title": "Server grid" }],
+  "usage": "<ServerCard\n  name=\"Lantern SMP\"\n  address=\"play.example.net\"\n  players={7}\n  maxPlayers={20}\n  version=\"1.21.4\"\n/>" }

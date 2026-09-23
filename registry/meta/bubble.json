@@ -1,0 +1,28 @@
+{
+  "name": "bubble",
+  "title": "Bubble",
+  "category": "Chat",
+  "description": "Chat bubbles in the Lantern style: sent messages in a raised panel with an orange edge, replies in the card panel.",
+  "dependencies": [
+    "class-variance-authority",
+    "radix-ui"
+  ],
+  "examples": [
+    {
+      "name": "bubble-demo"
+    },
+    {
+      "name": "bubble-variants",
+      "title": "Variants"
+    },
+    {
+      "name": "bubble-reactions",
+      "title": "Reactions and buttons"
+    }
+  ],
+  "usage": "<Bubble variant=\"muted\">\n  <BubbleContent>Anyone near spawn?</BubbleContent>\n</Bubble>\n<Bubble align=\"end\">\n  <BubbleContent>On my way.</BubbleContent>\n</Bubble>",
+  "notes": [
+    "The default variant is for your own messages and puts the orange edge on the side the bubble is aligned to. Use muted for other people and the assistant.",
+    "BubbleContent takes asChild, so a bubble can be a button or link with hover and focus states."
+  ]
+}

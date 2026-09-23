@@ -17,7 +17,7 @@ Tailwind v4 and the Lantern tokens in `app/globals.css` (mirrored in `registry/t
    Add `"use client"` if it uses state or event handlers.
 3. `registry/meta/<name>.json`:
    ```json
-   { "name": "<name>", "title": "Title Case", "category": "Forms|Display|Overlays|Navigation|Feedback|Lantern",
+   { "name": "<name>", "title": "Title Case", "category": "Forms|Display|Data|Layout|Overlays|Navigation|Feedback|Lantern",
      "description": "One or two plain sentences.",
      "dependencies": ["radix-ui"],            // npm packages the component file imports (not react)
      "registryDependencies": ["button"],       // other Lantern UI items it imports
@@ -26,6 +26,16 @@ Tailwind v4 and the Lantern tokens in `app/globals.css` (mirrored in `registry/t
      "notes": ["Optional extra paragraph shown on the docs page."] }
    ```
    The first example is the hero preview and has no title.
+   `files` is optional and defaults to `["ui/<name>.tsx"]`. List every file when a component needs more,
+   e.g. `["ui/sidebar.tsx", "hooks/use-mobile.ts"]`. Hooks live in `registry/lantern/hooks/` and are
+   imported as `@/registry/lantern/hooks/<file>`.
+
+## Third-party libraries
+
+Already installed; do not run npm install. Several are newer majors than you may know, so read their
+types in `node_modules/<pkg>` before writing code: cmdk, react-day-picker (v10) with date-fns,
+vaul, react-resizable-panels (v4), @tanstack/react-table (v9), recharts (v3), embla-carousel-react,
+input-otp, sonner. List each one a component file imports in its meta `dependencies`.
 
 ## Lantern look
 
@@ -43,6 +53,8 @@ Read `registry/lantern/ui/button.tsx`, `input.tsx`, `card.tsx`, `badge.tsx` and 
   buttons use a ring offset. Checked/selected states use `primary`.
 - Overlays: `bg-popover border shadow-block-sm` (hard offset shadow, no blur). Overlay backdrops
   `bg-[#080b0a]/75`. Use the tw-animate-css `data-[state=open]:animate-in fade-in-0 zoom-in-95` pattern.
+- Chart colors: `chart-1` orange, `chart-2` green, `chart-3` blue, `chart-4` yellow, `chart-5` red.
+  Sidebar tokens: `sidebar`, `sidebar-foreground`, `sidebar-primary`, `sidebar-accent`, `sidebar-border`, `sidebar-ring`.
 - Utilities available: `bg-grid`, `shadow-block`, `shadow-block-sm`, `animate-lantern-pulse`, `animate-lantern-blink`.
 - Every component must work at 375px wide and on desktop.
 

@@ -1,0 +1,22 @@
+{
+  "name": "not-found",
+  "type": "block",
+  "title": "Not Found",
+  "category": "Blocks",
+  "description": "A 404 page with a big Space Grotesk 404, a tilted terminal that fails to resolve hub://page-not-found/, and buttons back home and to search.",
+  "files": [
+    "blocks/not-found/not-found.tsx"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button",
+    "eyebrow",
+    "status-dot",
+    "terminal"
+  ],
+  "notes": [
+    "In the Next.js app router, render it from app/not-found.tsx."
+  ]
+}

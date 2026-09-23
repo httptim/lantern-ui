@@ -1,0 +1,10 @@
+{ "name": "data-table", "title": "Data Table", "category": "Data",
+  "description": "A reusable TanStack Table v9 data table with a global filter, sortable headers, a column visibility menu, row selection and pagination, built on the Lantern table, input, checkbox, dropdown menu and select.",
+  "dependencies": ["@tanstack/react-table", "lucide-react"],
+  "registryDependencies": ["table", "button", "input", "checkbox", "dropdown-menu", "select"],
+  "examples": [{ "name": "data-table-demo" }, { "name": "data-table-minimal", "title": "Sorting only" }],
+  "usage": "const helper = createDataTableColumnHelper<Turtle>();\nconst columns = helper.columns([\n  helper.accessor(\"name\", {\n    header: ({ column }) => <DataTableColumnHeader column={column} title=\"Turtle\" />,\n    meta: { title: \"Turtle\" },\n  }),\n]);\n\n<DataTable columns={columns} data={turtles} selectable pageSize={10} />",
+  "notes": [
+    "Columns are TanStack Table v9 column defs typed with the exported dataTableFeatures. Use createDataTableColumnHelper<TData>() so accessor values keep their types.",
+    "Set meta.title for the label in the column menu and meta.className for per-column classes such as text-right. Turn parts off with filterable={false}, columnToggle={false} or pagination={false}, and pass toolbar={(table) => ...} to add controls beside the filter."
+  ] }

@@ -1,0 +1,20 @@
+{
+  "name": "pricing",
+  "type": "block",
+  "title": "Pricing",
+  "category": "Blocks",
+  "description": "Three plan cards with a monthly and yearly toggle, the middle plan raised with an orange border and hard shadow, and an FAQ accordion underneath.",
+  "files": [
+    "blocks/pricing/pricing.tsx"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "accordion",
+    "badge",
+    "button",
+    "eyebrow",
+    "toggle-group"
+  ]
+}

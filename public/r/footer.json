@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "footer",
+  "title": "Footer",
+  "description": "A site footer with the brand, three link columns, a newsletter field and a status line. Columns fold into two on phones.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "https://ui.thultz.dev/r/lantern-theme.json",
+    "https://ui.thultz.dev/r/button.json",
+    "https://ui.thultz.dev/r/input.json",
+    "https://ui.thultz.dev/r/navbar.json",
+    "https://ui.thultz.dev/r/separator.json",
+    "https://ui.thultz.dev/r/status-dot.json"
+  ],
+  "files": [
+    {
+      "path": "registry/lantern/blocks/footer/footer.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { ArrowRight, Check } from \"lucide-react\";\n\nimport { Button } from \"@/registry/lantern/ui/button\";\nimport { Input } from \"@/registry/lantern/ui/input\";\nimport { NavbarLabel, NavbarMark } from \"@/registry/lantern/ui/navbar\";\nimport { Separator } from \"@/registry/lantern/ui/separator\";\nimport { StatusDot } from \"@/registry/lantern/ui/status-dot\";\n\nconst columns = [\n  {\n    title: \"Network\",\n    links: [\"Explore sites\", \"Guestbooks\", \"Templates\", \"Status\"],\n  },\n  {\n    title: \"Build\",\n    links: [\"Get started\", \"Documentation\", \"Lua API\", \"Changelog\"],\n  },\n  {\n    title: \"Community\",\n    links: [\"Discord\", \"GitHub\", \"Showcase\", \"Contact\"],\n  },\n];\n\nexport default function Footer() {\n  const [subscribed, setSubscribed] = React.useState(false);\n  const emailId = React.useId();\n\n  return (\n    <footer className=\"relative border-t bg-background\">\n      <div className=\"mx-auto max-w-[1280px] px-4 py-14 sm:px-6 lg:px-12 lg:py-16\">\n        <div className=\"grid gap-12 md:grid-cols-2 lg:grid-cols-[1.1fr_1.6fr_1.1fr] lg:gap-10\">\n          <div className=\"max-w-xs\">\n            <a\n              href=\"#\"\n              className=\"inline-flex items-center gap-2 rounded-sm font-display text-2xl font-semibold tracking-[-0.04em] text-foreground outline-none focus-visible:ring-2 focus-visible:ring-ring\"\n            >\n              <NavbarMark />\n              lantern\n              <NavbarLabel>Hub</NavbarLabel>\n            </a>\n            <p className=\"mt-4 text-sm leading-relaxed text-muted-foreground\">\n              A web between worlds. Publish a little corner of the in-game internet.\n            </p>\n          </div>\n\n          <nav\n            aria-label=\"Footer\"\n            className=\"grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 md:col-span-2 md:row-start-2 lg:col-span-1 lg:row-start-auto\"\n          >\n            {columns.map((column) => (\n              <div key={column.title}>\n                <h2 className=\"font-mono text-[10px] font-semibold tracking-[0.2em] text-success uppercase\">\n                  {column.title}\n                </h2>\n                <ul className=\"mt-4 grid gap-2.5 text-sm\">\n                  {column.links.map((link) => (\n                    <li key={link}>\n                      <a\n                        href=\"#\"\n                        className=\"rounded-sm text-muted-foreground transition-colors outline-none hover:text-primary focus-visible:text-foreground focus-visible:ring-2 focus-visible:ring-ring\"\n                      >\n                        {link}\n                      </a>\n                    </li>\n                  ))}\n                </ul>\n              </div>\n            ))}\n          </nav>\n\n          <div>\n            <label\n              htmlFor={emailId}\n              className=\"font-mono text-[10px] font-semibold tracking-[0.2em] text-success uppercase\"\n            >\n              Field notes\n            </label>\n            <p className=\"mt-4 text-sm leading-relaxed text-muted-foreground\">\n              One short letter a month. New sites, new tools, no noise.\n            </p>\n            {subscribed ? (\n              <p role=\"status\" className=\"mt-4 flex items-center gap-2 text-sm text-success\">\n                <Check className=\"size-4\" /> You are on the list.\n              </p>\n            ) : (\n              <form\n                className=\"mt-4 flex gap-2\"\n                onSubmit={(event) => {\n                  event.preventDefault();\n                  setSubscribed(true);\n                }}\n              >\n                <Input id={emailId} type=\"email\" required placeholder=\"you@example.com\" autoComplete=\"email\" />\n                <Button type=\"submit\" size=\"icon\" aria-label=\"Subscribe\">\n                  <ArrowRight />\n                </Button>\n              </form>\n            )}\n          </div>\n        </div>\n\n        <Separator className=\"mt-14 mb-6\" />\n\n        <div className=\"flex flex-col gap-4 text-[12.5px] text-muted-foreground sm:flex-row sm:items-center sm:justify-between\">\n          <p>\n            © 2026 Lantern Hub. Made for CC:Tweaked.\n          </p>\n          <a\n            href=\"#status\"\n            className=\"inline-flex items-center gap-2.5 rounded-sm font-mono text-[10px] tracking-[0.2em] uppercase outline-none hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring\"\n          >\n            <StatusDot /> All systems normal\n          </a>\n        </div>\n      </div>\n    </footer>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/footer/footer.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "button-group",
+  "title": "Button Group",
+  "category": "Forms",
+  "description": "Joins buttons, inputs and text into one control with shared borders, laid out horizontally or vertically.",
+  "dependencies": ["radix-ui", "class-variance-authority"],
+  "registryDependencies": ["separator"],
+  "examples": [
+    { "name": "button-group-demo" },
+    { "name": "button-group-input", "title": "With input" },
+    { "name": "button-group-split", "title": "Split button" }
+  ],
+  "usage": "<ButtonGroup>\n  <Button variant=\"outline\">Forward</Button>\n  <Button variant=\"outline\">Back</Button>\n</ButtonGroup>",
+  "notes": [
+    "Use orientation=\"vertical\" to stack. Nest ButtonGroups to put gaps between sets.",
+    "Filled buttons have no border, so put a ButtonGroupSeparator between them, as in the split button. Give the group an aria-label when its purpose is not clear from the buttons."
+  ]
+}

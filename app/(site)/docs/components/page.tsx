@@ -12,7 +12,7 @@ export default function ComponentsIndex() {
       <DocsHeader eyebrow="Library" title="Components">
         {components.length} components, each with live examples and a one-line install.
       </DocsHeader>
-      {navGroups().map((g) => (
+      {navGroups().filter((g) => g.title !== "Blocks").map((g) => (
         <section key={g.title}>
           <H2>{g.title}</H2>
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3">

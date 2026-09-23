@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "copy-button",
+  "title": "Copy Button",
+  "description": "An icon button that copies a value to the clipboard and flashes a green check. Failures show a red cross instead of throwing.",
+  "dependencies": [
+    "class-variance-authority",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "https://ui.thultz.dev/r/lantern-theme.json",
+    "https://ui.thultz.dev/r/button.json"
+  ],
+  "files": [
+    {
+      "path": "registry/lantern/ui/copy-button.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { type VariantProps } from \"class-variance-authority\";\nimport { CheckIcon, CopyIcon, XIcon } from \"lucide-react\";\n\nimport { cn } from \"@/lib/utils\";\nimport { buttonVariants } from \"@/registry/lantern/ui/button\";\n\ntype CopyState = \"idle\" | \"copied\" | \"error\";\n\nasync function writeClipboard(text: string) {\n  if (typeof navigator !== \"undefined\" && navigator.clipboard?.writeText) {\n    try {\n      await navigator.clipboard.writeText(text);\n      return;\n    } catch {\n      // Permission denied or unfocused document: try the legacy path below.\n    }\n  }\n  // Fallback for insecure origins, embedded frames and older browsers.\n  const area = document.createElement(\"textarea\");\n  area.value = text;\n  area.setAttribute(\"readonly\", \"\");\n  area.style.position = \"fixed\";\n  area.style.opacity = \"0\";\n  document.body.appendChild(area);\n  area.select();\n  const ok = document.execCommand(\"copy\");\n  document.body.removeChild(area);\n  if (!ok) throw new Error(\"Copy command failed\");\n}\n\n/** An icon button that copies `value` and flashes a green check. */\nfunction CopyButton({\n  className,\n  value,\n  variant = \"ghost\",\n  size = \"icon-sm\",\n  label = \"Copy\",\n  timeout = 1500,\n  onCopy,\n  onCopyError,\n  onClick,\n  children,\n  ...props\n}: Omit<React.ComponentProps<\"button\">, \"value\"> &\n  VariantProps<typeof buttonVariants> & {\n    value: string;\n    /** Accessible name before copying. */\n    label?: string;\n    /** How long the copied state lasts, in ms. */\n    timeout?: number;\n    onCopy?: (value: string) => void;\n    onCopyError?: (error: unknown) => void;\n  }) {\n  const [state, setState] = React.useState<CopyState>(\"idle\");\n  const timer = React.useRef<ReturnType<typeof setTimeout>>(undefined);\n\n  React.useEffect(() => () => clearTimeout(timer.current), []);\n\n  async function handleClick(event: React.MouseEvent<HTMLButtonElement>) {\n    onClick?.(event);\n    if (event.defaultPrevented) return;\n    try {\n      await writeClipboard(value);\n      setState(\"copied\");\n      onCopy?.(value);\n    } catch (error) {\n      setState(\"error\");\n      onCopyError?.(error);\n    }\n    clearTimeout(timer.current);\n    timer.current = setTimeout(() => setState(\"idle\"), timeout);\n  }\n\n  const Icon = state === \"copied\" ? CheckIcon : state === \"error\" ? XIcon : CopyIcon;\n  const status = state === \"copied\" ? \"Copied\" : state === \"error\" ? \"Copy failed\" : \"\";\n\n  return (\n    <button\n      type=\"button\"\n      data-slot=\"copy-button\"\n      data-state={state}\n      aria-label={children ? undefined : state === \"idle\" ? label : status}\n      className={cn(\n        buttonVariants({ variant, size }),\n        \"data-[state=copied]:text-success data-[state=error]:text-destructive\",\n        className,\n      )}\n      onClick={handleClick}\n      {...props}\n    >\n      <Icon key={state} aria-hidden=\"true\" className={cn(state !== \"idle\" && \"animate-in zoom-in-50 fade-in-0 duration-150\")} />\n      {children}\n      <span role=\"status\" aria-live=\"polite\" className=\"sr-only\">\n        {status}\n      </span>\n    </button>\n  );\n}\n\nexport { CopyButton };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

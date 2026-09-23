@@ -1,0 +1,29 @@
+{
+  "name": "form",
+  "title": "Form",
+  "category": "Forms",
+  "description": "Form building blocks wired to react-hook-form, with zod validation, accessible labels, descriptions and error messages.",
+  "dependencies": [
+    "react-hook-form",
+    "zod",
+    "@hookform/resolvers",
+    "radix-ui"
+  ],
+  "registryDependencies": [
+    "label"
+  ],
+  "examples": [
+    {
+      "name": "form-demo"
+    },
+    {
+      "name": "form-controls",
+      "title": "Select, switch and checkbox"
+    }
+  ],
+  "usage": "const form = useForm<z.infer<typeof schema>>({ resolver: zodResolver(schema) })\n\n<Form {...form}>\n  <form onSubmit={form.handleSubmit(onSubmit)}>\n    <FormField\n      control={form.control}\n      name=\"name\"\n      render={({ field }) => (\n        <FormItem>\n          <FormLabel>Site name</FormLabel>\n          <FormControl>\n            <Input {...field} />\n          </FormControl>\n          <FormDescription>Shown in the hub directory.</FormDescription>\n          <FormMessage />\n        </FormItem>\n      )}\n    />\n  </form>\n</Form>",
+  "notes": [
+    "FormControl passes the id, aria-describedby and aria-invalid to its child, so FormLabel, FormDescription and FormMessage are linked to the control automatically.",
+    "Field is the lighter option: the same layout without react-hook-form, for forms you validate yourself."
+  ]
+}

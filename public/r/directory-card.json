@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "directory-card",
+  "title": "Directory Card",
+  "description": "The Lantern directory listing: a grid banner with an icon and hub address, category, title, description, tags and a status footer.",
+  "dependencies": [
+    "radix-ui",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "https://ui.thultz.dev/r/lantern-theme.json",
+    "https://ui.thultz.dev/r/card.json",
+    "https://ui.thultz.dev/r/eyebrow.json",
+    "https://ui.thultz.dev/r/status-dot.json"
+  ],
+  "files": [
+    {
+      "path": "registry/lantern/ui/directory-card.tsx",
+      "content": "import * as React from \"react\";\nimport { Slot } from \"radix-ui\";\nimport { ArrowUpRight } from \"lucide-react\";\n\nimport { cn } from \"@/lib/utils\";\nimport { CardArt } from \"@/registry/lantern/ui/card\";\nimport { Eyebrow } from \"@/registry/lantern/ui/eyebrow\";\nimport { StatusDot } from \"@/registry/lantern/ui/status-dot\";\n\n/** A Lantern directory listing. Use asChild to render it as a link. */\nfunction DirectoryCard({ className, asChild = false, ...props }: React.ComponentProps<\"div\"> & { asChild?: boolean }) {\n  const Comp = asChild ? Slot.Root : \"div\";\n  return (\n    <Comp\n      data-slot=\"directory-card\"\n      className={cn(\n        \"group/directory-card relative flex flex-col overflow-hidden rounded-lg border bg-card text-card-foreground transition-[transform,border-color,box-shadow] outline-none\",\n        \"[a&]:hover:-translate-y-1 [a&]:hover:border-input [a&]:hover:shadow-block-sm\",\n        \"focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background\",\n        className,\n      )}\n      {...props}\n    />\n  );\n}\n\n/** Grid banner with a large icon and a mono hub address in the corner. */\nfunction DirectoryCardArt({\n  className,\n  address,\n  children,\n  ...props\n}: React.ComponentProps<\"div\"> & { address?: React.ReactNode }) {\n  return (\n    <CardArt data-slot=\"directory-card-art\" className={cn(\"mt-0 h-36 sm:h-40\", className)} {...props}>\n      {children}\n      {address != null && (\n        <span className=\"absolute bottom-3 left-4 max-w-[calc(100%-2rem)] truncate font-mono text-[9px] tracking-[0.15em] uppercase\">\n          {address}\n        </span>\n      )}\n    </CardArt>\n  );\n}\n\nfunction DirectoryCardHeader({ className, ...props }: React.ComponentProps<\"div\">) {\n  return <div data-slot=\"directory-card-header\" className={cn(\"flex flex-1 flex-col gap-1.5 px-5 pt-5 pb-5\", className)} {...props} />;\n}\n\nfunction DirectoryCardCategory({ className, ...props }: React.ComponentProps<\"div\">) {\n  return <Eyebrow data-slot=\"directory-card-category\" className={className} {...props} />;\n}\n\n/** Card title with a trailing arrow that nudges on hover. */\nfunction DirectoryCardTitle({\n  className,\n  children,\n  arrow = true,\n  ...props\n}: React.ComponentProps<\"div\"> & { arrow?: boolean }) {\n  return (\n    <div\n      data-slot=\"directory-card-title\"\n      className={cn(\"flex items-start justify-between gap-3 font-display text-xl leading-tight font-medium tracking-tight\", className)}\n      {...props}\n    >\n      <span className=\"min-w-0\">{children}</span>\n      {arrow && (\n        <ArrowUpRight\n          aria-hidden=\"true\"\n          className=\"mt-0.5 size-4 shrink-0 text-primary transition-transform group-hover/directory-card:translate-x-0.5 group-hover/directory-card:-translate-y-0.5\"\n        />\n      )}\n    </div>\n  );\n}\n\nfunction DirectoryCardDescription({ className, ...props }: React.ComponentProps<\"p\">) {\n  return <p data-slot=\"directory-card-description\" className={cn(\"text-sm leading-relaxed text-muted-foreground\", className)} {...props} />;\n}\n\nfunction DirectoryCardTags({ className, ...props }: React.ComponentProps<\"div\">) {\n  return <div data-slot=\"directory-card-tags\" className={cn(\"mt-2 flex flex-wrap gap-1.5\", className)} {...props} />;\n}\n\n/** Bottom row with a status dot and host details. */\nfunction DirectoryCardFooter({\n  className,\n  status,\n  children,\n  ...props\n}: React.ComponentProps<\"div\"> & { status?: \"online\" | \"busy\" | \"offline\" | \"error\" }) {\n  return (\n    <div\n      data-slot=\"directory-card-footer\"\n      className={cn(\n        \"mt-auto flex min-h-11 items-center gap-2.5 border-t px-5 py-3 font-mono text-[10px] tracking-[0.14em] text-muted-foreground uppercase\",\n        className,\n      )}\n      {...props}\n    >\n      {status && <StatusDot tone={status} pulse={status === \"online\"} />}\n      {children}\n    </div>\n  );\n}\n\nexport {\n  DirectoryCard,\n  DirectoryCardArt,\n  DirectoryCardHeader,\n  DirectoryCardCategory,\n  DirectoryCardTitle,\n  DirectoryCardDescription,\n  DirectoryCardTags,\n  DirectoryCardFooter,\n};\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

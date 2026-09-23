@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "orbit",
+  "title": "Orbit",
+  "description": "The dashed elliptical rings behind the Lantern hero terminal, as a decorative background layer with optional slow rotation.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "https://ui.thultz.dev/r/lantern-theme.json"
+  ],
+  "files": [
+    {
+      "path": "registry/lantern/ui/orbit.tsx",
+      "content": "import * as React from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\ntype OrbitRingProps = React.ComponentProps<\"span\"> & {\n  /** Ring width in px or any CSS length. */\n  width?: number | string;\n  /** Ring height in px or any CSS length. Defaults to the width (a circle). */\n  height?: number | string;\n  /** Tilt in degrees. */\n  rotation?: number;\n  /** Offset from the center of the layer, in px. */\n  x?: number;\n  y?: number;\n  /** Slowly rotate the ring. Skipped when the visitor prefers reduced motion. */\n  spin?: boolean;\n  /** Seconds per full turn when spinning. */\n  duration?: number;\n  reverse?: boolean;\n};\n\nconst toLength = (v: number | string) => (typeof v === \"number\" ? `${v}px` : v);\n\n/** One dashed elliptical ring. Use inside Orbit to build your own arrangement. */\nfunction OrbitRing({\n  className,\n  style,\n  width = 450,\n  height,\n  rotation = -20,\n  x = 0,\n  y = 0,\n  spin = false,\n  duration = 120,\n  reverse = false,\n  ...props\n}: OrbitRingProps) {\n  return (\n    <span\n      data-slot=\"orbit-ring\"\n      className={cn(\n        \"absolute top-1/2 left-1/2 block max-w-full rounded-full border border-dashed border-[#5a633b60]\",\n        spin && \"motion-safe:animate-spin\",\n        className,\n      )}\n      style={{\n        width: toLength(width),\n        height: toLength(height ?? width),\n        translate: `calc(-50% + ${x}px) calc(-50% + ${y}px)`,\n        rotate: `${rotation}deg`,\n        ...(spin ? { animationDuration: `${duration}s`, animationDirection: reverse ? \"reverse\" : \"normal\" } : null),\n        ...style,\n      }}\n      {...props}\n    />\n  );\n}\n\ntype OrbitProps = React.ComponentProps<\"div\"> & {\n  /** Number of generated rings. Ignored when you pass OrbitRing children. */\n  count?: number;\n  /** Width of the outer ring in px. Each next ring gets narrower and taller, like the Lantern hero. */\n  size?: number;\n  /** Tilt of every ring in degrees. */\n  rotation?: number;\n  /** Slowly rotate the rings, alternating direction. Respects prefers-reduced-motion. */\n  spin?: boolean;\n  /** Seconds per full turn for the outer ring. */\n  duration?: number;\n  /** Extra classes for every generated ring, such as a border color. */\n  ringClassName?: string;\n};\n\n/**\n * The dashed orbit rings behind the Lantern hero terminal. A decorative, absolutely positioned\n * layer: put it inside a relative parent, before the content it sits behind.\n */\nfunction Orbit({\n  className,\n  children,\n  count = 2,\n  size = 450,\n  rotation = -20,\n  spin = false,\n  duration = 120,\n  ringClassName,\n  ...props\n}: OrbitProps) {\n  return (\n    <div\n      data-slot=\"orbit\"\n      aria-hidden=\"true\"\n      className={cn(\"pointer-events-none absolute inset-0 select-none\", className)}\n      {...props}\n    >\n      {children ??\n        Array.from({ length: count }, (_, i) => (\n          <OrbitRing\n            key={i}\n            width={Math.round(size * (1 - 0.22 * i))}\n            height={Math.round(size * (1 + 0.11 * i))}\n            x={Math.round(size * 0.07 * i)}\n            y={Math.round(-size * 0.03 * i)}\n            rotation={rotation}\n            spin={spin}\n            duration={duration + i * 30}\n            reverse={i % 2 === 1}\n            className={ringClassName}\n          />\n        ))}\n    </div>\n  );\n}\n\nexport { Orbit, OrbitRing };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

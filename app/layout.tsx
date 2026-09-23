@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import { DM_Sans, Space_Grotesk } from "next/font/google";
 
 import site from "@/lib/site.json";
-import { SiteFooter } from "@/components/site/site-footer";
-import { SiteHeader } from "@/components/site/site-header";
 import { Toaster } from "@/registry/lantern/ui/sonner";
 
 import "./globals.css";
@@ -28,10 +26,8 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${dmSans.variable} ${spaceGrotesk.variable}`}>
-      <body className="flex min-h-svh flex-col overflow-x-hidden">
-        <SiteHeader />
-        <div className="flex-1">{children}</div>
-        <SiteFooter />
+      <body className="overflow-x-hidden">
+        {children}
         <Toaster />
       </body>
     </html>

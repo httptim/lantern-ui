@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "not-found",
+  "title": "Not Found",
+  "description": "A 404 page with a big Space Grotesk 404, a tilted terminal that fails to resolve hub://page-not-found/, and buttons back home and to search.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "https://ui.thultz.dev/r/lantern-theme.json",
+    "https://ui.thultz.dev/r/button.json",
+    "https://ui.thultz.dev/r/eyebrow.json",
+    "https://ui.thultz.dev/r/status-dot.json",
+    "https://ui.thultz.dev/r/terminal.json"
+  ],
+  "files": [
+    {
+      "path": "registry/lantern/blocks/not-found/not-found.tsx",
+      "content": "import { ArrowLeftIcon, SearchIcon } from \"lucide-react\";\n\nimport { Button } from \"@/registry/lantern/ui/button\";\nimport { Eyebrow } from \"@/registry/lantern/ui/eyebrow\";\nimport { StatusDot } from \"@/registry/lantern/ui/status-dot\";\nimport {\n  Terminal,\n  TerminalAddress,\n  TerminalBody,\n  TerminalCursor,\n  TerminalFooter,\n  TerminalHeader,\n  TerminalLine,\n  TerminalOutput,\n} from \"@/registry/lantern/ui/terminal\";\n\nexport default function NotFound() {\n  return (\n    <main className=\"relative flex min-h-svh items-center overflow-hidden bg-background bg-grid\">\n      <div className=\"pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_20%,var(--background)_75%)]\" />\n      <div className=\"relative mx-auto grid w-full max-w-6xl items-center gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[1fr_1fr] lg:gap-16 lg:px-10\">\n        <div>\n          <Eyebrow>\n            <StatusDot tone=\"error\" /> Error 404\n          </Eyebrow>\n          <h1 className=\"mt-4 text-[clamp(96px,22vw,200px)] leading-[0.9] font-medium tracking-[-0.08em]\">\n            4<span className=\"text-primary\">0</span>4<span className=\"text-primary\">.</span>\n          </h1>\n          <h2 className=\"mt-6 text-2xl font-medium tracking-[-0.04em] sm:text-3xl\">This page wandered off.</h2>\n          <p className=\"mt-3 max-w-[42ch] text-muted-foreground\">\n            The address might be old, or the hub that hosted it went offline. Head back to the start or search the\n            network.\n          </p>\n          <div className=\"mt-8 flex flex-col gap-3 sm:flex-row\">\n            <Button size=\"lg\" asChild>\n              <a href=\"/\">\n                <ArrowLeftIcon /> Back home\n              </a>\n            </Button>\n            <Button size=\"lg\" variant=\"secondary\" asChild>\n              <a href=\"#\">\n                <SearchIcon /> Search the network\n              </a>\n            </Button>\n          </div>\n        </div>\n\n        <div className=\"mx-auto w-full max-w-[480px] p-2 sm:p-4\" aria-hidden=\"true\">\n          <Terminal tilt>\n            <TerminalHeader>COMPUTER 17</TerminalHeader>\n            <TerminalAddress>hub://page-not-found/</TerminalAddress>\n            <TerminalBody className=\"min-h-[240px] px-5 text-[12px] sm:px-7 sm:text-[13px]\">\n              <div className=\"mb-4 text-[8px] tracking-[0.2em] text-[#738a69]\">RESOLVING</div>\n              <TerminalLine className=\"break-all\">open hub://page-not-found/</TerminalLine>\n              <TerminalOutput>{\"Asking relay... ok\\nLooking up page...\"}</TerminalOutput>\n              <TerminalOutput className=\"text-destructive\">{\"error 404: no page at this address\"}</TerminalOutput>\n              <TerminalLine>\n                <TerminalCursor />\n              </TerminalLine>\n            </TerminalBody>\n            <TerminalFooter>\n              <span>relay ok</span>\n              <span>page missing</span>\n            </TerminalFooter>\n          </Terminal>\n        </div>\n      </div>\n    </main>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/not-found/not-found.tsx"
+    }
+  ],
+  "type": "registry:block"
+}

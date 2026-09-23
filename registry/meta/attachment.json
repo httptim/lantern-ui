@@ -1,0 +1,27 @@
+{
+  "name": "attachment",
+  "title": "Attachment",
+  "category": "Chat",
+  "description": "Small file chips with an icon, name and size, plus idle, uploading, error and done states.",
+  "dependencies": [
+    "class-variance-authority",
+    "radix-ui"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "examples": [
+    {
+      "name": "attachment-demo"
+    },
+    {
+      "name": "attachment-states",
+      "title": "States and sizes"
+    }
+  ],
+  "usage": "<Attachment>\n  <AttachmentMedia>\n    <FileCode />\n  </AttachmentMedia>\n  <AttachmentContent>\n    <AttachmentTitle>startup.lua</AttachmentTitle>\n    <AttachmentDescription>2.4 KB</AttachmentDescription>\n  </AttachmentContent>\n</Attachment>",
+  "notes": [
+    "AttachmentGroup scrolls sideways with snapping when the chips do not fit.",
+    "Add AttachmentTrigger to make the whole chip clickable, for example to open a preview. It sits under AttachmentActions, so remove buttons still work."
+  ]
+}

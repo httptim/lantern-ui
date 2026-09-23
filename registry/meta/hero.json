@@ -1,0 +1,25 @@
+{
+  "name": "hero",
+  "type": "block",
+  "title": "Hero",
+  "category": "Blocks",
+  "description": "The Lantern landing hero: announcement bar, navbar, a big two-line heading with calls to action, and a tilted terminal typing a session inside orbit rings. A stat strip sits below.",
+  "files": [
+    "blocks/hero/hero.tsx"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "ambient",
+    "announcement-bar",
+    "button",
+    "eyebrow",
+    "navbar",
+    "orbit",
+    "stat",
+    "status-dot",
+    "terminal",
+    "typewriter"
+  ]
+}

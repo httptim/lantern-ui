@@ -1,0 +1,18 @@
+{
+  "name": "calendar",
+  "title": "Calendar",
+  "category": "Forms",
+  "description": "A month grid for picking a day or a range of days, built on React DayPicker with orange selection and today marked.",
+  "dependencies": ["react-day-picker", "lucide-react"],
+  "registryDependencies": ["button"],
+  "examples": [
+    { "name": "calendar-demo" },
+    { "name": "calendar-range", "title": "Range" },
+    { "name": "calendar-dropdown", "title": "Month and year dropdowns" }
+  ],
+  "usage": "const [date, setDate] = React.useState<Date | undefined>(new Date());\n\n<Calendar mode=\"single\" selected={date} onSelect={setDate} />",
+  "notes": [
+    "Every React DayPicker prop is passed through: mode, disabled, numberOfMonths, startMonth, endMonth, locale and so on.",
+    "Use captionLayout=\"dropdown\" with startMonth and endMonth for jumping across years. Arrow keys move between days, Page Up and Page Down change month."
+  ]
+}

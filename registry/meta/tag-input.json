@@ -1,0 +1,13 @@
+{ "name": "tag-input", "title": "Tag Input", "category": "Forms",
+  "description": "A text field that turns what you type into removable tags. Enter or comma adds a tag, Backspace on an empty field removes the last one, and pasting a comma separated list adds several.",
+  "dependencies": ["lucide-react"],
+  "examples": [
+    { "name": "tag-input-demo" },
+    { "name": "tag-input-max", "title": "Max, validation and suggestions" }
+  ],
+  "usage": "<Label htmlFor=\"tags\">Tags</Label>\n<TagInput id=\"tags\" defaultValue={[\"turtles\"]} placeholder=\"Add a tag\" />",
+  "notes": [
+    "Use value and onValueChange to control it, or defaultValue to let it manage its own tags. Duplicates are ignored (case-insensitive unless caseSensitive is set).",
+    "max caps the count and validate(tag, tags) can reject a tag; onReject(tag, reason) reports why, with reason duplicate, invalid or max. Rejected text stays in the field so it can be fixed.",
+    "id, placeholder and aria-* props go to the text input, so a Label or FieldLabel points at it. Each remove button is labelled with its tag, and additions and removals are announced to screen readers."
+  ] }

@@ -1,0 +1,11 @@
+{ "name": "typography", "title": "Typography", "category": "Display",
+  "description": "Long-form text styles: headings, paragraphs, lead, lists, quotes, inline code and tables as small components, plus a Prose wrapper that styles raw HTML or rendered markdown.",
+  "examples": [
+    { "name": "typography-demo" },
+    { "name": "typography-prose", "title": "Prose wrapper" }
+  ],
+  "usage": "<TypographyH1>Publishing a hub site</TypographyH1>\n<TypographyP>Run <TypographyInlineCode>lantern seed</TypographyInlineCode> once.</TypographyP>\n\n<Prose dangerouslySetInnerHTML={{ __html: html }} />",
+  "notes": [
+    "Prose styles descendant h1 to h4, p, a, strong, ul, ol, blockquote, code, pre, hr, table and img with plain Tailwind classes, so it does not need @tailwindcss/typography. Wrap part of the content in an element with the not-prose class to leave everything inside it unstyled.",
+    "Links are orange, list markers are green mono, blockquotes get an orange left rule and code uses the terminal colors."
+  ] }

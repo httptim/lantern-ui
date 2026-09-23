@@ -1,0 +1,12 @@
+{ "name": "orbit", "title": "Orbit", "category": "Lantern",
+  "description": "The dashed elliptical rings behind the Lantern hero terminal, as a decorative background layer with optional slow rotation.",
+  "examples": [
+    { "name": "orbit-demo" },
+    { "name": "orbit-spin", "title": "Spinning" },
+    { "name": "orbit-custom", "title": "Custom rings" }
+  ],
+  "usage": "<div className=\"relative\">\n  <Orbit size={400} />\n  <Terminal tilt>...</Terminal>\n</div>",
+  "notes": [
+    "Orbit is absolutely positioned and hidden from screen readers. Place it inside a relative parent, before the content it sits behind; that content should be positioned (Terminal already is) so it paints on top.",
+    "spin rotates the rings slowly in alternating directions and is skipped when the visitor prefers reduced motion. Pass OrbitRing children to lay out rings yourself."
+  ] }

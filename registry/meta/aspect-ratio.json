@@ -1,0 +1,22 @@
+{
+  "name": "aspect-ratio",
+  "title": "Aspect Ratio",
+  "category": "Display",
+  "description": "Keeps media and placeholders at a fixed width to height ratio as the container resizes.",
+  "dependencies": [
+    "radix-ui"
+  ],
+  "examples": [
+    {
+      "name": "aspect-ratio-demo"
+    },
+    {
+      "name": "aspect-ratio-square",
+      "title": "Other ratios"
+    }
+  ],
+  "usage": "<AspectRatio ratio={16 / 9} className=\"rounded-lg border bg-accent bg-grid\">\n  <img src=\"/screenshot.png\" alt=\"Turtle Farm\" className=\"size-full object-cover\" />\n</AspectRatio>",
+  "notes": [
+    "The child fills the box absolutely, so give images size-full and object-cover. Put rounded corners and overflow-hidden on AspectRatio itself."
+  ]
+}

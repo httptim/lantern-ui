@@ -1,0 +1,6 @@
+{ "name": "stepper", "title": "Stepper", "category": "Navigation",
+  "description": "Numbered steps with zero-padded mono numbers in bordered squares. Complete steps turn green with a check and the current step is orange.",
+  "dependencies": ["lucide-react"],
+  "examples": [{ "name": "stepper-demo" }, { "name": "stepper-horizontal", "title": "Horizontal with controls" }],
+  "usage": "<Stepper>\n  <StepperItem state=\"complete\">\n    <StepperTitle>Place a computer</StepperTitle>\n    <StepperDescription>Attach a modem.</StepperDescription>\n  </StepperItem>\n  <StepperItem state=\"current\">\n    <StepperTitle>Run the installer</StepperTitle>\n  </StepperItem>\n</Stepper>",
+  "notes": ["Numbers come from a CSS counter, so steps number themselves. The horizontal orientation uses a container query and stacks vertically when its container is narrower than 36rem. The current step gets aria-current=\"step\"."] }

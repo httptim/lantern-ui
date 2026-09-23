@@ -1,0 +1,6 @@
+{ "name": "status-pill", "title": "Status Pill", "category": "Lantern",
+  "description": "The TurtleDeck status label: a colored dot and a mono uppercase word for online, offline, running and idle. Running pulses.",
+  "dependencies": ["class-variance-authority"],
+  "examples": [{ "name": "status-pill-demo" }, { "name": "status-pill-list", "title": "In a list row" }],
+  "usage": "<StatusPill tone=\"running\">Running</StatusPill>",
+  "notes": ["With no children the pill shows the tone name. Add ml-auto through className to push it to the end of a flex row."] }

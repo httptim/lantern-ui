@@ -1,0 +1,18 @@
+{
+  "name": "date-picker",
+  "title": "Date Picker",
+  "category": "Forms",
+  "description": "A button that opens a calendar in a popover, for picking a single date or a range, with optional presets.",
+  "dependencies": ["date-fns", "react-day-picker", "lucide-react"],
+  "registryDependencies": ["button", "calendar", "popover"],
+  "examples": [
+    { "name": "date-picker-demo" },
+    { "name": "date-picker-range", "title": "Range" },
+    { "name": "date-picker-presets", "title": "With presets" }
+  ],
+  "usage": "const [date, setDate] = React.useState<Date | undefined>();\n\n<DatePicker value={date} onChange={setDate} placeholder=\"Pick a date\" />",
+  "notes": [
+    "DateRangePicker shows two months side by side on wide screens and one month below 768px.",
+    "Presets take a label and a value or a function returning one, so relative dates like \"Tomorrow\" are worked out when clicked. Pass calendarProps to forward options such as disabled days to the calendar."
+  ]
+}

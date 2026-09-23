@@ -1,0 +1,22 @@
+{
+  "name": "drawer",
+  "title": "Drawer",
+  "category": "Layout",
+  "description": "A bottom sheet with a grab handle that can be dragged closed. Built on vaul.",
+  "dependencies": [
+    "vaul"
+  ],
+  "examples": [
+    {
+      "name": "drawer-demo"
+    },
+    {
+      "name": "drawer-responsive",
+      "title": "Dialog on desktop, drawer on mobile"
+    }
+  ],
+  "usage": "<Drawer>\n  <DrawerTrigger asChild>\n    <Button>Open</Button>\n  </DrawerTrigger>\n  <DrawerContent>\n    <DrawerHeader>\n      <DrawerTitle>Refuel miner-02</DrawerTitle>\n      <DrawerDescription>Pick how much coal to load.</DrawerDescription>\n    </DrawerHeader>\n    <DrawerFooter>\n      <DrawerClose asChild>\n        <Button variant=\"secondary\">Cancel</Button>\n      </DrawerClose>\n    </DrawerFooter>\n  </DrawerContent>\n</Drawer>",
+  "notes": [
+    "Pass direction=\"top\", \"left\" or \"right\" to Drawer to slide from another edge. The grab handle only shows on bottom drawers."
+  ]
+}

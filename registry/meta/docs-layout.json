@@ -1,0 +1,30 @@
+{
+  "name": "docs-layout",
+  "type": "block",
+  "title": "Docs Layout",
+  "category": "Blocks",
+  "description": "A documentation page shell: header with search, grouped sidebar nav, a Prose article and an On this page list. On phones the nav moves into a sheet.",
+  "files": [
+    "blocks/docs-layout/docs-layout.tsx",
+    "blocks/docs-layout/docs-header.tsx",
+    "blocks/docs-layout/docs-nav.tsx",
+    "blocks/docs-layout/docs-article.tsx",
+    "blocks/docs-layout/toc.tsx"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "alert",
+    "breadcrumb",
+    "button",
+    "code-block",
+    "eyebrow",
+    "input-group",
+    "kbd",
+    "navbar",
+    "scroll-area",
+    "sheet",
+    "typography"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "message",
+  "title": "Message",
+  "category": "Chat",
+  "description": "Layout for one chat message: avatar, header, content and footer, aligned to the start or end of the thread.",
+  "examples": [
+    {
+      "name": "message-demo"
+    }
+  ],
+  "usage": "<Message align=\"end\">\n  <MessageContent>\n    <Bubble>\n      <BubbleContent>Park it at the charging dock.</BubbleContent>\n    </Bubble>\n    <MessageFooter>09:42</MessageFooter>\n  </MessageContent>\n</Message>",
+  "notes": [
+    "Message only handles layout. Put Bubble, Attachment or any other content inside MessageContent; with align=\"end\" its children line up on the right."
+  ]
+}

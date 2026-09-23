@@ -1,0 +1,14 @@
+{
+  "name": "command",
+  "title": "Command",
+  "category": "Navigation",
+  "description": "A searchable command palette with grouped items and shortcuts, inline or in a dialog opened with Cmd K.",
+  "dependencies": ["cmdk", "lucide-react"],
+  "registryDependencies": ["dialog"],
+  "examples": [
+    { "name": "command-demo" },
+    { "name": "command-dialog", "title": "Dialog" }
+  ],
+  "usage": "<Command>\n  <CommandInput placeholder=\"Search...\" />\n  <CommandList>\n    <CommandEmpty>No results found.</CommandEmpty>\n    <CommandGroup heading=\"Turtles\">\n      <CommandItem>Wake turtle 07</CommandItem>\n    </CommandGroup>\n  </CommandList>\n</Command>",
+  "notes": ["Arrow keys move the selection and Enter runs the item. CommandDialog wraps the palette in the Lantern dialog; wire up your own Cmd K / Ctrl K listener to toggle it."]
+}

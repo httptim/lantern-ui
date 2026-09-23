@@ -1,0 +1,22 @@
+{
+  "name": "scroll-area",
+  "title": "Scroll Area",
+  "category": "Layout",
+  "description": "A scroll container with a thin custom scrollbar that turns orange on hover.",
+  "dependencies": [
+    "radix-ui"
+  ],
+  "examples": [
+    {
+      "name": "scroll-area-demo"
+    },
+    {
+      "name": "scroll-area-horizontal",
+      "title": "Horizontal"
+    }
+  ],
+  "usage": "<ScrollArea className=\"h-72 w-48 rounded-lg border\">\n  {items}\n</ScrollArea>",
+  "notes": [
+    "For sideways scrolling add <ScrollBar orientation=\"horizontal\" /> inside the ScrollArea and give the content w-max."
+  ]
+}

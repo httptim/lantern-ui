@@ -1,0 +1,19 @@
+{
+  "name": "feature-grid",
+  "type": "block",
+  "title": "Feature Grid",
+  "category": "Blocks",
+  "description": "A features section with a heading, intro and six cards, one of them a wide highlighted card with a small terminal.",
+  "files": [
+    "blocks/feature-grid/feature-grid.tsx"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "badge",
+    "card",
+    "eyebrow",
+    "terminal"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "name": "settings",
+  "type": "block",
+  "title": "Settings",
+  "category": "Blocks",
+  "description": "A settings page with a section nav that turns into a select on phones: profile, hub site address and visibility, notification switches and a danger zone with a confirm dialog. Saving shows a toast.",
+  "files": [
+    "blocks/settings/settings.tsx",
+    "blocks/settings/sections.tsx"
+  ],
+  "dependencies": [
+    "lucide-react",
+    "sonner"
+  ],
+  "registryDependencies": [
+    "alert-dialog",
+    "avatar",
+    "button",
+    "eyebrow",
+    "field",
+    "input",
+    "input-group",
+    "radio-group",
+    "select",
+    "sonner",
+    "switch",
+    "textarea"
+  ],
+  "notes": [
+    "Toasts need the Toaster from the sonner component mounted once in your root layout."
+  ]
+}

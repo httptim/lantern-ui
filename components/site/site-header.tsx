@@ -16,6 +16,7 @@ export function SiteHeader() {
         <nav className="hidden items-center gap-7 text-[13px] lg:flex">
           <Link className="transition-colors hover:text-primary" href="/docs">Docs</Link>
           <Link className="transition-colors hover:text-primary" href="/docs/components">Components</Link>
+          <Link className="transition-colors hover:text-primary" href="/docs/blocks">Blocks</Link>
           <Link className="transition-colors hover:text-primary" href="/docs/theming">Theming</Link>
           <a className="transition-colors hover:text-primary" href={site.github} target="_blank" rel="noopener noreferrer">GitHub</a>
           <Link

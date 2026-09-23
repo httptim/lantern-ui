@@ -1,0 +1,20 @@
+{
+  "name": "faq",
+  "type": "block",
+  "title": "FAQ",
+  "category": "Blocks",
+  "description": "An FAQ section: a heading, intro and contact card on the left and a numbered accordion on the right. It stacks into one column on phones.",
+  "files": [
+    "blocks/faq/faq.tsx"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "accordion",
+    "button",
+    "card",
+    "eyebrow",
+    "status-dot"
+  ]
+}

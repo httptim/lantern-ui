@@ -1,0 +1,9 @@
+{ "name": "console", "title": "Console", "category": "Lantern",
+  "description": "TurtleDeck's log console: timestamped lines in four levels that stay scrolled to the newest entry, over a command row with an orange prompt.",
+  "dependencies": ["class-variance-authority"],
+  "examples": [{ "name": "console-demo" }],
+  "usage": "<Console className=\"h-80\">\n  <ConsoleLines>\n    <ConsoleLine level=\"system\" time=\"14:02:10\">Connected to quarry-2</ConsoleLine>\n    <ConsoleLine level=\"error\" time=\"14:02:19\">Lava found</ConsoleLine>\n  </ConsoleLines>\n  <ConsoleInput onCommand={(cmd) => run(cmd)} />\n</Console>",
+  "notes": [
+    "Levels are info (foreground), system (muted), error (destructive) and input (green, with a prompt glyph). ConsoleLines only follows new lines while the reader is at the bottom, so scrolling up to read history is not interrupted.",
+    "ConsoleInput clears itself on submit and keeps a history you can step through with the up and down arrow keys. Try help, fuel, pos, inv, dig, home and clear in the demo."
+  ] }

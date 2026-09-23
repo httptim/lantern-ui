@@ -1,0 +1,10 @@
+{ "name": "control-pad", "title": "Control Pad", "category": "Lantern",
+  "description": "The TurtleDeck movement pad: a 3x3 grid of buttons with icons, labels and key hints. Optional keyboard binding presses the matching button.",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["button"],
+  "examples": [{ "name": "control-pad-demo" }, { "name": "control-pad-compact", "title": "Compact, icon only" }],
+  "usage": "<ControlPad keyboard=\"page\" onAction={(id) => turtle(id)} />",
+  "notes": [
+    "Set keyboard=\"pad\" to listen only while focus is inside the pad, or keyboard=\"page\" to listen anywhere. Keys typed into inputs, textareas and editable content are ignored, as are shortcuts with Ctrl, Cmd or Alt.",
+    "Pass actions to change the layout. Each action has an id, label, icon and key; use null for an empty cell. Held keys fire onAction once and show the button pressed until released."
+  ] }

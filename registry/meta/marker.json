@@ -1,0 +1,16 @@
+{
+  "name": "marker",
+  "title": "Marker",
+  "category": "Chat",
+  "description": "Mono uppercase dividers and status notes for a thread, like day breaks, joins and system events.",
+  "dependencies": [
+    "class-variance-authority",
+    "radix-ui"
+  ],
+  "examples": [
+    {
+      "name": "marker-demo"
+    }
+  ],
+  "usage": "<Marker variant=\"separator\">\n  <MarkerContent>Today</MarkerContent>\n</Marker>"
+}

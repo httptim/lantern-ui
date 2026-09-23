@@ -1,0 +1,7 @@
+{ "name": "copy-button", "title": "Copy Button", "category": "Forms",
+  "description": "An icon button that copies a value to the clipboard and flashes a green check. Failures show a red cross instead of throwing.",
+  "dependencies": ["class-variance-authority", "lucide-react"],
+  "registryDependencies": ["button"],
+  "examples": [{ "name": "copy-button-demo" }, { "name": "copy-button-input", "title": "Next to a read-only field" }],
+  "usage": "<CopyButton value=\"pastebin get Xk2p9 hub\" label=\"Copy command\" />",
+  "notes": ["Uses the Clipboard API and falls back to a hidden textarea on insecure origins. The result is announced through a polite live region."] }

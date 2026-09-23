@@ -1,0 +1,12 @@
+{ "name": "timeline", "title": "Timeline", "category": "Display",
+  "description": "A vertical changelog or roadmap: a dot or icon on a connecting line, a mono date or version label, a title and a description, marked done, current or planned.",
+  "dependencies": ["class-variance-authority"],
+  "examples": [
+    { "name": "timeline-demo" },
+    { "name": "timeline-compact", "title": "Compact with icons" }
+  ],
+  "usage": "<Timeline>\n  <TimelineItem state=\"done\">\n    <TimelineLabel>v0.2 / 2026-05</TimelineLabel>\n    <TimelineTitle>Guestbooks</TimelineTitle>\n    <TimelineDescription>Visitors can sign a page.</TimelineDescription>\n  </TimelineItem>\n  <TimelineItem state=\"current\">...</TimelineItem>\n</Timeline>",
+  "notes": [
+    "States: done (green), current (orange, marked aria-current=\"step\") and planned (muted, dashed). Each item announces its state to screen readers. Pass icon to swap the dot for a boxed lucide icon, and size=\"compact\" for dense changelogs.",
+    "Put Badge components inside TimelineTitle to tag an entry."
+  ] }

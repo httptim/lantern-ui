@@ -1,6 +1,6 @@
 {
   "name": "lanterncn",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Add Lantern UI components to your project. The Lantern design as copy-paste React components, installed through the shadcn CLI.",
   "type": "module",
   "bin": {

@@ -1,0 +1,6 @@
+{ "name": "key-reveal", "title": "Key Reveal", "category": "Lantern",
+  "description": "TurtleDeck's show-once key box: the key in mono type with a copy button, an optional masked mode with a reveal toggle, and a warning that it will not be shown again.",
+  "dependencies": ["lucide-react"],
+  "examples": [{ "name": "key-reveal-demo" }, { "name": "key-reveal-masked", "title": "Masked until revealed" }],
+  "usage": "<KeyReveal label=\"Turtle key\" value={key} masked />",
+  "notes": ["Pass warning={null} to hide the warning line, or your own text to replace it. onCopy fires after the key reaches the clipboard."] }

@@ -1,0 +1,9 @@
+{ "name": "guestbook", "title": "Guestbook", "category": "Lantern",
+  "description": "A list of signed messages with a composer, like the Lantern guestbook. Entries show initials, a name, relative time and the message.",
+  "registryDependencies": ["avatar", "button", "label", "textarea"],
+  "examples": [{ "name": "guestbook-demo" }, { "name": "guestbook-read-only", "title": "Read-only list" }],
+  "usage": "<Guestbook>\n  <GuestbookHeader>Guestbook</GuestbookHeader>\n  <GuestbookComposer onSign={(message) => save(message)} />\n  <GuestbookList>\n    <GuestbookEntry name=\"ore_baron\" time={Date.now()} message=\"Hello\" />\n  </GuestbookList>\n</Guestbook>",
+  "notes": [
+    "GuestbookEntry takes time as a Date, timestamp or ISO string and shows it as relative time that refreshes every minute. Any other string is shown as written.",
+    "GuestbookComposer keeps its own draft, counts characters against maxLength (280 by default) and calls onSign with the trimmed message. Ctrl or Cmd plus Enter also signs."
+  ] }

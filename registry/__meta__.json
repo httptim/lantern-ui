@@ -1,5 +1,151 @@
 [
   {
+    "name": "ambient",
+    "title": "Ambient",
+    "category": "Lantern",
+    "description": "The soft olive or amber corner glow from the Lantern hero, as a decorative background layer.",
+    "dependencies": [
+      "class-variance-authority"
+    ],
+    "examples": [
+      {
+        "name": "ambient-demo"
+      },
+      {
+        "name": "ambient-positions",
+        "title": "Positions, tones and intensity"
+      }
+    ],
+    "usage": "<section className=\"relative overflow-hidden\">\n  <Ambient position=\"top-right\" />\n  <h1 className=\"relative\">...</h1>\n</section>",
+    "notes": [
+      "Ambient is absolutely positioned and hidden from screen readers. Put it inside a relative parent (add overflow-hidden to clip it) and keep the content after it positioned so it stays on top. Resize it with className, for example size-96."
+    ]
+  },
+  {
+    "name": "code-block",
+    "title": "Code Block",
+    "category": "Lantern",
+    "description": "A code panel with a filename bar, language badge, copy button, optional line numbers and highlighted lines. No syntax highlighter required.",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "examples": [
+      {
+        "name": "code-block-demo"
+      },
+      {
+        "name": "code-block-line-numbers",
+        "title": "Line numbers and highlighted lines"
+      },
+      {
+        "name": "code-block-max-height",
+        "title": "Long file with max height"
+      }
+    ],
+    "usage": "<CodeBlock title=\"startup.lua\" language=\"lua\" code={source} showLineNumbers highlightLines={[2, 3]} />",
+    "notes": [
+      "Pass code as a plain string and it renders in the default terminal text color. To use your own highlighter, render its output as children instead, for example a div with shiki HTML, and set copyValue to the raw source.",
+      "Line numbers and highlighted lines apply to the code prop. Set maxHeight to cap the panel and scroll the rest."
+    ]
+  },
+  {
+    "name": "command-tabs",
+    "title": "Command Tabs",
+    "category": "Lantern",
+    "description": "A package manager switcher that shows the same command for npm, pnpm, yarn and bun, with a copy button. The chosen manager is remembered and shared by every instance on the page.",
+    "dependencies": [
+      "radix-ui",
+      "lucide-react"
+    ],
+    "examples": [
+      {
+        "name": "command-tabs-demo"
+      },
+      {
+        "name": "command-tabs-install",
+        "title": "Install packages"
+      }
+    ],
+    "usage": "<CommandTabs command=\"lanterncn add button\" type=\"dlx\" />",
+    "notes": [
+      "type=\"dlx\" prefixes npx, pnpm dlx, yarn dlx or bunx --bun. type=\"install\" prefixes npm install, pnpm add, yarn add or bun add.",
+      "Pass commands, a record keyed by npm, pnpm, yarn and bun, to write each command out yourself. The last choice is saved in localStorage under lantern-package-manager."
+    ]
+  },
+  {
+    "name": "console",
+    "title": "Console",
+    "category": "Lantern",
+    "description": "TurtleDeck's log console: timestamped lines in four levels that stay scrolled to the newest entry, over a command row with an orange prompt.",
+    "dependencies": [
+      "class-variance-authority"
+    ],
+    "examples": [
+      {
+        "name": "console-demo"
+      }
+    ],
+    "usage": "<Console className=\"h-80\">\n  <ConsoleLines>\n    <ConsoleLine level=\"system\" time=\"14:02:10\">Connected to quarry-2</ConsoleLine>\n    <ConsoleLine level=\"error\" time=\"14:02:19\">Lava found</ConsoleLine>\n  </ConsoleLines>\n  <ConsoleInput onCommand={(cmd) => run(cmd)} />\n</Console>",
+    "notes": [
+      "Levels are info (foreground), system (muted), error (destructive) and input (green, with a prompt glyph). ConsoleLines only follows new lines while the reader is at the bottom, so scrolling up to read history is not interrupted.",
+      "ConsoleInput clears itself on submit and keeps a history you can step through with the up and down arrow keys. Try help, fuel, pos, inv, dig, home and clear in the demo."
+    ]
+  },
+  {
+    "name": "control-pad",
+    "title": "Control Pad",
+    "category": "Lantern",
+    "description": "The TurtleDeck movement pad: a 3x3 grid of buttons with icons, labels and key hints. Optional keyboard binding presses the matching button.",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "button"
+    ],
+    "examples": [
+      {
+        "name": "control-pad-demo"
+      },
+      {
+        "name": "control-pad-compact",
+        "title": "Compact, icon only"
+      }
+    ],
+    "usage": "<ControlPad keyboard=\"page\" onAction={(id) => turtle(id)} />",
+    "notes": [
+      "Set keyboard=\"pad\" to listen only while focus is inside the pad, or keyboard=\"page\" to listen anywhere. Keys typed into inputs, textareas and editable content are ignored, as are shortcuts with Ctrl, Cmd or Alt.",
+      "Pass actions to change the layout. Each action has an id, label, icon and key; use null for an empty cell. Held keys fire onAction once and show the button pressed until released."
+    ]
+  },
+  {
+    "name": "directory-card",
+    "title": "Directory Card",
+    "category": "Lantern",
+    "description": "The Lantern directory listing: a grid banner with an icon and hub address, category, title, description, tags and a status footer.",
+    "dependencies": [
+      "radix-ui",
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "card",
+      "eyebrow",
+      "status-dot"
+    ],
+    "examples": [
+      {
+        "name": "directory-card-demo"
+      },
+      {
+        "name": "directory-card-grid",
+        "title": "Responsive grid"
+      }
+    ],
+    "usage": "<DirectoryCard asChild>\n  <a href=\"/guestbook\">\n    <DirectoryCardArt address=\"hub://guestbook/\">\n      <BookOpen />\n    </DirectoryCardArt>\n    <DirectoryCardHeader>\n      <DirectoryCardCategory>Community</DirectoryCardCategory>\n      <DirectoryCardTitle>Lantern Guestbook</DirectoryCardTitle>\n      <DirectoryCardDescription>Leave a note.</DirectoryCardDescription>\n    </DirectoryCardHeader>\n    <DirectoryCardFooter status=\"online\">Online</DirectoryCardFooter>\n  </a>\n</DirectoryCard>",
+    "notes": [
+      "With asChild the whole card becomes the link, and it lifts with a block shadow on hover. The footer status takes online, busy, offline or error."
+    ]
+  },
+  {
     "name": "eyebrow",
     "title": "Eyebrow",
     "category": "Lantern",
@@ -13,6 +159,74 @@
       }
     ],
     "usage": "<Eyebrow>Get started</Eyebrow>"
+  },
+  {
+    "name": "guestbook",
+    "title": "Guestbook",
+    "category": "Lantern",
+    "description": "A list of signed messages with a composer, like the Lantern guestbook. Entries show initials, a name, relative time and the message.",
+    "registryDependencies": [
+      "avatar",
+      "button",
+      "label",
+      "textarea"
+    ],
+    "examples": [
+      {
+        "name": "guestbook-demo"
+      },
+      {
+        "name": "guestbook-read-only",
+        "title": "Read-only list"
+      }
+    ],
+    "usage": "<Guestbook>\n  <GuestbookHeader>Guestbook</GuestbookHeader>\n  <GuestbookComposer onSign={(message) => save(message)} />\n  <GuestbookList>\n    <GuestbookEntry name=\"ore_baron\" time={Date.now()} message=\"Hello\" />\n  </GuestbookList>\n</Guestbook>",
+    "notes": [
+      "GuestbookEntry takes time as a Date, timestamp or ISO string and shows it as relative time that refreshes every minute. Any other string is shown as written.",
+      "GuestbookComposer keeps its own draft, counts characters against maxLength (280 by default) and calls onSign with the trimmed message. Ctrl or Cmd plus Enter also signs."
+    ]
+  },
+  {
+    "name": "inventory-grid",
+    "title": "Inventory Grid",
+    "category": "Lantern",
+    "description": "TurtleDeck's inventory: square slots on a faint grid with beveled item swatches, short names and stack counts. The selected slot gets an orange border and the arrow keys move it.",
+    "examples": [
+      {
+        "name": "inventory-grid-demo"
+      },
+      {
+        "name": "inventory-grid-chest",
+        "title": "Compact 9 by 3 chest"
+      }
+    ],
+    "usage": "<InventoryGrid aria-label=\"Turtle inventory\" defaultValue={0}>\n  <InventorySlot name=\"Cobble\" count={64} color=\"#8b8f88\" />\n  <InventorySlot />\n</InventoryGrid>",
+    "notes": [
+      "The grid uses role=grid with one tab stop. Arrow keys move the selection, Home and End jump to the ends of a row, and Ctrl+Home or Ctrl+End jump to the first or last slot.",
+      "Set columns to change the width, for example columns={9} for a chest, and size=\"sm\" to hide item names for tight layouts. Use value and onValueChange to control the selection."
+    ]
+  },
+  {
+    "name": "key-reveal",
+    "title": "Key Reveal",
+    "category": "Lantern",
+    "description": "TurtleDeck's show-once key box: the key in mono type with a copy button, an optional masked mode with a reveal toggle, and a warning that it will not be shown again.",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "examples": [
+      {
+        "name": "key-reveal-demo"
+      },
+      {
+        "name": "key-reveal-masked",
+        "title": "Masked until revealed"
+      }
+    ],
+    "usage": "<KeyReveal label=\"Turtle key\" value={key} masked />",
+    "notes": [
+      "Pass warning={null} to hide the warning line, or your own text to replace it. onCopy fires after the key reaches the clipboard."
+    ]
   },
   {
     "name": "navbar",
@@ -37,6 +251,59 @@
       "NavbarBrand, NavbarLink and NavbarCta accept asChild, so you can pass a framework Link.",
       "NavbarMobile shows below the md breakpoint. Pass it the same links as NavbarLinks. Following a link closes the sheet."
     ]
+  },
+  {
+    "name": "orbit",
+    "title": "Orbit",
+    "category": "Lantern",
+    "description": "The dashed elliptical rings behind the Lantern hero terminal, as a decorative background layer with optional slow rotation.",
+    "examples": [
+      {
+        "name": "orbit-demo"
+      },
+      {
+        "name": "orbit-spin",
+        "title": "Spinning"
+      },
+      {
+        "name": "orbit-custom",
+        "title": "Custom rings"
+      }
+    ],
+    "usage": "<div className=\"relative\">\n  <Orbit size={400} />\n  <Terminal tilt>...</Terminal>\n</div>",
+    "notes": [
+      "Orbit is absolutely positioned and hidden from screen readers. Place it inside a relative parent, before the content it sits behind; that content should be positioned (Terminal already is) so it paints on top.",
+      "spin rotates the rings slowly in alternating directions and is skipped when the visitor prefers reduced motion. Pass OrbitRing children to lay out rings yourself."
+    ]
+  },
+  {
+    "name": "server-card",
+    "title": "Server Card",
+    "category": "Lantern",
+    "description": "A Minecraft server status card with a copyable address, online state, a player bar, version badge, MOTD and an initials stack of who is on.",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "avatar",
+      "badge",
+      "copy-button",
+      "status-pill"
+    ],
+    "examples": [
+      {
+        "name": "server-card-demo"
+      },
+      {
+        "name": "server-card-offline",
+        "title": "Offline"
+      },
+      {
+        "name": "server-card-grid",
+        "title": "Server grid"
+      }
+    ],
+    "usage": "<ServerCard\n  name=\"Lantern SMP\"\n  address=\"play.example.net\"\n  players={7}\n  maxPlayers={20}\n  version=\"1.21.4\"\n/>"
   },
   {
     "name": "stat",
@@ -69,6 +336,28 @@
     "usage": "<StatusDot tone=\"online\" label=\"Online\" />"
   },
   {
+    "name": "status-pill",
+    "title": "Status Pill",
+    "category": "Lantern",
+    "description": "The TurtleDeck status label: a colored dot and a mono uppercase word for online, offline, running and idle. Running pulses.",
+    "dependencies": [
+      "class-variance-authority"
+    ],
+    "examples": [
+      {
+        "name": "status-pill-demo"
+      },
+      {
+        "name": "status-pill-list",
+        "title": "In a list row"
+      }
+    ],
+    "usage": "<StatusPill tone=\"running\">Running</StatusPill>",
+    "notes": [
+      "With no children the pill shows the tone name. Add ml-auto through className to push it to the end of a flex row."
+    ]
+  },
+  {
     "name": "terminal",
     "title": "Terminal",
     "category": "Lantern",
@@ -79,6 +368,30 @@
       }
     ],
     "usage": "<Terminal tilt>\n  <TerminalHeader>LANTERN</TerminalHeader>\n  <TerminalBody>\n    <TerminalLine>lantern</TerminalLine>\n    <TerminalOutput>ready</TerminalOutput>\n  </TerminalBody>\n</Terminal>"
+  },
+  {
+    "name": "typewriter",
+    "title": "Typewriter",
+    "category": "Lantern",
+    "description": "Terminal lines that type themselves out, with a pause between lines, an optional loop and a blinking cursor. Use it inside a Terminal or on its own.",
+    "registryDependencies": [
+      "terminal"
+    ],
+    "examples": [
+      {
+        "name": "typewriter-demo"
+      },
+      {
+        "name": "typewriter-standalone",
+        "title": "Standalone"
+      }
+    ],
+    "usage": "<Terminal>\n  <TerminalHeader>LANTERN</TerminalHeader>\n  <TerminalTypewriter\n    loop\n    lines={[\n      { prompt: true, text: \"lantern publish ./site\" },\n      { text: \"published hub://your-little-world/\", delay: 800 },\n    ]}\n  />\n</Terminal>",
+    "notes": [
+      "Each line takes prompt, text, delay (milliseconds before it starts) and instant. Command lines (prompt: true) are typed at speed milliseconds per character; output lines print whole unless instant is false.",
+      "Visitors who prefer reduced motion see every line at once. Screen readers get the full text immediately from a visually hidden copy; the animated text is hidden from them.",
+      "The terminal grows as lines appear. Give the body a min height (bodyClassName on TerminalTypewriter, className on Typewriter) to keep the layout still."
+    ]
   },
   {
     "name": "button",
@@ -109,6 +422,68 @@
     "usage": "<Button variant=\"secondary\">Explore the network</Button>"
   },
   {
+    "name": "button-group",
+    "title": "Button Group",
+    "category": "Forms",
+    "description": "Joins buttons, inputs and text into one control with shared borders, laid out horizontally or vertically.",
+    "dependencies": [
+      "radix-ui",
+      "class-variance-authority"
+    ],
+    "registryDependencies": [
+      "separator"
+    ],
+    "examples": [
+      {
+        "name": "button-group-demo"
+      },
+      {
+        "name": "button-group-input",
+        "title": "With input"
+      },
+      {
+        "name": "button-group-split",
+        "title": "Split button"
+      }
+    ],
+    "usage": "<ButtonGroup>\n  <Button variant=\"outline\">Forward</Button>\n  <Button variant=\"outline\">Back</Button>\n</ButtonGroup>",
+    "notes": [
+      "Use orientation=\"vertical\" to stack. Nest ButtonGroups to put gaps between sets.",
+      "Filled buttons have no border, so put a ButtonGroupSeparator between them, as in the split button. Give the group an aria-label when its purpose is not clear from the buttons."
+    ]
+  },
+  {
+    "name": "calendar",
+    "title": "Calendar",
+    "category": "Forms",
+    "description": "A month grid for picking a day or a range of days, built on React DayPicker with orange selection and today marked.",
+    "dependencies": [
+      "react-day-picker",
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "button"
+    ],
+    "examples": [
+      {
+        "name": "calendar-demo"
+      },
+      {
+        "name": "calendar-range",
+        "title": "Range"
+      },
+      {
+        "name": "calendar-dropdown",
+        "title": "Month and year dropdowns"
+      }
+    ],
+    "usage": "const [date, setDate] = React.useState<Date | undefined>(new Date());\n\n<Calendar mode=\"single\" selected={date} onSelect={setDate} />",
+    "notes": [
+      "Every React DayPicker prop is passed through: mode, disabled, numberOfMonths, startMonth, endMonth, locale and so on.",
+      "Use captionLayout=\"dropdown\" with startMonth and endMonth for jumping across years. Arrow keys move between days, Page Up and Page Down change month."
+    ]
+  },
+  {
     "name": "checkbox",
     "title": "Checkbox",
     "category": "Forms",
@@ -133,6 +508,98 @@
     "usage": "<div className=\"flex items-center gap-3\">\n  <Checkbox id=\"terms\" />\n  <Label htmlFor=\"terms\">Accept the hub rules</Label>\n</div>",
     "notes": [
       "Pass checked=\"indeterminate\" to show a dash, for example on a select-all box when only some rows are checked."
+    ]
+  },
+  {
+    "name": "combobox",
+    "title": "Combobox",
+    "category": "Forms",
+    "description": "A searchable picker built from a popover and a command list, with a single-value Combobox and a multi-select ComboboxMulti that shows picks as badges.",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "popover",
+      "command",
+      "badge"
+    ],
+    "examples": [
+      {
+        "name": "combobox-demo"
+      },
+      {
+        "name": "combobox-multi",
+        "title": "Multiple"
+      },
+      {
+        "name": "combobox-form",
+        "title": "In a form"
+      }
+    ],
+    "usage": "<Combobox\n  options={[{ value: \"quarry\", label: \"quarry.hub\" }]}\n  value={value}\n  onChange={setValue}\n  placeholder=\"Pick a server\"\n  searchPlaceholder=\"Search servers...\"\n  empty=\"No server found.\"\n/>",
+    "notes": [
+      "Options take a value, a label and optional keywords, icon and disabled. Search matches the value, label and keywords.",
+      "ComboboxMulti keeps the popover open while you pick. Backspace in an empty search removes the last pick."
+    ]
+  },
+  {
+    "name": "copy-button",
+    "title": "Copy Button",
+    "category": "Forms",
+    "description": "An icon button that copies a value to the clipboard and flashes a green check. Failures show a red cross instead of throwing.",
+    "dependencies": [
+      "class-variance-authority",
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "button"
+    ],
+    "examples": [
+      {
+        "name": "copy-button-demo"
+      },
+      {
+        "name": "copy-button-input",
+        "title": "Next to a read-only field"
+      }
+    ],
+    "usage": "<CopyButton value=\"pastebin get Xk2p9 hub\" label=\"Copy command\" />",
+    "notes": [
+      "Uses the Clipboard API and falls back to a hidden textarea on insecure origins. The result is announced through a polite live region."
+    ]
+  },
+  {
+    "name": "date-picker",
+    "title": "Date Picker",
+    "category": "Forms",
+    "description": "A button that opens a calendar in a popover, for picking a single date or a range, with optional presets.",
+    "dependencies": [
+      "date-fns",
+      "react-day-picker",
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "button",
+      "calendar",
+      "popover"
+    ],
+    "examples": [
+      {
+        "name": "date-picker-demo"
+      },
+      {
+        "name": "date-picker-range",
+        "title": "Range"
+      },
+      {
+        "name": "date-picker-presets",
+        "title": "With presets"
+      }
+    ],
+    "usage": "const [date, setDate] = React.useState<Date | undefined>();\n\n<DatePicker value={date} onChange={setDate} placeholder=\"Pick a date\" />",
+    "notes": [
+      "DateRangePicker shows two months side by side on wide screens and one month below 768px.",
+      "Presets take a label and a value or a function returning one, so relative dates like \"Tomorrow\" are worked out when clicked. Pass calendarProps to forward options such as disabled days to the calendar."
     ]
   },
   {
@@ -176,6 +643,35 @@
       "Set data-invalid on a Field and aria-invalid on its control to show an error. FieldError takes children or an errors array, such as the output of a schema validator.",
       "Wrap a horizontal Field in a FieldLabel to turn a radio or checkbox into a selectable card.",
       "orientation=\"responsive\" stacks on narrow containers and goes side by side once the parent FieldGroup is wide enough."
+    ]
+  },
+  {
+    "name": "form",
+    "title": "Form",
+    "category": "Forms",
+    "description": "Form building blocks wired to react-hook-form, with zod validation, accessible labels, descriptions and error messages.",
+    "dependencies": [
+      "react-hook-form",
+      "zod",
+      "@hookform/resolvers",
+      "radix-ui"
+    ],
+    "registryDependencies": [
+      "label"
+    ],
+    "examples": [
+      {
+        "name": "form-demo"
+      },
+      {
+        "name": "form-controls",
+        "title": "Select, switch and checkbox"
+      }
+    ],
+    "usage": "const form = useForm<z.infer<typeof schema>>({ resolver: zodResolver(schema) })\n\n<Form {...form}>\n  <form onSubmit={form.handleSubmit(onSubmit)}>\n    <FormField\n      control={form.control}\n      name=\"name\"\n      render={({ field }) => (\n        <FormItem>\n          <FormLabel>Site name</FormLabel>\n          <FormControl>\n            <Input {...field} />\n          </FormControl>\n          <FormDescription>Shown in the hub directory.</FormDescription>\n          <FormMessage />\n        </FormItem>\n      )}\n    />\n  </form>\n</Form>",
+    "notes": [
+      "FormControl passes the id, aria-describedby and aria-invalid to its child, so FormLabel, FormDescription and FormMessage are linked to the control automatically.",
+      "Field is the lighter option: the same layout without react-hook-form, for forms you validate yourself."
     ]
   },
   {
@@ -262,6 +758,33 @@
       }
     ],
     "usage": "<Label htmlFor=\"email\">Email</Label>"
+  },
+  {
+    "name": "native-select",
+    "title": "Native Select",
+    "category": "Forms",
+    "description": "A styled native select element with the Input look, a chevron, options and option groups.",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "examples": [
+      {
+        "name": "native-select-demo"
+      },
+      {
+        "name": "native-select-groups",
+        "title": "Groups"
+      },
+      {
+        "name": "native-select-states",
+        "title": "Invalid, disabled and small"
+      }
+    ],
+    "usage": "<NativeSelect defaultValue=\"overworld\">\n  <NativeSelectOption value=\"overworld\">Overworld</NativeSelectOption>\n  <NativeSelectOption value=\"deepstone\">Deepstone</NativeSelectOption>\n</NativeSelect>",
+    "notes": [
+      "Use Native Select when you want the platform picker, especially on phones, or need the value to work in a plain form post. Use Select for a fully styled dropdown with icons.",
+      "The wrapper is w-fit by default. Pass className=\"w-full\" to stretch the select; the open list is drawn by the browser."
+    ]
   },
   {
     "name": "radio-group",
@@ -351,6 +874,30 @@
     "usage": "<Switch id=\"online\" defaultChecked />"
   },
   {
+    "name": "tag-input",
+    "title": "Tag Input",
+    "category": "Forms",
+    "description": "A text field that turns what you type into removable tags. Enter or comma adds a tag, Backspace on an empty field removes the last one, and pasting a comma separated list adds several.",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "examples": [
+      {
+        "name": "tag-input-demo"
+      },
+      {
+        "name": "tag-input-max",
+        "title": "Max, validation and suggestions"
+      }
+    ],
+    "usage": "<Label htmlFor=\"tags\">Tags</Label>\n<TagInput id=\"tags\" defaultValue={[\"turtles\"]} placeholder=\"Add a tag\" />",
+    "notes": [
+      "Use value and onValueChange to control it, or defaultValue to let it manage its own tags. Duplicates are ignored (case-insensitive unless caseSensitive is set).",
+      "max caps the count and validate(tag, tags) can reject a tag; onReject(tag, reason) reports why, with reason duplicate, invalid or max. Rejected text stays in the field so it can be fixed.",
+      "id, placeholder and aria-* props go to the text input, so a Label or FieldLabel points at it. Each remove button is labelled with its tag, and additions and removals are announced to screen readers."
+    ]
+  },
+  {
     "name": "textarea",
     "title": "Textarea",
     "category": "Forms",
@@ -430,6 +977,28 @@
     "usage": "<Accordion type=\"single\" collapsible>\n  <AccordionItem value=\"a\">\n    <AccordionTrigger>What is Lantern?</AccordionTrigger>\n    <AccordionContent>A small web for Minecraft servers.</AccordionContent>\n  </AccordionItem>\n</Accordion>"
   },
   {
+    "name": "aspect-ratio",
+    "title": "Aspect Ratio",
+    "category": "Display",
+    "description": "Keeps media and placeholders at a fixed width to height ratio as the container resizes.",
+    "dependencies": [
+      "radix-ui"
+    ],
+    "examples": [
+      {
+        "name": "aspect-ratio-demo"
+      },
+      {
+        "name": "aspect-ratio-square",
+        "title": "Other ratios"
+      }
+    ],
+    "usage": "<AspectRatio ratio={16 / 9} className=\"rounded-lg border bg-accent bg-grid\">\n  <img src=\"/screenshot.png\" alt=\"Turtle Farm\" className=\"size-full object-cover\" />\n</AspectRatio>",
+    "notes": [
+      "The child fills the box absolutely, so give images size-full and object-cover. Put rounded corners and overflow-hidden on AspectRatio itself."
+    ]
+  },
+  {
     "name": "avatar",
     "title": "Avatar",
     "category": "Display",
@@ -485,6 +1054,69 @@
     "usage": "<Card>\n  <CardHeader>\n    <CardTitle>Title</CardTitle>\n    <CardDescription>Description</CardDescription>\n  </CardHeader>\n  <CardContent>Content</CardContent>\n</Card>"
   },
   {
+    "name": "carousel",
+    "title": "Carousel",
+    "category": "Display",
+    "description": "A swipeable row of slides with previous and next buttons and dot indicators. Built on Embla.",
+    "dependencies": [
+      "embla-carousel-react",
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "button"
+    ],
+    "examples": [
+      {
+        "name": "carousel-demo"
+      },
+      {
+        "name": "carousel-sizes",
+        "title": "Sizes"
+      },
+      {
+        "name": "carousel-vertical",
+        "title": "Vertical"
+      }
+    ],
+    "usage": "<Carousel>\n  <CarouselContent>\n    <CarouselItem>North hub</CarouselItem>\n    <CarouselItem>Relay tower</CarouselItem>\n  </CarouselContent>\n  <CarouselPrevious />\n  <CarouselNext />\n  <CarouselDots />\n</Carousel>",
+    "notes": [
+      "Set a basis class on CarouselItem, such as basis-1/3, to show several slides at once.",
+      "The previous and next buttons sit outside the slides, 3rem to each side. Leave room for them with padding on the parent, or move them with className.",
+      "Arrow keys move between slides when focus is inside the carousel. Use setApi to reach the Embla API."
+    ]
+  },
+  {
+    "name": "item",
+    "title": "Item",
+    "category": "Display",
+    "description": "A flexible row for lists of things: media, title, description and actions, with outline and muted variants.",
+    "dependencies": [
+      "class-variance-authority",
+      "radix-ui"
+    ],
+    "registryDependencies": [
+      "separator"
+    ],
+    "examples": [
+      {
+        "name": "item-demo"
+      },
+      {
+        "name": "item-link",
+        "title": "As links"
+      },
+      {
+        "name": "item-avatar",
+        "title": "Avatars, header and footer"
+      }
+    ],
+    "usage": "<Item variant=\"outline\">\n  <ItemMedia variant=\"icon\">\n    <Server />\n  </ItemMedia>\n  <ItemContent>\n    <ItemTitle>Deepstone</ItemTitle>\n    <ItemDescription>deepstone.hub:25565</ItemDescription>\n  </ItemContent>\n  <ItemActions>\n    <Button size=\"sm\" variant=\"outline\">Join</Button>\n  </ItemActions>\n</Item>",
+    "notes": [
+      "Use asChild to render an Item as a link; it picks up a hover state automatically.",
+      "ItemGroup has role=\"list\". Wrap each Item in an element with role=\"listitem\", or pass role=\"listitem\" to the Item."
+    ]
+  },
+  {
     "name": "kbd",
     "title": "Kbd",
     "category": "Display",
@@ -528,6 +1160,269 @@
     "usage": "<Table>\n  <TableHeader>\n    <TableRow>\n      <TableHead>Site</TableHead>\n    </TableRow>\n  </TableHeader>\n  <TableBody>\n    <TableRow>\n      <TableCell>turtle.farm</TableCell>\n    </TableRow>\n  </TableBody>\n</Table>"
   },
   {
+    "name": "timeline",
+    "title": "Timeline",
+    "category": "Display",
+    "description": "A vertical changelog or roadmap: a dot or icon on a connecting line, a mono date or version label, a title and a description, marked done, current or planned.",
+    "dependencies": [
+      "class-variance-authority"
+    ],
+    "examples": [
+      {
+        "name": "timeline-demo"
+      },
+      {
+        "name": "timeline-compact",
+        "title": "Compact with icons"
+      }
+    ],
+    "usage": "<Timeline>\n  <TimelineItem state=\"done\">\n    <TimelineLabel>v0.2 / 2026-05</TimelineLabel>\n    <TimelineTitle>Guestbooks</TimelineTitle>\n    <TimelineDescription>Visitors can sign a page.</TimelineDescription>\n  </TimelineItem>\n  <TimelineItem state=\"current\">...</TimelineItem>\n</Timeline>",
+    "notes": [
+      "States: done (green), current (orange, marked aria-current=\"step\") and planned (muted, dashed). Each item announces its state to screen readers. Pass icon to swap the dot for a boxed lucide icon, and size=\"compact\" for dense changelogs.",
+      "Put Badge components inside TimelineTitle to tag an entry."
+    ]
+  },
+  {
+    "name": "typography",
+    "title": "Typography",
+    "category": "Display",
+    "description": "Long-form text styles: headings, paragraphs, lead, lists, quotes, inline code and tables as small components, plus a Prose wrapper that styles raw HTML or rendered markdown.",
+    "examples": [
+      {
+        "name": "typography-demo"
+      },
+      {
+        "name": "typography-prose",
+        "title": "Prose wrapper"
+      }
+    ],
+    "usage": "<TypographyH1>Publishing a hub site</TypographyH1>\n<TypographyP>Run <TypographyInlineCode>lantern seed</TypographyInlineCode> once.</TypographyP>\n\n<Prose dangerouslySetInnerHTML={{ __html: html }} />",
+    "notes": [
+      "Prose styles descendant h1 to h4, p, a, strong, ul, ol, blockquote, code, pre, hr, table and img with plain Tailwind classes, so it does not need @tailwindcss/typography. Wrap part of the content in an element with the not-prose class to leave everything inside it unstyled.",
+      "Links are orange, list markers are green mono, blockquotes get an orange left rule and code uses the terminal colors."
+    ]
+  },
+  {
+    "name": "chart",
+    "title": "Chart",
+    "category": "Data",
+    "description": "Recharts v3 wrappers: a responsive ChartContainer driven by a ChartConfig of series labels and colors, plus a Lantern tooltip and legend. Axes and grid lines pick up border and muted colors.",
+    "dependencies": [
+      "recharts"
+    ],
+    "examples": [
+      {
+        "name": "chart-demo"
+      },
+      {
+        "name": "chart-bar",
+        "title": "Bar chart with two series"
+      },
+      {
+        "name": "chart-line",
+        "title": "Line chart"
+      },
+      {
+        "name": "chart-donut",
+        "title": "Donut with a center label"
+      },
+      {
+        "name": "chart-radial",
+        "title": "Radial bar"
+      }
+    ],
+    "usage": "const chartConfig = {\n  fuel: { label: \"Fuel\", color: \"var(--chart-1)\" },\n} satisfies ChartConfig;\n\n<ChartContainer config={chartConfig} className=\"h-[220px] w-full\">\n  <AreaChart data={data}>\n    <XAxis dataKey=\"time\" />\n    <ChartTooltip content={<ChartTooltipContent />} />\n    <Area dataKey=\"fuel\" fill=\"var(--color-fuel)\" stroke=\"var(--color-fuel)\" />\n  </AreaChart>\n</ChartContainer>",
+    "notes": [
+      "Every key in the config becomes a --color-<key> variable on the container, so series can use fill=\"var(--color-fuel)\". Keys without a color fall back to var(--chart-1) through var(--chart-5) in order.",
+      "ChartContainer uses aspect-video by default. Pass aspect-auto with a fixed height, or aspect-square with a max height for pie and radial charts."
+    ]
+  },
+  {
+    "name": "data-table",
+    "title": "Data Table",
+    "category": "Data",
+    "description": "A reusable TanStack Table v9 data table with a global filter, sortable headers, a column visibility menu, row selection and pagination, built on the Lantern table, input, checkbox, dropdown menu and select.",
+    "dependencies": [
+      "@tanstack/react-table",
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "table",
+      "button",
+      "input",
+      "checkbox",
+      "dropdown-menu",
+      "select"
+    ],
+    "examples": [
+      {
+        "name": "data-table-demo"
+      },
+      {
+        "name": "data-table-minimal",
+        "title": "Sorting only"
+      }
+    ],
+    "usage": "const helper = createDataTableColumnHelper<Turtle>();\nconst columns = helper.columns([\n  helper.accessor(\"name\", {\n    header: ({ column }) => <DataTableColumnHeader column={column} title=\"Turtle\" />,\n    meta: { title: \"Turtle\" },\n  }),\n]);\n\n<DataTable columns={columns} data={turtles} selectable pageSize={10} />",
+    "notes": [
+      "Columns are TanStack Table v9 column defs typed with the exported dataTableFeatures. Use createDataTableColumnHelper<TData>() so accessor values keep their types.",
+      "Set meta.title for the label in the column menu and meta.className for per-column classes such as text-right. Turn parts off with filterable={false}, columnToggle={false} or pagination={false}, and pass toolbar={(table) => ...} to add controls beside the filter."
+    ]
+  },
+  {
+    "name": "collapsible",
+    "title": "Collapsible",
+    "category": "Layout",
+    "description": "Shows and hides a section of content with an animated height.",
+    "dependencies": [
+      "radix-ui"
+    ],
+    "examples": [
+      {
+        "name": "collapsible-demo"
+      },
+      {
+        "name": "collapsible-file-tree",
+        "title": "File tree"
+      }
+    ],
+    "usage": "<Collapsible>\n  <CollapsibleTrigger>Show servers</CollapsibleTrigger>\n  <CollapsibleContent>computer-17, computer-33</CollapsibleContent>\n</Collapsible>"
+  },
+  {
+    "name": "direction",
+    "title": "Direction",
+    "category": "Layout",
+    "description": "Sets the reading direction for Radix components below it, so menus, selects and sliders mirror correctly in right to left layouts.",
+    "dependencies": [
+      "radix-ui"
+    ],
+    "examples": [
+      {
+        "name": "direction-demo"
+      }
+    ],
+    "usage": "<DirectionProvider dir=\"rtl\">\n  <div dir=\"rtl\">\n    <App />\n  </div>\n</DirectionProvider>",
+    "notes": [
+      "The provider only tells Radix components the direction. Also set the dir attribute on the html element or a wrapper so text, flex order and logical utilities like ps-* and start-* flip.",
+      "useDirection returns the current direction, handy for flipping icons such as arrows."
+    ]
+  },
+  {
+    "name": "drawer",
+    "title": "Drawer",
+    "category": "Layout",
+    "description": "A bottom sheet with a grab handle that can be dragged closed. Built on vaul.",
+    "dependencies": [
+      "vaul"
+    ],
+    "examples": [
+      {
+        "name": "drawer-demo"
+      },
+      {
+        "name": "drawer-responsive",
+        "title": "Dialog on desktop, drawer on mobile"
+      }
+    ],
+    "usage": "<Drawer>\n  <DrawerTrigger asChild>\n    <Button>Open</Button>\n  </DrawerTrigger>\n  <DrawerContent>\n    <DrawerHeader>\n      <DrawerTitle>Refuel miner-02</DrawerTitle>\n      <DrawerDescription>Pick how much coal to load.</DrawerDescription>\n    </DrawerHeader>\n    <DrawerFooter>\n      <DrawerClose asChild>\n        <Button variant=\"secondary\">Cancel</Button>\n      </DrawerClose>\n    </DrawerFooter>\n  </DrawerContent>\n</Drawer>",
+    "notes": [
+      "Pass direction=\"top\", \"left\" or \"right\" to Drawer to slide from another edge. The grab handle only shows on bottom drawers."
+    ]
+  },
+  {
+    "name": "resizable",
+    "title": "Resizable",
+    "category": "Layout",
+    "description": "Panels split by draggable handles, for editors and dashboards. Built on react-resizable-panels.",
+    "dependencies": [
+      "react-resizable-panels",
+      "lucide-react"
+    ],
+    "examples": [
+      {
+        "name": "resizable-demo"
+      },
+      {
+        "name": "resizable-vertical",
+        "title": "Vertical"
+      },
+      {
+        "name": "resizable-editor",
+        "title": "Nested editor"
+      }
+    ],
+    "usage": "<ResizablePanelGroup orientation=\"horizontal\">\n  <ResizablePanel defaultSize=\"40%\">Monitor</ResizablePanel>\n  <ResizableHandle withHandle />\n  <ResizablePanel defaultSize=\"60%\">Terminal</ResizablePanel>\n</ResizablePanelGroup>",
+    "notes": [
+      "This uses react-resizable-panels v4. The group takes orientation (not direction). Sizes given as numbers are pixels; use strings like \"40%\" for percentages.",
+      "Handles are keyboard accessible: focus one with Tab and use the arrow keys. Double-click a handle to reset its panel."
+    ]
+  },
+  {
+    "name": "scroll-area",
+    "title": "Scroll Area",
+    "category": "Layout",
+    "description": "A scroll container with a thin custom scrollbar that turns orange on hover.",
+    "dependencies": [
+      "radix-ui"
+    ],
+    "examples": [
+      {
+        "name": "scroll-area-demo"
+      },
+      {
+        "name": "scroll-area-horizontal",
+        "title": "Horizontal"
+      }
+    ],
+    "usage": "<ScrollArea className=\"h-72 w-48 rounded-lg border\">\n  {items}\n</ScrollArea>",
+    "notes": [
+      "For sideways scrolling add <ScrollBar orientation=\"horizontal\" /> inside the ScrollArea and give the content w-max."
+    ]
+  },
+  {
+    "name": "sidebar",
+    "title": "Sidebar",
+    "category": "Layout",
+    "description": "A composable app sidebar that collapses off canvas or down to icons, and turns into a sheet on phones.",
+    "dependencies": [
+      "radix-ui",
+      "lucide-react",
+      "class-variance-authority"
+    ],
+    "registryDependencies": [
+      "button",
+      "input",
+      "separator",
+      "sheet",
+      "skeleton",
+      "tooltip"
+    ],
+    "files": [
+      "ui/sidebar.tsx",
+      "hooks/use-mobile.ts"
+    ],
+    "examples": [
+      {
+        "name": "sidebar-demo"
+      },
+      {
+        "name": "sidebar-icon",
+        "title": "Collapse to icons"
+      },
+      {
+        "name": "sidebar-floating",
+        "title": "Floating"
+      }
+    ],
+    "usage": "<SidebarProvider>\n  <Sidebar collapsible=\"icon\">\n    <SidebarContent>\n      <SidebarGroup>\n        <SidebarGroupLabel>Hub</SidebarGroupLabel>\n        <SidebarMenu>\n          <SidebarMenuItem>\n            <SidebarMenuButton isActive tooltip=\"Servers\">\n              <ServerIcon />\n              <span>Servers</span>\n            </SidebarMenuButton>\n          </SidebarMenuItem>\n        </SidebarMenu>\n      </SidebarGroup>\n    </SidebarContent>\n  </Sidebar>\n  <SidebarInset>\n    <SidebarTrigger />\n  </SidebarInset>\n</SidebarProvider>",
+    "notes": [
+      "SidebarProvider holds the open state in React state only; nothing is written to cookies. Pass open and onOpenChange to control it yourself. Cmd+B or Ctrl+B toggles it; set keyboardShortcut={false} when a page has more than one sidebar.",
+      "Set variant to sidebar, floating or inset, and collapsible to offcanvas, icon or none. Below 768px the sidebar opens as a sheet from SidebarTrigger.",
+      "The sidebar is fixed to the viewport by default. To embed it in a box, give SidebarProvider className=\"relative h-full min-h-0\" and Sidebar className=\"absolute h-full\", as the examples here do.",
+      "The use-mobile hook is installed alongside the component at hooks/use-mobile.ts."
+    ]
+  },
+  {
     "name": "alert-dialog",
     "title": "Alert Dialog",
     "category": "Overlays",
@@ -546,6 +1441,26 @@
     "usage": "<AlertDialog>\n  <AlertDialogTrigger asChild>\n    <Button variant=\"destructive\">Unpublish site</Button>\n  </AlertDialogTrigger>\n  <AlertDialogContent>\n    <AlertDialogHeader>\n      <AlertDialogTitle>Unpublish site?</AlertDialogTitle>\n      <AlertDialogDescription>Visitors will see a dead link.</AlertDialogDescription>\n    </AlertDialogHeader>\n    <AlertDialogFooter>\n      <AlertDialogCancel>Cancel</AlertDialogCancel>\n      <AlertDialogAction variant=\"destructive\">Unpublish</AlertDialogAction>\n    </AlertDialogFooter>\n  </AlertDialogContent>\n</AlertDialog>",
     "notes": [
       "AlertDialogAction takes variant=\"destructive\" for a filled red confirm button."
+    ]
+  },
+  {
+    "name": "context-menu",
+    "title": "Context Menu",
+    "category": "Overlays",
+    "description": "A menu opened by right-clicking an area, with labels, shortcuts, checkbox and radio items and submenus.",
+    "dependencies": [
+      "radix-ui",
+      "lucide-react"
+    ],
+    "examples": [
+      {
+        "name": "context-menu-demo"
+      }
+    ],
+    "usage": "<ContextMenu>\n  <ContextMenuTrigger>Right-click here</ContextMenuTrigger>\n  <ContextMenuContent>\n    <ContextMenuItem>Rename</ContextMenuItem>\n    <ContextMenuItem>Copy path</ContextMenuItem>\n    <ContextMenuSeparator />\n    <ContextMenuItem variant=\"destructive\">Delete</ContextMenuItem>\n  </ContextMenuContent>\n</ContextMenu>",
+    "notes": [
+      "On touch devices the menu opens on a long-press instead of a right-click. From the keyboard, focus the trigger and press Shift F10 or the context menu key.",
+      "The API matches Dropdown Menu: ContextMenuItem takes inset and variant=\"destructive\", and there are checkbox, radio and sub items."
     ]
   },
   {
@@ -695,6 +1610,95 @@
     ]
   },
   {
+    "name": "command",
+    "title": "Command",
+    "category": "Navigation",
+    "description": "A searchable command palette with grouped items and shortcuts, inline or in a dialog opened with Cmd K.",
+    "dependencies": [
+      "cmdk",
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "dialog"
+    ],
+    "examples": [
+      {
+        "name": "command-demo"
+      },
+      {
+        "name": "command-dialog",
+        "title": "Dialog"
+      }
+    ],
+    "usage": "<Command>\n  <CommandInput placeholder=\"Search...\" />\n  <CommandList>\n    <CommandEmpty>No results found.</CommandEmpty>\n    <CommandGroup heading=\"Turtles\">\n      <CommandItem>Wake turtle 07</CommandItem>\n    </CommandGroup>\n  </CommandList>\n</Command>",
+    "notes": [
+      "Arrow keys move the selection and Enter runs the item. CommandDialog wraps the palette in the Lantern dialog; wire up your own Cmd K / Ctrl K listener to toggle it."
+    ]
+  },
+  {
+    "name": "file-tree",
+    "title": "File Tree",
+    "category": "Navigation",
+    "description": "An accessible tree of folders and files with indentation guides, an orange selected border and status letters like M for modified.",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "examples": [
+      {
+        "name": "file-tree-demo"
+      },
+      {
+        "name": "file-tree-selection",
+        "title": "Controlled with selection readout"
+      }
+    ],
+    "usage": "<FileTree\n  items={[{ id: \"pages\", name: \"pages\", children: [{ id: \"index\", name: \"index.lua\" }] }]}\n  onSelect={(item) => open(item)}\n/>",
+    "notes": [
+      "Follows the WAI-ARIA tree pattern: Up and Down move, Right expands or enters a folder, Left collapses or moves to the parent, Home and End jump, Enter or Space selects, * expands siblings and typing a letter jumps to the next matching name.",
+      "An item with a children array is a folder. Selection and expansion can be controlled or uncontrolled."
+    ]
+  },
+  {
+    "name": "menubar",
+    "title": "Menubar",
+    "category": "Navigation",
+    "description": "A row of menus like a desktop app's menu bar, with shortcuts, checkbox and radio items and submenus.",
+    "dependencies": [
+      "radix-ui",
+      "lucide-react"
+    ],
+    "examples": [
+      {
+        "name": "menubar-demo"
+      }
+    ],
+    "usage": "<Menubar>\n  <MenubarMenu>\n    <MenubarTrigger>File</MenubarTrigger>\n    <MenubarContent>\n      <MenubarItem>New program <MenubarShortcut>Ctrl N</MenubarShortcut></MenubarItem>\n      <MenubarSeparator />\n      <MenubarItem>Save</MenubarItem>\n    </MenubarContent>\n  </MenubarMenu>\n</Menubar>",
+    "notes": [
+      "Once a menu is open, Left and Right arrows move between menus and hovering another trigger switches to it. Item parts share the Dropdown Menu API."
+    ]
+  },
+  {
+    "name": "navigation-menu",
+    "title": "Navigation Menu",
+    "category": "Navigation",
+    "description": "A header menu whose triggers open panels of links in a shared viewport, with an orange indicator under the open trigger.",
+    "dependencies": [
+      "radix-ui",
+      "class-variance-authority",
+      "lucide-react"
+    ],
+    "examples": [
+      {
+        "name": "navigation-menu-demo"
+      }
+    ],
+    "usage": "<NavigationMenu>\n  <NavigationMenuList>\n    <NavigationMenuItem>\n      <NavigationMenuTrigger>Hubs</NavigationMenuTrigger>\n      <NavigationMenuContent>\n        <NavigationMenuLink href=\"/hubs\">Directory</NavigationMenuLink>\n      </NavigationMenuContent>\n    </NavigationMenuItem>\n    <NavigationMenuItem>\n      <NavigationMenuLink href=\"/guestbook\" className={navigationMenuTriggerStyle()}>\n        Guestbook\n      </NavigationMenuLink>\n    </NavigationMenuItem>\n  </NavigationMenuList>\n</NavigationMenu>",
+    "notes": [
+      "Below 768px the panel fills the width of the menu and links stack in one column; give panel contents md: widths for the wide layout.",
+      "Pass viewport={false} to render each panel under its own trigger instead of in the shared viewport. Put NavigationMenuIndicator last inside the list."
+    ]
+  },
+  {
     "name": "pagination",
     "title": "Pagination",
     "category": "Navigation",
@@ -713,6 +1717,28 @@
     "usage": "<Pagination>\n  <PaginationContent>\n    <PaginationItem><PaginationPrevious href=\"#\" /></PaginationItem>\n    <PaginationItem><PaginationLink href=\"#\" isActive>2</PaginationLink></PaginationItem>\n    <PaginationItem><PaginationNext href=\"#\" /></PaginationItem>\n  </PaginationContent>\n</Pagination>",
     "notes": [
       "The Prev and Next words hide on phones to leave room for the page numbers."
+    ]
+  },
+  {
+    "name": "stepper",
+    "title": "Stepper",
+    "category": "Navigation",
+    "description": "Numbered steps with zero-padded mono numbers in bordered squares. Complete steps turn green with a check and the current step is orange.",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "examples": [
+      {
+        "name": "stepper-demo"
+      },
+      {
+        "name": "stepper-horizontal",
+        "title": "Horizontal with controls"
+      }
+    ],
+    "usage": "<Stepper>\n  <StepperItem state=\"complete\">\n    <StepperTitle>Place a computer</StepperTitle>\n    <StepperDescription>Attach a modem.</StepperDescription>\n  </StepperItem>\n  <StepperItem state=\"current\">\n    <StepperTitle>Run the installer</StepperTitle>\n  </StepperItem>\n</Stepper>",
+    "notes": [
+      "Numbers come from a CSS counter, so steps number themselves. The horizontal orientation uses a container query and stacks vertically when its container is narrower than 36rem. The current step gets aria-current=\"step\"."
     ]
   },
   {
@@ -757,6 +1783,31 @@
       }
     ],
     "usage": "<Alert variant=\"warning\">\n  <TriangleAlert />\n  <AlertTitle>Low fuel</AlertTitle>\n  <AlertDescription>Drop coal in the turtle.</AlertDescription>\n</Alert>"
+  },
+  {
+    "name": "announcement-bar",
+    "title": "Announcement Bar",
+    "category": "Feedback",
+    "description": "A slim full-width bar for the top of a site with an optional badge, a message, a link and a dismiss button that can remember the dismissal.",
+    "dependencies": [
+      "class-variance-authority",
+      "lucide-react",
+      "radix-ui"
+    ],
+    "examples": [
+      {
+        "name": "announcement-bar-demo"
+      },
+      {
+        "name": "announcement-bar-variants",
+        "title": "Variants"
+      }
+    ],
+    "usage": "<AnnouncementBar id=\"directory-v2\">\n  <AnnouncementBarBadge>New</AnnouncementBarBadge>\n  <AnnouncementBarMessage>The directory now lists guestbooks.</AnnouncementBarMessage>\n  <AnnouncementBarLink href=\"/changelog\">Read more</AnnouncementBarLink>\n</AnnouncementBar>",
+    "notes": [
+      "Give the bar an id to remember a dismissal in localStorage; change the id for the next announcement. Without an id it only hides until the page reloads. resetAnnouncementBar(id) forgets a dismissal.",
+      "Variants: default (card), primary (orange) and subtle. The bar is a labelled region and the dismiss button has an accessible name."
+    ]
   },
   {
     "name": "empty",
@@ -849,6 +1900,386 @@
     "usage": "<Spinner />",
     "notes": [
       "Both spinners announce themselves with role=\"status\" and the label Loading. Inside a button that already says what is happening, pass aria-hidden and clear the role."
+    ]
+  },
+  {
+    "name": "attachment",
+    "title": "Attachment",
+    "category": "Chat",
+    "description": "Small file chips with an icon, name and size, plus idle, uploading, error and done states.",
+    "dependencies": [
+      "class-variance-authority",
+      "radix-ui"
+    ],
+    "registryDependencies": [
+      "button"
+    ],
+    "examples": [
+      {
+        "name": "attachment-demo"
+      },
+      {
+        "name": "attachment-states",
+        "title": "States and sizes"
+      }
+    ],
+    "usage": "<Attachment>\n  <AttachmentMedia>\n    <FileCode />\n  </AttachmentMedia>\n  <AttachmentContent>\n    <AttachmentTitle>startup.lua</AttachmentTitle>\n    <AttachmentDescription>2.4 KB</AttachmentDescription>\n  </AttachmentContent>\n</Attachment>",
+    "notes": [
+      "AttachmentGroup scrolls sideways with snapping when the chips do not fit.",
+      "Add AttachmentTrigger to make the whole chip clickable, for example to open a preview. It sits under AttachmentActions, so remove buttons still work."
+    ]
+  },
+  {
+    "name": "bubble",
+    "title": "Bubble",
+    "category": "Chat",
+    "description": "Chat bubbles in the Lantern style: sent messages in a raised panel with an orange edge, replies in the card panel.",
+    "dependencies": [
+      "class-variance-authority",
+      "radix-ui"
+    ],
+    "examples": [
+      {
+        "name": "bubble-demo"
+      },
+      {
+        "name": "bubble-variants",
+        "title": "Variants"
+      },
+      {
+        "name": "bubble-reactions",
+        "title": "Reactions and buttons"
+      }
+    ],
+    "usage": "<Bubble variant=\"muted\">\n  <BubbleContent>Anyone near spawn?</BubbleContent>\n</Bubble>\n<Bubble align=\"end\">\n  <BubbleContent>On my way.</BubbleContent>\n</Bubble>",
+    "notes": [
+      "The default variant is for your own messages and puts the orange edge on the side the bubble is aligned to. Use muted for other people and the assistant.",
+      "BubbleContent takes asChild, so a bubble can be a button or link with hover and focus states."
+    ]
+  },
+  {
+    "name": "marker",
+    "title": "Marker",
+    "category": "Chat",
+    "description": "Mono uppercase dividers and status notes for a thread, like day breaks, joins and system events.",
+    "dependencies": [
+      "class-variance-authority",
+      "radix-ui"
+    ],
+    "examples": [
+      {
+        "name": "marker-demo"
+      }
+    ],
+    "usage": "<Marker variant=\"separator\">\n  <MarkerContent>Today</MarkerContent>\n</Marker>"
+  },
+  {
+    "name": "message",
+    "title": "Message",
+    "category": "Chat",
+    "description": "Layout for one chat message: avatar, header, content and footer, aligned to the start or end of the thread.",
+    "examples": [
+      {
+        "name": "message-demo"
+      }
+    ],
+    "usage": "<Message align=\"end\">\n  <MessageContent>\n    <Bubble>\n      <BubbleContent>Park it at the charging dock.</BubbleContent>\n    </Bubble>\n    <MessageFooter>09:42</MessageFooter>\n  </MessageContent>\n</Message>",
+    "notes": [
+      "Message only handles layout. Put Bubble, Attachment or any other content inside MessageContent; with align=\"end\" its children line up on the right."
+    ]
+  },
+  {
+    "name": "message-scroller",
+    "title": "Message Scroller",
+    "category": "Chat",
+    "description": "A chat scroll area that starts at the newest message, follows new messages and shows a jump to latest button when you scroll up.",
+    "dependencies": [
+      "@shadcn/react",
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "button"
+    ],
+    "examples": [
+      {
+        "name": "message-scroller-demo"
+      }
+    ],
+    "usage": "<MessageScrollerProvider autoScroll>\n  <MessageScroller>\n    <MessageScrollerViewport>\n      <MessageScrollerContent>\n        {messages.map((m) => (\n          <MessageScrollerItem key={m.id} messageId={m.id}>...</MessageScrollerItem>\n        ))}\n      </MessageScrollerContent>\n    </MessageScrollerViewport>\n    <MessageScrollerButton />\n  </MessageScroller>\n</MessageScrollerProvider>",
+    "notes": [
+      "Give the scroller a bounded height, for example a flex-1 child of a fixed height column.",
+      "With autoScroll it keeps following new messages while you are at the bottom and stops once you scroll up. Call scrollToEnd from useMessageScroller to jump down after sending."
+    ]
+  },
+  {
+    "name": "dashboard",
+    "type": "block",
+    "title": "Dashboard",
+    "category": "Blocks",
+    "description": "A TurtleDeck-style app shell: a collapsible sidebar with nav groups and a user menu, a header with breadcrumb and search, a stats row, a mining chart, a live console and a data table of turtles.",
+    "files": [
+      "blocks/dashboard/dashboard.tsx",
+      "blocks/dashboard/app-sidebar.tsx",
+      "blocks/dashboard/stats.tsx",
+      "blocks/dashboard/mining-chart.tsx",
+      "blocks/dashboard/fleet-console.tsx",
+      "blocks/dashboard/turtles-table.tsx"
+    ],
+    "dependencies": [
+      "lucide-react",
+      "recharts"
+    ],
+    "registryDependencies": [
+      "avatar",
+      "badge",
+      "breadcrumb",
+      "button",
+      "card",
+      "chart",
+      "console",
+      "data-table",
+      "dropdown-menu",
+      "input-group",
+      "progress",
+      "separator",
+      "sidebar",
+      "status-dot",
+      "tabs"
+    ],
+    "notes": [
+      "The block owns the whole viewport, so the sidebar keeps its default fixed positioning. Below 768px it opens as a sheet from the header trigger.",
+      "The console answers help, fuel, pos, inv, home and clear."
+    ]
+  },
+  {
+    "name": "docs-layout",
+    "type": "block",
+    "title": "Docs Layout",
+    "category": "Blocks",
+    "description": "A documentation page shell: header with search, grouped sidebar nav, a Prose article and an On this page list. On phones the nav moves into a sheet.",
+    "files": [
+      "blocks/docs-layout/docs-layout.tsx",
+      "blocks/docs-layout/docs-header.tsx",
+      "blocks/docs-layout/docs-nav.tsx",
+      "blocks/docs-layout/docs-article.tsx",
+      "blocks/docs-layout/toc.tsx"
+    ],
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "alert",
+      "breadcrumb",
+      "button",
+      "code-block",
+      "eyebrow",
+      "input-group",
+      "kbd",
+      "navbar",
+      "scroll-area",
+      "sheet",
+      "typography"
+    ]
+  },
+  {
+    "name": "faq",
+    "type": "block",
+    "title": "FAQ",
+    "category": "Blocks",
+    "description": "An FAQ section: a heading, intro and contact card on the left and a numbered accordion on the right. It stacks into one column on phones.",
+    "files": [
+      "blocks/faq/faq.tsx"
+    ],
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "accordion",
+      "button",
+      "card",
+      "eyebrow",
+      "status-dot"
+    ]
+  },
+  {
+    "name": "feature-grid",
+    "type": "block",
+    "title": "Feature Grid",
+    "category": "Blocks",
+    "description": "A features section with a heading, intro and six cards, one of them a wide highlighted card with a small terminal.",
+    "files": [
+      "blocks/feature-grid/feature-grid.tsx"
+    ],
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "badge",
+      "card",
+      "eyebrow",
+      "terminal"
+    ]
+  },
+  {
+    "name": "footer",
+    "type": "block",
+    "title": "Footer",
+    "category": "Blocks",
+    "description": "A site footer with the brand, three link columns, a newsletter field and a status line. Columns fold into two on phones.",
+    "files": [
+      "blocks/footer/footer.tsx"
+    ],
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "button",
+      "input",
+      "navbar",
+      "separator",
+      "status-dot"
+    ]
+  },
+  {
+    "name": "hero",
+    "type": "block",
+    "title": "Hero",
+    "category": "Blocks",
+    "description": "The Lantern landing hero: announcement bar, navbar, a big two-line heading with calls to action, and a tilted terminal typing a session inside orbit rings. A stat strip sits below.",
+    "files": [
+      "blocks/hero/hero.tsx"
+    ],
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "ambient",
+      "announcement-bar",
+      "button",
+      "eyebrow",
+      "navbar",
+      "orbit",
+      "stat",
+      "status-dot",
+      "terminal",
+      "typewriter"
+    ]
+  },
+  {
+    "name": "login",
+    "type": "block",
+    "title": "Login",
+    "category": "Blocks",
+    "description": "A split-screen sign in page: the form on the left with a show/hide password, remember me and GitHub sign in, and a tilted terminal on a grid on the right. The right panel hides on phones.",
+    "files": [
+      "blocks/login/login.tsx"
+    ],
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "button",
+      "checkbox",
+      "eyebrow",
+      "field",
+      "input-group",
+      "status-dot",
+      "terminal"
+    ]
+  },
+  {
+    "name": "not-found",
+    "type": "block",
+    "title": "Not Found",
+    "category": "Blocks",
+    "description": "A 404 page with a big Space Grotesk 404, a tilted terminal that fails to resolve hub://page-not-found/, and buttons back home and to search.",
+    "files": [
+      "blocks/not-found/not-found.tsx"
+    ],
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "button",
+      "eyebrow",
+      "status-dot",
+      "terminal"
+    ],
+    "notes": [
+      "In the Next.js app router, render it from app/not-found.tsx."
+    ]
+  },
+  {
+    "name": "pricing",
+    "type": "block",
+    "title": "Pricing",
+    "category": "Blocks",
+    "description": "Three plan cards with a monthly and yearly toggle, the middle plan raised with an orange border and hard shadow, and an FAQ accordion underneath.",
+    "files": [
+      "blocks/pricing/pricing.tsx"
+    ],
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "accordion",
+      "badge",
+      "button",
+      "eyebrow",
+      "toggle-group"
+    ]
+  },
+  {
+    "name": "settings",
+    "type": "block",
+    "title": "Settings",
+    "category": "Blocks",
+    "description": "A settings page with a section nav that turns into a select on phones: profile, hub site address and visibility, notification switches and a danger zone with a confirm dialog. Saving shows a toast.",
+    "files": [
+      "blocks/settings/settings.tsx",
+      "blocks/settings/sections.tsx"
+    ],
+    "dependencies": [
+      "lucide-react",
+      "sonner"
+    ],
+    "registryDependencies": [
+      "alert-dialog",
+      "avatar",
+      "button",
+      "eyebrow",
+      "field",
+      "input",
+      "input-group",
+      "radio-group",
+      "select",
+      "sonner",
+      "switch",
+      "textarea"
+    ],
+    "notes": [
+      "Toasts need the Toaster from the sonner component mounted once in your root layout."
+    ]
+  },
+  {
+    "name": "signup",
+    "type": "block",
+    "title": "Signup",
+    "category": "Blocks",
+    "description": "A create-account page with name, email and a password strength meter, a terms checkbox and inline validation errors, beside a short list of what the account includes.",
+    "files": [
+      "blocks/signup/signup.tsx"
+    ],
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "button",
+      "checkbox",
+      "eyebrow",
+      "field",
+      "input",
+      "input-group"
     ]
   }
 ]

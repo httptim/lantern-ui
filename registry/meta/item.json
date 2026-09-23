@@ -1,0 +1,31 @@
+{
+  "name": "item",
+  "title": "Item",
+  "category": "Display",
+  "description": "A flexible row for lists of things: media, title, description and actions, with outline and muted variants.",
+  "dependencies": [
+    "class-variance-authority",
+    "radix-ui"
+  ],
+  "registryDependencies": [
+    "separator"
+  ],
+  "examples": [
+    {
+      "name": "item-demo"
+    },
+    {
+      "name": "item-link",
+      "title": "As links"
+    },
+    {
+      "name": "item-avatar",
+      "title": "Avatars, header and footer"
+    }
+  ],
+  "usage": "<Item variant=\"outline\">\n  <ItemMedia variant=\"icon\">\n    <Server />\n  </ItemMedia>\n  <ItemContent>\n    <ItemTitle>Deepstone</ItemTitle>\n    <ItemDescription>deepstone.hub:25565</ItemDescription>\n  </ItemContent>\n  <ItemActions>\n    <Button size=\"sm\" variant=\"outline\">Join</Button>\n  </ItemActions>\n</Item>",
+  "notes": [
+    "Use asChild to render an Item as a link; it picks up a hover state automatically.",
+    "ItemGroup has role=\"list\". Wrap each Item in an element with role=\"listitem\", or pass role=\"listitem\" to the Item."
+  ]
+}

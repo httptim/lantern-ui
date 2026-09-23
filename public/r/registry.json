@@ -46,6 +46,19 @@
           "terminal-foreground": "#c6d4b8",
           "block-shadow": "#1e271c",
           "grid-line": "rgba(174, 196, 165, 0.05)",
+          "chart-1": "#f5a665",
+          "chart-2": "#9bba86",
+          "chart-3": "#8fb3c9",
+          "chart-4": "#e8c98a",
+          "chart-5": "#e0715f",
+          "sidebar": "#141a17",
+          "sidebar-foreground": "#eeeade",
+          "sidebar-primary": "#f5a665",
+          "sidebar-primary-foreground": "#1b241b",
+          "sidebar-accent": "#202823",
+          "sidebar-accent-foreground": "#eeeade",
+          "sidebar-border": "#303b34",
+          "sidebar-ring": "#f5a665",
           "radius": "0.3125rem"
         },
         "dark": {
@@ -79,6 +92,19 @@
           "terminal-foreground": "#c6d4b8",
           "block-shadow": "#1e271c",
           "grid-line": "rgba(174, 196, 165, 0.05)",
+          "chart-1": "#f5a665",
+          "chart-2": "#9bba86",
+          "chart-3": "#8fb3c9",
+          "chart-4": "#e8c98a",
+          "chart-5": "#e0715f",
+          "sidebar": "#141a17",
+          "sidebar-foreground": "#eeeade",
+          "sidebar-primary": "#f5a665",
+          "sidebar-primary-foreground": "#1b241b",
+          "sidebar-accent": "#202823",
+          "sidebar-accent-foreground": "#eeeade",
+          "sidebar-border": "#303b34",
+          "sidebar-ring": "#f5a665",
           "radius": "0.3125rem"
         }
       },
@@ -106,6 +132,126 @@
       }
     },
     {
+      "name": "ambient",
+      "type": "registry:ui",
+      "title": "Ambient",
+      "description": "The soft olive or amber corner glow from the Lantern hero, as a decorative background layer.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/ambient.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "code-block",
+      "type": "registry:ui",
+      "title": "Code Block",
+      "description": "A code panel with a filename bar, language badge, copy button, optional line numbers and highlighted lines. No syntax highlighter required.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/code-block.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "command-tabs",
+      "type": "registry:ui",
+      "title": "Command Tabs",
+      "description": "A package manager switcher that shows the same command for npm, pnpm, yarn and bun, with a copy button. The chosen manager is remembered and shared by every instance on the page.",
+      "dependencies": [
+        "radix-ui",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/command-tabs.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "console",
+      "type": "registry:ui",
+      "title": "Console",
+      "description": "TurtleDeck's log console: timestamped lines in four levels that stay scrolled to the newest entry, over a command row with an orange prompt.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/console.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "control-pad",
+      "type": "registry:ui",
+      "title": "Control Pad",
+      "description": "The TurtleDeck movement pad: a 3x3 grid of buttons with icons, labels and key hints. Optional keyboard binding presses the matching button.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json",
+        "https://ui.thultz.dev/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/control-pad.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "directory-card",
+      "type": "registry:ui",
+      "title": "Directory Card",
+      "description": "The Lantern directory listing: a grid banner with an icon and hub address, category, title, description, tags and a status footer.",
+      "dependencies": [
+        "radix-ui",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json",
+        "https://ui.thultz.dev/r/card.json",
+        "https://ui.thultz.dev/r/eyebrow.json",
+        "https://ui.thultz.dev/r/status-dot.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/directory-card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "eyebrow",
       "type": "registry:ui",
       "title": "Eyebrow",
@@ -119,6 +265,63 @@
       "files": [
         {
           "path": "registry/lantern/ui/eyebrow.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "guestbook",
+      "type": "registry:ui",
+      "title": "Guestbook",
+      "description": "A list of signed messages with a composer, like the Lantern guestbook. Entries show initials, a name, relative time and the message.",
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json",
+        "https://ui.thultz.dev/r/avatar.json",
+        "https://ui.thultz.dev/r/button.json",
+        "https://ui.thultz.dev/r/label.json",
+        "https://ui.thultz.dev/r/textarea.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/guestbook.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "inventory-grid",
+      "type": "registry:ui",
+      "title": "Inventory Grid",
+      "description": "TurtleDeck's inventory: square slots on a faint grid with beveled item swatches, short names and stack counts. The selected slot gets an orange border and the arrow keys move it.",
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/inventory-grid.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "key-reveal",
+      "type": "registry:ui",
+      "title": "Key Reveal",
+      "description": "TurtleDeck's show-once key box: the key in mono type with a copy button, an optional masked mode with a reveal toggle, and a warning that it will not be shown again.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/key-reveal.tsx",
           "type": "registry:ui"
         }
       ]
@@ -141,6 +344,46 @@
       "files": [
         {
           "path": "registry/lantern/ui/navbar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "orbit",
+      "type": "registry:ui",
+      "title": "Orbit",
+      "description": "The dashed elliptical rings behind the Lantern hero terminal, as a decorative background layer with optional slow rotation.",
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/orbit.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "server-card",
+      "type": "registry:ui",
+      "title": "Server Card",
+      "description": "A Minecraft server status card with a copyable address, online state, a player bar, version badge, MOTD and an initials stack of who is on.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json",
+        "https://ui.thultz.dev/r/avatar.json",
+        "https://ui.thultz.dev/r/badge.json",
+        "https://ui.thultz.dev/r/copy-button.json",
+        "https://ui.thultz.dev/r/status-pill.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/server-card.tsx",
           "type": "registry:ui"
         }
       ]
@@ -182,6 +425,25 @@
       ]
     },
     {
+      "name": "status-pill",
+      "type": "registry:ui",
+      "title": "Status Pill",
+      "description": "The TurtleDeck status label: a colored dot and a mono uppercase word for online, offline, running and idle. Running pulses.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/status-pill.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "terminal",
       "type": "registry:ui",
       "title": "Terminal",
@@ -194,6 +456,24 @@
       "files": [
         {
           "path": "registry/lantern/ui/terminal.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "typewriter",
+      "type": "registry:ui",
+      "title": "Typewriter",
+      "description": "Terminal lines that type themselves out, with a pause between lines, an optional loop and a blinking cursor. Use it inside a Terminal or on its own.",
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json",
+        "https://ui.thultz.dev/r/terminal.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/typewriter.tsx",
           "type": "registry:ui"
         }
       ]
@@ -219,6 +499,48 @@
       ]
     },
     {
+      "name": "button-group",
+      "type": "registry:ui",
+      "title": "Button Group",
+      "description": "Joins buttons, inputs and text into one control with shared borders, laid out horizontally or vertically.",
+      "dependencies": [
+        "radix-ui",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json",
+        "https://ui.thultz.dev/r/separator.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/button-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "calendar",
+      "type": "registry:ui",
+      "title": "Calendar",
+      "description": "A month grid for picking a day or a range of days, built on React DayPicker with orange selection and today marked.",
+      "dependencies": [
+        "react-day-picker",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json",
+        "https://ui.thultz.dev/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/calendar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "checkbox",
       "type": "registry:ui",
       "title": "Checkbox",
@@ -239,6 +561,73 @@
       ]
     },
     {
+      "name": "combobox",
+      "type": "registry:ui",
+      "title": "Combobox",
+      "description": "A searchable picker built from a popover and a command list, with a single-value Combobox and a multi-select ComboboxMulti that shows picks as badges.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json",
+        "https://ui.thultz.dev/r/popover.json",
+        "https://ui.thultz.dev/r/command.json",
+        "https://ui.thultz.dev/r/badge.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/combobox.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "copy-button",
+      "type": "registry:ui",
+      "title": "Copy Button",
+      "description": "An icon button that copies a value to the clipboard and flashes a green check. Failures show a red cross instead of throwing.",
+      "dependencies": [
+        "class-variance-authority",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json",
+        "https://ui.thultz.dev/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/copy-button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "date-picker",
+      "type": "registry:ui",
+      "title": "Date Picker",
+      "description": "A button that opens a calendar in a popover, for picking a single date or a range, with optional presets.",
+      "dependencies": [
+        "date-fns",
+        "react-day-picker",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json",
+        "https://ui.thultz.dev/r/button.json",
+        "https://ui.thultz.dev/r/calendar.json",
+        "https://ui.thultz.dev/r/popover.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/date-picker.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "field",
       "type": "registry:ui",
       "title": "Field",
@@ -254,6 +643,29 @@
       "files": [
         {
           "path": "registry/lantern/ui/field.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "form",
+      "type": "registry:ui",
+      "title": "Form",
+      "description": "Form building blocks wired to react-hook-form, with zod validation, accessible labels, descriptions and error messages.",
+      "dependencies": [
+        "react-hook-form",
+        "zod",
+        "@hookform/resolvers",
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json",
+        "https://ui.thultz.dev/r/label.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/form.tsx",
           "type": "registry:ui"
         }
       ]
@@ -337,6 +749,25 @@
       ]
     },
     {
+      "name": "native-select",
+      "type": "registry:ui",
+      "title": "Native Select",
+      "description": "A styled native select element with the Input look, a chevron, options and option groups.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/native-select.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "radio-group",
       "type": "registry:ui",
       "title": "Radio Group",
@@ -409,6 +840,25 @@
       "files": [
         {
           "path": "registry/lantern/ui/switch.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tag-input",
+      "type": "registry:ui",
+      "title": "Tag Input",
+      "description": "A text field that turns what you type into removable tags. Enter or comma adds a tag, Backspace on an empty field removes the last one, and pasting a comma separated list adds several.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/tag-input.tsx",
           "type": "registry:ui"
         }
       ]
@@ -492,6 +942,25 @@
       ]
     },
     {
+      "name": "aspect-ratio",
+      "type": "registry:ui",
+      "title": "Aspect Ratio",
+      "description": "Keeps media and placeholders at a fixed width to height ratio as the container resizes.",
+      "dependencies": [
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/aspect-ratio.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "avatar",
       "type": "registry:ui",
       "title": "Avatar",
@@ -543,6 +1012,48 @@
       "files": [
         {
           "path": "registry/lantern/ui/card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "carousel",
+      "type": "registry:ui",
+      "title": "Carousel",
+      "description": "A swipeable row of slides with previous and next buttons and dot indicators. Built on Embla.",
+      "dependencies": [
+        "embla-carousel-react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json",
+        "https://ui.thultz.dev/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/carousel.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "item",
+      "type": "registry:ui",
+      "title": "Item",
+      "description": "A flexible row for lists of things: media, title, description and actions, with outline and muted variants.",
+      "dependencies": [
+        "class-variance-authority",
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json",
+        "https://ui.thultz.dev/r/separator.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/item.tsx",
           "type": "registry:ui"
         }
       ]
@@ -601,6 +1112,214 @@
       ]
     },
     {
+      "name": "timeline",
+      "type": "registry:ui",
+      "title": "Timeline",
+      "description": "A vertical changelog or roadmap: a dot or icon on a connecting line, a mono date or version label, a title and a description, marked done, current or planned.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/timeline.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "typography",
+      "type": "registry:ui",
+      "title": "Typography",
+      "description": "Long-form text styles: headings, paragraphs, lead, lists, quotes, inline code and tables as small components, plus a Prose wrapper that styles raw HTML or rendered markdown.",
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/typography.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "chart",
+      "type": "registry:ui",
+      "title": "Chart",
+      "description": "Recharts v3 wrappers: a responsive ChartContainer driven by a ChartConfig of series labels and colors, plus a Lantern tooltip and legend. Axes and grid lines pick up border and muted colors.",
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/chart.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "data-table",
+      "type": "registry:ui",
+      "title": "Data Table",
+      "description": "A reusable TanStack Table v9 data table with a global filter, sortable headers, a column visibility menu, row selection and pagination, built on the Lantern table, input, checkbox, dropdown menu and select.",
+      "dependencies": [
+        "@tanstack/react-table",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json",
+        "https://ui.thultz.dev/r/table.json",
+        "https://ui.thultz.dev/r/button.json",
+        "https://ui.thultz.dev/r/input.json",
+        "https://ui.thultz.dev/r/checkbox.json",
+        "https://ui.thultz.dev/r/dropdown-menu.json",
+        "https://ui.thultz.dev/r/select.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/data-table.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "collapsible",
+      "type": "registry:ui",
+      "title": "Collapsible",
+      "description": "Shows and hides a section of content with an animated height.",
+      "dependencies": [
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/collapsible.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "direction",
+      "type": "registry:ui",
+      "title": "Direction",
+      "description": "Sets the reading direction for Radix components below it, so menus, selects and sliders mirror correctly in right to left layouts.",
+      "dependencies": [
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/direction.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "drawer",
+      "type": "registry:ui",
+      "title": "Drawer",
+      "description": "A bottom sheet with a grab handle that can be dragged closed. Built on vaul.",
+      "dependencies": [
+        "vaul"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/drawer.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "resizable",
+      "type": "registry:ui",
+      "title": "Resizable",
+      "description": "Panels split by draggable handles, for editors and dashboards. Built on react-resizable-panels.",
+      "dependencies": [
+        "react-resizable-panels",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/resizable.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "scroll-area",
+      "type": "registry:ui",
+      "title": "Scroll Area",
+      "description": "A scroll container with a thin custom scrollbar that turns orange on hover.",
+      "dependencies": [
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/scroll-area.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sidebar",
+      "type": "registry:ui",
+      "title": "Sidebar",
+      "description": "A composable app sidebar that collapses off canvas or down to icons, and turns into a sheet on phones.",
+      "dependencies": [
+        "radix-ui",
+        "lucide-react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json",
+        "https://ui.thultz.dev/r/button.json",
+        "https://ui.thultz.dev/r/input.json",
+        "https://ui.thultz.dev/r/separator.json",
+        "https://ui.thultz.dev/r/sheet.json",
+        "https://ui.thultz.dev/r/skeleton.json",
+        "https://ui.thultz.dev/r/tooltip.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/sidebar.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/lantern/hooks/use-mobile.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
       "name": "alert-dialog",
       "type": "registry:ui",
       "title": "Alert Dialog",
@@ -616,6 +1335,26 @@
       "files": [
         {
           "path": "registry/lantern/ui/alert-dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "context-menu",
+      "type": "registry:ui",
+      "title": "Context Menu",
+      "description": "A menu opened by right-clicking an area, with labels, shortcuts, checkbox and radio items and submenus.",
+      "dependencies": [
+        "radix-ui",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/context-menu.tsx",
           "type": "registry:ui"
         }
       ]
@@ -758,6 +1497,87 @@
       ]
     },
     {
+      "name": "command",
+      "type": "registry:ui",
+      "title": "Command",
+      "description": "A searchable command palette with grouped items and shortcuts, inline or in a dialog opened with Cmd K.",
+      "dependencies": [
+        "cmdk",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json",
+        "https://ui.thultz.dev/r/dialog.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/command.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "file-tree",
+      "type": "registry:ui",
+      "title": "File Tree",
+      "description": "An accessible tree of folders and files with indentation guides, an orange selected border and status letters like M for modified.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/file-tree.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "menubar",
+      "type": "registry:ui",
+      "title": "Menubar",
+      "description": "A row of menus like a desktop app's menu bar, with shortcuts, checkbox and radio items and submenus.",
+      "dependencies": [
+        "radix-ui",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/menubar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "navigation-menu",
+      "type": "registry:ui",
+      "title": "Navigation Menu",
+      "description": "A header menu whose triggers open panels of links in a shared viewport, with an orange indicator under the open trigger.",
+      "dependencies": [
+        "radix-ui",
+        "class-variance-authority",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/navigation-menu.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "pagination",
       "type": "registry:ui",
       "title": "Pagination",
@@ -773,6 +1593,25 @@
       "files": [
         {
           "path": "registry/lantern/ui/pagination.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "stepper",
+      "type": "registry:ui",
+      "title": "Stepper",
+      "description": "Numbered steps with zero-padded mono numbers in bordered squares. Complete steps turn green with a check and the current step is orange.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/stepper.tsx",
           "type": "registry:ui"
         }
       ]
@@ -812,6 +1651,27 @@
       "files": [
         {
           "path": "registry/lantern/ui/alert.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "announcement-bar",
+      "type": "registry:ui",
+      "title": "Announcement Bar",
+      "description": "A slim full-width bar for the top of a site with an optional badge, a message, a link and a dismiss button that can remember the dismissal.",
+      "dependencies": [
+        "class-variance-authority",
+        "lucide-react",
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/announcement-bar.tsx",
           "type": "registry:ui"
         }
       ]
@@ -907,6 +1767,461 @@
         {
           "path": "registry/lantern/ui/spinner.tsx",
           "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "attachment",
+      "type": "registry:ui",
+      "title": "Attachment",
+      "description": "Small file chips with an icon, name and size, plus idle, uploading, error and done states.",
+      "dependencies": [
+        "class-variance-authority",
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json",
+        "https://ui.thultz.dev/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/attachment.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "bubble",
+      "type": "registry:ui",
+      "title": "Bubble",
+      "description": "Chat bubbles in the Lantern style: sent messages in a raised panel with an orange edge, replies in the card panel.",
+      "dependencies": [
+        "class-variance-authority",
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/bubble.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "marker",
+      "type": "registry:ui",
+      "title": "Marker",
+      "description": "Mono uppercase dividers and status notes for a thread, like day breaks, joins and system events.",
+      "dependencies": [
+        "class-variance-authority",
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/marker.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "message",
+      "type": "registry:ui",
+      "title": "Message",
+      "description": "Layout for one chat message: avatar, header, content and footer, aligned to the start or end of the thread.",
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/message.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "message-scroller",
+      "type": "registry:ui",
+      "title": "Message Scroller",
+      "description": "A chat scroll area that starts at the newest message, follows new messages and shows a jump to latest button when you scroll up.",
+      "dependencies": [
+        "@shadcn/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json",
+        "https://ui.thultz.dev/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/message-scroller.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "dashboard",
+      "type": "registry:block",
+      "title": "Dashboard",
+      "description": "A TurtleDeck-style app shell: a collapsible sidebar with nav groups and a user menu, a header with breadcrumb and search, a stats row, a mining chart, a live console and a data table of turtles.",
+      "dependencies": [
+        "lucide-react",
+        "recharts"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json",
+        "https://ui.thultz.dev/r/avatar.json",
+        "https://ui.thultz.dev/r/badge.json",
+        "https://ui.thultz.dev/r/breadcrumb.json",
+        "https://ui.thultz.dev/r/button.json",
+        "https://ui.thultz.dev/r/card.json",
+        "https://ui.thultz.dev/r/chart.json",
+        "https://ui.thultz.dev/r/console.json",
+        "https://ui.thultz.dev/r/data-table.json",
+        "https://ui.thultz.dev/r/dropdown-menu.json",
+        "https://ui.thultz.dev/r/input-group.json",
+        "https://ui.thultz.dev/r/progress.json",
+        "https://ui.thultz.dev/r/separator.json",
+        "https://ui.thultz.dev/r/sidebar.json",
+        "https://ui.thultz.dev/r/status-dot.json",
+        "https://ui.thultz.dev/r/tabs.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/blocks/dashboard/dashboard.tsx",
+          "type": "registry:component",
+          "target": "components/dashboard/dashboard.tsx"
+        },
+        {
+          "path": "registry/lantern/blocks/dashboard/app-sidebar.tsx",
+          "type": "registry:component",
+          "target": "components/dashboard/app-sidebar.tsx"
+        },
+        {
+          "path": "registry/lantern/blocks/dashboard/stats.tsx",
+          "type": "registry:component",
+          "target": "components/dashboard/stats.tsx"
+        },
+        {
+          "path": "registry/lantern/blocks/dashboard/mining-chart.tsx",
+          "type": "registry:component",
+          "target": "components/dashboard/mining-chart.tsx"
+        },
+        {
+          "path": "registry/lantern/blocks/dashboard/fleet-console.tsx",
+          "type": "registry:component",
+          "target": "components/dashboard/fleet-console.tsx"
+        },
+        {
+          "path": "registry/lantern/blocks/dashboard/turtles-table.tsx",
+          "type": "registry:component",
+          "target": "components/dashboard/turtles-table.tsx"
+        }
+      ]
+    },
+    {
+      "name": "docs-layout",
+      "type": "registry:block",
+      "title": "Docs Layout",
+      "description": "A documentation page shell: header with search, grouped sidebar nav, a Prose article and an On this page list. On phones the nav moves into a sheet.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json",
+        "https://ui.thultz.dev/r/alert.json",
+        "https://ui.thultz.dev/r/breadcrumb.json",
+        "https://ui.thultz.dev/r/button.json",
+        "https://ui.thultz.dev/r/code-block.json",
+        "https://ui.thultz.dev/r/eyebrow.json",
+        "https://ui.thultz.dev/r/input-group.json",
+        "https://ui.thultz.dev/r/kbd.json",
+        "https://ui.thultz.dev/r/navbar.json",
+        "https://ui.thultz.dev/r/scroll-area.json",
+        "https://ui.thultz.dev/r/sheet.json",
+        "https://ui.thultz.dev/r/typography.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/blocks/docs-layout/docs-layout.tsx",
+          "type": "registry:component",
+          "target": "components/docs-layout/docs-layout.tsx"
+        },
+        {
+          "path": "registry/lantern/blocks/docs-layout/docs-header.tsx",
+          "type": "registry:component",
+          "target": "components/docs-layout/docs-header.tsx"
+        },
+        {
+          "path": "registry/lantern/blocks/docs-layout/docs-nav.tsx",
+          "type": "registry:component",
+          "target": "components/docs-layout/docs-nav.tsx"
+        },
+        {
+          "path": "registry/lantern/blocks/docs-layout/docs-article.tsx",
+          "type": "registry:component",
+          "target": "components/docs-layout/docs-article.tsx"
+        },
+        {
+          "path": "registry/lantern/blocks/docs-layout/toc.tsx",
+          "type": "registry:component",
+          "target": "components/docs-layout/toc.tsx"
+        }
+      ]
+    },
+    {
+      "name": "faq",
+      "type": "registry:block",
+      "title": "FAQ",
+      "description": "An FAQ section: a heading, intro and contact card on the left and a numbered accordion on the right. It stacks into one column on phones.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json",
+        "https://ui.thultz.dev/r/accordion.json",
+        "https://ui.thultz.dev/r/button.json",
+        "https://ui.thultz.dev/r/card.json",
+        "https://ui.thultz.dev/r/eyebrow.json",
+        "https://ui.thultz.dev/r/status-dot.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/blocks/faq/faq.tsx",
+          "type": "registry:component",
+          "target": "components/faq/faq.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-grid",
+      "type": "registry:block",
+      "title": "Feature Grid",
+      "description": "A features section with a heading, intro and six cards, one of them a wide highlighted card with a small terminal.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json",
+        "https://ui.thultz.dev/r/badge.json",
+        "https://ui.thultz.dev/r/card.json",
+        "https://ui.thultz.dev/r/eyebrow.json",
+        "https://ui.thultz.dev/r/terminal.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/blocks/feature-grid/feature-grid.tsx",
+          "type": "registry:component",
+          "target": "components/feature-grid/feature-grid.tsx"
+        }
+      ]
+    },
+    {
+      "name": "footer",
+      "type": "registry:block",
+      "title": "Footer",
+      "description": "A site footer with the brand, three link columns, a newsletter field and a status line. Columns fold into two on phones.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json",
+        "https://ui.thultz.dev/r/button.json",
+        "https://ui.thultz.dev/r/input.json",
+        "https://ui.thultz.dev/r/navbar.json",
+        "https://ui.thultz.dev/r/separator.json",
+        "https://ui.thultz.dev/r/status-dot.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/blocks/footer/footer.tsx",
+          "type": "registry:component",
+          "target": "components/footer/footer.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hero",
+      "type": "registry:block",
+      "title": "Hero",
+      "description": "The Lantern landing hero: announcement bar, navbar, a big two-line heading with calls to action, and a tilted terminal typing a session inside orbit rings. A stat strip sits below.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json",
+        "https://ui.thultz.dev/r/ambient.json",
+        "https://ui.thultz.dev/r/announcement-bar.json",
+        "https://ui.thultz.dev/r/button.json",
+        "https://ui.thultz.dev/r/eyebrow.json",
+        "https://ui.thultz.dev/r/navbar.json",
+        "https://ui.thultz.dev/r/orbit.json",
+        "https://ui.thultz.dev/r/stat.json",
+        "https://ui.thultz.dev/r/status-dot.json",
+        "https://ui.thultz.dev/r/terminal.json",
+        "https://ui.thultz.dev/r/typewriter.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/blocks/hero/hero.tsx",
+          "type": "registry:component",
+          "target": "components/hero/hero.tsx"
+        }
+      ]
+    },
+    {
+      "name": "login",
+      "type": "registry:block",
+      "title": "Login",
+      "description": "A split-screen sign in page: the form on the left with a show/hide password, remember me and GitHub sign in, and a tilted terminal on a grid on the right. The right panel hides on phones.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json",
+        "https://ui.thultz.dev/r/button.json",
+        "https://ui.thultz.dev/r/checkbox.json",
+        "https://ui.thultz.dev/r/eyebrow.json",
+        "https://ui.thultz.dev/r/field.json",
+        "https://ui.thultz.dev/r/input-group.json",
+        "https://ui.thultz.dev/r/status-dot.json",
+        "https://ui.thultz.dev/r/terminal.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/blocks/login/login.tsx",
+          "type": "registry:component",
+          "target": "components/login/login.tsx"
+        }
+      ]
+    },
+    {
+      "name": "not-found",
+      "type": "registry:block",
+      "title": "Not Found",
+      "description": "A 404 page with a big Space Grotesk 404, a tilted terminal that fails to resolve hub://page-not-found/, and buttons back home and to search.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json",
+        "https://ui.thultz.dev/r/button.json",
+        "https://ui.thultz.dev/r/eyebrow.json",
+        "https://ui.thultz.dev/r/status-dot.json",
+        "https://ui.thultz.dev/r/terminal.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/blocks/not-found/not-found.tsx",
+          "type": "registry:component",
+          "target": "components/not-found/not-found.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pricing",
+      "type": "registry:block",
+      "title": "Pricing",
+      "description": "Three plan cards with a monthly and yearly toggle, the middle plan raised with an orange border and hard shadow, and an FAQ accordion underneath.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json",
+        "https://ui.thultz.dev/r/accordion.json",
+        "https://ui.thultz.dev/r/badge.json",
+        "https://ui.thultz.dev/r/button.json",
+        "https://ui.thultz.dev/r/eyebrow.json",
+        "https://ui.thultz.dev/r/toggle-group.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/blocks/pricing/pricing.tsx",
+          "type": "registry:component",
+          "target": "components/pricing/pricing.tsx"
+        }
+      ]
+    },
+    {
+      "name": "settings",
+      "type": "registry:block",
+      "title": "Settings",
+      "description": "A settings page with a section nav that turns into a select on phones: profile, hub site address and visibility, notification switches and a danger zone with a confirm dialog. Saving shows a toast.",
+      "dependencies": [
+        "lucide-react",
+        "sonner"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json",
+        "https://ui.thultz.dev/r/alert-dialog.json",
+        "https://ui.thultz.dev/r/avatar.json",
+        "https://ui.thultz.dev/r/button.json",
+        "https://ui.thultz.dev/r/eyebrow.json",
+        "https://ui.thultz.dev/r/field.json",
+        "https://ui.thultz.dev/r/input.json",
+        "https://ui.thultz.dev/r/input-group.json",
+        "https://ui.thultz.dev/r/radio-group.json",
+        "https://ui.thultz.dev/r/select.json",
+        "https://ui.thultz.dev/r/sonner.json",
+        "https://ui.thultz.dev/r/switch.json",
+        "https://ui.thultz.dev/r/textarea.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/blocks/settings/settings.tsx",
+          "type": "registry:component",
+          "target": "components/settings/settings.tsx"
+        },
+        {
+          "path": "registry/lantern/blocks/settings/sections.tsx",
+          "type": "registry:component",
+          "target": "components/settings/sections.tsx"
+        }
+      ]
+    },
+    {
+      "name": "signup",
+      "type": "registry:block",
+      "title": "Signup",
+      "description": "A create-account page with name, email and a password strength meter, a terms checkbox and inline validation errors, beside a short list of what the account includes.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json",
+        "https://ui.thultz.dev/r/button.json",
+        "https://ui.thultz.dev/r/checkbox.json",
+        "https://ui.thultz.dev/r/eyebrow.json",
+        "https://ui.thultz.dev/r/field.json",
+        "https://ui.thultz.dev/r/input.json",
+        "https://ui.thultz.dev/r/input-group.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/blocks/signup/signup.tsx",
+          "type": "registry:component",
+          "target": "components/signup/signup.tsx"
         }
       ]
     }

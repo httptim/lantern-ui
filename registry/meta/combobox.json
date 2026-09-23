@@ -1,0 +1,18 @@
+{
+  "name": "combobox",
+  "title": "Combobox",
+  "category": "Forms",
+  "description": "A searchable picker built from a popover and a command list, with a single-value Combobox and a multi-select ComboboxMulti that shows picks as badges.",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["popover", "command", "badge"],
+  "examples": [
+    { "name": "combobox-demo" },
+    { "name": "combobox-multi", "title": "Multiple" },
+    { "name": "combobox-form", "title": "In a form" }
+  ],
+  "usage": "<Combobox\n  options={[{ value: \"quarry\", label: \"quarry.hub\" }]}\n  value={value}\n  onChange={setValue}\n  placeholder=\"Pick a server\"\n  searchPlaceholder=\"Search servers...\"\n  empty=\"No server found.\"\n/>",
+  "notes": [
+    "Options take a value, a label and optional keywords, icon and disabled. Search matches the value, label and keywords.",
+    "ComboboxMulti keeps the popover open while you pick. Backspace in an empty search removes the last pick."
+  ]
+}

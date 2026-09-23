@@ -6,8 +6,9 @@ from lantern.thultz.dev as copy-paste components built on shadcn/ui, Radix and T
 ```sh
 npx lanterncn init                # set up shadcn (Radix) and add the Lantern theme
 npx lanterncn add button card     # add components by name
-npx lanterncn add all             # add everything
-npx lanterncn list                # see what is available
+npx lanterncn add dashboard       # add a whole block
+npx lanterncn add all             # add every component
+npx lanterncn list                # see components and blocks
 ```
 
 The source is copied into your `components/ui` folder, so you own it and can change anything.

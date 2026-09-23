@@ -1,0 +1,11 @@
+{ "name": "ambient", "title": "Ambient", "category": "Lantern",
+  "description": "The soft olive or amber corner glow from the Lantern hero, as a decorative background layer.",
+  "dependencies": ["class-variance-authority"],
+  "examples": [
+    { "name": "ambient-demo" },
+    { "name": "ambient-positions", "title": "Positions, tones and intensity" }
+  ],
+  "usage": "<section className=\"relative overflow-hidden\">\n  <Ambient position=\"top-right\" />\n  <h1 className=\"relative\">...</h1>\n</section>",
+  "notes": [
+    "Ambient is absolutely positioned and hidden from screen readers. Put it inside a relative parent (add overflow-hidden to clip it) and keep the content after it positioned so it stays on top. Resize it with className, for example size-96."
+  ] }

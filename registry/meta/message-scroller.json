@@ -1,0 +1,23 @@
+{
+  "name": "message-scroller",
+  "title": "Message Scroller",
+  "category": "Chat",
+  "description": "A chat scroll area that starts at the newest message, follows new messages and shows a jump to latest button when you scroll up.",
+  "dependencies": [
+    "@shadcn/react",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "examples": [
+    {
+      "name": "message-scroller-demo"
+    }
+  ],
+  "usage": "<MessageScrollerProvider autoScroll>\n  <MessageScroller>\n    <MessageScrollerViewport>\n      <MessageScrollerContent>\n        {messages.map((m) => (\n          <MessageScrollerItem key={m.id} messageId={m.id}>...</MessageScrollerItem>\n        ))}\n      </MessageScrollerContent>\n    </MessageScrollerViewport>\n    <MessageScrollerButton />\n  </MessageScroller>\n</MessageScrollerProvider>",
+  "notes": [
+    "Give the scroller a bounded height, for example a flex-1 child of a fixed height column.",
+    "With autoScroll it keeps following new messages while you are at the bottom and stops once you scroll up. Call scrollToEnd from useMessageScroller to jump down after sending."
+  ]
+}

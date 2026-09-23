@@ -1,0 +1,13 @@
+{ "name": "typewriter", "title": "Typewriter", "category": "Lantern",
+  "description": "Terminal lines that type themselves out, with a pause between lines, an optional loop and a blinking cursor. Use it inside a Terminal or on its own.",
+  "registryDependencies": ["terminal"],
+  "examples": [
+    { "name": "typewriter-demo" },
+    { "name": "typewriter-standalone", "title": "Standalone" }
+  ],
+  "usage": "<Terminal>\n  <TerminalHeader>LANTERN</TerminalHeader>\n  <TerminalTypewriter\n    loop\n    lines={[\n      { prompt: true, text: \"lantern publish ./site\" },\n      { text: \"published hub://your-little-world/\", delay: 800 },\n    ]}\n  />\n</Terminal>",
+  "notes": [
+    "Each line takes prompt, text, delay (milliseconds before it starts) and instant. Command lines (prompt: true) are typed at speed milliseconds per character; output lines print whole unless instant is false.",
+    "Visitors who prefer reduced motion see every line at once. Screen readers get the full text immediately from a visually hidden copy; the animated text is hidden from them.",
+    "The terminal grows as lines appear. Give the body a min height (bodyClassName on TerminalTypewriter, className on Typewriter) to keep the layout still."
+  ] }

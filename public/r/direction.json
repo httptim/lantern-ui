@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "direction",
+  "title": "Direction",
+  "description": "Sets the reading direction for Radix components below it, so menus, selects and sliders mirror correctly in right to left layouts.",
+  "dependencies": [
+    "radix-ui"
+  ],
+  "registryDependencies": [
+    "utils",
+    "https://ui.thultz.dev/r/lantern-theme.json"
+  ],
+  "files": [
+    {
+      "path": "registry/lantern/ui/direction.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { Direction } from \"radix-ui\";\n\nfunction DirectionProvider({\n  dir,\n  direction,\n  children,\n}: React.ComponentProps<typeof Direction.DirectionProvider> & {\n  direction?: React.ComponentProps<typeof Direction.DirectionProvider>[\"dir\"];\n}) {\n  return <Direction.DirectionProvider dir={direction ?? dir}>{children}</Direction.DirectionProvider>;\n}\n\nconst useDirection = Direction.useDirection;\n\nexport { DirectionProvider, useDirection };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

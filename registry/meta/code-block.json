@@ -1,0 +1,9 @@
+{ "name": "code-block", "title": "Code Block", "category": "Lantern",
+  "description": "A code panel with a filename bar, language badge, copy button, optional line numbers and highlighted lines. No syntax highlighter required.",
+  "dependencies": ["lucide-react"],
+  "examples": [{ "name": "code-block-demo" }, { "name": "code-block-line-numbers", "title": "Line numbers and highlighted lines" }, { "name": "code-block-max-height", "title": "Long file with max height" }],
+  "usage": "<CodeBlock title=\"startup.lua\" language=\"lua\" code={source} showLineNumbers highlightLines={[2, 3]} />",
+  "notes": [
+    "Pass code as a plain string and it renders in the default terminal text color. To use your own highlighter, render its output as children instead, for example a div with shiki HTML, and set copyValue to the raw source.",
+    "Line numbers and highlighted lines apply to the code prop. Set maxHeight to cap the panel and scroll the rest."
+  ] }

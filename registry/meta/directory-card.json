@@ -1,0 +1,7 @@
+{ "name": "directory-card", "title": "Directory Card", "category": "Lantern",
+  "description": "The Lantern directory listing: a grid banner with an icon and hub address, category, title, description, tags and a status footer.",
+  "dependencies": ["radix-ui", "lucide-react"],
+  "registryDependencies": ["card", "eyebrow", "status-dot"],
+  "examples": [{ "name": "directory-card-demo" }, { "name": "directory-card-grid", "title": "Responsive grid" }],
+  "usage": "<DirectoryCard asChild>\n  <a href=\"/guestbook\">\n    <DirectoryCardArt address=\"hub://guestbook/\">\n      <BookOpen />\n    </DirectoryCardArt>\n    <DirectoryCardHeader>\n      <DirectoryCardCategory>Community</DirectoryCardCategory>\n      <DirectoryCardTitle>Lantern Guestbook</DirectoryCardTitle>\n      <DirectoryCardDescription>Leave a note.</DirectoryCardDescription>\n    </DirectoryCardHeader>\n    <DirectoryCardFooter status=\"online\">Online</DirectoryCardFooter>\n  </a>\n</DirectoryCard>",
+  "notes": ["With asChild the whole card becomes the link, and it lifts with a block shadow on hover. The footer status takes online, busy, offline or error."] }

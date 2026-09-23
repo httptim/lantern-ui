@@ -1,0 +1,10 @@
+{
+  "name": "menubar",
+  "title": "Menubar",
+  "category": "Navigation",
+  "description": "A row of menus like a desktop app's menu bar, with shortcuts, checkbox and radio items and submenus.",
+  "dependencies": ["radix-ui", "lucide-react"],
+  "examples": [{ "name": "menubar-demo" }],
+  "usage": "<Menubar>\n  <MenubarMenu>\n    <MenubarTrigger>File</MenubarTrigger>\n    <MenubarContent>\n      <MenubarItem>New program <MenubarShortcut>Ctrl N</MenubarShortcut></MenubarItem>\n      <MenubarSeparator />\n      <MenubarItem>Save</MenubarItem>\n    </MenubarContent>\n  </MenubarMenu>\n</Menubar>",
+  "notes": ["Once a menu is open, Left and Right arrows move between menus and hovering another trigger switches to it. Item parts share the Dropdown Menu API."]
+}

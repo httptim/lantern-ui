@@ -1,0 +1,19 @@
+{
+  "name": "direction",
+  "title": "Direction",
+  "category": "Layout",
+  "description": "Sets the reading direction for Radix components below it, so menus, selects and sliders mirror correctly in right to left layouts.",
+  "dependencies": [
+    "radix-ui"
+  ],
+  "examples": [
+    {
+      "name": "direction-demo"
+    }
+  ],
+  "usage": "<DirectionProvider dir=\"rtl\">\n  <div dir=\"rtl\">\n    <App />\n  </div>\n</DirectionProvider>",
+  "notes": [
+    "The provider only tells Radix components the direction. Also set the dir attribute on the html element or a wrapper so text, flex order and logical utilities like ps-* and start-* flip.",
+    "useDirection returns the current direction, handy for flipping icons such as arrows."
+  ]
+}

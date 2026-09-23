@@ -1,0 +1,12 @@
+{ "name": "announcement-bar", "title": "Announcement Bar", "category": "Feedback",
+  "description": "A slim full-width bar for the top of a site with an optional badge, a message, a link and a dismiss button that can remember the dismissal.",
+  "dependencies": ["class-variance-authority", "lucide-react", "radix-ui"],
+  "examples": [
+    { "name": "announcement-bar-demo" },
+    { "name": "announcement-bar-variants", "title": "Variants" }
+  ],
+  "usage": "<AnnouncementBar id=\"directory-v2\">\n  <AnnouncementBarBadge>New</AnnouncementBarBadge>\n  <AnnouncementBarMessage>The directory now lists guestbooks.</AnnouncementBarMessage>\n  <AnnouncementBarLink href=\"/changelog\">Read more</AnnouncementBarLink>\n</AnnouncementBar>",
+  "notes": [
+    "Give the bar an id to remember a dismissal in localStorage; change the id for the next announcement. Without an id it only hides until the page reloads. resetAnnouncementBar(id) forgets a dismissal.",
+    "Variants: default (card), primary (orange) and subtle. The bar is a labelled region and the dismiss button has an accessible name."
+  ] }

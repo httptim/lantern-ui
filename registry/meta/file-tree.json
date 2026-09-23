@@ -1,0 +1,9 @@
+{ "name": "file-tree", "title": "File Tree", "category": "Navigation",
+  "description": "An accessible tree of folders and files with indentation guides, an orange selected border and status letters like M for modified.",
+  "dependencies": ["lucide-react"],
+  "examples": [{ "name": "file-tree-demo" }, { "name": "file-tree-selection", "title": "Controlled with selection readout" }],
+  "usage": "<FileTree\n  items={[{ id: \"pages\", name: \"pages\", children: [{ id: \"index\", name: \"index.lua\" }] }]}\n  onSelect={(item) => open(item)}\n/>",
+  "notes": [
+    "Follows the WAI-ARIA tree pattern: Up and Down move, Right expands or enters a folder, Left collapses or moves to the parent, Home and End jump, Enter or Space selects, * expands siblings and typing a letter jumps to the next matching name.",
+    "An item with a children array is a folder. Selection and expansion can be controlled or uncontrolled."
+  ] }

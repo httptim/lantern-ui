@@ -1,0 +1,15 @@
+{ "name": "chart", "title": "Chart", "category": "Data",
+  "description": "Recharts v3 wrappers: a responsive ChartContainer driven by a ChartConfig of series labels and colors, plus a Lantern tooltip and legend. Axes and grid lines pick up border and muted colors.",
+  "dependencies": ["recharts"],
+  "examples": [
+    { "name": "chart-demo" },
+    { "name": "chart-bar", "title": "Bar chart with two series" },
+    { "name": "chart-line", "title": "Line chart" },
+    { "name": "chart-donut", "title": "Donut with a center label" },
+    { "name": "chart-radial", "title": "Radial bar" }
+  ],
+  "usage": "const chartConfig = {\n  fuel: { label: \"Fuel\", color: \"var(--chart-1)\" },\n} satisfies ChartConfig;\n\n<ChartContainer config={chartConfig} className=\"h-[220px] w-full\">\n  <AreaChart data={data}>\n    <XAxis dataKey=\"time\" />\n    <ChartTooltip content={<ChartTooltipContent />} />\n    <Area dataKey=\"fuel\" fill=\"var(--color-fuel)\" stroke=\"var(--color-fuel)\" />\n  </AreaChart>\n</ChartContainer>",
+  "notes": [
+    "Every key in the config becomes a --color-<key> variable on the container, so series can use fill=\"var(--color-fuel)\". Keys without a color fall back to var(--chart-1) through var(--chart-5) in order.",
+    "ChartContainer uses aspect-video by default. Pass aspect-auto with a fixed height, or aspect-square with a max height for pie and radial charts."
+  ] }

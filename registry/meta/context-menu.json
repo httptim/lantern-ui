@@ -1,0 +1,13 @@
+{
+  "name": "context-menu",
+  "title": "Context Menu",
+  "category": "Overlays",
+  "description": "A menu opened by right-clicking an area, with labels, shortcuts, checkbox and radio items and submenus.",
+  "dependencies": ["radix-ui", "lucide-react"],
+  "examples": [{ "name": "context-menu-demo" }],
+  "usage": "<ContextMenu>\n  <ContextMenuTrigger>Right-click here</ContextMenuTrigger>\n  <ContextMenuContent>\n    <ContextMenuItem>Rename</ContextMenuItem>\n    <ContextMenuItem>Copy path</ContextMenuItem>\n    <ContextMenuSeparator />\n    <ContextMenuItem variant=\"destructive\">Delete</ContextMenuItem>\n  </ContextMenuContent>\n</ContextMenu>",
+  "notes": [
+    "On touch devices the menu opens on a long-press instead of a right-click. From the keyboard, focus the trigger and press Shift F10 or the context menu key.",
+    "The API matches Dropdown Menu: ContextMenuItem takes inset and variant=\"destructive\", and there are checkbox, radio and sub items."
+  ]
+}

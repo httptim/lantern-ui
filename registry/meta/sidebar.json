@@ -1,0 +1,43 @@
+{
+  "name": "sidebar",
+  "title": "Sidebar",
+  "category": "Layout",
+  "description": "A composable app sidebar that collapses off canvas or down to icons, and turns into a sheet on phones.",
+  "dependencies": [
+    "radix-ui",
+    "lucide-react",
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "button",
+    "input",
+    "separator",
+    "sheet",
+    "skeleton",
+    "tooltip"
+  ],
+  "files": [
+    "ui/sidebar.tsx",
+    "hooks/use-mobile.ts"
+  ],
+  "examples": [
+    {
+      "name": "sidebar-demo"
+    },
+    {
+      "name": "sidebar-icon",
+      "title": "Collapse to icons"
+    },
+    {
+      "name": "sidebar-floating",
+      "title": "Floating"
+    }
+  ],
+  "usage": "<SidebarProvider>\n  <Sidebar collapsible=\"icon\">\n    <SidebarContent>\n      <SidebarGroup>\n        <SidebarGroupLabel>Hub</SidebarGroupLabel>\n        <SidebarMenu>\n          <SidebarMenuItem>\n            <SidebarMenuButton isActive tooltip=\"Servers\">\n              <ServerIcon />\n              <span>Servers</span>\n            </SidebarMenuButton>\n          </SidebarMenuItem>\n        </SidebarMenu>\n      </SidebarGroup>\n    </SidebarContent>\n  </Sidebar>\n  <SidebarInset>\n    <SidebarTrigger />\n  </SidebarInset>\n</SidebarProvider>",
+  "notes": [
+    "SidebarProvider holds the open state in React state only; nothing is written to cookies. Pass open and onOpenChange to control it yourself. Cmd+B or Ctrl+B toggles it; set keyboardShortcut={false} when a page has more than one sidebar.",
+    "Set variant to sidebar, floating or inset, and collapsible to offcanvas, icon or none. Below 768px the sidebar opens as a sheet from SidebarTrigger.",
+    "The sidebar is fixed to the viewport by default. To embed it in a box, give SidebarProvider className=\"relative h-full min-h-0\" and Sidebar className=\"absolute h-full\", as the examples here do.",
+    "The use-mobile hook is installed alongside the component at hooks/use-mobile.ts."
+  ]
+}

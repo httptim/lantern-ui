@@ -1,0 +1,40 @@
+{
+  "name": "dashboard",
+  "type": "block",
+  "title": "Dashboard",
+  "category": "Blocks",
+  "description": "A TurtleDeck-style app shell: a collapsible sidebar with nav groups and a user menu, a header with breadcrumb and search, a stats row, a mining chart, a live console and a data table of turtles.",
+  "files": [
+    "blocks/dashboard/dashboard.tsx",
+    "blocks/dashboard/app-sidebar.tsx",
+    "blocks/dashboard/stats.tsx",
+    "blocks/dashboard/mining-chart.tsx",
+    "blocks/dashboard/fleet-console.tsx",
+    "blocks/dashboard/turtles-table.tsx"
+  ],
+  "dependencies": [
+    "lucide-react",
+    "recharts"
+  ],
+  "registryDependencies": [
+    "avatar",
+    "badge",
+    "breadcrumb",
+    "button",
+    "card",
+    "chart",
+    "console",
+    "data-table",
+    "dropdown-menu",
+    "input-group",
+    "progress",
+    "separator",
+    "sidebar",
+    "status-dot",
+    "tabs"
+  ],
+  "notes": [
+    "The block owns the whole viewport, so the sidebar keeps its default fixed positioning. Below 768px it opens as a sheet from the header trigger.",
+    "The console answers help, fuel, pos, inv, home and clear."
+  ]
+}

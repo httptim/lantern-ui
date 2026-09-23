@@ -29,5 +29,18 @@
   "terminal-foreground": "#c6d4b8",
   "block-shadow": "#1e271c",
   "grid-line": "rgba(174, 196, 165, 0.05)",
+  "chart-1": "#f5a665",
+  "chart-2": "#9bba86",
+  "chart-3": "#8fb3c9",
+  "chart-4": "#e8c98a",
+  "chart-5": "#e0715f",
+  "sidebar": "#141a17",
+  "sidebar-foreground": "#eeeade",
+  "sidebar-primary": "#f5a665",
+  "sidebar-primary-foreground": "#1b241b",
+  "sidebar-accent": "#202823",
+  "sidebar-accent-foreground": "#eeeade",
+  "sidebar-border": "#303b34",
+  "sidebar-ring": "#f5a665",
   "radius": "0.3125rem"
 }

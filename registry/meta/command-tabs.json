@@ -1,0 +1,9 @@
+{ "name": "command-tabs", "title": "Command Tabs", "category": "Lantern",
+  "description": "A package manager switcher that shows the same command for npm, pnpm, yarn and bun, with a copy button. The chosen manager is remembered and shared by every instance on the page.",
+  "dependencies": ["radix-ui", "lucide-react"],
+  "examples": [{ "name": "command-tabs-demo" }, { "name": "command-tabs-install", "title": "Install packages" }],
+  "usage": "<CommandTabs command=\"lanterncn add button\" type=\"dlx\" />",
+  "notes": [
+    "type=\"dlx\" prefixes npx, pnpm dlx, yarn dlx or bunx --bun. type=\"install\" prefixes npm install, pnpm add, yarn add or bun add.",
+    "Pass commands, a record keyed by npm, pnpm, yarn and bun, to write each command out yourself. The last choice is saved in localStorage under lantern-package-manager."
+  ] }

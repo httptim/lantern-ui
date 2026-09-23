@@ -1,0 +1,19 @@
+{
+  "name": "collapsible",
+  "title": "Collapsible",
+  "category": "Layout",
+  "description": "Shows and hides a section of content with an animated height.",
+  "dependencies": [
+    "radix-ui"
+  ],
+  "examples": [
+    {
+      "name": "collapsible-demo"
+    },
+    {
+      "name": "collapsible-file-tree",
+      "title": "File tree"
+    }
+  ],
+  "usage": "<Collapsible>\n  <CollapsibleTrigger>Show servers</CollapsibleTrigger>\n  <CollapsibleContent>computer-17, computer-33</CollapsibleContent>\n</Collapsible>"
+}

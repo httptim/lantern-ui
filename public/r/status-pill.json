@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "status-pill",
+  "title": "Status Pill",
+  "description": "The TurtleDeck status label: a colored dot and a mono uppercase word for online, offline, running and idle. Running pulses.",
+  "dependencies": [
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "utils",
+    "https://ui.thultz.dev/r/lantern-theme.json"
+  ],
+  "files": [
+    {
+      "path": "registry/lantern/ui/status-pill.tsx",
+      "content": "import * as React from \"react\";\nimport { cva, type VariantProps } from \"class-variance-authority\";\n\nimport { cn } from \"@/lib/utils\";\n\nconst statusPillVariants = cva(\n  \"inline-flex w-fit shrink-0 items-center gap-[7px] font-mono text-[10px] leading-none font-semibold tracking-[0.15em] whitespace-nowrap uppercase\",\n  {\n    variants: {\n      tone: {\n        online: \"text-success\",\n        offline: \"text-destructive\",\n        running: \"text-primary\",\n        idle: \"text-muted-foreground\",\n      },\n    },\n    defaultVariants: { tone: \"idle\" },\n  },\n);\n\nconst dotTones = {\n  online: \"bg-success shadow-[0_0_10px_#9bba8660]\",\n  offline: \"bg-destructive\",\n  running: \"animate-lantern-pulse bg-primary shadow-[0_0_10px_#f5a66560] [animation-duration:1.2s]\",\n  idle: \"bg-input\",\n} as const;\n\n/** The TurtleDeck status pill: a dot and a mono uppercase label. */\nfunction StatusPill({\n  className,\n  tone,\n  children,\n  ...props\n}: React.ComponentProps<\"span\"> & VariantProps<typeof statusPillVariants>) {\n  const t = tone ?? \"idle\";\n  return (\n    <span data-slot=\"status-pill\" data-tone={t} className={cn(statusPillVariants({ tone: t }), className)} {...props}>\n      <span aria-hidden=\"true\" data-slot=\"status-pill-dot\" className={cn(\"size-1.5 shrink-0 rounded-full\", dotTones[t])} />\n      {children ?? t}\n    </span>\n  );\n}\n\nexport { StatusPill, statusPillVariants };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

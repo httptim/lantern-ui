@@ -17,9 +17,9 @@ ${orange("lanterncn")} ${muted(`v${version}`)}  Lantern UI components, added wit
 
 ${green("USAGE")}
   npx lanterncn init                 Set up shadcn with Radix and add the Lantern theme
-  npx lanterncn add <name...>        Add components, e.g. ${muted("add button card terminal")}
-  npx lanterncn add all              Add every component
-  npx lanterncn list                 List available components
+  npx lanterncn add <name...>        Add components or blocks, e.g. ${muted("add button card dashboard")}
+  npx lanterncn add all              Add every component (not blocks)
+  npx lanterncn list                 List available components and blocks
 
 Extra flags pass through to shadcn, e.g. ${muted("--overwrite")}, ${muted("--path")}, ${muted("-y")}.
 Docs: ${SITE}
@@ -83,10 +83,17 @@ switch (command) {
   }
   case "list":
   case "ls": {
-    const items = (await registry()).filter((i) => i.type === "registry:ui");
-    const width = Math.max(...items.map((i) => i.name.length));
-    console.log(`\n${green("LANTERN UI")} ${muted(`${items.length} components`)}\n`);
-    for (const i of items) console.log(`  ${orange(i.name.padEnd(width))}  ${muted(i.description ?? "")}`);
+    const all = await registry();
+    const ui = all.filter((i) => i.type === "registry:ui");
+    const blocks = all.filter((i) => i.type === "registry:block");
+    const width = Math.max(...[...ui, ...blocks].map((i) => i.name.length));
+    const print = (i) => console.log(`  ${orange(i.name.padEnd(width))}  ${muted(i.description ?? "")}`);
+    console.log(`\n${green("COMPONENTS")} ${muted(String(ui.length))}\n`);
+    ui.forEach(print);
+    if (blocks.length) {
+      console.log(`\n${green("BLOCKS")} ${muted(String(blocks.length))}\n`);
+      blocks.forEach(print);
+    }
     console.log(`\n${muted("Add one with")} npx lanterncn add <name>\n`);
     break;
   }

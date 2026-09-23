@@ -1,0 +1,22 @@
+{
+  "name": "login",
+  "type": "block",
+  "title": "Login",
+  "category": "Blocks",
+  "description": "A split-screen sign in page: the form on the left with a show/hide password, remember me and GitHub sign in, and a tilted terminal on a grid on the right. The right panel hides on phones.",
+  "files": [
+    "blocks/login/login.tsx"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button",
+    "checkbox",
+    "eyebrow",
+    "field",
+    "input-group",
+    "status-dot",
+    "terminal"
+  ]
+}

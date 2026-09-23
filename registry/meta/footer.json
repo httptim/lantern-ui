@@ -1,0 +1,20 @@
+{
+  "name": "footer",
+  "type": "block",
+  "title": "Footer",
+  "category": "Blocks",
+  "description": "A site footer with the brand, three link columns, a newsletter field and a status line. Columns fold into two on phones.",
+  "files": [
+    "blocks/footer/footer.tsx"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button",
+    "input",
+    "navbar",
+    "separator",
+    "status-dot"
+  ]
+}
