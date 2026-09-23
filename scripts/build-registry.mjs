@@ -43,10 +43,10 @@ const themeItem = {
   description: "Lantern colors, fonts, block shadows, the grid pattern and the pulse and blink animations.",
   cssVars: {
     theme: {
-      "font-sans": 'var(--font-dm-sans), "DM Sans", ui-sans-serif, system-ui, sans-serif',
-      "font-display": 'var(--font-space-grotesk), "Space Grotesk", ui-sans-serif, sans-serif',
-      "shadow-block": "12px 14px 0 var(--shadow-block)",
-      "shadow-block-sm": "6px 7px 0 var(--shadow-block)",
+      "font-sans": 'var(--font-dm-sans, "DM Sans"), ui-sans-serif, system-ui, sans-serif',
+      "font-display": 'var(--font-space-grotesk, "Space Grotesk"), ui-sans-serif, sans-serif',
+      "shadow-block": "12px 14px 0 var(--block-shadow)",
+      "shadow-block-sm": "6px 7px 0 var(--block-shadow)",
     },
     light: { ...colors, radius },
     dark: { ...colors, radius },

@@ -25,7 +25,7 @@ function ToggleGroup({
       data-variant={variant ?? "default"}
       data-size={size ?? "default"}
       className={cn(
-        "group/toggle-group flex w-fit items-center rounded-md data-[variant=default]:gap-1 data-[variant=outline]:shadow-[3px_3px_0_var(--shadow-block)]",
+        "group/toggle-group flex w-fit items-center rounded-md data-[variant=default]:gap-1 data-[variant=outline]:shadow-[3px_3px_0_var(--block-shadow)]",
         className,
       )}
       {...props}

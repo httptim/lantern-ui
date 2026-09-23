@@ -25,7 +25,7 @@ export default function RadioGroupCards() {
         <Label
           key={mode.value}
           htmlFor={`host-${mode.value}`}
-          className="cursor-pointer items-start gap-3 rounded-md border border-input p-4 transition-[border-color,background-color,box-shadow] hover:border-muted-foreground/60 has-data-[state=checked]:border-primary has-data-[state=checked]:bg-primary/8 has-data-[state=checked]:shadow-[4px_5px_0_var(--shadow-block)]"
+          className="cursor-pointer items-start gap-3 rounded-md border border-input p-4 transition-[border-color,background-color,box-shadow] hover:border-muted-foreground/60 has-data-[state=checked]:border-primary has-data-[state=checked]:bg-primary/8 has-data-[state=checked]:shadow-[4px_5px_0_var(--block-shadow)]"
         >
           <mode.icon className="mt-px size-4 shrink-0 text-muted-foreground" aria-hidden="true" />
           <span className="grid flex-1 gap-1.5">

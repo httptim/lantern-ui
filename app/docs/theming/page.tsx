@@ -10,7 +10,7 @@ const groups: { title: string; note: string; keys: string[] }[] = [
   { title: "Surfaces", note: "Page, panels and floating layers.", keys: ["background", "foreground", "card", "popover", "secondary", "muted", "muted-foreground", "accent"] },
   { title: "Accents and states", note: "One orange for action, green for eyebrows and good news.", keys: ["primary", "primary-foreground", "success", "warning", "info", "destructive", "ring"] },
   { title: "Lines", note: "Hairline dividers and control borders.", keys: ["border", "input", "grid-line"] },
-  { title: "Terminal", note: "The in-game window and the block shadow behind it.", keys: ["terminal", "terminal-bar", "terminal-border", "terminal-foreground", "shadow-block"] },
+  { title: "Terminal", note: "The in-game window and the block shadow behind it.", keys: ["terminal", "terminal-bar", "terminal-border", "terminal-foreground", "block-shadow"] },
 ];
 
 const utilities = [

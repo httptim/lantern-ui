@@ -27,7 +27,7 @@
   "terminal-bar": "#354832",
   "terminal-border": "#687357",
   "terminal-foreground": "#c6d4b8",
-  "shadow-block": "#1e271c",
+  "block-shadow": "#1e271c",
   "grid-line": "rgba(174, 196, 165, 0.05)",
   "radius": "0.3125rem"
 }
