@@ -2,7 +2,7 @@ import { ArrowUpRight, BookOpen } from "lucide-react";
 import Link from "next/link";
 
 import { Showcase } from "@/components/site/showcase";
-import { components, registryUrl } from "@/lib/docs";
+import { components, itemRef } from "@/lib/docs";
 import { Button } from "@/registry/lantern/ui/button";
 import { Eyebrow } from "@/registry/lantern/ui/eyebrow";
 import { StatusDot } from "@/registry/lantern/ui/status-dot";
@@ -61,7 +61,7 @@ export default function Home() {
             <TerminalAddress>~/my-little-world</TerminalAddress>
             <TerminalBody className="min-h-[282px] text-[12px] sm:text-[13px]">
               <div className="mb-4 text-[8px] tracking-[0.2em] text-[#738a69]">ADDING COMPONENTS</div>
-              <TerminalLine className="break-all">npx shadcn add @lantern/terminal</TerminalLine>
+              <TerminalLine className="break-all">npx shadcn add httptim/lantern-ui/terminal</TerminalLine>
               <TerminalOutput>
                 {"Checking registry... done\nInstalling dependencies... done\nCreated 1 file:\n  components/ui/terminal.tsx"}
               </TerminalOutput>
@@ -102,7 +102,7 @@ export default function Home() {
             Start with a <span className="text-primary">button.</span>
           </h2>
           <code className="mt-6 max-w-full overflow-x-auto rounded-md border bg-terminal px-4 py-3 font-mono text-[12px] whitespace-nowrap text-terminal-foreground sm:text-[13px]">
-            <span className="mr-2 text-primary">$</span>npx shadcn@latest add {registryUrl("button")}
+            <span className="mr-2 text-primary">$</span>npx shadcn@latest add {itemRef("button")}
           </code>
           <Button className="mt-6" variant="secondary" asChild>
             <Link href="/docs">

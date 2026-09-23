@@ -48,6 +48,8 @@ export function getComponent(name: string) {
 }
 
 export const registryUrl = (name: string) => `${site.url}/r/${name}.json`;
+/** Short install address: shadcn reads registry.json straight from the public GitHub repo. */
+export const itemRef = (name: string) => `${site.repo}/${name}`;
 
 const root = process.cwd();
 const toUserImports = (src: string) =>

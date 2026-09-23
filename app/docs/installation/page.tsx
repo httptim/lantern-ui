@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { CodeBlock } from "@/components/site/code-block";
 import { CommandTabs } from "@/components/site/command-tabs";
 import { DocsHeader, H2, P, Pager, Step, Steps } from "@/components/site/docs-ui";
-import { registryUrl } from "@/lib/docs";
+import { itemRef, registryUrl } from "@/lib/docs";
 import site from "@/lib/site.json";
 
 export const metadata: Metadata = { title: "Installation" };
@@ -49,7 +49,7 @@ export default function Installation() {
           </P>
         </Step>
         <Step title="Add the Lantern theme">
-          <CommandTabs args={`add ${registryUrl("lantern-theme")}`} />
+          <CommandTabs args={`add ${itemRef("lantern-theme")}`} />
           <P className="my-0">
             This writes the Lantern colors, radius, block shadows, the <code>bg-grid</code> utility and the pulse and
             blink animations into your global CSS. Components also pull it in on their own, so this step is optional
@@ -64,15 +64,17 @@ export default function Installation() {
           <CodeBlock title="app/layout.tsx" code={fonts} />
         </Step>
         <Step title="Add components">
-          <CommandTabs args={`add ${registryUrl("button")}`} />
+          <CommandTabs args={`add ${itemRef("button")}`} />
           <P className="my-0">Then import it from your components folder.</P>
           <CodeBlock code={`import { Button } from "@/components/ui/button";\n\nexport default function Page() {\n  return <Button>Make yourself at home</Button>;\n}`} />
         </Step>
       </Steps>
 
-      <H2>Shorter names</H2>
+      <H2>Other ways to add</H2>
       <P>
-        Register Lantern UI as a namespace in <code>components.json</code> and you can add components by name.
+        The short <code>httptim/lantern-ui/button</code> address reads from the GitHub repo. You can also use the full
+        URL, <code>{registryUrl("button")}</code>, or register Lantern UI as a namespace in <code>components.json</code>{" "}
+        and add components by name.
       </P>
       <CodeBlock title="components.json" lang="json" code={namespace} className="max-w-3xl" />
       <div className="mt-3 max-w-3xl">

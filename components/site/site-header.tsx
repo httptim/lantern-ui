@@ -2,6 +2,7 @@ import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 
 import { guides, navGroups } from "@/lib/docs";
+import site from "@/lib/site.json";
 
 import { Logo } from "./logo";
 import { MobileNav } from "./mobile-nav";
@@ -16,6 +17,7 @@ export function SiteHeader() {
           <Link className="transition-colors hover:text-primary" href="/docs">Docs</Link>
           <Link className="transition-colors hover:text-primary" href="/docs/components">Components</Link>
           <Link className="transition-colors hover:text-primary" href="/docs/theming">Theming</Link>
+          <a className="transition-colors hover:text-primary" href={site.github} target="_blank" rel="noopener noreferrer">GitHub</a>
           <Link
             className="inline-flex items-center gap-3 rounded-md border border-[#566151] px-3.5 py-2.5 transition-colors hover:border-muted-foreground hover:bg-secondary"
             href="/docs/installation"

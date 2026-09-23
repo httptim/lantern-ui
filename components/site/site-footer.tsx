@@ -16,7 +16,8 @@ export function SiteFooter() {
         </span>
         <span>
           By <a className="text-foreground underline-offset-4 hover:underline" href="https://thultz.dev">thultz</a>.{" "}
-          <Link className="text-foreground underline-offset-4 hover:underline" href="/docs">Docs</Link>
+          <Link className="text-foreground underline-offset-4 hover:underline" href="/docs">Docs</Link>.{" "}
+          <a className="text-foreground underline-offset-4 hover:underline" href="https://github.com/httptim/lantern-ui">GitHub</a>
         </span>
       </div>
     </footer>

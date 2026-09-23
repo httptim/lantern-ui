@@ -5,7 +5,7 @@ import { CodeBlock } from "@/components/site/code-block";
 import { CommandTabs } from "@/components/site/command-tabs";
 import { ComponentPreview } from "@/components/site/component-preview";
 import { DocsHeader, H2, H3, P, Pager, Step, Steps } from "@/components/site/docs-ui";
-import { componentSource, components, getComponent, importLine, registryUrl } from "@/lib/docs";
+import { componentSource, components, getComponent, importLine, itemRef, registryUrl } from "@/lib/docs";
 
 export function generateStaticParams() {
   return components.map((c) => ({ slug: c.name }));
@@ -33,9 +33,10 @@ export default async function ComponentPage({ params }: { params: Promise<{ slug
 
       <H2>Installation</H2>
       <H3>With the CLI</H3>
-      <CommandTabs args={`add ${registryUrl(meta.name)}`} />
+      <CommandTabs args={`add ${itemRef(meta.name)}`} />
       <P>
-        This also installs the Lantern theme and any Lantern UI components it depends on. See{" "}
+        This also installs the Lantern theme and any Lantern UI components it depends on. The full URL,{" "}
+        <code>{registryUrl(meta.name)}</code>, works too. See{" "}
         <a href="/docs/installation">Installation</a> if your project has not run <code>shadcn init</code> yet.
       </P>
       <H3>Manually</H3>
