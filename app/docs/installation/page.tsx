@@ -67,10 +67,10 @@ export default function Installation() {
       <H2>Commands</H2>
       <div className="max-w-3xl overflow-hidden rounded-lg border">
         {[
-          ["lanternui init", "Set up shadcn with Radix and add the Lantern theme."],
-          ["lanternui add <name...>", "Add one or more components and whatever they depend on."],
-          ["lanternui add all", "Add every component."],
-          ["lanternui list", "Print every component with a short description."],
+          ["lanterncn init", "Set up shadcn with Radix and add the Lantern theme."],
+          ["lanterncn add <name...>", "Add one or more components and whatever they depend on."],
+          ["lanterncn add all", "Add every component."],
+          ["lanterncn list", "Print every component with a short description."],
         ].map(([cmd, desc]) => (
           <div key={cmd} className="grid gap-1 border-b px-4 py-3 last:border-b-0 sm:grid-cols-[220px_1fr] sm:gap-4">
             <code className="font-mono text-[13px] text-primary">{cmd}</code>
@@ -86,7 +86,7 @@ export default function Installation() {
 
       <H2>Using the shadcn CLI directly</H2>
       <P>
-        <code>lanternui</code> is a thin front for the shadcn CLI, so you can skip it. Start the project on Radix,
+        <code>lanterncn</code> is a thin front for the shadcn CLI, so you can skip it. Start the project on Radix,
         since the default Base UI setup rewrites Radix props in ways that break some components:
       </P>
       <div className="grid max-w-3xl gap-3">

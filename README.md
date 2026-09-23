@@ -4,11 +4,11 @@ The Lantern design (lantern.thultz.dev) as a shadcn-style component registry, wi
 https://ui.thultz.dev.
 
 ```sh
-npx lanternui init
-npx lanternui add button card terminal
+npx lanterncn init
+npx lanterncn add button card terminal
 ```
 
-- `cli/`: the `lanternui` npm package, a thin front for the shadcn CLI.
+- `cli/`: the `lanterncn` npm package, a thin front for the shadcn CLI.
 
 - `registry/lantern/ui/`: the components that get installed into user projects.
 - `registry/lantern/examples/`: live examples rendered on the docs pages.

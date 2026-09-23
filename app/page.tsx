@@ -61,7 +61,7 @@ export default function Home() {
             <TerminalAddress>~/my-little-world</TerminalAddress>
             <TerminalBody className="min-h-[282px] text-[12px] sm:text-[13px]">
               <div className="mb-4 text-[8px] tracking-[0.2em] text-[#738a69]">ADDING COMPONENTS</div>
-              <TerminalLine className="break-all">npx lanternui add terminal</TerminalLine>
+              <TerminalLine className="break-all">npx lanterncn add terminal</TerminalLine>
               <TerminalOutput>
                 {"Checking registry... done\nInstalling dependencies... done\nCreated 1 file:\n  components/ui/terminal.tsx"}
               </TerminalOutput>
@@ -102,7 +102,7 @@ export default function Home() {
             Start with a <span className="text-primary">button.</span>
           </h2>
           <code className="mt-6 max-w-full overflow-x-auto rounded-md border bg-terminal px-4 py-3 font-mono text-[12px] whitespace-nowrap text-terminal-foreground sm:text-[13px]">
-            <span className="mr-2 text-primary">$</span>npx lanternui add button
+            <span className="mr-2 text-primary">$</span>npx lanterncn add button
           </code>
           <Button className="mt-6" variant="secondary" asChild>
             <Link href="/docs">

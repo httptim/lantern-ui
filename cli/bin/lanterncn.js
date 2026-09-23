@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// lanternui: a thin front for the shadcn CLI that points it at the Lantern UI registry.
+// lanterncn: a thin front for the shadcn CLI that points it at the Lantern UI registry.
 import { spawnSync } from "node:child_process";
 import { readFileSync } from "node:fs";
 
@@ -13,13 +13,13 @@ const green = (s) => (c ? `\x1b[38;2;155;186;134m${s}\x1b[0m` : s);
 const muted = (s) => (c ? `\x1b[38;2;150;163;153m${s}\x1b[0m` : s);
 
 const help = `
-${orange("lanternui")} ${muted(`v${version}`)}  Lantern UI components, added with the shadcn CLI.
+${orange("lanterncn")} ${muted(`v${version}`)}  Lantern UI components, added with the shadcn CLI.
 
 ${green("USAGE")}
-  npx lanternui init                 Set up shadcn with Radix and add the Lantern theme
-  npx lanternui add <name...>        Add components, e.g. ${muted("add button card terminal")}
-  npx lanternui add all              Add every component
-  npx lanternui list                 List available components
+  npx lanterncn init                 Set up shadcn with Radix and add the Lantern theme
+  npx lanterncn add <name...>        Add components, e.g. ${muted("add button card terminal")}
+  npx lanterncn add all              Add every component
+  npx lanterncn list                 List available components
 
 Extra flags pass through to shadcn, e.g. ${muted("--overwrite")}, ${muted("--path")}, ${muted("-y")}.
 Docs: ${SITE}
@@ -76,7 +76,7 @@ switch (command) {
     }
     if (!items.length) {
       console.log(help);
-      console.error("Name at least one component, e.g. npx lanternui add button");
+      console.error("Name at least one component, e.g. npx lanterncn add button");
       process.exit(1);
     }
     process.exit(shadcn(["add", ...items.map(toRef), ...flags]));
@@ -87,7 +87,7 @@ switch (command) {
     const width = Math.max(...items.map((i) => i.name.length));
     console.log(`\n${green("LANTERN UI")} ${muted(`${items.length} components`)}\n`);
     for (const i of items) console.log(`  ${orange(i.name.padEnd(width))}  ${muted(i.description ?? "")}`);
-    console.log(`\n${muted("Add one with")} npx lanternui add <name>\n`);
+    console.log(`\n${muted("Add one with")} npx lanterncn add <name>\n`);
     break;
   }
   case "-v":

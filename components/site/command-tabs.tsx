@@ -15,9 +15,9 @@ const runners = {
 
 type Runner = keyof typeof runners;
 
-export function CommandTabs({ args, tool = "lanternui" }: { args: string; tool?: "lanternui" | "shadcn" }) {
+export function CommandTabs({ args, tool = "lanterncn" }: { args: string; tool?: "lanterncn" | "shadcn" }) {
   const [runner, setRunner] = useState<Runner>("npm");
-  const command = `${runners[runner]} ${tool === "shadcn" ? "shadcn@latest" : "lanternui"} ${args}`;
+  const command = `${runners[runner]} ${tool === "shadcn" ? "shadcn@latest" : "lanterncn"} ${args}`;
   return (
     <div className="overflow-hidden rounded-lg border bg-terminal">
       <div className="flex items-center justify-between gap-2 border-b bg-[#16211c] pr-2 pl-1">
