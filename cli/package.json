@@ -1,0 +1,14 @@
+{
+  "name": "lanternui",
+  "version": "0.1.0",
+  "description": "Add Lantern UI components to your project. The Lantern design as copy-paste React components, installed through the shadcn CLI.",
+  "type": "module",
+  "bin": { "lanternui": "bin/lanternui.js" },
+  "files": ["bin", "README.md"],
+  "engines": { "node": ">=18" },
+  "keywords": ["lantern", "lantern-ui", "shadcn", "components", "react", "tailwind", "radix", "ui"],
+  "homepage": "https://lantern-ui-kit.vercel.app",
+  "repository": { "type": "git", "url": "git+https://github.com/httptim/lantern-ui.git", "directory": "cli" },
+  "bugs": "https://github.com/httptim/lantern-ui/issues",
+  "license": "MIT"
+}
