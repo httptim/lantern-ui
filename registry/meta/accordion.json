@@ -1,0 +1,5 @@
+{ "name": "accordion", "title": "Accordion", "category": "Display",
+  "description": "Stacked questions that open one panel at a time, with a rotating chevron and orange open state.",
+  "dependencies": ["radix-ui", "lucide-react"],
+  "examples": [{ "name": "accordion-demo" }],
+  "usage": "<Accordion type=\"single\" collapsible>\n  <AccordionItem value=\"a\">\n    <AccordionTrigger>What is Lantern?</AccordionTrigger>\n    <AccordionContent>A small web for Minecraft servers.</AccordionContent>\n  </AccordionItem>\n</Accordion>" }

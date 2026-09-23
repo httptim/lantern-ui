@@ -1,0 +1,15 @@
+{
+  "name": "popover",
+  "title": "Popover",
+  "category": "Overlays",
+  "description": "A small floating panel anchored to a trigger, for quick settings and short forms.",
+  "dependencies": [
+    "radix-ui"
+  ],
+  "examples": [
+    {
+      "name": "popover-demo"
+    }
+  ],
+  "usage": "<Popover>\n  <PopoverTrigger asChild>\n    <Button variant=\"secondary\">Open</Button>\n  </PopoverTrigger>\n  <PopoverContent>Place content here.</PopoverContent>\n</Popover>"
+}

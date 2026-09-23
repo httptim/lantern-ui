@@ -1,0 +1,21 @@
+{
+  "name": "alert-dialog",
+  "title": "Alert Dialog",
+  "category": "Overlays",
+  "description": "A modal that interrupts to confirm an important action. It does not close on outside click, so the reader has to choose.",
+  "dependencies": [
+    "radix-ui"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "examples": [
+    {
+      "name": "alert-dialog-demo"
+    }
+  ],
+  "usage": "<AlertDialog>\n  <AlertDialogTrigger asChild>\n    <Button variant=\"destructive\">Unpublish site</Button>\n  </AlertDialogTrigger>\n  <AlertDialogContent>\n    <AlertDialogHeader>\n      <AlertDialogTitle>Unpublish site?</AlertDialogTitle>\n      <AlertDialogDescription>Visitors will see a dead link.</AlertDialogDescription>\n    </AlertDialogHeader>\n    <AlertDialogFooter>\n      <AlertDialogCancel>Cancel</AlertDialogCancel>\n      <AlertDialogAction variant=\"destructive\">Unpublish</AlertDialogAction>\n    </AlertDialogFooter>\n  </AlertDialogContent>\n</AlertDialog>",
+  "notes": [
+    "AlertDialogAction takes variant=\"destructive\" for a filled red confirm button."
+  ]
+}

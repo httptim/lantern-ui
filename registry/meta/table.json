@@ -1,0 +1,4 @@
+{ "name": "table", "title": "Table", "category": "Display",
+  "description": "A plain, responsive table with mono uppercase column heads, hover rows, a footer and a caption. Scrolls sideways on narrow screens.",
+  "examples": [{ "name": "table-demo" }, { "name": "table-compact", "title": "Compact data with a footer total" }],
+  "usage": "<Table>\n  <TableHeader>\n    <TableRow>\n      <TableHead>Site</TableHead>\n    </TableRow>\n  </TableHeader>\n  <TableBody>\n    <TableRow>\n      <TableCell>turtle.farm</TableCell>\n    </TableRow>\n  </TableBody>\n</Table>" }

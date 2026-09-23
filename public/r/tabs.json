@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tabs",
+  "title": "Tabs",
+  "description": "Mono uppercase tabs with an orange underline on the active tab, plus a boxed variant for switching between panels.",
+  "dependencies": [
+    "radix-ui",
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "utils",
+    "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+  ],
+  "files": [
+    {
+      "path": "registry/lantern/ui/tabs.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { Tabs as TabsPrimitive } from \"radix-ui\";\nimport { cva, type VariantProps } from \"class-variance-authority\";\n\nimport { cn } from \"@/lib/utils\";\n\ntype TabsVariant = \"line\" | \"boxed\";\n\nconst TabsVariantContext = React.createContext<TabsVariant>(\"line\");\n\nfunction Tabs({\n  className,\n  variant = \"line\",\n  ...props\n}: React.ComponentProps<typeof TabsPrimitive.Root> & { variant?: TabsVariant }) {\n  return (\n    <TabsVariantContext.Provider value={variant}>\n      <TabsPrimitive.Root\n        data-slot=\"tabs\"\n        data-variant={variant}\n        className={cn(\"flex flex-col gap-4 data-[orientation=vertical]:flex-row\", className)}\n        {...props}\n      />\n    </TabsVariantContext.Provider>\n  );\n}\n\nconst tabsListVariants = cva(\"inline-flex max-w-full items-center overflow-x-auto [scrollbar-width:none]\", {\n  variants: {\n    variant: {\n      line: \"w-full gap-6 border-b\",\n      boxed: \"w-fit gap-1 rounded-md border bg-card p-1\",\n    },\n  },\n  defaultVariants: { variant: \"line\" },\n});\n\nfunction TabsList({\n  className,\n  variant,\n  ...props\n}: React.ComponentProps<typeof TabsPrimitive.List> & VariantProps<typeof tabsListVariants>) {\n  const contextVariant = React.useContext(TabsVariantContext);\n  return (\n    <TabsPrimitive.List\n      data-slot=\"tabs-list\"\n      className={cn(tabsListVariants({ variant: variant ?? contextVariant }), className)}\n      {...props}\n    />\n  );\n}\n\nconst tabsTriggerVariants = cva(\n  \"inline-flex shrink-0 cursor-pointer items-center justify-center gap-2 font-mono text-[11px] font-semibold tracking-[0.16em] whitespace-nowrap uppercase transition-colors outline-none disabled:pointer-events-none disabled:opacity-40 focus-visible:ring-2 focus-visible:ring-ring/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-3.5\",\n  {\n    variants: {\n      variant: {\n        line: \"relative -mb-px h-10 border-b-2 border-transparent px-0.5 text-muted-foreground hover:text-foreground data-[state=active]:border-primary data-[state=active]:text-foreground\",\n        boxed:\n          \"h-8 rounded-sm px-3 text-muted-foreground hover:text-foreground data-[state=active]:bg-secondary data-[state=active]:text-primary data-[state=active]:shadow-[inset_0_0_0_1px_var(--color-input)]\",\n      },\n    },\n    defaultVariants: { variant: \"line\" },\n  },\n);\n\nfunction TabsTrigger({\n  className,\n  variant,\n  ...props\n}: React.ComponentProps<typeof TabsPrimitive.Trigger> & VariantProps<typeof tabsTriggerVariants>) {\n  const contextVariant = React.useContext(TabsVariantContext);\n  return (\n    <TabsPrimitive.Trigger\n      data-slot=\"tabs-trigger\"\n      className={cn(tabsTriggerVariants({ variant: variant ?? contextVariant }), className)}\n      {...props}\n    />\n  );\n}\n\nfunction TabsContent({ className, ...props }: React.ComponentProps<typeof TabsPrimitive.Content>) {\n  return (\n    <TabsPrimitive.Content\n      data-slot=\"tabs-content\"\n      className={cn(\"flex-1 rounded-sm outline-none focus-visible:ring-2 focus-visible:ring-ring/25\", className)}\n      {...props}\n    />\n  );\n}\n\nexport { Tabs, TabsContent, TabsList, TabsTrigger, tabsListVariants, tabsTriggerVariants };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

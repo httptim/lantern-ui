@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "status-dot",
+  "title": "Status Dot",
+  "description": "A small glowing dot for online, running, error and offline states. Pulses by default.",
+  "dependencies": [
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "utils",
+    "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+  ],
+  "files": [
+    {
+      "path": "registry/lantern/ui/status-dot.tsx",
+      "content": "import * as React from \"react\";\nimport { cva, type VariantProps } from \"class-variance-authority\";\n\nimport { cn } from \"@/lib/utils\";\n\nconst statusDotVariants = cva(\"inline-block size-1.5 shrink-0 rounded-full\", {\n  variants: {\n    tone: {\n      online: \"bg-[#a7c68c] shadow-[0_0_12px_#91aa7880]\",\n      busy: \"bg-primary shadow-[0_0_12px_#f5a66560]\",\n      offline: \"bg-input\",\n      error: \"bg-destructive shadow-[0_0_12px_#e0715f60]\",\n    },\n    pulse: { true: \"animate-lantern-pulse\", false: \"\" },\n  },\n  defaultVariants: { tone: \"online\", pulse: true },\n});\n\nfunction StatusDot({\n  className,\n  tone,\n  pulse,\n  label,\n  ...props\n}: React.ComponentProps<\"span\"> & VariantProps<typeof statusDotVariants> & { label?: string }) {\n  return (\n    <span\n      data-slot=\"status-dot\"\n      role={label ? \"status\" : undefined}\n      aria-label={label}\n      aria-hidden={label ? undefined : true}\n      className={cn(statusDotVariants({ tone, pulse }), className)}\n      {...props}\n    />\n  );\n}\n\nexport { StatusDot, statusDotVariants };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

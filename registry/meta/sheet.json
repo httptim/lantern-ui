@@ -1,0 +1,23 @@
+{
+  "name": "sheet",
+  "title": "Sheet",
+  "category": "Overlays",
+  "description": "A dialog that slides in from an edge of the screen, for settings panels and mobile navigation.",
+  "dependencies": [
+    "radix-ui",
+    "lucide-react"
+  ],
+  "examples": [
+    {
+      "name": "sheet-demo"
+    },
+    {
+      "name": "sheet-sides",
+      "title": "Sides"
+    }
+  ],
+  "usage": "<Sheet>\n  <SheetTrigger asChild>\n    <Button>Open</Button>\n  </SheetTrigger>\n  <SheetContent side=\"right\">\n    <SheetHeader>\n      <SheetTitle>Server settings</SheetTitle>\n      <SheetDescription>Where your hub is hosted.</SheetDescription>\n    </SheetHeader>\n  </SheetContent>\n</Sheet>",
+  "notes": [
+    "Set side to top, right, bottom or left. Left and right sheets take three quarters of the screen on phones and cap at 24rem on larger screens."
+  ]
+}

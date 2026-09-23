@@ -1,0 +1,18 @@
+{ "name": "field", "title": "Field", "category": "Forms",
+  "description": "Building blocks for accessible forms: labels, descriptions, errors, fieldsets and legends in vertical, horizontal or responsive layouts.",
+  "dependencies": ["class-variance-authority"],
+  "registryDependencies": ["label"],
+  "examples": [
+    { "name": "field-demo" },
+    { "name": "field-login", "title": "Sign in" },
+    { "name": "field-signup", "title": "Sign up with validation" },
+    { "name": "field-settings", "title": "Settings" },
+    { "name": "field-contact", "title": "Contact" },
+    { "name": "field-newsletter", "title": "Newsletter" }
+  ],
+  "usage": "<FieldGroup>\n  <Field>\n    <FieldLabel htmlFor=\"name\">Site name</FieldLabel>\n    <Input id=\"name\" />\n    <FieldDescription>Shown in the directory.</FieldDescription>\n  </Field>\n  <Field orientation=\"horizontal\">\n    <Switch id=\"online\" />\n    <FieldLabel htmlFor=\"online\">Keep site online</FieldLabel>\n  </Field>\n</FieldGroup>",
+  "notes": [
+    "Set data-invalid on a Field and aria-invalid on its control to show an error. FieldError takes children or an errors array, such as the output of a schema validator.",
+    "Wrap a horizontal Field in a FieldLabel to turn a radio or checkbox into a selectable card.",
+    "orientation=\"responsive\" stacks on narrow containers and goes side by side once the parent FieldGroup is wide enough."
+  ] }

@@ -1,0 +1,6 @@
+{ "name": "checkbox", "title": "Checkbox", "category": "Forms",
+  "description": "A square toggle for yes or no choices, with checked, indeterminate and disabled states.",
+  "dependencies": ["radix-ui", "lucide-react"],
+  "examples": [{ "name": "checkbox-demo" }, { "name": "checkbox-disabled", "title": "Disabled and indeterminate" }, { "name": "checkbox-checklist", "title": "Checklist" }],
+  "usage": "<div className=\"flex items-center gap-3\">\n  <Checkbox id=\"terms\" />\n  <Label htmlFor=\"terms\">Accept the hub rules</Label>\n</div>",
+  "notes": ["Pass checked=\"indeterminate\" to show a dash, for example on a select-all box when only some rows are checked."] }

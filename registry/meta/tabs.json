@@ -1,0 +1,24 @@
+{
+  "name": "tabs",
+  "title": "Tabs",
+  "category": "Navigation",
+  "description": "Mono uppercase tabs with an orange underline on the active tab, plus a boxed variant for switching between panels.",
+  "dependencies": [
+    "radix-ui",
+    "class-variance-authority"
+  ],
+  "examples": [
+    {
+      "name": "tabs-demo"
+    },
+    {
+      "name": "tabs-boxed",
+      "title": "Boxed"
+    }
+  ],
+  "usage": "<Tabs defaultValue=\"program\">\n  <TabsList>\n    <TabsTrigger value=\"program\">Program</TabsTrigger>\n    <TabsTrigger value=\"log\">Log</TabsTrigger>\n  </TabsList>\n  <TabsContent value=\"program\">...</TabsContent>\n  <TabsContent value=\"log\">...</TabsContent>\n</Tabs>",
+  "notes": [
+    "Set variant=\"boxed\" on Tabs to get the segmented style. The list and triggers pick it up automatically.",
+    "The tab list scrolls sideways when there are more tabs than fit on a phone."
+  ]
+}

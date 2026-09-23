@@ -1,0 +1,24 @@
+{
+  "name": "dropdown-menu",
+  "title": "Dropdown Menu",
+  "category": "Overlays",
+  "description": "A menu of actions opened from a button, with labels, separators, shortcuts, checkbox and radio items and submenus.",
+  "dependencies": [
+    "radix-ui",
+    "lucide-react"
+  ],
+  "examples": [
+    {
+      "name": "dropdown-menu-demo"
+    },
+    {
+      "name": "dropdown-menu-checkboxes",
+      "title": "Checkboxes"
+    },
+    {
+      "name": "dropdown-menu-radio-group",
+      "title": "Radio group"
+    }
+  ],
+  "usage": "<DropdownMenu>\n  <DropdownMenuTrigger asChild>\n    <Button variant=\"secondary\">Open</Button>\n  </DropdownMenuTrigger>\n  <DropdownMenuContent>\n    <DropdownMenuLabel>Account</DropdownMenuLabel>\n    <DropdownMenuItem>Profile</DropdownMenuItem>\n    <DropdownMenuSeparator />\n    <DropdownMenuItem variant=\"destructive\">Log out</DropdownMenuItem>\n  </DropdownMenuContent>\n</DropdownMenu>"
+}

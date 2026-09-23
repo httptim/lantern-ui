@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert",
+  "title": "Alert",
+  "description": "An inline callout with an icon, title and description. Default, success, warning and destructive variants each carry a colored left edge.",
+  "dependencies": [
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "utils",
+    "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+  ],
+  "files": [
+    {
+      "path": "registry/lantern/ui/alert.tsx",
+      "content": "import * as React from \"react\";\nimport { cva, type VariantProps } from \"class-variance-authority\";\n\nimport { cn } from \"@/lib/utils\";\n\nconst alertVariants = cva(\n  \"relative grid w-full grid-cols-[0_1fr] items-start gap-y-1 rounded-md border border-l-2 px-4 py-3.5 text-sm has-[>svg]:grid-cols-[calc(var(--spacing)*4)_1fr] has-[>svg]:gap-x-3 [&>svg]:size-4 [&>svg]:translate-y-0.5\",\n  {\n    variants: {\n      variant: {\n        default: \"border-border border-l-primary bg-card text-card-foreground [&>svg]:text-primary\",\n        success: \"border-success/30 border-l-success bg-success/[0.06] text-foreground [&>svg]:text-success\",\n        warning: \"border-warning/30 border-l-warning bg-warning/[0.06] text-foreground [&>svg]:text-warning\",\n        destructive:\n          \"border-destructive/35 border-l-destructive bg-destructive/[0.07] text-foreground [&>svg]:text-destructive *:data-[slot=alert-title]:text-destructive\",\n      },\n    },\n    defaultVariants: { variant: \"default\" },\n  },\n);\n\nfunction Alert({ className, variant, ...props }: React.ComponentProps<\"div\"> & VariantProps<typeof alertVariants>) {\n  return <div data-slot=\"alert\" role=\"alert\" className={cn(alertVariants({ variant }), className)} {...props} />;\n}\n\nfunction AlertTitle({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"alert-title\"\n      className={cn(\"col-start-2 line-clamp-1 min-h-4 font-display font-medium tracking-tight\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction AlertDescription({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"alert-description\"\n      className={cn(\"col-start-2 grid justify-items-start gap-1 text-sm text-muted-foreground [&_p]:leading-relaxed\", className)}\n      {...props}\n    />\n  );\n}\n\nexport { Alert, AlertTitle, AlertDescription, alertVariants };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

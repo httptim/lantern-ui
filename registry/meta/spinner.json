@@ -1,0 +1,6 @@
+{ "name": "spinner", "title": "Spinner", "category": "Feedback",
+  "description": "A spinning orange loader, plus a block spinner that pulses three squares like a terminal waiting on a reply.",
+  "dependencies": ["lucide-react"],
+  "examples": [{ "name": "spinner-demo" }, { "name": "spinner-button", "title": "In a button" }],
+  "usage": "<Spinner />",
+  "notes": ["Both spinners announce themselves with role=\"status\" and the label Loading. Inside a button that already says what is happening, pass aria-hidden and clear the role."] }

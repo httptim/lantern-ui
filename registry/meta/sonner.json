@@ -1,0 +1,6 @@
+{ "name": "sonner", "title": "Sonner", "category": "Feedback",
+  "description": "Toast notifications from the sonner package, dressed in Lantern colors with a hard offset shadow and lucide status icons.",
+  "dependencies": ["sonner", "lucide-react"],
+  "examples": [{ "name": "sonner-demo" }],
+  "usage": "toast.success(\"Site published\", { description: \"turtle.farm is live.\" })",
+  "notes": ["Mount <Toaster /> once in your root layout, then call toast() from any client component. The toaster is always dark, so it does not need next-themes."] }

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sonner",
+  "title": "Sonner",
+  "description": "Toast notifications from the sonner package, dressed in Lantern colors with a hard offset shadow and lucide status icons.",
+  "dependencies": [
+    "sonner",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+  ],
+  "files": [
+    {
+      "path": "registry/lantern/ui/sonner.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { CircleAlert, CircleCheck, Info, Loader2, TriangleAlert, X } from \"lucide-react\";\nimport { Toaster as Sonner, type ToasterProps } from \"sonner\";\n\n/** Lantern-styled toaster. Mount once near the root, then call toast() from anywhere. */\nfunction Toaster({ toastOptions, ...props }: ToasterProps) {\n  return (\n    <Sonner\n      theme=\"dark\"\n      className=\"toaster group font-sans!\"\n      icons={{\n        success: <CircleCheck className=\"size-4 text-success\" />,\n        info: <Info className=\"size-4 text-info\" />,\n        warning: <TriangleAlert className=\"size-4 text-warning\" />,\n        error: <CircleAlert className=\"size-4 text-destructive\" />,\n        loading: <Loader2 className=\"size-4 animate-spin text-primary\" />,\n        close: <X className=\"size-3\" />,\n      }}\n      style={\n        {\n          \"--normal-bg\": \"var(--popover)\",\n          \"--normal-text\": \"var(--popover-foreground)\",\n          \"--normal-border\": \"var(--border)\",\n          \"--border-radius\": \"var(--radius)\",\n        } as React.CSSProperties\n      }\n      toastOptions={{\n        ...toastOptions,\n        classNames: {\n          toast: \"font-sans! shadow-block-sm! gap-3! border-border! px-4! py-3.5!\",\n          title: \"text-sm! font-semibold! text-foreground!\",\n          description: \"text-[13px]! text-muted-foreground!\",\n          icon: \"self-start! mt-0.5!\",\n          actionButton:\n            \"h-7! rounded-sm! bg-primary! px-2.5! font-mono! text-[10px]! font-semibold! tracking-[0.12em]! text-primary-foreground! uppercase!\",\n          cancelButton:\n            \"h-7! rounded-sm! bg-secondary! px-2.5! font-mono! text-[10px]! tracking-[0.12em]! text-muted-foreground! uppercase!\",\n          closeButton: \"border-input! bg-popover! text-muted-foreground! hover:text-foreground!\",\n          ...toastOptions?.classNames,\n        },\n      }}\n      {...props}\n    />\n  );\n}\n\nexport { Toaster };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,4 @@
+{ "name": "terminal", "title": "Terminal", "category": "Lantern",
+  "description": "The in-game terminal window from the Lantern hero: title bar, address line, prompt lines, output and a blinking cursor.",
+  "examples": [{ "name": "terminal-demo" }],
+  "usage": "<Terminal tilt>\n  <TerminalHeader>LANTERN</TerminalHeader>\n  <TerminalBody>\n    <TerminalLine>lantern</TerminalLine>\n    <TerminalOutput>ready</TerminalOutput>\n  </TerminalBody>\n</Terminal>" }

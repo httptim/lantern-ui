@@ -1,0 +1,854 @@
+[
+  {
+    "name": "eyebrow",
+    "title": "Eyebrow",
+    "category": "Lantern",
+    "description": "The mono uppercase label that sits above Lantern headings.",
+    "registryDependencies": [
+      "status-dot"
+    ],
+    "examples": [
+      {
+        "name": "eyebrow-demo"
+      }
+    ],
+    "usage": "<Eyebrow>Get started</Eyebrow>"
+  },
+  {
+    "name": "navbar",
+    "title": "Navbar",
+    "category": "Lantern",
+    "description": "The Lantern site header: diamond mark, name and outlined tag, nav links and a bordered call to action. On phones the links move into a sheet behind a menu button.",
+    "dependencies": [
+      "radix-ui",
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "button",
+      "sheet"
+    ],
+    "examples": [
+      {
+        "name": "navbar-demo"
+      }
+    ],
+    "usage": "<Navbar>\n  <NavbarBrand href=\"/\">\n    <NavbarMark />\n    lantern\n    <NavbarLabel>Hub</NavbarLabel>\n  </NavbarBrand>\n  <NavbarLinks>\n    <NavbarLink href=\"/directory\" active>Directory</NavbarLink>\n    <NavbarCta href=\"/publish\">Publish a hub</NavbarCta>\n  </NavbarLinks>\n  <NavbarMobile>\n    <NavbarLink href=\"/directory\" active>Directory</NavbarLink>\n    <NavbarCta href=\"/publish\">Publish a hub</NavbarCta>\n  </NavbarMobile>\n</Navbar>",
+    "notes": [
+      "NavbarBrand, NavbarLink and NavbarCta accept asChild, so you can pass a framework Link.",
+      "NavbarMobile shows below the md breakpoint. Pass it the same links as NavbarLinks. Following a link closes the sheet."
+    ]
+  },
+  {
+    "name": "stat",
+    "title": "Stat",
+    "category": "Lantern",
+    "description": "The numbers strip from the Lantern site: large orange figures with a muted caption, split by dividers and stacked on mobile.",
+    "examples": [
+      {
+        "name": "stat-demo"
+      }
+    ],
+    "usage": "<StatGroup>\n  <Stat>\n    <StatLabel>sites on the network</StatLabel>\n    <StatValue>128</StatValue>\n  </Stat>\n</StatGroup>",
+    "notes": [
+      "StatGroup renders a description list. Put StatLabel before StatValue in the markup so screen readers read the term first; the value is shown on top visually."
+    ]
+  },
+  {
+    "name": "status-dot",
+    "title": "Status Dot",
+    "category": "Lantern",
+    "description": "A small glowing dot for online, running, error and offline states. Pulses by default.",
+    "dependencies": [
+      "class-variance-authority"
+    ],
+    "examples": [
+      {
+        "name": "status-dot-demo"
+      }
+    ],
+    "usage": "<StatusDot tone=\"online\" label=\"Online\" />"
+  },
+  {
+    "name": "terminal",
+    "title": "Terminal",
+    "category": "Lantern",
+    "description": "The in-game terminal window from the Lantern hero: title bar, address line, prompt lines, output and a blinking cursor.",
+    "examples": [
+      {
+        "name": "terminal-demo"
+      }
+    ],
+    "usage": "<Terminal tilt>\n  <TerminalHeader>LANTERN</TerminalHeader>\n  <TerminalBody>\n    <TerminalLine>lantern</TerminalLine>\n    <TerminalOutput>ready</TerminalOutput>\n  </TerminalBody>\n</Terminal>"
+  },
+  {
+    "name": "button",
+    "title": "Button",
+    "category": "Forms",
+    "description": "Orange primary actions and quiet outlined secondaries, with sizes, icons and link rendering.",
+    "dependencies": [
+      "radix-ui",
+      "class-variance-authority"
+    ],
+    "examples": [
+      {
+        "name": "button-demo"
+      },
+      {
+        "name": "button-variants",
+        "title": "Variants"
+      },
+      {
+        "name": "button-sizes",
+        "title": "Sizes"
+      },
+      {
+        "name": "button-states",
+        "title": "Loading, disabled and as a link"
+      }
+    ],
+    "usage": "<Button variant=\"secondary\">Explore the network</Button>"
+  },
+  {
+    "name": "checkbox",
+    "title": "Checkbox",
+    "category": "Forms",
+    "description": "A square toggle for yes or no choices, with checked, indeterminate and disabled states.",
+    "dependencies": [
+      "radix-ui",
+      "lucide-react"
+    ],
+    "examples": [
+      {
+        "name": "checkbox-demo"
+      },
+      {
+        "name": "checkbox-disabled",
+        "title": "Disabled and indeterminate"
+      },
+      {
+        "name": "checkbox-checklist",
+        "title": "Checklist"
+      }
+    ],
+    "usage": "<div className=\"flex items-center gap-3\">\n  <Checkbox id=\"terms\" />\n  <Label htmlFor=\"terms\">Accept the hub rules</Label>\n</div>",
+    "notes": [
+      "Pass checked=\"indeterminate\" to show a dash, for example on a select-all box when only some rows are checked."
+    ]
+  },
+  {
+    "name": "field",
+    "title": "Field",
+    "category": "Forms",
+    "description": "Building blocks for accessible forms: labels, descriptions, errors, fieldsets and legends in vertical, horizontal or responsive layouts.",
+    "dependencies": [
+      "class-variance-authority"
+    ],
+    "registryDependencies": [
+      "label"
+    ],
+    "examples": [
+      {
+        "name": "field-demo"
+      },
+      {
+        "name": "field-login",
+        "title": "Sign in"
+      },
+      {
+        "name": "field-signup",
+        "title": "Sign up with validation"
+      },
+      {
+        "name": "field-settings",
+        "title": "Settings"
+      },
+      {
+        "name": "field-contact",
+        "title": "Contact"
+      },
+      {
+        "name": "field-newsletter",
+        "title": "Newsletter"
+      }
+    ],
+    "usage": "<FieldGroup>\n  <Field>\n    <FieldLabel htmlFor=\"name\">Site name</FieldLabel>\n    <Input id=\"name\" />\n    <FieldDescription>Shown in the directory.</FieldDescription>\n  </Field>\n  <Field orientation=\"horizontal\">\n    <Switch id=\"online\" />\n    <FieldLabel htmlFor=\"online\">Keep site online</FieldLabel>\n  </Field>\n</FieldGroup>",
+    "notes": [
+      "Set data-invalid on a Field and aria-invalid on its control to show an error. FieldError takes children or an errors array, such as the output of a schema validator.",
+      "Wrap a horizontal Field in a FieldLabel to turn a radio or checkbox into a selectable card.",
+      "orientation=\"responsive\" stacks on narrow containers and goes side by side once the parent FieldGroup is wide enough."
+    ]
+  },
+  {
+    "name": "input",
+    "title": "Input",
+    "category": "Forms",
+    "description": "A single-line text field for text, email, passwords and files, with invalid and disabled states.",
+    "examples": [
+      {
+        "name": "input-demo"
+      },
+      {
+        "name": "input-types",
+        "title": "Types and states"
+      }
+    ],
+    "usage": "<Input type=\"email\" placeholder=\"you@example.com\" />"
+  },
+  {
+    "name": "input-group",
+    "title": "Input Group",
+    "category": "Forms",
+    "description": "An input or textarea with icons, text prefixes like hub://, and inline buttons attached inside one border.",
+    "dependencies": [
+      "class-variance-authority"
+    ],
+    "registryDependencies": [
+      "button",
+      "input",
+      "textarea"
+    ],
+    "examples": [
+      {
+        "name": "input-group-demo"
+      },
+      {
+        "name": "input-group-affixes",
+        "title": "Prefix and suffix"
+      },
+      {
+        "name": "input-group-button",
+        "title": "With buttons"
+      }
+    ],
+    "usage": "<InputGroup>\n  <InputGroupAddon>\n    <InputGroupText>hub://</InputGroupText>\n  </InputGroupAddon>\n  <InputGroupInput placeholder=\"my-base\" />\n</InputGroup>",
+    "notes": [
+      "Addons take align=\"inline-start\", \"inline-end\", \"block-start\" or \"block-end\". Clicking an addon focuses the input."
+    ]
+  },
+  {
+    "name": "input-otp",
+    "title": "Input OTP",
+    "category": "Forms",
+    "description": "A row of single-character slots for pairing codes and one-time passwords, with paste support.",
+    "dependencies": [
+      "input-otp",
+      "lucide-react"
+    ],
+    "examples": [
+      {
+        "name": "input-otp-demo"
+      },
+      {
+        "name": "input-otp-separator",
+        "title": "With separator"
+      }
+    ],
+    "usage": "<InputOTP maxLength={6}>\n  <InputOTPGroup>\n    <InputOTPSlot index={0} />\n    <InputOTPSlot index={1} />\n    <InputOTPSlot index={2} />\n  </InputOTPGroup>\n  <InputOTPSeparator />\n  <InputOTPGroup>\n    <InputOTPSlot index={3} />\n    <InputOTPSlot index={4} />\n    <InputOTPSlot index={5} />\n  </InputOTPGroup>\n</InputOTP>",
+    "notes": [
+      "Built on the input-otp package by Guilherme Rodz. Use the pattern prop to limit which characters are accepted."
+    ]
+  },
+  {
+    "name": "label",
+    "title": "Label",
+    "category": "Forms",
+    "description": "An accessible label for form controls.",
+    "dependencies": [
+      "radix-ui"
+    ],
+    "examples": [
+      {
+        "name": "label-demo"
+      }
+    ],
+    "usage": "<Label htmlFor=\"email\">Email</Label>"
+  },
+  {
+    "name": "radio-group",
+    "title": "Radio Group",
+    "category": "Forms",
+    "description": "A set of options where exactly one can be picked, navigable with the arrow keys.",
+    "dependencies": [
+      "radix-ui"
+    ],
+    "examples": [
+      {
+        "name": "radio-group-demo"
+      },
+      {
+        "name": "radio-group-cards",
+        "title": "Choice cards"
+      }
+    ],
+    "usage": "<RadioGroup defaultValue=\"daily\">\n  <div className=\"flex items-center gap-3\">\n    <RadioGroupItem value=\"daily\" id=\"daily\" />\n    <Label htmlFor=\"daily\">Back up daily</Label>\n  </div>\n</RadioGroup>",
+    "notes": [
+      "For choice cards, wrap each item in a Label and style the checked card with has-data-[state=checked]. The Field component does this for you with FieldLabel."
+    ]
+  },
+  {
+    "name": "select",
+    "title": "Select",
+    "category": "Forms",
+    "description": "A dropdown for picking one value from a list, with groups, labels, icons and full keyboard support.",
+    "dependencies": [
+      "radix-ui",
+      "lucide-react"
+    ],
+    "examples": [
+      {
+        "name": "select-demo"
+      },
+      {
+        "name": "select-grouped",
+        "title": "Groups and icons"
+      },
+      {
+        "name": "select-states",
+        "title": "Invalid, disabled and small"
+      }
+    ],
+    "usage": "<Select>\n  <SelectTrigger className=\"w-48\">\n    <SelectValue placeholder=\"Pick a theme\" />\n  </SelectTrigger>\n  <SelectContent>\n    <SelectItem value=\"lantern\">Lantern</SelectItem>\n    <SelectItem value=\"moss\">Moss</SelectItem>\n  </SelectContent>\n</Select>"
+  },
+  {
+    "name": "slider",
+    "title": "Slider",
+    "category": "Forms",
+    "description": "Pick a number or a range by dragging square thumbs along a track, or with the arrow keys.",
+    "dependencies": [
+      "radix-ui"
+    ],
+    "examples": [
+      {
+        "name": "slider-demo"
+      },
+      {
+        "name": "slider-range",
+        "title": "Range"
+      }
+    ],
+    "usage": "<Slider defaultValue={[8]} min={2} max={16} step={1} />",
+    "notes": [
+      "Pass two values to get a range with two thumbs. Give the slider an aria-label or aria-labelledby."
+    ]
+  },
+  {
+    "name": "switch",
+    "title": "Switch",
+    "category": "Forms",
+    "description": "An on and off control for settings that take effect right away.",
+    "dependencies": [
+      "radix-ui"
+    ],
+    "examples": [
+      {
+        "name": "switch-demo"
+      },
+      {
+        "name": "switch-settings",
+        "title": "Settings list"
+      }
+    ],
+    "usage": "<Switch id=\"online\" defaultChecked />"
+  },
+  {
+    "name": "textarea",
+    "title": "Textarea",
+    "category": "Forms",
+    "description": "A multi-line text field that grows with its content, with invalid and disabled states.",
+    "examples": [
+      {
+        "name": "textarea-demo"
+      },
+      {
+        "name": "textarea-states",
+        "title": "Invalid and disabled"
+      }
+    ],
+    "usage": "<Textarea placeholder=\"Sign the guestbook\" />"
+  },
+  {
+    "name": "toggle",
+    "title": "Toggle",
+    "category": "Forms",
+    "description": "A button that stays pressed, for switching a single tool or view on and off.",
+    "dependencies": [
+      "radix-ui",
+      "class-variance-authority"
+    ],
+    "examples": [
+      {
+        "name": "toggle-demo"
+      },
+      {
+        "name": "toggle-outline",
+        "title": "Outline and sizes"
+      },
+      {
+        "name": "toggle-text",
+        "title": "With text"
+      }
+    ],
+    "usage": "<Toggle aria-label=\"Bookmark site\">\n  <BookmarkIcon />\n</Toggle>"
+  },
+  {
+    "name": "toggle-group",
+    "title": "Toggle Group",
+    "category": "Forms",
+    "description": "A row of toggles joined together, allowing one or many to be pressed.",
+    "dependencies": [
+      "radix-ui",
+      "class-variance-authority"
+    ],
+    "registryDependencies": [
+      "toggle"
+    ],
+    "examples": [
+      {
+        "name": "toggle-group-demo"
+      },
+      {
+        "name": "toggle-group-multiple",
+        "title": "Multiple"
+      }
+    ],
+    "usage": "<ToggleGroup type=\"single\" variant=\"outline\" defaultValue=\"left\">\n  <ToggleGroupItem value=\"left\" aria-label=\"Align left\">\n    <AlignLeftIcon />\n  </ToggleGroupItem>\n  <ToggleGroupItem value=\"right\" aria-label=\"Align right\">\n    <AlignRightIcon />\n  </ToggleGroupItem>\n</ToggleGroup>"
+  },
+  {
+    "name": "accordion",
+    "title": "Accordion",
+    "category": "Display",
+    "description": "Stacked questions that open one panel at a time, with a rotating chevron and orange open state.",
+    "dependencies": [
+      "radix-ui",
+      "lucide-react"
+    ],
+    "examples": [
+      {
+        "name": "accordion-demo"
+      }
+    ],
+    "usage": "<Accordion type=\"single\" collapsible>\n  <AccordionItem value=\"a\">\n    <AccordionTrigger>What is Lantern?</AccordionTrigger>\n    <AccordionContent>A small web for Minecraft servers.</AccordionContent>\n  </AccordionItem>\n</Accordion>"
+  },
+  {
+    "name": "avatar",
+    "title": "Avatar",
+    "category": "Display",
+    "description": "A round player portrait with an image and mono initials as the fallback. Group several into an overlapping stack.",
+    "dependencies": [
+      "radix-ui"
+    ],
+    "examples": [
+      {
+        "name": "avatar-demo"
+      },
+      {
+        "name": "avatar-fallback",
+        "title": "Fallback initials"
+      },
+      {
+        "name": "avatar-group",
+        "title": "Stacked group"
+      }
+    ],
+    "usage": "<Avatar>\n  <AvatarImage src=\"/player.png\" alt=\"Player\" />\n  <AvatarFallback>PL</AvatarFallback>\n</Avatar>"
+  },
+  {
+    "name": "badge",
+    "title": "Badge",
+    "category": "Display",
+    "description": "Small mono labels, including the square outlined tag used for HUB and DEV.",
+    "dependencies": [
+      "radix-ui",
+      "class-variance-authority"
+    ],
+    "examples": [
+      {
+        "name": "badge-demo"
+      }
+    ],
+    "usage": "<Badge variant=\"outline\">Hub</Badge>"
+  },
+  {
+    "name": "card",
+    "title": "Card",
+    "category": "Display",
+    "description": "A panel with header, content and footer slots, plus the grid-patterned art banner from the Lantern directory.",
+    "examples": [
+      {
+        "name": "card-demo"
+      },
+      {
+        "name": "card-art",
+        "title": "Directory card with art"
+      }
+    ],
+    "usage": "<Card>\n  <CardHeader>\n    <CardTitle>Title</CardTitle>\n    <CardDescription>Description</CardDescription>\n  </CardHeader>\n  <CardContent>Content</CardContent>\n</Card>"
+  },
+  {
+    "name": "kbd",
+    "title": "Kbd",
+    "category": "Display",
+    "description": "Mono key caps for keyboard shortcuts. KbdGroup lines several keys up with even spacing.",
+    "examples": [
+      {
+        "name": "kbd-demo"
+      }
+    ],
+    "usage": "<KbdGroup>\n  <Kbd>Ctrl</Kbd>\n  <Kbd>K</Kbd>\n</KbdGroup>"
+  },
+  {
+    "name": "separator",
+    "title": "Separator",
+    "category": "Display",
+    "description": "A one-pixel rule in the border color, horizontal or vertical.",
+    "dependencies": [
+      "radix-ui"
+    ],
+    "examples": [
+      {
+        "name": "separator-demo"
+      }
+    ],
+    "usage": "<Separator />"
+  },
+  {
+    "name": "table",
+    "title": "Table",
+    "category": "Display",
+    "description": "A plain, responsive table with mono uppercase column heads, hover rows, a footer and a caption. Scrolls sideways on narrow screens.",
+    "examples": [
+      {
+        "name": "table-demo"
+      },
+      {
+        "name": "table-compact",
+        "title": "Compact data with a footer total"
+      }
+    ],
+    "usage": "<Table>\n  <TableHeader>\n    <TableRow>\n      <TableHead>Site</TableHead>\n    </TableRow>\n  </TableHeader>\n  <TableBody>\n    <TableRow>\n      <TableCell>turtle.farm</TableCell>\n    </TableRow>\n  </TableBody>\n</Table>"
+  },
+  {
+    "name": "alert-dialog",
+    "title": "Alert Dialog",
+    "category": "Overlays",
+    "description": "A modal that interrupts to confirm an important action. It does not close on outside click, so the reader has to choose.",
+    "dependencies": [
+      "radix-ui"
+    ],
+    "registryDependencies": [
+      "button"
+    ],
+    "examples": [
+      {
+        "name": "alert-dialog-demo"
+      }
+    ],
+    "usage": "<AlertDialog>\n  <AlertDialogTrigger asChild>\n    <Button variant=\"destructive\">Unpublish site</Button>\n  </AlertDialogTrigger>\n  <AlertDialogContent>\n    <AlertDialogHeader>\n      <AlertDialogTitle>Unpublish site?</AlertDialogTitle>\n      <AlertDialogDescription>Visitors will see a dead link.</AlertDialogDescription>\n    </AlertDialogHeader>\n    <AlertDialogFooter>\n      <AlertDialogCancel>Cancel</AlertDialogCancel>\n      <AlertDialogAction variant=\"destructive\">Unpublish</AlertDialogAction>\n    </AlertDialogFooter>\n  </AlertDialogContent>\n</AlertDialog>",
+    "notes": [
+      "AlertDialogAction takes variant=\"destructive\" for a filled red confirm button."
+    ]
+  },
+  {
+    "name": "dialog",
+    "title": "Dialog",
+    "category": "Overlays",
+    "description": "A modal window over a dimmed backdrop, for short forms and focused reading. Focus is trapped inside and Escape closes it.",
+    "dependencies": [
+      "radix-ui",
+      "lucide-react"
+    ],
+    "examples": [
+      {
+        "name": "dialog-demo"
+      },
+      {
+        "name": "dialog-scrollable",
+        "title": "Scrollable content"
+      }
+    ],
+    "usage": "<Dialog>\n  <DialogTrigger asChild>\n    <Button>Open</Button>\n  </DialogTrigger>\n  <DialogContent>\n    <DialogHeader>\n      <DialogTitle>Edit profile<span className=\"text-primary\">.</span></DialogTitle>\n      <DialogDescription>Change how you appear on the network.</DialogDescription>\n    </DialogHeader>\n  </DialogContent>\n</Dialog>",
+    "notes": [
+      "The orange period after the title is a Lantern touch you add in the title content. It is not forced by the component.",
+      "Pass showCloseButton={false} to DialogContent to hide the corner close button."
+    ]
+  },
+  {
+    "name": "dropdown-menu",
+    "title": "Dropdown Menu",
+    "category": "Overlays",
+    "description": "A menu of actions opened from a button, with labels, separators, shortcuts, checkbox and radio items and submenus.",
+    "dependencies": [
+      "radix-ui",
+      "lucide-react"
+    ],
+    "examples": [
+      {
+        "name": "dropdown-menu-demo"
+      },
+      {
+        "name": "dropdown-menu-checkboxes",
+        "title": "Checkboxes"
+      },
+      {
+        "name": "dropdown-menu-radio-group",
+        "title": "Radio group"
+      }
+    ],
+    "usage": "<DropdownMenu>\n  <DropdownMenuTrigger asChild>\n    <Button variant=\"secondary\">Open</Button>\n  </DropdownMenuTrigger>\n  <DropdownMenuContent>\n    <DropdownMenuLabel>Account</DropdownMenuLabel>\n    <DropdownMenuItem>Profile</DropdownMenuItem>\n    <DropdownMenuSeparator />\n    <DropdownMenuItem variant=\"destructive\">Log out</DropdownMenuItem>\n  </DropdownMenuContent>\n</DropdownMenu>"
+  },
+  {
+    "name": "hover-card",
+    "title": "Hover Card",
+    "category": "Overlays",
+    "description": "A preview card that opens when a pointer rests on a link, such as a creator profile behind a username.",
+    "dependencies": [
+      "radix-ui"
+    ],
+    "examples": [
+      {
+        "name": "hover-card-demo"
+      }
+    ],
+    "usage": "<HoverCard>\n  <HoverCardTrigger asChild>\n    <a href=\"#\">@turtlewright</a>\n  </HoverCardTrigger>\n  <HoverCardContent>Profile preview</HoverCardContent>\n</HoverCard>",
+    "notes": [
+      "Hover cards are for sighted pointer users. The trigger link should still lead somewhere useful on its own."
+    ]
+  },
+  {
+    "name": "popover",
+    "title": "Popover",
+    "category": "Overlays",
+    "description": "A small floating panel anchored to a trigger, for quick settings and short forms.",
+    "dependencies": [
+      "radix-ui"
+    ],
+    "examples": [
+      {
+        "name": "popover-demo"
+      }
+    ],
+    "usage": "<Popover>\n  <PopoverTrigger asChild>\n    <Button variant=\"secondary\">Open</Button>\n  </PopoverTrigger>\n  <PopoverContent>Place content here.</PopoverContent>\n</Popover>"
+  },
+  {
+    "name": "sheet",
+    "title": "Sheet",
+    "category": "Overlays",
+    "description": "A dialog that slides in from an edge of the screen, for settings panels and mobile navigation.",
+    "dependencies": [
+      "radix-ui",
+      "lucide-react"
+    ],
+    "examples": [
+      {
+        "name": "sheet-demo"
+      },
+      {
+        "name": "sheet-sides",
+        "title": "Sides"
+      }
+    ],
+    "usage": "<Sheet>\n  <SheetTrigger asChild>\n    <Button>Open</Button>\n  </SheetTrigger>\n  <SheetContent side=\"right\">\n    <SheetHeader>\n      <SheetTitle>Server settings</SheetTitle>\n      <SheetDescription>Where your hub is hosted.</SheetDescription>\n    </SheetHeader>\n  </SheetContent>\n</Sheet>",
+    "notes": [
+      "Set side to top, right, bottom or left. Left and right sheets take three quarters of the screen on phones and cap at 24rem on larger screens."
+    ]
+  },
+  {
+    "name": "tooltip",
+    "title": "Tooltip",
+    "category": "Overlays",
+    "description": "A dark label in small mono type that appears on hover or keyboard focus. Good for naming icon buttons.",
+    "dependencies": [
+      "radix-ui"
+    ],
+    "examples": [
+      {
+        "name": "tooltip-demo"
+      }
+    ],
+    "usage": "<Tooltip>\n  <TooltipTrigger asChild>\n    <Button size=\"icon\" aria-label=\"Copy address\"><CopyIcon /></Button>\n  </TooltipTrigger>\n  <TooltipContent>Copy address</TooltipContent>\n</Tooltip>",
+    "notes": [
+      "Each Tooltip brings its own provider. Wrap a group in TooltipProvider to share the open delay so moving between buttons shows the next tooltip instantly.",
+      "Tooltips do not show on touch screens. Keep an aria-label on icon-only buttons."
+    ]
+  },
+  {
+    "name": "breadcrumb",
+    "title": "Breadcrumb",
+    "category": "Navigation",
+    "description": "Shows where a page sits in the site, in small mono uppercase with chevron separators.",
+    "dependencies": [
+      "radix-ui",
+      "lucide-react"
+    ],
+    "examples": [
+      {
+        "name": "breadcrumb-demo"
+      },
+      {
+        "name": "breadcrumb-dropdown",
+        "title": "Collapsed with a dropdown"
+      }
+    ],
+    "usage": "<Breadcrumb>\n  <BreadcrumbList>\n    <BreadcrumbItem>\n      <BreadcrumbLink href=\"/\">Directory</BreadcrumbLink>\n    </BreadcrumbItem>\n    <BreadcrumbSeparator />\n    <BreadcrumbItem>\n      <BreadcrumbPage>Guestbook</BreadcrumbPage>\n    </BreadcrumbItem>\n  </BreadcrumbList>\n</Breadcrumb>",
+    "notes": [
+      "The collapsed example uses the Dropdown Menu component, which you install separately."
+    ]
+  },
+  {
+    "name": "pagination",
+    "title": "Pagination",
+    "category": "Navigation",
+    "description": "Page links with previous and next controls. The current page gets an orange outline.",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "button"
+    ],
+    "examples": [
+      {
+        "name": "pagination-demo"
+      }
+    ],
+    "usage": "<Pagination>\n  <PaginationContent>\n    <PaginationItem><PaginationPrevious href=\"#\" /></PaginationItem>\n    <PaginationItem><PaginationLink href=\"#\" isActive>2</PaginationLink></PaginationItem>\n    <PaginationItem><PaginationNext href=\"#\" /></PaginationItem>\n  </PaginationContent>\n</Pagination>",
+    "notes": [
+      "The Prev and Next words hide on phones to leave room for the page numbers."
+    ]
+  },
+  {
+    "name": "tabs",
+    "title": "Tabs",
+    "category": "Navigation",
+    "description": "Mono uppercase tabs with an orange underline on the active tab, plus a boxed variant for switching between panels.",
+    "dependencies": [
+      "radix-ui",
+      "class-variance-authority"
+    ],
+    "examples": [
+      {
+        "name": "tabs-demo"
+      },
+      {
+        "name": "tabs-boxed",
+        "title": "Boxed"
+      }
+    ],
+    "usage": "<Tabs defaultValue=\"program\">\n  <TabsList>\n    <TabsTrigger value=\"program\">Program</TabsTrigger>\n    <TabsTrigger value=\"log\">Log</TabsTrigger>\n  </TabsList>\n  <TabsContent value=\"program\">...</TabsContent>\n  <TabsContent value=\"log\">...</TabsContent>\n</Tabs>",
+    "notes": [
+      "Set variant=\"boxed\" on Tabs to get the segmented style. The list and triggers pick it up automatically.",
+      "The tab list scrolls sideways when there are more tabs than fit on a phone."
+    ]
+  },
+  {
+    "name": "alert",
+    "title": "Alert",
+    "category": "Feedback",
+    "description": "An inline callout with an icon, title and description. Default, success, warning and destructive variants each carry a colored left edge.",
+    "dependencies": [
+      "class-variance-authority"
+    ],
+    "examples": [
+      {
+        "name": "alert-demo"
+      },
+      {
+        "name": "alert-variants",
+        "title": "Variants"
+      }
+    ],
+    "usage": "<Alert variant=\"warning\">\n  <TriangleAlert />\n  <AlertTitle>Low fuel</AlertTitle>\n  <AlertDescription>Drop coal in the turtle.</AlertDescription>\n</Alert>"
+  },
+  {
+    "name": "empty",
+    "title": "Empty",
+    "category": "Feedback",
+    "description": "An empty state with an icon in a grid-patterned square, a display title that ends in an orange period, a short description and actions.",
+    "dependencies": [
+      "class-variance-authority"
+    ],
+    "examples": [
+      {
+        "name": "empty-demo"
+      }
+    ],
+    "usage": "<Empty>\n  <EmptyHeader>\n    <EmptyMedia>\n      <Bot />\n    </EmptyMedia>\n    <EmptyTitle>No turtles yet</EmptyTitle>\n    <EmptyDescription>Pair one to see it here.</EmptyDescription>\n  </EmptyHeader>\n  <EmptyContent>\n    <Button>Pair a turtle</Button>\n  </EmptyContent>\n</Empty>",
+    "notes": [
+      "EmptyTitle adds the orange period itself, so write the title without one."
+    ]
+  },
+  {
+    "name": "progress",
+    "title": "Progress",
+    "category": "Feedback",
+    "description": "A thin orange bar on a dark 2px to 6px track, modeled on the turtle fuel gauge.",
+    "dependencies": [
+      "radix-ui"
+    ],
+    "examples": [
+      {
+        "name": "progress-demo"
+      },
+      {
+        "name": "progress-labeled",
+        "title": "Labeled with a percentage"
+      }
+    ],
+    "usage": "<Progress value={66} aria-label=\"Fuel level\" />",
+    "notes": [
+      "Use size=\"sm\", \"default\" or \"lg\" for a 2px, 4px or 6px track. Pass indicatorClassName to recolor the bar, for example bg-destructive when a value is low."
+    ]
+  },
+  {
+    "name": "skeleton",
+    "title": "Skeleton",
+    "category": "Feedback",
+    "description": "A pulsing placeholder block to hold space while content loads.",
+    "examples": [
+      {
+        "name": "skeleton-demo"
+      }
+    ],
+    "usage": "<Skeleton className=\"h-4 w-40\" />"
+  },
+  {
+    "name": "sonner",
+    "title": "Sonner",
+    "category": "Feedback",
+    "description": "Toast notifications from the sonner package, dressed in Lantern colors with a hard offset shadow and lucide status icons.",
+    "dependencies": [
+      "sonner",
+      "lucide-react"
+    ],
+    "examples": [
+      {
+        "name": "sonner-demo"
+      }
+    ],
+    "usage": "toast.success(\"Site published\", { description: \"turtle.farm is live.\" })",
+    "notes": [
+      "Mount <Toaster /> once in your root layout, then call toast() from any client component. The toaster is always dark, so it does not need next-themes."
+    ]
+  },
+  {
+    "name": "spinner",
+    "title": "Spinner",
+    "category": "Feedback",
+    "description": "A spinning orange loader, plus a block spinner that pulses three squares like a terminal waiting on a reply.",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "examples": [
+      {
+        "name": "spinner-demo"
+      },
+      {
+        "name": "spinner-button",
+        "title": "In a button"
+      }
+    ],
+    "usage": "<Spinner />",
+    "notes": [
+      "Both spinners announce themselves with role=\"status\" and the label Loading. Inside a button that already says what is happening, pass aria-hidden and clear the role."
+    ]
+  }
+]

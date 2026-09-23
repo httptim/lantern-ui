@@ -1,0 +1,6 @@
+{ "name": "progress", "title": "Progress", "category": "Feedback",
+  "description": "A thin orange bar on a dark 2px to 6px track, modeled on the turtle fuel gauge.",
+  "dependencies": ["radix-ui"],
+  "examples": [{ "name": "progress-demo" }, { "name": "progress-labeled", "title": "Labeled with a percentage" }],
+  "usage": "<Progress value={66} aria-label=\"Fuel level\" />",
+  "notes": ["Use size=\"sm\", \"default\" or \"lg\" for a 2px, 4px or 6px track. Pass indicatorClassName to recolor the bar, for example bg-destructive when a value is low."] }

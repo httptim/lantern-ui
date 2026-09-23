@@ -1,0 +1,6 @@
+{ "name": "slider", "title": "Slider", "category": "Forms",
+  "description": "Pick a number or a range by dragging square thumbs along a track, or with the arrow keys.",
+  "dependencies": ["radix-ui"],
+  "examples": [{ "name": "slider-demo" }, { "name": "slider-range", "title": "Range" }],
+  "usage": "<Slider defaultValue={[8]} min={2} max={16} step={1} />",
+  "notes": ["Pass two values to get a range with two thumbs. Give the slider an aria-label or aria-labelledby."] }

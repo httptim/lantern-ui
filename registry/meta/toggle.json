@@ -1,0 +1,5 @@
+{ "name": "toggle", "title": "Toggle", "category": "Forms",
+  "description": "A button that stays pressed, for switching a single tool or view on and off.",
+  "dependencies": ["radix-ui", "class-variance-authority"],
+  "examples": [{ "name": "toggle-demo" }, { "name": "toggle-outline", "title": "Outline and sizes" }, { "name": "toggle-text", "title": "With text" }],
+  "usage": "<Toggle aria-label=\"Bookmark site\">\n  <BookmarkIcon />\n</Toggle>" }

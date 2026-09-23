@@ -1,0 +1,914 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "lantern",
+  "homepage": "https://lantern-ui-kit.vercel.app",
+  "items": [
+    {
+      "name": "lantern-theme",
+      "type": "registry:theme",
+      "title": "Lantern theme",
+      "description": "Lantern colors, fonts, block shadows, the grid pattern and the pulse and blink animations.",
+      "cssVars": {
+        "theme": {
+          "font-sans": "var(--font-dm-sans), \"DM Sans\", ui-sans-serif, system-ui, sans-serif",
+          "font-display": "var(--font-space-grotesk), \"Space Grotesk\", ui-sans-serif, sans-serif",
+          "shadow-block": "12px 14px 0 var(--shadow-block)",
+          "shadow-block-sm": "6px 7px 0 var(--shadow-block)"
+        },
+        "light": {
+          "background": "#111614",
+          "foreground": "#eeeade",
+          "card": "#1a211e",
+          "card-foreground": "#eeeade",
+          "popover": "#161d1a",
+          "popover-foreground": "#eeeade",
+          "primary": "#f5a665",
+          "primary-foreground": "#1b241b",
+          "secondary": "#202823",
+          "secondary-foreground": "#eeeade",
+          "muted": "#1a211e",
+          "muted-foreground": "#96a399",
+          "accent": "#263b30",
+          "accent-foreground": "#eeeade",
+          "destructive": "#e0715f",
+          "destructive-foreground": "#1b241b",
+          "success": "#9bba86",
+          "success-foreground": "#111614",
+          "warning": "#e8c98a",
+          "warning-foreground": "#1b241b",
+          "info": "#8fb3c9",
+          "border": "#303b34",
+          "input": "#495347",
+          "ring": "#f5a665",
+          "terminal": "#101b17",
+          "terminal-bar": "#354832",
+          "terminal-border": "#687357",
+          "terminal-foreground": "#c6d4b8",
+          "shadow-block": "#1e271c",
+          "grid-line": "rgba(174, 196, 165, 0.05)",
+          "radius": "0.3125rem"
+        },
+        "dark": {
+          "background": "#111614",
+          "foreground": "#eeeade",
+          "card": "#1a211e",
+          "card-foreground": "#eeeade",
+          "popover": "#161d1a",
+          "popover-foreground": "#eeeade",
+          "primary": "#f5a665",
+          "primary-foreground": "#1b241b",
+          "secondary": "#202823",
+          "secondary-foreground": "#eeeade",
+          "muted": "#1a211e",
+          "muted-foreground": "#96a399",
+          "accent": "#263b30",
+          "accent-foreground": "#eeeade",
+          "destructive": "#e0715f",
+          "destructive-foreground": "#1b241b",
+          "success": "#9bba86",
+          "success-foreground": "#111614",
+          "warning": "#e8c98a",
+          "warning-foreground": "#1b241b",
+          "info": "#8fb3c9",
+          "border": "#303b34",
+          "input": "#495347",
+          "ring": "#f5a665",
+          "terminal": "#101b17",
+          "terminal-bar": "#354832",
+          "terminal-border": "#687357",
+          "terminal-foreground": "#c6d4b8",
+          "shadow-block": "#1e271c",
+          "grid-line": "rgba(174, 196, 165, 0.05)",
+          "radius": "0.3125rem"
+        }
+      },
+      "css": {
+        "@utility bg-grid": {
+          "background-image": "linear-gradient(var(--grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--grid-line) 1px, transparent 1px)",
+          "background-size": "20px 20px"
+        },
+        "@keyframes lantern-pulse": {
+          "50%": {
+            "opacity": "0.35"
+          }
+        },
+        "@keyframes lantern-blink": {
+          "50%": {
+            "opacity": "0"
+          }
+        },
+        "@utility animate-lantern-pulse": {
+          "animation": "lantern-pulse 2.4s ease-in-out infinite"
+        },
+        "@utility animate-lantern-blink": {
+          "animation": "lantern-blink 1.1s steps(1) infinite"
+        }
+      }
+    },
+    {
+      "name": "eyebrow",
+      "type": "registry:ui",
+      "title": "Eyebrow",
+      "description": "The mono uppercase label that sits above Lantern headings.",
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json",
+        "https://lantern-ui-kit.vercel.app/r/status-dot.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/eyebrow.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "navbar",
+      "type": "registry:ui",
+      "title": "Navbar",
+      "description": "The Lantern site header: diamond mark, name and outlined tag, nav links and a bordered call to action. On phones the links move into a sheet behind a menu button.",
+      "dependencies": [
+        "radix-ui",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json",
+        "https://lantern-ui-kit.vercel.app/r/button.json",
+        "https://lantern-ui-kit.vercel.app/r/sheet.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/navbar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "stat",
+      "type": "registry:ui",
+      "title": "Stat",
+      "description": "The numbers strip from the Lantern site: large orange figures with a muted caption, split by dividers and stacked on mobile.",
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/stat.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "status-dot",
+      "type": "registry:ui",
+      "title": "Status Dot",
+      "description": "A small glowing dot for online, running, error and offline states. Pulses by default.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/status-dot.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "terminal",
+      "type": "registry:ui",
+      "title": "Terminal",
+      "description": "The in-game terminal window from the Lantern hero: title bar, address line, prompt lines, output and a blinking cursor.",
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/terminal.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "Orange primary actions and quiet outlined secondaries, with sizes, icons and link rendering.",
+      "dependencies": [
+        "radix-ui",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "title": "Checkbox",
+      "description": "A square toggle for yes or no choices, with checked, indeterminate and disabled states.",
+      "dependencies": [
+        "radix-ui",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/checkbox.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "field",
+      "type": "registry:ui",
+      "title": "Field",
+      "description": "Building blocks for accessible forms: labels, descriptions, errors, fieldsets and legends in vertical, horizontal or responsive layouts.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json",
+        "https://lantern-ui-kit.vercel.app/r/label.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/field.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "title": "Input",
+      "description": "A single-line text field for text, email, passwords and files, with invalid and disabled states.",
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-group",
+      "type": "registry:ui",
+      "title": "Input Group",
+      "description": "An input or textarea with icons, text prefixes like hub://, and inline buttons attached inside one border.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json",
+        "https://lantern-ui-kit.vercel.app/r/button.json",
+        "https://lantern-ui-kit.vercel.app/r/input.json",
+        "https://lantern-ui-kit.vercel.app/r/textarea.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/input-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-otp",
+      "type": "registry:ui",
+      "title": "Input OTP",
+      "description": "A row of single-character slots for pairing codes and one-time passwords, with paste support.",
+      "dependencies": [
+        "input-otp",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/input-otp.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "label",
+      "type": "registry:ui",
+      "title": "Label",
+      "description": "An accessible label for form controls.",
+      "dependencies": [
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/label.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "radio-group",
+      "type": "registry:ui",
+      "title": "Radio Group",
+      "description": "A set of options where exactly one can be picked, navigable with the arrow keys.",
+      "dependencies": [
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/radio-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "type": "registry:ui",
+      "title": "Select",
+      "description": "A dropdown for picking one value from a list, with groups, labels, icons and full keyboard support.",
+      "dependencies": [
+        "radix-ui",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/select.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "slider",
+      "type": "registry:ui",
+      "title": "Slider",
+      "description": "Pick a number or a range by dragging square thumbs along a track, or with the arrow keys.",
+      "dependencies": [
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/slider.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "title": "Switch",
+      "description": "An on and off control for settings that take effect right away.",
+      "dependencies": [
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/switch.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "title": "Textarea",
+      "description": "A multi-line text field that grows with its content, with invalid and disabled states.",
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/textarea.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "toggle",
+      "type": "registry:ui",
+      "title": "Toggle",
+      "description": "A button that stays pressed, for switching a single tool or view on and off.",
+      "dependencies": [
+        "radix-ui",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/toggle.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "toggle-group",
+      "type": "registry:ui",
+      "title": "Toggle Group",
+      "description": "A row of toggles joined together, allowing one or many to be pressed.",
+      "dependencies": [
+        "radix-ui",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json",
+        "https://lantern-ui-kit.vercel.app/r/toggle.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/toggle-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "accordion",
+      "type": "registry:ui",
+      "title": "Accordion",
+      "description": "Stacked questions that open one panel at a time, with a rotating chevron and orange open state.",
+      "dependencies": [
+        "radix-ui",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/accordion.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "avatar",
+      "type": "registry:ui",
+      "title": "Avatar",
+      "description": "A round player portrait with an image and mono initials as the fallback. Group several into an overlapping stack.",
+      "dependencies": [
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/avatar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "Badge",
+      "description": "Small mono labels, including the square outlined tag used for HUB and DEV.",
+      "dependencies": [
+        "radix-ui",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/badge.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "title": "Card",
+      "description": "A panel with header, content and footer slots, plus the grid-patterned art banner from the Lantern directory.",
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "kbd",
+      "type": "registry:ui",
+      "title": "Kbd",
+      "description": "Mono key caps for keyboard shortcuts. KbdGroup lines several keys up with even spacing.",
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/kbd.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "separator",
+      "type": "registry:ui",
+      "title": "Separator",
+      "description": "A one-pixel rule in the border color, horizontal or vertical.",
+      "dependencies": [
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/separator.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "table",
+      "type": "registry:ui",
+      "title": "Table",
+      "description": "A plain, responsive table with mono uppercase column heads, hover rows, a footer and a caption. Scrolls sideways on narrow screens.",
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/table.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert-dialog",
+      "type": "registry:ui",
+      "title": "Alert Dialog",
+      "description": "A modal that interrupts to confirm an important action. It does not close on outside click, so the reader has to choose.",
+      "dependencies": [
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json",
+        "https://lantern-ui-kit.vercel.app/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/alert-dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui",
+      "title": "Dialog",
+      "description": "A modal window over a dimmed backdrop, for short forms and focused reading. Focus is trapped inside and Escape closes it.",
+      "dependencies": [
+        "radix-ui",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu",
+      "type": "registry:ui",
+      "title": "Dropdown Menu",
+      "description": "A menu of actions opened from a button, with labels, separators, shortcuts, checkbox and radio items and submenus.",
+      "dependencies": [
+        "radix-ui",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/dropdown-menu.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "hover-card",
+      "type": "registry:ui",
+      "title": "Hover Card",
+      "description": "A preview card that opens when a pointer rests on a link, such as a creator profile behind a username.",
+      "dependencies": [
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/hover-card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "popover",
+      "type": "registry:ui",
+      "title": "Popover",
+      "description": "A small floating panel anchored to a trigger, for quick settings and short forms.",
+      "dependencies": [
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/popover.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sheet",
+      "type": "registry:ui",
+      "title": "Sheet",
+      "description": "A dialog that slides in from an edge of the screen, for settings panels and mobile navigation.",
+      "dependencies": [
+        "radix-ui",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/sheet.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "title": "Tooltip",
+      "description": "A dark label in small mono type that appears on hover or keyboard focus. Good for naming icon buttons.",
+      "dependencies": [
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/tooltip.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "breadcrumb",
+      "type": "registry:ui",
+      "title": "Breadcrumb",
+      "description": "Shows where a page sits in the site, in small mono uppercase with chevron separators.",
+      "dependencies": [
+        "radix-ui",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/breadcrumb.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "pagination",
+      "type": "registry:ui",
+      "title": "Pagination",
+      "description": "Page links with previous and next controls. The current page gets an orange outline.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json",
+        "https://lantern-ui-kit.vercel.app/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/pagination.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui",
+      "title": "Tabs",
+      "description": "Mono uppercase tabs with an orange underline on the active tab, plus a boxed variant for switching between panels.",
+      "dependencies": [
+        "radix-ui",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/tabs.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert",
+      "type": "registry:ui",
+      "title": "Alert",
+      "description": "An inline callout with an icon, title and description. Default, success, warning and destructive variants each carry a colored left edge.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/alert.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "empty",
+      "type": "registry:ui",
+      "title": "Empty",
+      "description": "An empty state with an icon in a grid-patterned square, a display title that ends in an orange period, a short description and actions.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/empty.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "progress",
+      "type": "registry:ui",
+      "title": "Progress",
+      "description": "A thin orange bar on a dark 2px to 6px track, modeled on the turtle fuel gauge.",
+      "dependencies": [
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/progress.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:ui",
+      "title": "Skeleton",
+      "description": "A pulsing placeholder block to hold space while content loads.",
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/skeleton.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sonner",
+      "type": "registry:ui",
+      "title": "Sonner",
+      "description": "Toast notifications from the sonner package, dressed in Lantern colors with a hard offset shadow and lucide status icons.",
+      "dependencies": [
+        "sonner",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/sonner.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "spinner",
+      "type": "registry:ui",
+      "title": "Spinner",
+      "description": "A spinning orange loader, plus a block spinner that pulses three squares like a terminal waiting on a reply.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/spinner.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
+}

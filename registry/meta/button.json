@@ -1,0 +1,5 @@
+{ "name": "button", "title": "Button", "category": "Forms",
+  "description": "Orange primary actions and quiet outlined secondaries, with sizes, icons and link rendering.",
+  "dependencies": ["radix-ui", "class-variance-authority"],
+  "examples": [{ "name": "button-demo" }, { "name": "button-variants", "title": "Variants" }, { "name": "button-sizes", "title": "Sizes" }, { "name": "button-states", "title": "Loading, disabled and as a link" }],
+  "usage": "<Button variant=\"secondary\">Explore the network</Button>" }

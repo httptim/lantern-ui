@@ -1,0 +1,4 @@
+{ "name": "card", "title": "Card", "category": "Display",
+  "description": "A panel with header, content and footer slots, plus the grid-patterned art banner from the Lantern directory.",
+  "examples": [{ "name": "card-demo" }, { "name": "card-art", "title": "Directory card with art" }],
+  "usage": "<Card>\n  <CardHeader>\n    <CardTitle>Title</CardTitle>\n    <CardDescription>Description</CardDescription>\n  </CardHeader>\n  <CardContent>Content</CardContent>\n</Card>" }

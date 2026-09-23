@@ -1,0 +1,7 @@
+{ "name": "input-group", "title": "Input Group", "category": "Forms",
+  "description": "An input or textarea with icons, text prefixes like hub://, and inline buttons attached inside one border.",
+  "dependencies": ["class-variance-authority"],
+  "registryDependencies": ["button", "input", "textarea"],
+  "examples": [{ "name": "input-group-demo" }, { "name": "input-group-affixes", "title": "Prefix and suffix" }, { "name": "input-group-button", "title": "With buttons" }],
+  "usage": "<InputGroup>\n  <InputGroupAddon>\n    <InputGroupText>hub://</InputGroupText>\n  </InputGroupAddon>\n  <InputGroupInput placeholder=\"my-base\" />\n</InputGroup>",
+  "notes": ["Addons take align=\"inline-start\", \"inline-end\", \"block-start\" or \"block-end\". Clicking an addon focuses the input."] }

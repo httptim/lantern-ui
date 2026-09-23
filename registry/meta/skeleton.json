@@ -1,0 +1,4 @@
+{ "name": "skeleton", "title": "Skeleton", "category": "Feedback",
+  "description": "A pulsing placeholder block to hold space while content loads.",
+  "examples": [{ "name": "skeleton-demo" }],
+  "usage": "<Skeleton className=\"h-4 w-40\" />" }

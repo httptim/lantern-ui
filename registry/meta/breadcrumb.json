@@ -1,0 +1,23 @@
+{
+  "name": "breadcrumb",
+  "title": "Breadcrumb",
+  "category": "Navigation",
+  "description": "Shows where a page sits in the site, in small mono uppercase with chevron separators.",
+  "dependencies": [
+    "radix-ui",
+    "lucide-react"
+  ],
+  "examples": [
+    {
+      "name": "breadcrumb-demo"
+    },
+    {
+      "name": "breadcrumb-dropdown",
+      "title": "Collapsed with a dropdown"
+    }
+  ],
+  "usage": "<Breadcrumb>\n  <BreadcrumbList>\n    <BreadcrumbItem>\n      <BreadcrumbLink href=\"/\">Directory</BreadcrumbLink>\n    </BreadcrumbItem>\n    <BreadcrumbSeparator />\n    <BreadcrumbItem>\n      <BreadcrumbPage>Guestbook</BreadcrumbPage>\n    </BreadcrumbItem>\n  </BreadcrumbList>\n</Breadcrumb>",
+  "notes": [
+    "The collapsed example uses the Dropdown Menu component, which you install separately."
+  ]
+}

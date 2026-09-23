@@ -1,0 +1,4 @@
+{ "name": "kbd", "title": "Kbd", "category": "Display",
+  "description": "Mono key caps for keyboard shortcuts. KbdGroup lines several keys up with even spacing.",
+  "examples": [{ "name": "kbd-demo" }],
+  "usage": "<KbdGroup>\n  <Kbd>Ctrl</Kbd>\n  <Kbd>K</Kbd>\n</KbdGroup>" }

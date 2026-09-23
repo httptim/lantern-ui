@@ -1,0 +1,5 @@
+{ "name": "switch", "title": "Switch", "category": "Forms",
+  "description": "An on and off control for settings that take effect right away.",
+  "dependencies": ["radix-ui"],
+  "examples": [{ "name": "switch-demo" }, { "name": "switch-settings", "title": "Settings list" }],
+  "usage": "<Switch id=\"online\" defaultChecked />" }

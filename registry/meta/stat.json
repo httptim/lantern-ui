@@ -1,0 +1,5 @@
+{ "name": "stat", "title": "Stat", "category": "Lantern",
+  "description": "The numbers strip from the Lantern site: large orange figures with a muted caption, split by dividers and stacked on mobile.",
+  "examples": [{ "name": "stat-demo" }],
+  "usage": "<StatGroup>\n  <Stat>\n    <StatLabel>sites on the network</StatLabel>\n    <StatValue>128</StatValue>\n  </Stat>\n</StatGroup>",
+  "notes": ["StatGroup renders a description list. Put StatLabel before StatValue in the markup so screen readers read the term first; the value is shown on top visually."] }

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "badge",
+  "title": "Badge",
+  "description": "Small mono labels, including the square outlined tag used for HUB and DEV.",
+  "dependencies": [
+    "radix-ui",
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "utils",
+    "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+  ],
+  "files": [
+    {
+      "path": "registry/lantern/ui/badge.tsx",
+      "content": "import * as React from \"react\";\nimport { cva, type VariantProps } from \"class-variance-authority\";\nimport { Slot } from \"radix-ui\";\n\nimport { cn } from \"@/lib/utils\";\n\nconst badgeVariants = cva(\n  \"inline-flex w-fit shrink-0 items-center justify-center gap-1.5 overflow-hidden whitespace-nowrap border font-mono text-[10px] leading-none tracking-[0.12em] uppercase transition-colors [&>svg]:pointer-events-none [&>svg]:size-3\",\n  {\n    variants: {\n      variant: {\n        default: \"rounded-sm border-transparent bg-primary px-2 py-1 text-primary-foreground\",\n        outline: \"rounded-none border-[#647160] px-1.5 py-1 text-[#b8c2b2]\",\n        secondary: \"rounded-sm border-transparent bg-secondary px-2 py-1 text-secondary-foreground\",\n        success: \"rounded-sm border-success/40 bg-success/10 px-2 py-1 text-success\",\n        warning: \"rounded-sm border-warning/40 bg-warning/10 px-2 py-1 text-warning\",\n        destructive: \"rounded-sm border-destructive/40 bg-destructive/10 px-2 py-1 text-destructive\",\n      },\n    },\n    defaultVariants: { variant: \"default\" },\n  },\n);\n\nfunction Badge({\n  className,\n  variant,\n  asChild = false,\n  ...props\n}: React.ComponentProps<\"span\"> & VariantProps<typeof badgeVariants> & { asChild?: boolean }) {\n  const Comp = asChild ? Slot.Root : \"span\";\n  return <Comp data-slot=\"badge\" className={cn(badgeVariants({ variant }), className)} {...props} />;\n}\n\nexport { Badge, badgeVariants };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

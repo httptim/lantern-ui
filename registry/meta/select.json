@@ -1,0 +1,5 @@
+{ "name": "select", "title": "Select", "category": "Forms",
+  "description": "A dropdown for picking one value from a list, with groups, labels, icons and full keyboard support.",
+  "dependencies": ["radix-ui", "lucide-react"],
+  "examples": [{ "name": "select-demo" }, { "name": "select-grouped", "title": "Groups and icons" }, { "name": "select-states", "title": "Invalid, disabled and small" }],
+  "usage": "<Select>\n  <SelectTrigger className=\"w-48\">\n    <SelectValue placeholder=\"Pick a theme\" />\n  </SelectTrigger>\n  <SelectContent>\n    <SelectItem value=\"lantern\">Lantern</SelectItem>\n    <SelectItem value=\"moss\">Moss</SelectItem>\n  </SelectContent>\n</Select>" }

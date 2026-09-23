@@ -1,0 +1,21 @@
+{
+  "name": "pagination",
+  "title": "Pagination",
+  "category": "Navigation",
+  "description": "Page links with previous and next controls. The current page gets an orange outline.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "examples": [
+    {
+      "name": "pagination-demo"
+    }
+  ],
+  "usage": "<Pagination>\n  <PaginationContent>\n    <PaginationItem><PaginationPrevious href=\"#\" /></PaginationItem>\n    <PaginationItem><PaginationLink href=\"#\" isActive>2</PaginationLink></PaginationItem>\n    <PaginationItem><PaginationNext href=\"#\" /></PaginationItem>\n  </PaginationContent>\n</Pagination>",
+  "notes": [
+    "The Prev and Next words hide on phones to leave room for the page numbers."
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "eyebrow",
+  "title": "Eyebrow",
+  "description": "The mono uppercase label that sits above Lantern headings.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "https://lantern-ui-kit.vercel.app/r/lantern-theme.json",
+    "https://lantern-ui-kit.vercel.app/r/status-dot.json"
+  ],
+  "files": [
+    {
+      "path": "registry/lantern/ui/eyebrow.tsx",
+      "content": "import * as React from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\n/** The small mono uppercase label that sits above Lantern headings. */\nfunction Eyebrow({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"eyebrow\"\n      className={cn(\n        \"flex items-center gap-2.5 font-mono text-[10px] leading-loose font-semibold tracking-[0.2em] text-success uppercase\",\n        className,\n      )}\n      {...props}\n    />\n  );\n}\n\nexport { Eyebrow };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

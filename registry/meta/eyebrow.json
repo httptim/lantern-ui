@@ -1,0 +1,5 @@
+{ "name": "eyebrow", "title": "Eyebrow", "category": "Lantern",
+  "description": "The mono uppercase label that sits above Lantern headings.",
+  "registryDependencies": ["status-dot"],
+  "examples": [{ "name": "eyebrow-demo" }],
+  "usage": "<Eyebrow>Get started</Eyebrow>" }

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "stat",
+  "title": "Stat",
+  "description": "The numbers strip from the Lantern site: large orange figures with a muted caption, split by dividers and stacked on mobile.",
+  "dependencies": [],
+  "registryDependencies": [
+    "utils",
+    "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+  ],
+  "files": [
+    {
+      "path": "registry/lantern/ui/stat.tsx",
+      "content": "import * as React from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\n/** The bordered numbers strip from the Lantern site. Columns stack on small screens. */\nfunction StatGroup({ className, ...props }: React.ComponentProps<\"dl\">) {\n  return (\n    <dl\n      data-slot=\"stat-group\"\n      className={cn(\n        \"grid grid-cols-1 divide-y divide-border rounded-lg border bg-card sm:auto-cols-fr sm:grid-flow-col sm:grid-cols-none sm:divide-x sm:divide-y-0\",\n        className,\n      )}\n      {...props}\n    />\n  );\n}\n\nfunction Stat({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div data-slot=\"stat\" className={cn(\"flex flex-col-reverse gap-1.5 px-6 py-5\", className)} {...props} />\n  );\n}\n\nfunction StatValue({ className, ...props }: React.ComponentProps<\"dd\">) {\n  return (\n    <dd\n      data-slot=\"stat-value\"\n      className={cn(\"font-display text-4xl leading-none font-medium tracking-tight text-primary tabular-nums\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction StatLabel({ className, ...props }: React.ComponentProps<\"dt\">) {\n  return <dt data-slot=\"stat-label\" className={cn(\"text-sm text-muted-foreground\", className)} {...props} />;\n}\n\nexport { StatGroup, Stat, StatValue, StatLabel };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

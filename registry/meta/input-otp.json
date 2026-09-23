@@ -1,0 +1,6 @@
+{ "name": "input-otp", "title": "Input OTP", "category": "Forms",
+  "description": "A row of single-character slots for pairing codes and one-time passwords, with paste support.",
+  "dependencies": ["input-otp", "lucide-react"],
+  "examples": [{ "name": "input-otp-demo" }, { "name": "input-otp-separator", "title": "With separator" }],
+  "usage": "<InputOTP maxLength={6}>\n  <InputOTPGroup>\n    <InputOTPSlot index={0} />\n    <InputOTPSlot index={1} />\n    <InputOTPSlot index={2} />\n  </InputOTPGroup>\n  <InputOTPSeparator />\n  <InputOTPGroup>\n    <InputOTPSlot index={3} />\n    <InputOTPSlot index={4} />\n    <InputOTPSlot index={5} />\n  </InputOTPGroup>\n</InputOTP>",
+  "notes": ["Built on the input-otp package by Guilherme Rodz. Use the pattern prop to limit which characters are accepted."] }

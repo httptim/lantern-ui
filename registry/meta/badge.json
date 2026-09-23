@@ -1,0 +1,5 @@
+{ "name": "badge", "title": "Badge", "category": "Display",
+  "description": "Small mono labels, including the square outlined tag used for HUB and DEV.",
+  "dependencies": ["radix-ui", "class-variance-authority"],
+  "examples": [{ "name": "badge-demo" }],
+  "usage": "<Badge variant=\"outline\">Hub</Badge>" }

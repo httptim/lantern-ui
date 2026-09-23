@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toggle-group",
+  "title": "Toggle Group",
+  "description": "A row of toggles joined together, allowing one or many to be pressed.",
+  "dependencies": [
+    "radix-ui",
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "utils",
+    "https://lantern-ui-kit.vercel.app/r/lantern-theme.json",
+    "https://lantern-ui-kit.vercel.app/r/toggle.json"
+  ],
+  "files": [
+    {
+      "path": "registry/lantern/ui/toggle-group.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { type VariantProps } from \"class-variance-authority\";\nimport { ToggleGroup as ToggleGroupPrimitive } from \"radix-ui\";\n\nimport { cn } from \"@/lib/utils\";\nimport { toggleVariants } from \"@/registry/lantern/ui/toggle\";\n\nconst ToggleGroupContext = React.createContext<VariantProps<typeof toggleVariants>>({\n  size: \"default\",\n  variant: \"default\",\n});\n\nfunction ToggleGroup({\n  className,\n  variant,\n  size,\n  children,\n  ...props\n}: React.ComponentProps<typeof ToggleGroupPrimitive.Root> & VariantProps<typeof toggleVariants>) {\n  return (\n    <ToggleGroupPrimitive.Root\n      data-slot=\"toggle-group\"\n      data-variant={variant ?? \"default\"}\n      data-size={size ?? \"default\"}\n      className={cn(\n        \"group/toggle-group flex w-fit items-center rounded-md data-[variant=default]:gap-1 data-[variant=outline]:shadow-[3px_3px_0_var(--shadow-block)]\",\n        className,\n      )}\n      {...props}\n    >\n      <ToggleGroupContext.Provider value={{ variant, size }}>{children}</ToggleGroupContext.Provider>\n    </ToggleGroupPrimitive.Root>\n  );\n}\n\nfunction ToggleGroupItem({\n  className,\n  children,\n  variant,\n  size,\n  ...props\n}: React.ComponentProps<typeof ToggleGroupPrimitive.Item> & VariantProps<typeof toggleVariants>) {\n  const context = React.useContext(ToggleGroupContext);\n\n  return (\n    <ToggleGroupPrimitive.Item\n      data-slot=\"toggle-group-item\"\n      data-variant={context.variant || variant || \"default\"}\n      data-size={context.size || size || \"default\"}\n      className={cn(\n        toggleVariants({ variant: context.variant || variant, size: context.size || size }),\n        \"min-w-0 flex-1 shrink-0 shadow-none focus:z-10 focus-visible:z-10\",\n        \"data-[variant=outline]:rounded-none data-[variant=outline]:focus-visible:ring-offset-0 data-[variant=outline]:first:rounded-l-md data-[variant=outline]:last:rounded-r-md\",\n        \"data-[variant=outline]:border-l-0 data-[variant=outline]:first:border-l data-[variant=outline]:data-[state=on]:border-input\",\n        className,\n      )}\n      {...props}\n    >\n      {children}\n    </ToggleGroupPrimitive.Item>\n  );\n}\n\nexport { ToggleGroup, ToggleGroupItem };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

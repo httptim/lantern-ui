@@ -1,0 +1,18 @@
+{
+  "name": "hover-card",
+  "title": "Hover Card",
+  "category": "Overlays",
+  "description": "A preview card that opens when a pointer rests on a link, such as a creator profile behind a username.",
+  "dependencies": [
+    "radix-ui"
+  ],
+  "examples": [
+    {
+      "name": "hover-card-demo"
+    }
+  ],
+  "usage": "<HoverCard>\n  <HoverCardTrigger asChild>\n    <a href=\"#\">@turtlewright</a>\n  </HoverCardTrigger>\n  <HoverCardContent>Profile preview</HoverCardContent>\n</HoverCard>",
+  "notes": [
+    "Hover cards are for sighted pointer users. The trigger link should still lead somewhere useful on its own."
+  ]
+}

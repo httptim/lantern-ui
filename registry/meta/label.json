@@ -1,0 +1,5 @@
+{ "name": "label", "title": "Label", "category": "Forms",
+  "description": "An accessible label for form controls.",
+  "dependencies": ["radix-ui"],
+  "examples": [{ "name": "label-demo" }],
+  "usage": "<Label htmlFor=\"email\">Email</Label>" }

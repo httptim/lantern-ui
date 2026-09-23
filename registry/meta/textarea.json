@@ -1,0 +1,4 @@
+{ "name": "textarea", "title": "Textarea", "category": "Forms",
+  "description": "A multi-line text field that grows with its content, with invalid and disabled states.",
+  "examples": [{ "name": "textarea-demo" }, { "name": "textarea-states", "title": "Invalid and disabled" }],
+  "usage": "<Textarea placeholder=\"Sign the guestbook\" />" }

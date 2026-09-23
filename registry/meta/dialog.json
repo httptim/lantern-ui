@@ -1,0 +1,24 @@
+{
+  "name": "dialog",
+  "title": "Dialog",
+  "category": "Overlays",
+  "description": "A modal window over a dimmed backdrop, for short forms and focused reading. Focus is trapped inside and Escape closes it.",
+  "dependencies": [
+    "radix-ui",
+    "lucide-react"
+  ],
+  "examples": [
+    {
+      "name": "dialog-demo"
+    },
+    {
+      "name": "dialog-scrollable",
+      "title": "Scrollable content"
+    }
+  ],
+  "usage": "<Dialog>\n  <DialogTrigger asChild>\n    <Button>Open</Button>\n  </DialogTrigger>\n  <DialogContent>\n    <DialogHeader>\n      <DialogTitle>Edit profile<span className=\"text-primary\">.</span></DialogTitle>\n      <DialogDescription>Change how you appear on the network.</DialogDescription>\n    </DialogHeader>\n  </DialogContent>\n</Dialog>",
+  "notes": [
+    "The orange period after the title is a Lantern touch you add in the title content. It is not forced by the component.",
+    "Pass showCloseButton={false} to DialogContent to hide the corner close button."
+  ]
+}

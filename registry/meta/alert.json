@@ -1,0 +1,5 @@
+{ "name": "alert", "title": "Alert", "category": "Feedback",
+  "description": "An inline callout with an icon, title and description. Default, success, warning and destructive variants each carry a colored left edge.",
+  "dependencies": ["class-variance-authority"],
+  "examples": [{ "name": "alert-demo" }, { "name": "alert-variants", "title": "Variants" }],
+  "usage": "<Alert variant=\"warning\">\n  <TriangleAlert />\n  <AlertTitle>Low fuel</AlertTitle>\n  <AlertDescription>Drop coal in the turtle.</AlertDescription>\n</Alert>" }

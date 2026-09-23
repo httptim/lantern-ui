@@ -1,0 +1,19 @@
+{
+  "name": "tooltip",
+  "title": "Tooltip",
+  "category": "Overlays",
+  "description": "A dark label in small mono type that appears on hover or keyboard focus. Good for naming icon buttons.",
+  "dependencies": [
+    "radix-ui"
+  ],
+  "examples": [
+    {
+      "name": "tooltip-demo"
+    }
+  ],
+  "usage": "<Tooltip>\n  <TooltipTrigger asChild>\n    <Button size=\"icon\" aria-label=\"Copy address\"><CopyIcon /></Button>\n  </TooltipTrigger>\n  <TooltipContent>Copy address</TooltipContent>\n</Tooltip>",
+  "notes": [
+    "Each Tooltip brings its own provider. Wrap a group in TooltipProvider to share the open delay so moving between buttons shows the next tooltip instantly.",
+    "Tooltips do not show on touch screens. Keep an aria-label on icon-only buttons."
+  ]
+}

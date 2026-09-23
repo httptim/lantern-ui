@@ -1,0 +1,5 @@
+{ "name": "avatar", "title": "Avatar", "category": "Display",
+  "description": "A round player portrait with an image and mono initials as the fallback. Group several into an overlapping stack.",
+  "dependencies": ["radix-ui"],
+  "examples": [{ "name": "avatar-demo" }, { "name": "avatar-fallback", "title": "Fallback initials" }, { "name": "avatar-group", "title": "Stacked group" }],
+  "usage": "<Avatar>\n  <AvatarImage src=\"/player.png\" alt=\"Player\" />\n  <AvatarFallback>PL</AvatarFallback>\n</Avatar>" }

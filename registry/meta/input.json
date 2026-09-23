@@ -1,0 +1,4 @@
+{ "name": "input", "title": "Input", "category": "Forms",
+  "description": "A single-line text field for text, email, passwords and files, with invalid and disabled states.",
+  "examples": [{ "name": "input-demo" }, { "name": "input-types", "title": "Types and states" }],
+  "usage": "<Input type=\"email\" placeholder=\"you@example.com\" />" }

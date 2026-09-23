@@ -1,0 +1,24 @@
+{
+  "name": "navbar",
+  "title": "Navbar",
+  "category": "Lantern",
+  "description": "The Lantern site header: diamond mark, name and outlined tag, nav links and a bordered call to action. On phones the links move into a sheet behind a menu button.",
+  "dependencies": [
+    "radix-ui",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button",
+    "sheet"
+  ],
+  "examples": [
+    {
+      "name": "navbar-demo"
+    }
+  ],
+  "usage": "<Navbar>\n  <NavbarBrand href=\"/\">\n    <NavbarMark />\n    lantern\n    <NavbarLabel>Hub</NavbarLabel>\n  </NavbarBrand>\n  <NavbarLinks>\n    <NavbarLink href=\"/directory\" active>Directory</NavbarLink>\n    <NavbarCta href=\"/publish\">Publish a hub</NavbarCta>\n  </NavbarLinks>\n  <NavbarMobile>\n    <NavbarLink href=\"/directory\" active>Directory</NavbarLink>\n    <NavbarCta href=\"/publish\">Publish a hub</NavbarCta>\n  </NavbarMobile>\n</Navbar>",
+  "notes": [
+    "NavbarBrand, NavbarLink and NavbarCta accept asChild, so you can pass a framework Link.",
+    "NavbarMobile shows below the md breakpoint. Pass it the same links as NavbarLinks. Following a link closes the sheet."
+  ]
+}

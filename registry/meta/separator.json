@@ -1,0 +1,5 @@
+{ "name": "separator", "title": "Separator", "category": "Display",
+  "description": "A one-pixel rule in the border color, horizontal or vertical.",
+  "dependencies": ["radix-ui"],
+  "examples": [{ "name": "separator-demo" }],
+  "usage": "<Separator />" }

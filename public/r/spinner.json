@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "spinner",
+  "title": "Spinner",
+  "description": "A spinning orange loader, plus a block spinner that pulses three squares like a terminal waiting on a reply.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+  ],
+  "files": [
+    {
+      "path": "registry/lantern/ui/spinner.tsx",
+      "content": "import * as React from \"react\";\nimport { Loader2Icon } from \"lucide-react\";\n\nimport { cn } from \"@/lib/utils\";\n\nfunction Spinner({ className, ...props }: React.ComponentProps<\"svg\">) {\n  return (\n    <Loader2Icon\n      data-slot=\"spinner\"\n      role=\"status\"\n      aria-label=\"Loading\"\n      className={cn(\"size-4 animate-spin text-primary\", className)}\n      {...props}\n    />\n  );\n}\n\n/** A terminal-style spinner: three blocks lighting up in turn. */\nfunction BlockSpinner({ className, ...props }: React.ComponentProps<\"span\">) {\n  return (\n    <span\n      data-slot=\"block-spinner\"\n      role=\"status\"\n      aria-label=\"Loading\"\n      className={cn(\"inline-flex items-center gap-[3px] text-primary\", className)}\n      {...props}\n    >\n      {[0, 1, 2].map((i) => (\n        <i\n          key={i}\n          aria-hidden=\"true\"\n          className=\"block size-1.5 animate-lantern-pulse bg-current\"\n          style={{ animationDuration: \"0.9s\", animationDelay: `${i * 0.15}s` }}\n        />\n      ))}\n    </span>\n  );\n}\n\nexport { Spinner, BlockSpinner };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

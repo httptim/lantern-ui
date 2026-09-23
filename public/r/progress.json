@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "progress",
+  "title": "Progress",
+  "description": "A thin orange bar on a dark 2px to 6px track, modeled on the turtle fuel gauge.",
+  "dependencies": [
+    "radix-ui"
+  ],
+  "registryDependencies": [
+    "utils",
+    "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+  ],
+  "files": [
+    {
+      "path": "registry/lantern/ui/progress.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { Progress as ProgressPrimitive } from \"radix-ui\";\n\nimport { cn } from \"@/lib/utils\";\n\nconst trackSizes = {\n  sm: \"h-0.5\",\n  default: \"h-1\",\n  lg: \"h-1.5\",\n} as const;\n\n/** A thin orange bar on a dark track, like a turtle's fuel gauge. */\nfunction Progress({\n  className,\n  value,\n  size = \"default\",\n  indicatorClassName,\n  ...props\n}: React.ComponentProps<typeof ProgressPrimitive.Root> & {\n  size?: keyof typeof trackSizes;\n  indicatorClassName?: string;\n}) {\n  return (\n    <ProgressPrimitive.Root\n      data-slot=\"progress\"\n      value={value}\n      className={cn(\"relative w-full overflow-hidden rounded-[1px] bg-[#2b352f]\", trackSizes[size], className)}\n      {...props}\n    >\n      <ProgressPrimitive.Indicator\n        data-slot=\"progress-indicator\"\n        className={cn(\"h-full w-full flex-1 bg-primary transition-transform duration-300\", indicatorClassName)}\n        style={{ transform: `translateX(-${100 - (value ?? 0)}%)` }}\n      />\n    </ProgressPrimitive.Root>\n  );\n}\n\nexport { Progress };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

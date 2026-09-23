@@ -1,0 +1,6 @@
+{ "name": "empty", "title": "Empty", "category": "Feedback",
+  "description": "An empty state with an icon in a grid-patterned square, a display title that ends in an orange period, a short description and actions.",
+  "dependencies": ["class-variance-authority"],
+  "examples": [{ "name": "empty-demo" }],
+  "usage": "<Empty>\n  <EmptyHeader>\n    <EmptyMedia>\n      <Bot />\n    </EmptyMedia>\n    <EmptyTitle>No turtles yet</EmptyTitle>\n    <EmptyDescription>Pair one to see it here.</EmptyDescription>\n  </EmptyHeader>\n  <EmptyContent>\n    <Button>Pair a turtle</Button>\n  </EmptyContent>\n</Empty>",
+  "notes": ["EmptyTitle adds the orange period itself, so write the title without one."] }

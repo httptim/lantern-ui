@@ -1,0 +1,6 @@
+{ "name": "toggle-group", "title": "Toggle Group", "category": "Forms",
+  "description": "A row of toggles joined together, allowing one or many to be pressed.",
+  "dependencies": ["radix-ui", "class-variance-authority"],
+  "registryDependencies": ["toggle"],
+  "examples": [{ "name": "toggle-group-demo" }, { "name": "toggle-group-multiple", "title": "Multiple" }],
+  "usage": "<ToggleGroup type=\"single\" variant=\"outline\" defaultValue=\"left\">\n  <ToggleGroupItem value=\"left\" aria-label=\"Align left\">\n    <AlignLeftIcon />\n  </ToggleGroupItem>\n  <ToggleGroupItem value=\"right\" aria-label=\"Align right\">\n    <AlignRightIcon />\n  </ToggleGroupItem>\n</ToggleGroup>" }

@@ -1,0 +1,5 @@
+{ "name": "status-dot", "title": "Status Dot", "category": "Lantern",
+  "description": "A small glowing dot for online, running, error and offline states. Pulses by default.",
+  "dependencies": ["class-variance-authority"],
+  "examples": [{ "name": "status-dot-demo" }],
+  "usage": "<StatusDot tone=\"online\" label=\"Online\" />" }

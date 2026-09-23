@@ -1,0 +1,6 @@
+{
+  "name": "Lantern UI",
+  "url": "https://lantern-ui-kit.vercel.app",
+  "description": "Components in the Lantern style. Copy them into your app, or add them with the shadcn CLI.",
+  "github": "https://github.com/httptim/lantern-ui"
+}
