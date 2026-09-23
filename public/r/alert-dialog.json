@@ -8,8 +8,8 @@
   ],
   "registryDependencies": [
     "utils",
-    "https://lantern-ui-kit.vercel.app/r/lantern-theme.json",
-    "https://lantern-ui-kit.vercel.app/r/button.json"
+    "https://ui.thultz.dev/r/lantern-theme.json",
+    "https://ui.thultz.dev/r/button.json"
   ],
   "files": [
     {

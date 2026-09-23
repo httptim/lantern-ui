@@ -7,7 +7,7 @@
   "files": ["bin", "README.md"],
   "engines": { "node": ">=18" },
   "keywords": ["lantern", "lantern-ui", "shadcn", "components", "react", "tailwind", "radix", "ui"],
-  "homepage": "https://lantern-ui-kit.vercel.app",
+  "homepage": "https://ui.thultz.dev",
   "repository": { "type": "git", "url": "git+https://github.com/httptim/lantern-ui.git", "directory": "cli" },
   "bugs": "https://github.com/httptim/lantern-ui/issues",
   "license": "MIT"

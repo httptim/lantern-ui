@@ -1,6 +1,6 @@
 # lanternui
 
-Add [Lantern UI](https://lantern-ui-kit.vercel.app) components to your React project. Lantern UI is the design
+Add [Lantern UI](https://ui.thultz.dev) components to your React project. Lantern UI is the design
 from lantern.thultz.dev as copy-paste components built on shadcn/ui, Radix and Tailwind CSS v4.
 
 ```sh

@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "lantern",
-  "homepage": "https://lantern-ui-kit.vercel.app",
+  "homepage": "https://ui.thultz.dev",
   "items": [
     {
       "name": "lantern-theme",
@@ -113,8 +113,8 @@
       "dependencies": [],
       "registryDependencies": [
         "utils",
-        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json",
-        "https://lantern-ui-kit.vercel.app/r/status-dot.json"
+        "https://ui.thultz.dev/r/lantern-theme.json",
+        "https://ui.thultz.dev/r/status-dot.json"
       ],
       "files": [
         {
@@ -134,9 +134,9 @@
       ],
       "registryDependencies": [
         "utils",
-        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json",
-        "https://lantern-ui-kit.vercel.app/r/button.json",
-        "https://lantern-ui-kit.vercel.app/r/sheet.json"
+        "https://ui.thultz.dev/r/lantern-theme.json",
+        "https://ui.thultz.dev/r/button.json",
+        "https://ui.thultz.dev/r/sheet.json"
       ],
       "files": [
         {
@@ -153,7 +153,7 @@
       "dependencies": [],
       "registryDependencies": [
         "utils",
-        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+        "https://ui.thultz.dev/r/lantern-theme.json"
       ],
       "files": [
         {
@@ -172,7 +172,7 @@
       ],
       "registryDependencies": [
         "utils",
-        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+        "https://ui.thultz.dev/r/lantern-theme.json"
       ],
       "files": [
         {
@@ -189,7 +189,7 @@
       "dependencies": [],
       "registryDependencies": [
         "utils",
-        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+        "https://ui.thultz.dev/r/lantern-theme.json"
       ],
       "files": [
         {
@@ -209,7 +209,7 @@
       ],
       "registryDependencies": [
         "utils",
-        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+        "https://ui.thultz.dev/r/lantern-theme.json"
       ],
       "files": [
         {
@@ -229,7 +229,7 @@
       ],
       "registryDependencies": [
         "utils",
-        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+        "https://ui.thultz.dev/r/lantern-theme.json"
       ],
       "files": [
         {
@@ -248,8 +248,8 @@
       ],
       "registryDependencies": [
         "utils",
-        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json",
-        "https://lantern-ui-kit.vercel.app/r/label.json"
+        "https://ui.thultz.dev/r/lantern-theme.json",
+        "https://ui.thultz.dev/r/label.json"
       ],
       "files": [
         {
@@ -266,7 +266,7 @@
       "dependencies": [],
       "registryDependencies": [
         "utils",
-        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+        "https://ui.thultz.dev/r/lantern-theme.json"
       ],
       "files": [
         {
@@ -285,10 +285,10 @@
       ],
       "registryDependencies": [
         "utils",
-        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json",
-        "https://lantern-ui-kit.vercel.app/r/button.json",
-        "https://lantern-ui-kit.vercel.app/r/input.json",
-        "https://lantern-ui-kit.vercel.app/r/textarea.json"
+        "https://ui.thultz.dev/r/lantern-theme.json",
+        "https://ui.thultz.dev/r/button.json",
+        "https://ui.thultz.dev/r/input.json",
+        "https://ui.thultz.dev/r/textarea.json"
       ],
       "files": [
         {
@@ -308,7 +308,7 @@
       ],
       "registryDependencies": [
         "utils",
-        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+        "https://ui.thultz.dev/r/lantern-theme.json"
       ],
       "files": [
         {
@@ -327,7 +327,7 @@
       ],
       "registryDependencies": [
         "utils",
-        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+        "https://ui.thultz.dev/r/lantern-theme.json"
       ],
       "files": [
         {
@@ -346,7 +346,7 @@
       ],
       "registryDependencies": [
         "utils",
-        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+        "https://ui.thultz.dev/r/lantern-theme.json"
       ],
       "files": [
         {
@@ -366,7 +366,7 @@
       ],
       "registryDependencies": [
         "utils",
-        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+        "https://ui.thultz.dev/r/lantern-theme.json"
       ],
       "files": [
         {
@@ -385,7 +385,7 @@
       ],
       "registryDependencies": [
         "utils",
-        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+        "https://ui.thultz.dev/r/lantern-theme.json"
       ],
       "files": [
         {
@@ -404,7 +404,7 @@
       ],
       "registryDependencies": [
         "utils",
-        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+        "https://ui.thultz.dev/r/lantern-theme.json"
       ],
       "files": [
         {
@@ -421,7 +421,7 @@
       "dependencies": [],
       "registryDependencies": [
         "utils",
-        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+        "https://ui.thultz.dev/r/lantern-theme.json"
       ],
       "files": [
         {
@@ -441,7 +441,7 @@
       ],
       "registryDependencies": [
         "utils",
-        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+        "https://ui.thultz.dev/r/lantern-theme.json"
       ],
       "files": [
         {
@@ -461,8 +461,8 @@
       ],
       "registryDependencies": [
         "utils",
-        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json",
-        "https://lantern-ui-kit.vercel.app/r/toggle.json"
+        "https://ui.thultz.dev/r/lantern-theme.json",
+        "https://ui.thultz.dev/r/toggle.json"
       ],
       "files": [
         {
@@ -482,7 +482,7 @@
       ],
       "registryDependencies": [
         "utils",
-        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+        "https://ui.thultz.dev/r/lantern-theme.json"
       ],
       "files": [
         {
@@ -501,7 +501,7 @@
       ],
       "registryDependencies": [
         "utils",
-        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+        "https://ui.thultz.dev/r/lantern-theme.json"
       ],
       "files": [
         {
@@ -521,7 +521,7 @@
       ],
       "registryDependencies": [
         "utils",
-        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+        "https://ui.thultz.dev/r/lantern-theme.json"
       ],
       "files": [
         {
@@ -538,7 +538,7 @@
       "dependencies": [],
       "registryDependencies": [
         "utils",
-        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+        "https://ui.thultz.dev/r/lantern-theme.json"
       ],
       "files": [
         {
@@ -555,7 +555,7 @@
       "dependencies": [],
       "registryDependencies": [
         "utils",
-        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+        "https://ui.thultz.dev/r/lantern-theme.json"
       ],
       "files": [
         {
@@ -574,7 +574,7 @@
       ],
       "registryDependencies": [
         "utils",
-        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+        "https://ui.thultz.dev/r/lantern-theme.json"
       ],
       "files": [
         {
@@ -591,7 +591,7 @@
       "dependencies": [],
       "registryDependencies": [
         "utils",
-        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+        "https://ui.thultz.dev/r/lantern-theme.json"
       ],
       "files": [
         {
@@ -610,8 +610,8 @@
       ],
       "registryDependencies": [
         "utils",
-        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json",
-        "https://lantern-ui-kit.vercel.app/r/button.json"
+        "https://ui.thultz.dev/r/lantern-theme.json",
+        "https://ui.thultz.dev/r/button.json"
       ],
       "files": [
         {
@@ -631,7 +631,7 @@
       ],
       "registryDependencies": [
         "utils",
-        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+        "https://ui.thultz.dev/r/lantern-theme.json"
       ],
       "files": [
         {
@@ -651,7 +651,7 @@
       ],
       "registryDependencies": [
         "utils",
-        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+        "https://ui.thultz.dev/r/lantern-theme.json"
       ],
       "files": [
         {
@@ -670,7 +670,7 @@
       ],
       "registryDependencies": [
         "utils",
-        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+        "https://ui.thultz.dev/r/lantern-theme.json"
       ],
       "files": [
         {
@@ -689,7 +689,7 @@
       ],
       "registryDependencies": [
         "utils",
-        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+        "https://ui.thultz.dev/r/lantern-theme.json"
       ],
       "files": [
         {
@@ -709,7 +709,7 @@
       ],
       "registryDependencies": [
         "utils",
-        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+        "https://ui.thultz.dev/r/lantern-theme.json"
       ],
       "files": [
         {
@@ -728,7 +728,7 @@
       ],
       "registryDependencies": [
         "utils",
-        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+        "https://ui.thultz.dev/r/lantern-theme.json"
       ],
       "files": [
         {
@@ -748,7 +748,7 @@
       ],
       "registryDependencies": [
         "utils",
-        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+        "https://ui.thultz.dev/r/lantern-theme.json"
       ],
       "files": [
         {
@@ -767,8 +767,8 @@
       ],
       "registryDependencies": [
         "utils",
-        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json",
-        "https://lantern-ui-kit.vercel.app/r/button.json"
+        "https://ui.thultz.dev/r/lantern-theme.json",
+        "https://ui.thultz.dev/r/button.json"
       ],
       "files": [
         {
@@ -788,7 +788,7 @@
       ],
       "registryDependencies": [
         "utils",
-        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+        "https://ui.thultz.dev/r/lantern-theme.json"
       ],
       "files": [
         {
@@ -807,7 +807,7 @@
       ],
       "registryDependencies": [
         "utils",
-        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+        "https://ui.thultz.dev/r/lantern-theme.json"
       ],
       "files": [
         {
@@ -826,7 +826,7 @@
       ],
       "registryDependencies": [
         "utils",
-        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+        "https://ui.thultz.dev/r/lantern-theme.json"
       ],
       "files": [
         {
@@ -845,7 +845,7 @@
       ],
       "registryDependencies": [
         "utils",
-        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+        "https://ui.thultz.dev/r/lantern-theme.json"
       ],
       "files": [
         {
@@ -862,7 +862,7 @@
       "dependencies": [],
       "registryDependencies": [
         "utils",
-        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+        "https://ui.thultz.dev/r/lantern-theme.json"
       ],
       "files": [
         {
@@ -882,7 +882,7 @@
       ],
       "registryDependencies": [
         "utils",
-        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+        "https://ui.thultz.dev/r/lantern-theme.json"
       ],
       "files": [
         {
@@ -901,7 +901,7 @@
       ],
       "registryDependencies": [
         "utils",
-        "https://lantern-ui-kit.vercel.app/r/lantern-theme.json"
+        "https://ui.thultz.dev/r/lantern-theme.json"
       ],
       "files": [
         {

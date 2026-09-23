@@ -3,7 +3,7 @@
 import { spawnSync } from "node:child_process";
 import { readFileSync } from "node:fs";
 
-const REGISTRY = (process.env.LANTERN_REGISTRY || "https://lantern-ui-kit.vercel.app/r").replace(/\/$/, "");
+const REGISTRY = (process.env.LANTERN_REGISTRY || "https://ui.thultz.dev/r").replace(/\/$/, "");
 const SITE = REGISTRY.replace(/\/r$/, "");
 const { version } = JSON.parse(readFileSync(new URL("../package.json", import.meta.url), "utf8"));
 
