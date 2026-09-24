@@ -1,0 +1,36 @@
+{
+  "name": "ai-panel",
+  "type": "block",
+  "title": "AI Panel",
+  "category": "Blocks",
+  "description": "The Forge with AI / Build with AI side panel: prompt, Generate, Fix and Explain, a model Select, a running state with an elapsed clock and Thinking and Writing stream boxes, and a result card with a checks badge, evidence, changed files and Apply or Discard. The preview runs against a mock.",
+  "files": [
+    "blocks/ai-panel/ai-panel.tsx",
+    "blocks/ai-panel/panel.tsx",
+    "blocks/ai-panel/mock.tsx"
+  ],
+  "dependencies": [
+    "lucide-react",
+    "sonner"
+  ],
+  "registryDependencies": [
+    "badge",
+    "button",
+    "eyebrow",
+    "job-card",
+    "label",
+    "select",
+    "sonner",
+    "stat",
+    "stream-box",
+    "textarea",
+    "toggle-group",
+    "usage-meter"
+  ],
+  "notes": [
+    "ai-panel.tsx is a demo wired to mock.tsx. In your app, import { AiPanel } from \"@/components/ai-panel/panel\" and drive it from your own backend: set status to running and pass startedAt, then append streamed text to thinking and writing; when the request ends, set status to result and pass result, plus thought for the collapsed \"Thought for 1:31\" line. Delete mock.tsx once you do.",
+    "result.evidence is a slot. The mock shows both kinds from the mockups: dry-run stat tiles (Stat with variant=\"tiles\") and a test-request checklist (AiPanelChecklist). Wrap either in AiPanelEvidence for the eyebrow title.",
+    "Ctrl or Cmd and Enter in the prompt runs Generate. Fix and Explain appear only when you pass onFix and onExplain; Cancel only with onCancel. The model picker is the Lantern Select, not a native select.",
+    "The panel announces Thinking, Writing and Result ready through one polite live region; the streamed text itself is not announced. Toasts in the demo need the Toaster from the sonner component in your root layout."
+  ]
+}

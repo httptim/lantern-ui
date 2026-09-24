@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "native-select",
   "title": "Native Select",
-  "description": "A styled native select element with the Input look, a chevron, options and option groups.",
+  "description": "A styled native select element with the Input look, a chevron, options and option groups. Prefer Select unless you need the browser's own picker.",
   "dependencies": [
     "lucide-react"
   ],

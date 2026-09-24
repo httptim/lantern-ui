@@ -1,0 +1,19 @@
+{
+  "name": "bottom-tab-bar",
+  "title": "Bottom Tab Bar",
+  "category": "App",
+  "description": "The phone version of App Rail: equal-width icon tabs along the bottom of the screen with an orange top bar on the active tab.",
+  "dependencies": [
+    "radix-ui"
+  ],
+  "examples": [
+    {
+      "name": "bottom-tab-bar-demo"
+    }
+  ],
+  "usage": "<BottomTabBar aria-label=\"Sections\" className=\"fixed inset-x-0 bottom-0 md:hidden\">\n  <BottomTabBarItem isActive>\n    <MapIcon />\n    <span>Map</span>\n  </BottomTabBarItem>\n</BottomTabBar>",
+  "notes": [
+    "Tabs are at least 48px tall and pad the bottom for the home indicator with env(safe-area-inset-bottom); add viewport-fit=cover to your viewport meta for that to apply. Keep it to five tabs and put the rest behind a More tab.",
+    "The bar does not position itself. Fix it to the bottom, or make it the last row of a full-height flex column as the App Shell block does, and leave room for it under the page content."
+  ]
+}

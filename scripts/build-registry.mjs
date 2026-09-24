@@ -64,7 +64,7 @@ const themeItem = {
   },
 };
 
-const order = ["Lantern", "Forms", "Display", "Data", "Layout", "Overlays", "Navigation", "Feedback", "Chat", "Blocks"];
+const order = ["Lantern", "Forms", "Display", "Data", "Layout", "Overlays", "Navigation", "Feedback", "Chat", "App", "Blocks"];
 
 // Registry file type from its folder. Block files keep their folder layout under components/<block>/.
 function fileEntry(m, f) {

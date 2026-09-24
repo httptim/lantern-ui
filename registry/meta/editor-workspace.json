@@ -1,0 +1,27 @@
+{
+  "name": "editor-workspace",
+  "type": "block",
+  "title": "Editor Workspace",
+  "category": "Blocks",
+  "description": "Lantern's Creator Studio: a file tree, a code frame and the AI panel side by side, with Validate, Download and Publish in the header. The columns stack on phones. Applying the AI result writes it into app.lua.",
+  "files": [
+    "blocks/editor-workspace/editor-workspace.tsx"
+  ],
+  "dependencies": [
+    "lucide-react",
+    "sonner"
+  ],
+  "registryDependencies": [
+    "ai-panel",
+    "button",
+    "code-frame",
+    "eyebrow",
+    "file-tree",
+    "sonner",
+    "usage-meter"
+  ],
+  "notes": [
+    "The AI side comes from the AI Panel block, which installs alongside it; this file imports ../ai-panel/panel and ../ai-panel/mock. Swap useMockAiRun for your own request code.",
+    "The code frame shows static text. Mount your editor inside CodeFrameBody (leave out its code prop) to make the files editable. From 1024px the three columns sit side by side and fill the viewport; below that they stack and the page scrolls."
+  ]
+}

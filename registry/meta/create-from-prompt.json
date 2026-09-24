@@ -1,0 +1,32 @@
+{
+  "name": "create-from-prompt",
+  "type": "block",
+  "title": "Create From Prompt",
+  "category": "Blocks",
+  "description": "The \"Describe it. We'll build the first draft.\" page: an address field with availability, a description, template chips, a model Select with a cost hint and a Generate button, plus a progress card with a step list, times and a streaming Writing box.",
+  "files": [
+    "blocks/create-from-prompt/create-from-prompt.tsx"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "account-chip",
+    "button",
+    "dropdown-menu",
+    "eyebrow",
+    "input-group",
+    "job-card",
+    "label",
+    "select",
+    "step-list",
+    "stream-box",
+    "textarea",
+    "toggle-group",
+    "usage-meter"
+  ],
+  "notes": [
+    "The build is simulated on a timer. Replace generate with a call to your backend and feed the step states, times and streamed text from its events.",
+    "Picking a template chip replaces the description with that template's text. The address shows Available, Taken or a format hint as you type, announced politely to screen readers. The progress card moves under the form below 1280px."
+  ]
+}

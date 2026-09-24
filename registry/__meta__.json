@@ -313,11 +313,16 @@
     "examples": [
       {
         "name": "stat-demo"
+      },
+      {
+        "name": "stat-tiles",
+        "title": "Tiles"
       }
     ],
     "usage": "<StatGroup>\n  <Stat>\n    <StatLabel>sites on the network</StatLabel>\n    <StatValue>128</StatValue>\n  </Stat>\n</StatGroup>",
     "notes": [
-      "StatGroup renders a description list. Put StatLabel before StatValue in the markup so screen readers read the term first; the value is shown on top visually."
+      "StatGroup renders a description list. Put StatLabel before StatValue in the markup so screen readers read the term first; the value is shown on top visually.",
+      "variant=\"tiles\" draws small bordered tiles with mono labels, for inspectors and result cards. They fit as many columns as the width allows, at least 64px each."
     ]
   },
   {
@@ -763,7 +768,7 @@
     "name": "native-select",
     "title": "Native Select",
     "category": "Forms",
-    "description": "A styled native select element with the Input look, a chevron, options and option groups.",
+    "description": "A styled native select element with the Input look, a chevron, options and option groups. Prefer Select unless you need the browser's own picker.",
     "dependencies": [
       "lucide-react"
     ],
@@ -782,7 +787,7 @@
     ],
     "usage": "<NativeSelect defaultValue=\"overworld\">\n  <NativeSelectOption value=\"overworld\">Overworld</NativeSelectOption>\n  <NativeSelectOption value=\"deepstone\">Deepstone</NativeSelectOption>\n</NativeSelect>",
     "notes": [
-      "Use Native Select when you want the platform picker, especially on phones, or need the value to work in a plain form post. Use Select for a fully styled dropdown with icons.",
+      "Prefer Select for dropdowns: it has the Lantern popover, icons and keyboard support. Use Native Select only when you need the platform picker, for example a very long list on phones, or a value that must work in a plain form post without JavaScript.",
       "The wrapper is w-fit by default. Pass className=\"w-full\" to stretch the select; the open list is drawn by the browser."
     ]
   },
@@ -830,7 +835,11 @@
         "title": "Invalid, disabled and small"
       }
     ],
-    "usage": "<Select>\n  <SelectTrigger className=\"w-48\">\n    <SelectValue placeholder=\"Pick a theme\" />\n  </SelectTrigger>\n  <SelectContent>\n    <SelectItem value=\"lantern\">Lantern</SelectItem>\n    <SelectItem value=\"moss\">Moss</SelectItem>\n  </SelectContent>\n</Select>"
+    "usage": "<Select>\n  <SelectTrigger className=\"w-48\">\n    <SelectValue placeholder=\"Pick a theme\" />\n  </SelectTrigger>\n  <SelectContent>\n    <SelectItem value=\"lantern\">Lantern</SelectItem>\n    <SelectItem value=\"moss\">Moss</SelectItem>\n  </SelectContent>\n</Select>",
+    "notes": [
+      "Select is the default dropdown in Lantern UI and what every block uses for pickers such as models, worlds and turtles. Reach for Native Select only when you need the platform's own picker, such as a very long list on phones.",
+      "SelectTrigger is w-fit by default; pass className=\"w-full\" or a width. The list opens in a popover below the trigger and flips when there is no room."
+    ]
   },
   {
     "name": "slider",
@@ -2012,6 +2021,316 @@
     ]
   },
   {
+    "name": "account-chip",
+    "title": "Account Chip",
+    "category": "App",
+    "description": "The top bar account control: allowance meters, avatar, name and plan tag, opening a dropdown menu with the account links.",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "avatar",
+      "dropdown-menu",
+      "usage-meter"
+    ],
+    "examples": [
+      {
+        "name": "account-chip-demo"
+      }
+    ],
+    "usage": "<AccountChip>\n  <AccountChipTrigger name=\"Tim\" plan=\"Pro\" fallback=\"TH\">\n    <UsageMeterGroup aria-label=\"AI allowance\">...</UsageMeterGroup>\n  </AccountChipTrigger>\n  <AccountChipContent>\n    <AccountChipLabel name=\"Tim\" email=\"tim@thultz.dev\" plan=\"Pro\" />\n    <DropdownMenuSeparator />\n    <DropdownMenuItem asChild><a href=\"/account\">Profile</a></DropdownMenuItem>\n  </AccountChipContent>\n</AccountChip>",
+    "notes": [
+      "AccountChip is a DropdownMenu, so build the menu from the dropdown-menu parts. Use DropdownMenuItem asChild with an a or Link for account links.",
+      "Children of AccountChipTrigger (usually a UsageMeterGroup) sit to the left of the avatar and hide below 768px; the name and plan hide below 640px. Put full-size meters in AccountChipLabel so phones still see the allowance inside the menu."
+    ]
+  },
+  {
+    "name": "app-rail",
+    "title": "App Rail",
+    "category": "App",
+    "description": "A narrow vertical workspace nav: icon over a mono label, the active item marked with an orange left border, with pinned items at the bottom.",
+    "dependencies": [
+      "radix-ui"
+    ],
+    "examples": [
+      {
+        "name": "app-rail-demo"
+      }
+    ],
+    "usage": "<AppRail aria-label=\"Workspaces\">\n  <AppRailContent>\n    <AppRailItem isActive>\n      <MapIcon />\n      <span>Map</span>\n    </AppRailItem>\n  </AppRailContent>\n  <AppRailFooter>\n    <AppRailItem asChild>\n      <a href=\"/settings\"><SettingsIcon /><span>Settings</span></a>\n    </AppRailItem>\n  </AppRailFooter>\n</AppRail>",
+    "notes": [
+      "The rail is 72px wide and fills its parent's height. Items are buttons; pass asChild to render a link. The active item gets aria-current=\"page\". Keep labels to one short word; longer ones truncate.",
+      "On phones, hide the rail (className=\"hidden md:flex\") and render the same items in a Bottom Tab Bar. The App Shell block does this."
+    ]
+  },
+  {
+    "name": "bottom-tab-bar",
+    "title": "Bottom Tab Bar",
+    "category": "App",
+    "description": "The phone version of App Rail: equal-width icon tabs along the bottom of the screen with an orange top bar on the active tab.",
+    "dependencies": [
+      "radix-ui"
+    ],
+    "examples": [
+      {
+        "name": "bottom-tab-bar-demo"
+      }
+    ],
+    "usage": "<BottomTabBar aria-label=\"Sections\" className=\"fixed inset-x-0 bottom-0 md:hidden\">\n  <BottomTabBarItem isActive>\n    <MapIcon />\n    <span>Map</span>\n  </BottomTabBarItem>\n</BottomTabBar>",
+    "notes": [
+      "Tabs are at least 48px tall and pad the bottom for the home indicator with env(safe-area-inset-bottom); add viewport-fit=cover to your viewport meta for that to apply. Keep it to five tabs and put the rest behind a More tab.",
+      "The bar does not position itself. Fix it to the bottom, or make it the last row of a full-height flex column as the App Shell block does, and leave room for it under the page content."
+    ]
+  },
+  {
+    "name": "code-frame",
+    "title": "Code Frame",
+    "category": "App",
+    "description": "Editor chrome: a file bar with an unsaved tag and a toolbar, a line-numbered code area and an optional status bar. Static for docs and previews, or a frame to mount a real editor in.",
+    "dependencies": [
+      "class-variance-authority"
+    ],
+    "examples": [
+      {
+        "name": "code-frame-demo"
+      }
+    ],
+    "usage": "<CodeFrame className=\"h-[460px]\">\n  <CodeFrameHeader>\n    <CodeFrameTitle>strip_mine.lua</CodeFrameTitle>\n    <CodeFrameTag>Unsaved</CodeFrameTag>\n    <CodeFrameToolbar aria-label=\"File actions\">\n      <Button size=\"sm\">Run on Testy</Button>\n    </CodeFrameToolbar>\n  </CodeFrameHeader>\n  <CodeFrameBody code={source} />\n</CodeFrame>",
+    "notes": [
+      "CodeFrameBody with code renders static, line-numbered text and dims comment lines (--, // and #). It scrolls both ways inside the frame. To edit, leave out code and put your editor (CodeMirror, Monaco, a textarea) inside CodeFrameBody; it fills the remaining height.",
+      "CodeFrameTag takes tone warning (default), primary, success or muted. Use Code Block instead when you only need to show a snippet with a copy button."
+    ]
+  },
+  {
+    "name": "entity-card",
+    "title": "Entity Card",
+    "category": "App",
+    "description": "A selectable list card for turtles, sites or scripts: status dot, title, right-side tag, a meta line and an optional fuel bar. The selected card gets an orange border and block shadow.",
+    "dependencies": [
+      "radix-ui"
+    ],
+    "registryDependencies": [
+      "progress",
+      "status-dot"
+    ],
+    "examples": [
+      {
+        "name": "entity-card-demo"
+      },
+      {
+        "name": "entity-card-links",
+        "title": "As links"
+      }
+    ],
+    "usage": "<EntityCard selected onClick={() => select(\"testy\")}>\n  <EntityCardHeader>\n    <StatusDot tone=\"online\" />\n    <EntityCardTitle>Testy</EntityCardTitle>\n    <EntityCardTag>Online</EntityCardTag>\n  </EntityCardHeader>\n  <EntityCardDescription>Strip mine 41/64</EntityCardDescription>\n  <EntityCardMeta>\n    <span>120 12 -352</span>\n    <span>Fuel 72%</span>\n  </EntityCardMeta>\n  <EntityCardBar value={72} />\n</EntityCard>",
+    "notes": [
+      "The card is a button with aria-pressed when selected is set. With asChild it renders your link and marks the selected one with aria-current. Do not put other buttons inside it.",
+      "EntityCardMeta pushes its last child to the right. EntityCardBar is green and turns red at or below lowAt (20)."
+    ]
+  },
+  {
+    "name": "job-card",
+    "title": "Job Card",
+    "category": "App",
+    "description": "A running task card with an eyebrow, title, live timer, progress bar, a stats row and actions, drawn with an orange border and a warm block shadow.",
+    "registryDependencies": [
+      "progress"
+    ],
+    "examples": [
+      {
+        "name": "job-card-demo"
+      }
+    ],
+    "usage": "<JobCard aria-label=\"Current job\">\n  <JobCardHeader>\n    <JobCardEyebrow>Running job</JobCardEyebrow>\n    <JobCardTitle>Strip mine, 3 branches of 32</JobCardTitle>\n    <JobCardTimer startedAt={job.startedAt} />\n  </JobCardHeader>\n  <JobCardProgress value={64} aria-label=\"Job progress\" />\n  <JobCardFooter>\n    <JobCardStats><span>41/64 blocks</span><span>Ores 7</span></JobCardStats>\n    <JobCardActions>\n      <Button size=\"sm\" variant=\"secondary\">Pause</Button>\n    </JobCardActions>\n  </JobCardFooter>\n</JobCard>",
+    "notes": [
+      "JobCardTimer ticks every second from startedAt (a Date.now() timestamp). Pass seconds for a fixed value, which also shows before the clock starts on the client. The file exports formatElapsed and useElapsed for your own clocks.",
+      "The card uses a container query: below 28rem the title drops to its own line and the actions go full width under the stats, so it works as a floating card on a map and in a phone column. Buttons in JobCardActions are 44px tall on phones."
+    ]
+  },
+  {
+    "name": "step-list",
+    "title": "Step List",
+    "category": "App",
+    "description": "A compact progress list for background work: one line per step with a done, current, todo or error mark and a time on the right.",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "examples": [
+      {
+        "name": "step-list-demo"
+      },
+      {
+        "name": "step-list-error",
+        "title": "Failed step"
+      }
+    ],
+    "usage": "<StepList aria-label=\"Build progress\">\n  <StepListItem state=\"done\" time=\"0:48\">Wrote index.json</StepListItem>\n  <StepListItem state=\"current\" time=\"1:19\">Testing requests 3 of 5</StepListItem>\n  <StepListItem>Preview and publish</StepListItem>\n</StepList>",
+    "notes": [
+      "Use Step List for work the app is doing (a build, a deploy, an AI run). Use Stepper for numbered steps a person follows, such as an install guide.",
+      "Each item reads its state to screen readers before the label, and the current one gets aria-current=\"step\"."
+    ]
+  },
+  {
+    "name": "stream-box",
+    "title": "Stream Box",
+    "category": "App",
+    "description": "A collapsible box for streamed model output with a title and character count. It follows the end of the text as it grows until the reader scrolls up.",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "collapsible"
+    ],
+    "examples": [
+      {
+        "name": "stream-box-demo"
+      },
+      {
+        "name": "stream-box-summary",
+        "title": "Collapsed summary line"
+      }
+    ],
+    "usage": "<StreamBox title=\"Thinking\" text={thinking} streaming />\n\n<StreamBox title=\"Thought for 1:31\" meta=\"Whole request 2:16\" text={thinking} defaultOpen={false} />",
+    "notes": [
+      "Pass the text received so far and re-render as chunks arrive. While streaming the header shows a pulsing dot and the text ends in a blinking cursor. Scrolling up stops the follow; scrolling back to the bottom or reopening the box resumes it.",
+      "The content is not a live region, so screen readers are not flooded while tokens arrive. Announce the finished result elsewhere. Pass children instead of text to render your own content, such as highlighted code."
+    ]
+  },
+  {
+    "name": "usage-meter",
+    "title": "Usage Meter",
+    "category": "App",
+    "description": "A labelled thin meter for quotas such as an AI allowance: label, percent, bar and an optional reset time. Turns yellow and then red as it fills.",
+    "registryDependencies": [
+      "progress"
+    ],
+    "examples": [
+      {
+        "name": "usage-meter-demo"
+      },
+      {
+        "name": "usage-meter-allowance",
+        "title": "Allowance chip"
+      }
+    ],
+    "usage": "<UsageMeter label=\"5-hour window\" value={32} reset=\"Resets at 3:40 pm\" />\n\n<UsageMeterGroup aria-label=\"AI allowance\">\n  <UsageMeterGroupLabel>AI allowance</UsageMeterGroupLabel>\n  <UsageMeter size=\"compact\" label=\"5-hour\" value={32} />\n  <UsageMeter size=\"compact\" label=\"Week\" value={18} />\n</UsageMeterGroup>",
+    "notes": [
+      "value is the amount used, out of max (100 by default). The percent is rounded and read out by screen readers as \"32% used\". The bar turns yellow at warnAt (75) and red at dangerAt (90).",
+      "size=\"compact\" is the 88px meter used in top bars; it hides the reset line. UsageMeterGroup wraps compact meters in the bordered allowance chip. Give it an aria-label, since it has role=\"group\"."
+    ]
+  },
+  {
+    "name": "ai-panel",
+    "type": "block",
+    "title": "AI Panel",
+    "category": "Blocks",
+    "description": "The Forge with AI / Build with AI side panel: prompt, Generate, Fix and Explain, a model Select, a running state with an elapsed clock and Thinking and Writing stream boxes, and a result card with a checks badge, evidence, changed files and Apply or Discard. The preview runs against a mock.",
+    "files": [
+      "blocks/ai-panel/ai-panel.tsx",
+      "blocks/ai-panel/panel.tsx",
+      "blocks/ai-panel/mock.tsx"
+    ],
+    "dependencies": [
+      "lucide-react",
+      "sonner"
+    ],
+    "registryDependencies": [
+      "badge",
+      "button",
+      "eyebrow",
+      "job-card",
+      "label",
+      "select",
+      "sonner",
+      "stat",
+      "stream-box",
+      "textarea",
+      "toggle-group",
+      "usage-meter"
+    ],
+    "notes": [
+      "ai-panel.tsx is a demo wired to mock.tsx. In your app, import { AiPanel } from \"@/components/ai-panel/panel\" and drive it from your own backend: set status to running and pass startedAt, then append streamed text to thinking and writing; when the request ends, set status to result and pass result, plus thought for the collapsed \"Thought for 1:31\" line. Delete mock.tsx once you do.",
+      "result.evidence is a slot. The mock shows both kinds from the mockups: dry-run stat tiles (Stat with variant=\"tiles\") and a test-request checklist (AiPanelChecklist). Wrap either in AiPanelEvidence for the eyebrow title.",
+      "Ctrl or Cmd and Enter in the prompt runs Generate. Fix and Explain appear only when you pass onFix and onExplain; Cancel only with onCancel. The model picker is the Lantern Select, not a native select.",
+      "The panel announces Thinking, Writing and Result ready through one polite live region; the streamed text itself is not announced. Toasts in the demo need the Toaster from the sonner component in your root layout."
+    ]
+  },
+  {
+    "name": "app-shell",
+    "type": "block",
+    "title": "App Shell",
+    "category": "Blocks",
+    "description": "A full-height app layout: a top bar with logo, context pickers and the account chip, a workspace rail, an optional list column, the main area and an optional inspector. On phones it becomes top bar, main and a bottom tab bar. The preview is the TurtleDeck dashboard.",
+    "files": [
+      "blocks/app-shell/app-shell.tsx",
+      "blocks/app-shell/shell.tsx",
+      "blocks/app-shell/fleet.tsx",
+      "blocks/app-shell/inspector.tsx",
+      "blocks/app-shell/data.ts"
+    ],
+    "dependencies": [
+      "lucide-react",
+      "sonner"
+    ],
+    "registryDependencies": [
+      "account-chip",
+      "app-rail",
+      "bottom-tab-bar",
+      "button",
+      "control-pad",
+      "dropdown-menu",
+      "entity-card",
+      "eyebrow",
+      "input-group",
+      "inventory-grid",
+      "job-card",
+      "select",
+      "sheet",
+      "sonner",
+      "stat",
+      "status-dot",
+      "status-pill",
+      "usage-meter"
+    ],
+    "notes": [
+      "The layout lives in shell.tsx as AppShell and takes logo, context, actions, nav, pinnedNav, active, onNavigate, list, inspector and children. app-shell.tsx, fleet.tsx, inspector.tsx and data.ts are the TurtleDeck example built on it; replace them with your own content.",
+      "Breakpoints: the rail shows from 768px, the list column from 1024px (a left sheet opened from the top bar below that) and the inspector column from 1280px (stacked under the main content below that). Under 768px the rail becomes a bottom tab bar; with more than five destinations the last tab is More, which opens a sheet with the rest.",
+      "The shell is h-svh with its own scroll areas, so render it as the whole page. Put the world, turtle and similar pickers in context or actions as Select components."
+    ]
+  },
+  {
+    "name": "create-from-prompt",
+    "type": "block",
+    "title": "Create From Prompt",
+    "category": "Blocks",
+    "description": "The \"Describe it. We'll build the first draft.\" page: an address field with availability, a description, template chips, a model Select with a cost hint and a Generate button, plus a progress card with a step list, times and a streaming Writing box.",
+    "files": [
+      "blocks/create-from-prompt/create-from-prompt.tsx"
+    ],
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "account-chip",
+      "button",
+      "dropdown-menu",
+      "eyebrow",
+      "input-group",
+      "job-card",
+      "label",
+      "select",
+      "step-list",
+      "stream-box",
+      "textarea",
+      "toggle-group",
+      "usage-meter"
+    ],
+    "notes": [
+      "The build is simulated on a timer. Replace generate with a call to your backend and feed the step states, times and streamed text from its events.",
+      "Picking a template chip replaces the description with that template's text. The address shows Available, Taken or a format hint as you type, announced politely to screen readers. The progress card moves under the form below 1280px."
+    ]
+  },
+  {
     "name": "dashboard",
     "type": "block",
     "title": "Dashboard",
@@ -2079,6 +2398,33 @@
       "scroll-area",
       "sheet",
       "typography"
+    ]
+  },
+  {
+    "name": "editor-workspace",
+    "type": "block",
+    "title": "Editor Workspace",
+    "category": "Blocks",
+    "description": "Lantern's Creator Studio: a file tree, a code frame and the AI panel side by side, with Validate, Download and Publish in the header. The columns stack on phones. Applying the AI result writes it into app.lua.",
+    "files": [
+      "blocks/editor-workspace/editor-workspace.tsx"
+    ],
+    "dependencies": [
+      "lucide-react",
+      "sonner"
+    ],
+    "registryDependencies": [
+      "ai-panel",
+      "button",
+      "code-frame",
+      "eyebrow",
+      "file-tree",
+      "sonner",
+      "usage-meter"
+    ],
+    "notes": [
+      "The AI side comes from the AI Panel block, which installs alongside it; this file imports ../ai-panel/panel and ../ai-panel/mock. Swap useMockAiRun for your own request code.",
+      "The code frame shows static text. Mount your editor inside CodeFrameBody (leave out its code prop) to make the files editable. From 1024px the three columns sit side by side and fill the viewport; below that they stack and the page scrolls."
     ]
   },
   {

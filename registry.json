@@ -752,7 +752,7 @@
       "name": "native-select",
       "type": "registry:ui",
       "title": "Native Select",
-      "description": "A styled native select element with the Input look, a chevron, options and option groups.",
+      "description": "A styled native select element with the Input look, a chevron, options and option groups. Prefer Select unless you need the browser's own picker.",
       "dependencies": [
         "lucide-react"
       ],
@@ -1870,6 +1870,316 @@
       ]
     },
     {
+      "name": "account-chip",
+      "type": "registry:ui",
+      "title": "Account Chip",
+      "description": "The top bar account control: allowance meters, avatar, name and plan tag, opening a dropdown menu with the account links.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json",
+        "https://ui.thultz.dev/r/avatar.json",
+        "https://ui.thultz.dev/r/dropdown-menu.json",
+        "https://ui.thultz.dev/r/usage-meter.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/account-chip.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "app-rail",
+      "type": "registry:ui",
+      "title": "App Rail",
+      "description": "A narrow vertical workspace nav: icon over a mono label, the active item marked with an orange left border, with pinned items at the bottom.",
+      "dependencies": [
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/app-rail.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "bottom-tab-bar",
+      "type": "registry:ui",
+      "title": "Bottom Tab Bar",
+      "description": "The phone version of App Rail: equal-width icon tabs along the bottom of the screen with an orange top bar on the active tab.",
+      "dependencies": [
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/bottom-tab-bar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "code-frame",
+      "type": "registry:ui",
+      "title": "Code Frame",
+      "description": "Editor chrome: a file bar with an unsaved tag and a toolbar, a line-numbered code area and an optional status bar. Static for docs and previews, or a frame to mount a real editor in.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/code-frame.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "entity-card",
+      "type": "registry:ui",
+      "title": "Entity Card",
+      "description": "A selectable list card for turtles, sites or scripts: status dot, title, right-side tag, a meta line and an optional fuel bar. The selected card gets an orange border and block shadow.",
+      "dependencies": [
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json",
+        "https://ui.thultz.dev/r/progress.json",
+        "https://ui.thultz.dev/r/status-dot.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/entity-card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "job-card",
+      "type": "registry:ui",
+      "title": "Job Card",
+      "description": "A running task card with an eyebrow, title, live timer, progress bar, a stats row and actions, drawn with an orange border and a warm block shadow.",
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json",
+        "https://ui.thultz.dev/r/progress.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/job-card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "step-list",
+      "type": "registry:ui",
+      "title": "Step List",
+      "description": "A compact progress list for background work: one line per step with a done, current, todo or error mark and a time on the right.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/step-list.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "stream-box",
+      "type": "registry:ui",
+      "title": "Stream Box",
+      "description": "A collapsible box for streamed model output with a title and character count. It follows the end of the text as it grows until the reader scrolls up.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json",
+        "https://ui.thultz.dev/r/collapsible.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/stream-box.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "usage-meter",
+      "type": "registry:ui",
+      "title": "Usage Meter",
+      "description": "A labelled thin meter for quotas such as an AI allowance: label, percent, bar and an optional reset time. Turns yellow and then red as it fills.",
+      "dependencies": [],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json",
+        "https://ui.thultz.dev/r/progress.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/ui/usage-meter.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "ai-panel",
+      "type": "registry:block",
+      "title": "AI Panel",
+      "description": "The Forge with AI / Build with AI side panel: prompt, Generate, Fix and Explain, a model Select, a running state with an elapsed clock and Thinking and Writing stream boxes, and a result card with a checks badge, evidence, changed files and Apply or Discard. The preview runs against a mock.",
+      "dependencies": [
+        "lucide-react",
+        "sonner"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json",
+        "https://ui.thultz.dev/r/badge.json",
+        "https://ui.thultz.dev/r/button.json",
+        "https://ui.thultz.dev/r/eyebrow.json",
+        "https://ui.thultz.dev/r/job-card.json",
+        "https://ui.thultz.dev/r/label.json",
+        "https://ui.thultz.dev/r/select.json",
+        "https://ui.thultz.dev/r/sonner.json",
+        "https://ui.thultz.dev/r/stat.json",
+        "https://ui.thultz.dev/r/stream-box.json",
+        "https://ui.thultz.dev/r/textarea.json",
+        "https://ui.thultz.dev/r/toggle-group.json",
+        "https://ui.thultz.dev/r/usage-meter.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/blocks/ai-panel/ai-panel.tsx",
+          "type": "registry:component",
+          "target": "components/ai-panel/ai-panel.tsx"
+        },
+        {
+          "path": "registry/lantern/blocks/ai-panel/panel.tsx",
+          "type": "registry:component",
+          "target": "components/ai-panel/panel.tsx"
+        },
+        {
+          "path": "registry/lantern/blocks/ai-panel/mock.tsx",
+          "type": "registry:component",
+          "target": "components/ai-panel/mock.tsx"
+        }
+      ]
+    },
+    {
+      "name": "app-shell",
+      "type": "registry:block",
+      "title": "App Shell",
+      "description": "A full-height app layout: a top bar with logo, context pickers and the account chip, a workspace rail, an optional list column, the main area and an optional inspector. On phones it becomes top bar, main and a bottom tab bar. The preview is the TurtleDeck dashboard.",
+      "dependencies": [
+        "lucide-react",
+        "sonner"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json",
+        "https://ui.thultz.dev/r/account-chip.json",
+        "https://ui.thultz.dev/r/app-rail.json",
+        "https://ui.thultz.dev/r/bottom-tab-bar.json",
+        "https://ui.thultz.dev/r/button.json",
+        "https://ui.thultz.dev/r/control-pad.json",
+        "https://ui.thultz.dev/r/dropdown-menu.json",
+        "https://ui.thultz.dev/r/entity-card.json",
+        "https://ui.thultz.dev/r/eyebrow.json",
+        "https://ui.thultz.dev/r/input-group.json",
+        "https://ui.thultz.dev/r/inventory-grid.json",
+        "https://ui.thultz.dev/r/job-card.json",
+        "https://ui.thultz.dev/r/select.json",
+        "https://ui.thultz.dev/r/sheet.json",
+        "https://ui.thultz.dev/r/sonner.json",
+        "https://ui.thultz.dev/r/stat.json",
+        "https://ui.thultz.dev/r/status-dot.json",
+        "https://ui.thultz.dev/r/status-pill.json",
+        "https://ui.thultz.dev/r/usage-meter.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/blocks/app-shell/app-shell.tsx",
+          "type": "registry:component",
+          "target": "components/app-shell/app-shell.tsx"
+        },
+        {
+          "path": "registry/lantern/blocks/app-shell/shell.tsx",
+          "type": "registry:component",
+          "target": "components/app-shell/shell.tsx"
+        },
+        {
+          "path": "registry/lantern/blocks/app-shell/fleet.tsx",
+          "type": "registry:component",
+          "target": "components/app-shell/fleet.tsx"
+        },
+        {
+          "path": "registry/lantern/blocks/app-shell/inspector.tsx",
+          "type": "registry:component",
+          "target": "components/app-shell/inspector.tsx"
+        },
+        {
+          "path": "registry/lantern/blocks/app-shell/data.ts",
+          "type": "registry:component",
+          "target": "components/app-shell/data.ts"
+        }
+      ]
+    },
+    {
+      "name": "create-from-prompt",
+      "type": "registry:block",
+      "title": "Create From Prompt",
+      "description": "The \"Describe it. We'll build the first draft.\" page: an address field with availability, a description, template chips, a model Select with a cost hint and a Generate button, plus a progress card with a step list, times and a streaming Writing box.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json",
+        "https://ui.thultz.dev/r/account-chip.json",
+        "https://ui.thultz.dev/r/button.json",
+        "https://ui.thultz.dev/r/dropdown-menu.json",
+        "https://ui.thultz.dev/r/eyebrow.json",
+        "https://ui.thultz.dev/r/input-group.json",
+        "https://ui.thultz.dev/r/job-card.json",
+        "https://ui.thultz.dev/r/label.json",
+        "https://ui.thultz.dev/r/select.json",
+        "https://ui.thultz.dev/r/step-list.json",
+        "https://ui.thultz.dev/r/stream-box.json",
+        "https://ui.thultz.dev/r/textarea.json",
+        "https://ui.thultz.dev/r/toggle-group.json",
+        "https://ui.thultz.dev/r/usage-meter.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/blocks/create-from-prompt/create-from-prompt.tsx",
+          "type": "registry:component",
+          "target": "components/create-from-prompt/create-from-prompt.tsx"
+        }
+      ]
+    },
+    {
       "name": "dashboard",
       "type": "registry:block",
       "title": "Dashboard",
@@ -1978,6 +2288,34 @@
           "path": "registry/lantern/blocks/docs-layout/toc.tsx",
           "type": "registry:component",
           "target": "components/docs-layout/toc.tsx"
+        }
+      ]
+    },
+    {
+      "name": "editor-workspace",
+      "type": "registry:block",
+      "title": "Editor Workspace",
+      "description": "Lantern's Creator Studio: a file tree, a code frame and the AI panel side by side, with Validate, Download and Publish in the header. The columns stack on phones. Applying the AI result writes it into app.lua.",
+      "dependencies": [
+        "lucide-react",
+        "sonner"
+      ],
+      "registryDependencies": [
+        "utils",
+        "https://ui.thultz.dev/r/lantern-theme.json",
+        "https://ui.thultz.dev/r/ai-panel.json",
+        "https://ui.thultz.dev/r/button.json",
+        "https://ui.thultz.dev/r/code-frame.json",
+        "https://ui.thultz.dev/r/eyebrow.json",
+        "https://ui.thultz.dev/r/file-tree.json",
+        "https://ui.thultz.dev/r/sonner.json",
+        "https://ui.thultz.dev/r/usage-meter.json"
+      ],
+      "files": [
+        {
+          "path": "registry/lantern/blocks/editor-workspace/editor-workspace.tsx",
+          "type": "registry:component",
+          "target": "components/editor-workspace/editor-workspace.tsx"
         }
       ]
     },

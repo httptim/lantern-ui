@@ -1,0 +1,23 @@
+{
+  "name": "usage-meter",
+  "title": "Usage Meter",
+  "category": "App",
+  "description": "A labelled thin meter for quotas such as an AI allowance: label, percent, bar and an optional reset time. Turns yellow and then red as it fills.",
+  "registryDependencies": [
+    "progress"
+  ],
+  "examples": [
+    {
+      "name": "usage-meter-demo"
+    },
+    {
+      "name": "usage-meter-allowance",
+      "title": "Allowance chip"
+    }
+  ],
+  "usage": "<UsageMeter label=\"5-hour window\" value={32} reset=\"Resets at 3:40 pm\" />\n\n<UsageMeterGroup aria-label=\"AI allowance\">\n  <UsageMeterGroupLabel>AI allowance</UsageMeterGroupLabel>\n  <UsageMeter size=\"compact\" label=\"5-hour\" value={32} />\n  <UsageMeter size=\"compact\" label=\"Week\" value={18} />\n</UsageMeterGroup>",
+  "notes": [
+    "value is the amount used, out of max (100 by default). The percent is rounded and read out by screen readers as \"32% used\". The bar turns yellow at warnAt (75) and red at dangerAt (90).",
+    "size=\"compact\" is the 88px meter used in top bars; it hides the reset line. UsageMeterGroup wraps compact meters in the bordered allowance chip. Give it an aria-label, since it has role=\"group\"."
+  ]
+}

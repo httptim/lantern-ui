@@ -1,0 +1,26 @@
+{
+  "name": "stream-box",
+  "title": "Stream Box",
+  "category": "App",
+  "description": "A collapsible box for streamed model output with a title and character count. It follows the end of the text as it grows until the reader scrolls up.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "collapsible"
+  ],
+  "examples": [
+    {
+      "name": "stream-box-demo"
+    },
+    {
+      "name": "stream-box-summary",
+      "title": "Collapsed summary line"
+    }
+  ],
+  "usage": "<StreamBox title=\"Thinking\" text={thinking} streaming />\n\n<StreamBox title=\"Thought for 1:31\" meta=\"Whole request 2:16\" text={thinking} defaultOpen={false} />",
+  "notes": [
+    "Pass the text received so far and re-render as chunks arrive. While streaming the header shows a pulsing dot and the text ends in a blinking cursor. Scrolling up stops the follow; scrolling back to the bottom or reopening the box resumes it.",
+    "The content is not a live region, so screen readers are not flooded while tokens arrive. Announce the finished result elsewhere. Pass children instead of text to render your own content, such as highlighted code."
+  ]
+}

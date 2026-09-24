@@ -1,0 +1,23 @@
+{
+  "name": "step-list",
+  "title": "Step List",
+  "category": "App",
+  "description": "A compact progress list for background work: one line per step with a done, current, todo or error mark and a time on the right.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "examples": [
+    {
+      "name": "step-list-demo"
+    },
+    {
+      "name": "step-list-error",
+      "title": "Failed step"
+    }
+  ],
+  "usage": "<StepList aria-label=\"Build progress\">\n  <StepListItem state=\"done\" time=\"0:48\">Wrote index.json</StepListItem>\n  <StepListItem state=\"current\" time=\"1:19\">Testing requests 3 of 5</StepListItem>\n  <StepListItem>Preview and publish</StepListItem>\n</StepList>",
+  "notes": [
+    "Use Step List for work the app is doing (a build, a deploy, an AI run). Use Stepper for numbered steps a person follows, such as an install guide.",
+    "Each item reads its state to screen readers before the label, and the current one gets aria-current=\"step\"."
+  ]
+}

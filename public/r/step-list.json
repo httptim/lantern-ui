@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "step-list",
+  "title": "Step List",
+  "description": "A compact progress list for background work: one line per step with a done, current, todo or error mark and a time on the right.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils",
+    "https://ui.thultz.dev/r/lantern-theme.json"
+  ],
+  "files": [
+    {
+      "path": "registry/lantern/ui/step-list.tsx",
+      "content": "import * as React from \"react\";\nimport { CheckIcon, XIcon } from \"lucide-react\";\n\nimport { cn } from \"@/lib/utils\";\n\ntype StepListState = \"done\" | \"current\" | \"todo\" | \"error\";\n\nconst stateLabel: Record<StepListState, string> = {\n  done: \"Done\",\n  current: \"In progress\",\n  todo: \"Not started\",\n  error: \"Failed\",\n};\n\n/** A compact progress list for background work: one line per step with a mark and a time. */\nfunction StepList({ className, ...props }: React.ComponentProps<\"ol\">) {\n  return <ol data-slot=\"step-list\" className={cn(\"flex flex-col gap-2.5\", className)} {...props} />;\n}\n\nfunction StepListItem({\n  className,\n  state = \"todo\",\n  time,\n  children,\n  ...props\n}: React.ComponentProps<\"li\"> & {\n  state?: StepListState;\n  /** Time the step finished or has been running, e.g. \"0:48\". */\n  time?: React.ReactNode;\n}) {\n  return (\n    <li\n      data-slot=\"step-list-item\"\n      data-state={state}\n      aria-current={state === \"current\" ? \"step\" : undefined}\n      className={cn(\n        \"flex min-w-0 items-start gap-2.5 text-[13px] leading-5\",\n        state === \"todo\" ? \"text-muted-foreground\" : \"text-foreground\",\n        className,\n      )}\n      {...props}\n    >\n      <span data-slot=\"step-list-mark\" aria-hidden=\"true\" className=\"flex h-5 w-4 shrink-0 items-center justify-center\">\n        {state === \"done\" && <CheckIcon className=\"size-3.5 text-success\" />}\n        {state === \"error\" && <XIcon className=\"size-3.5 text-destructive\" />}\n        {state === \"current\" && (\n          <span className=\"size-2.5 animate-lantern-pulse rounded-full border-2 border-primary [animation-duration:1.4s]\" />\n        )}\n        {state === \"todo\" && <span className=\"size-2.5 rounded-full border border-input\" />}\n      </span>\n      <span className=\"sr-only\">{stateLabel[state]}: </span>\n      <span data-slot=\"step-list-label\" className=\"min-w-0 flex-1\">\n        {children}\n      </span>\n      {time != null && (\n        <span\n          data-slot=\"step-list-time\"\n          className=\"shrink-0 font-mono text-[11px] leading-5 text-muted-foreground tabular-nums\"\n        >\n          {time}\n        </span>\n      )}\n    </li>\n  );\n}\n\nexport { StepList, StepListItem, type StepListState };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

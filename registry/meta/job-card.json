@@ -1,0 +1,19 @@
+{
+  "name": "job-card",
+  "title": "Job Card",
+  "category": "App",
+  "description": "A running task card with an eyebrow, title, live timer, progress bar, a stats row and actions, drawn with an orange border and a warm block shadow.",
+  "registryDependencies": [
+    "progress"
+  ],
+  "examples": [
+    {
+      "name": "job-card-demo"
+    }
+  ],
+  "usage": "<JobCard aria-label=\"Current job\">\n  <JobCardHeader>\n    <JobCardEyebrow>Running job</JobCardEyebrow>\n    <JobCardTitle>Strip mine, 3 branches of 32</JobCardTitle>\n    <JobCardTimer startedAt={job.startedAt} />\n  </JobCardHeader>\n  <JobCardProgress value={64} aria-label=\"Job progress\" />\n  <JobCardFooter>\n    <JobCardStats><span>41/64 blocks</span><span>Ores 7</span></JobCardStats>\n    <JobCardActions>\n      <Button size=\"sm\" variant=\"secondary\">Pause</Button>\n    </JobCardActions>\n  </JobCardFooter>\n</JobCard>",
+  "notes": [
+    "JobCardTimer ticks every second from startedAt (a Date.now() timestamp). Pass seconds for a fixed value, which also shows before the clock starts on the client. The file exports formatElapsed and useElapsed for your own clocks.",
+    "The card uses a container query: below 28rem the title drops to its own line and the actions go full width under the stats, so it works as a floating card on a map and in a phone column. Buttons in JobCardActions are 44px tall on phones."
+  ]
+}

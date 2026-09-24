@@ -1,0 +1,19 @@
+{
+  "name": "app-rail",
+  "title": "App Rail",
+  "category": "App",
+  "description": "A narrow vertical workspace nav: icon over a mono label, the active item marked with an orange left border, with pinned items at the bottom.",
+  "dependencies": [
+    "radix-ui"
+  ],
+  "examples": [
+    {
+      "name": "app-rail-demo"
+    }
+  ],
+  "usage": "<AppRail aria-label=\"Workspaces\">\n  <AppRailContent>\n    <AppRailItem isActive>\n      <MapIcon />\n      <span>Map</span>\n    </AppRailItem>\n  </AppRailContent>\n  <AppRailFooter>\n    <AppRailItem asChild>\n      <a href=\"/settings\"><SettingsIcon /><span>Settings</span></a>\n    </AppRailItem>\n  </AppRailFooter>\n</AppRail>",
+  "notes": [
+    "The rail is 72px wide and fills its parent's height. Items are buttons; pass asChild to render a link. The active item gets aria-current=\"page\". Keep labels to one short word; longer ones truncate.",
+    "On phones, hide the rail (className=\"hidden md:flex\") and render the same items in a Bottom Tab Bar. The App Shell block does this."
+  ]
+}

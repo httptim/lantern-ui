@@ -27,168 +27,186 @@ import E23 from "@/registry/lantern/examples/server-card-demo";
 import E24 from "@/registry/lantern/examples/server-card-offline";
 import E25 from "@/registry/lantern/examples/server-card-grid";
 import E26 from "@/registry/lantern/examples/stat-demo";
-import E27 from "@/registry/lantern/examples/status-dot-demo";
-import E28 from "@/registry/lantern/examples/status-pill-demo";
-import E29 from "@/registry/lantern/examples/status-pill-list";
-import E30 from "@/registry/lantern/examples/terminal-demo";
-import E31 from "@/registry/lantern/examples/typewriter-demo";
-import E32 from "@/registry/lantern/examples/typewriter-standalone";
-import E33 from "@/registry/lantern/examples/button-demo";
-import E34 from "@/registry/lantern/examples/button-variants";
-import E35 from "@/registry/lantern/examples/button-sizes";
-import E36 from "@/registry/lantern/examples/button-states";
-import E37 from "@/registry/lantern/examples/button-group-demo";
-import E38 from "@/registry/lantern/examples/button-group-input";
-import E39 from "@/registry/lantern/examples/button-group-split";
-import E40 from "@/registry/lantern/examples/calendar-demo";
-import E41 from "@/registry/lantern/examples/calendar-range";
-import E42 from "@/registry/lantern/examples/calendar-dropdown";
-import E43 from "@/registry/lantern/examples/checkbox-demo";
-import E44 from "@/registry/lantern/examples/checkbox-disabled";
-import E45 from "@/registry/lantern/examples/checkbox-checklist";
-import E46 from "@/registry/lantern/examples/combobox-demo";
-import E47 from "@/registry/lantern/examples/combobox-multi";
-import E48 from "@/registry/lantern/examples/combobox-form";
-import E49 from "@/registry/lantern/examples/copy-button-demo";
-import E50 from "@/registry/lantern/examples/copy-button-input";
-import E51 from "@/registry/lantern/examples/date-picker-demo";
-import E52 from "@/registry/lantern/examples/date-picker-range";
-import E53 from "@/registry/lantern/examples/date-picker-presets";
-import E54 from "@/registry/lantern/examples/field-demo";
-import E55 from "@/registry/lantern/examples/field-login";
-import E56 from "@/registry/lantern/examples/field-signup";
-import E57 from "@/registry/lantern/examples/field-settings";
-import E58 from "@/registry/lantern/examples/field-contact";
-import E59 from "@/registry/lantern/examples/field-newsletter";
-import E60 from "@/registry/lantern/examples/form-demo";
-import E61 from "@/registry/lantern/examples/form-controls";
-import E62 from "@/registry/lantern/examples/input-demo";
-import E63 from "@/registry/lantern/examples/input-types";
-import E64 from "@/registry/lantern/examples/input-group-demo";
-import E65 from "@/registry/lantern/examples/input-group-affixes";
-import E66 from "@/registry/lantern/examples/input-group-button";
-import E67 from "@/registry/lantern/examples/input-otp-demo";
-import E68 from "@/registry/lantern/examples/input-otp-separator";
-import E69 from "@/registry/lantern/examples/label-demo";
-import E70 from "@/registry/lantern/examples/native-select-demo";
-import E71 from "@/registry/lantern/examples/native-select-groups";
-import E72 from "@/registry/lantern/examples/native-select-states";
-import E73 from "@/registry/lantern/examples/radio-group-demo";
-import E74 from "@/registry/lantern/examples/radio-group-cards";
-import E75 from "@/registry/lantern/examples/select-demo";
-import E76 from "@/registry/lantern/examples/select-grouped";
-import E77 from "@/registry/lantern/examples/select-states";
-import E78 from "@/registry/lantern/examples/slider-demo";
-import E79 from "@/registry/lantern/examples/slider-range";
-import E80 from "@/registry/lantern/examples/switch-demo";
-import E81 from "@/registry/lantern/examples/switch-settings";
-import E82 from "@/registry/lantern/examples/tag-input-demo";
-import E83 from "@/registry/lantern/examples/tag-input-max";
-import E84 from "@/registry/lantern/examples/textarea-demo";
-import E85 from "@/registry/lantern/examples/textarea-states";
-import E86 from "@/registry/lantern/examples/toggle-demo";
-import E87 from "@/registry/lantern/examples/toggle-outline";
-import E88 from "@/registry/lantern/examples/toggle-text";
-import E89 from "@/registry/lantern/examples/toggle-group-demo";
-import E90 from "@/registry/lantern/examples/toggle-group-multiple";
-import E91 from "@/registry/lantern/examples/accordion-demo";
-import E92 from "@/registry/lantern/examples/aspect-ratio-demo";
-import E93 from "@/registry/lantern/examples/aspect-ratio-square";
-import E94 from "@/registry/lantern/examples/avatar-demo";
-import E95 from "@/registry/lantern/examples/avatar-fallback";
-import E96 from "@/registry/lantern/examples/avatar-group";
-import E97 from "@/registry/lantern/examples/badge-demo";
-import E98 from "@/registry/lantern/examples/card-demo";
-import E99 from "@/registry/lantern/examples/card-art";
-import E100 from "@/registry/lantern/examples/carousel-demo";
-import E101 from "@/registry/lantern/examples/carousel-sizes";
-import E102 from "@/registry/lantern/examples/carousel-vertical";
-import E103 from "@/registry/lantern/examples/item-demo";
-import E104 from "@/registry/lantern/examples/item-link";
-import E105 from "@/registry/lantern/examples/item-avatar";
-import E106 from "@/registry/lantern/examples/kbd-demo";
-import E107 from "@/registry/lantern/examples/separator-demo";
-import E108 from "@/registry/lantern/examples/table-demo";
-import E109 from "@/registry/lantern/examples/table-compact";
-import E110 from "@/registry/lantern/examples/timeline-demo";
-import E111 from "@/registry/lantern/examples/timeline-compact";
-import E112 from "@/registry/lantern/examples/typography-demo";
-import E113 from "@/registry/lantern/examples/typography-prose";
-import E114 from "@/registry/lantern/examples/chart-demo";
-import E115 from "@/registry/lantern/examples/chart-bar";
-import E116 from "@/registry/lantern/examples/chart-line";
-import E117 from "@/registry/lantern/examples/chart-donut";
-import E118 from "@/registry/lantern/examples/chart-radial";
-import E119 from "@/registry/lantern/examples/data-table-demo";
-import E120 from "@/registry/lantern/examples/data-table-minimal";
-import E121 from "@/registry/lantern/examples/collapsible-demo";
-import E122 from "@/registry/lantern/examples/collapsible-file-tree";
-import E123 from "@/registry/lantern/examples/direction-demo";
-import E124 from "@/registry/lantern/examples/drawer-demo";
-import E125 from "@/registry/lantern/examples/drawer-responsive";
-import E126 from "@/registry/lantern/examples/resizable-demo";
-import E127 from "@/registry/lantern/examples/resizable-vertical";
-import E128 from "@/registry/lantern/examples/resizable-editor";
-import E129 from "@/registry/lantern/examples/scroll-area-demo";
-import E130 from "@/registry/lantern/examples/scroll-area-horizontal";
-import E131 from "@/registry/lantern/examples/sidebar-demo";
-import E132 from "@/registry/lantern/examples/sidebar-icon";
-import E133 from "@/registry/lantern/examples/sidebar-floating";
-import E134 from "@/registry/lantern/examples/alert-dialog-demo";
-import E135 from "@/registry/lantern/examples/context-menu-demo";
-import E136 from "@/registry/lantern/examples/dialog-demo";
-import E137 from "@/registry/lantern/examples/dialog-scrollable";
-import E138 from "@/registry/lantern/examples/dropdown-menu-demo";
-import E139 from "@/registry/lantern/examples/dropdown-menu-checkboxes";
-import E140 from "@/registry/lantern/examples/dropdown-menu-radio-group";
-import E141 from "@/registry/lantern/examples/hover-card-demo";
-import E142 from "@/registry/lantern/examples/popover-demo";
-import E143 from "@/registry/lantern/examples/sheet-demo";
-import E144 from "@/registry/lantern/examples/sheet-sides";
-import E145 from "@/registry/lantern/examples/tooltip-demo";
-import E146 from "@/registry/lantern/examples/breadcrumb-demo";
-import E147 from "@/registry/lantern/examples/breadcrumb-dropdown";
-import E148 from "@/registry/lantern/examples/command-demo";
-import E149 from "@/registry/lantern/examples/command-dialog";
-import E150 from "@/registry/lantern/examples/file-tree-demo";
-import E151 from "@/registry/lantern/examples/file-tree-selection";
-import E152 from "@/registry/lantern/examples/menubar-demo";
-import E153 from "@/registry/lantern/examples/navigation-menu-demo";
-import E154 from "@/registry/lantern/examples/pagination-demo";
-import E155 from "@/registry/lantern/examples/stepper-demo";
-import E156 from "@/registry/lantern/examples/stepper-horizontal";
-import E157 from "@/registry/lantern/examples/tabs-demo";
-import E158 from "@/registry/lantern/examples/tabs-boxed";
-import E159 from "@/registry/lantern/examples/alert-demo";
-import E160 from "@/registry/lantern/examples/alert-variants";
-import E161 from "@/registry/lantern/examples/announcement-bar-demo";
-import E162 from "@/registry/lantern/examples/announcement-bar-variants";
-import E163 from "@/registry/lantern/examples/empty-demo";
-import E164 from "@/registry/lantern/examples/progress-demo";
-import E165 from "@/registry/lantern/examples/progress-labeled";
-import E166 from "@/registry/lantern/examples/skeleton-demo";
-import E167 from "@/registry/lantern/examples/sonner-demo";
-import E168 from "@/registry/lantern/examples/spinner-demo";
-import E169 from "@/registry/lantern/examples/spinner-button";
-import E170 from "@/registry/lantern/examples/attachment-demo";
-import E171 from "@/registry/lantern/examples/attachment-states";
-import E172 from "@/registry/lantern/examples/bubble-demo";
-import E173 from "@/registry/lantern/examples/bubble-variants";
-import E174 from "@/registry/lantern/examples/bubble-reactions";
-import E175 from "@/registry/lantern/examples/marker-demo";
-import E176 from "@/registry/lantern/examples/message-demo";
-import E177 from "@/registry/lantern/examples/message-scroller-demo";
-import B0 from "@/registry/lantern/blocks/dashboard/dashboard";
-import B1 from "@/registry/lantern/blocks/docs-layout/docs-layout";
-import B2 from "@/registry/lantern/blocks/faq/faq";
-import B3 from "@/registry/lantern/blocks/feature-grid/feature-grid";
-import B4 from "@/registry/lantern/blocks/footer/footer";
-import B5 from "@/registry/lantern/blocks/hero/hero";
-import B6 from "@/registry/lantern/blocks/login/login";
-import B7 from "@/registry/lantern/blocks/not-found/not-found";
-import B8 from "@/registry/lantern/blocks/pricing/pricing";
-import B9 from "@/registry/lantern/blocks/settings/settings";
-import B10 from "@/registry/lantern/blocks/signup/signup";
+import E27 from "@/registry/lantern/examples/stat-tiles";
+import E28 from "@/registry/lantern/examples/status-dot-demo";
+import E29 from "@/registry/lantern/examples/status-pill-demo";
+import E30 from "@/registry/lantern/examples/status-pill-list";
+import E31 from "@/registry/lantern/examples/terminal-demo";
+import E32 from "@/registry/lantern/examples/typewriter-demo";
+import E33 from "@/registry/lantern/examples/typewriter-standalone";
+import E34 from "@/registry/lantern/examples/button-demo";
+import E35 from "@/registry/lantern/examples/button-variants";
+import E36 from "@/registry/lantern/examples/button-sizes";
+import E37 from "@/registry/lantern/examples/button-states";
+import E38 from "@/registry/lantern/examples/button-group-demo";
+import E39 from "@/registry/lantern/examples/button-group-input";
+import E40 from "@/registry/lantern/examples/button-group-split";
+import E41 from "@/registry/lantern/examples/calendar-demo";
+import E42 from "@/registry/lantern/examples/calendar-range";
+import E43 from "@/registry/lantern/examples/calendar-dropdown";
+import E44 from "@/registry/lantern/examples/checkbox-demo";
+import E45 from "@/registry/lantern/examples/checkbox-disabled";
+import E46 from "@/registry/lantern/examples/checkbox-checklist";
+import E47 from "@/registry/lantern/examples/combobox-demo";
+import E48 from "@/registry/lantern/examples/combobox-multi";
+import E49 from "@/registry/lantern/examples/combobox-form";
+import E50 from "@/registry/lantern/examples/copy-button-demo";
+import E51 from "@/registry/lantern/examples/copy-button-input";
+import E52 from "@/registry/lantern/examples/date-picker-demo";
+import E53 from "@/registry/lantern/examples/date-picker-range";
+import E54 from "@/registry/lantern/examples/date-picker-presets";
+import E55 from "@/registry/lantern/examples/field-demo";
+import E56 from "@/registry/lantern/examples/field-login";
+import E57 from "@/registry/lantern/examples/field-signup";
+import E58 from "@/registry/lantern/examples/field-settings";
+import E59 from "@/registry/lantern/examples/field-contact";
+import E60 from "@/registry/lantern/examples/field-newsletter";
+import E61 from "@/registry/lantern/examples/form-demo";
+import E62 from "@/registry/lantern/examples/form-controls";
+import E63 from "@/registry/lantern/examples/input-demo";
+import E64 from "@/registry/lantern/examples/input-types";
+import E65 from "@/registry/lantern/examples/input-group-demo";
+import E66 from "@/registry/lantern/examples/input-group-affixes";
+import E67 from "@/registry/lantern/examples/input-group-button";
+import E68 from "@/registry/lantern/examples/input-otp-demo";
+import E69 from "@/registry/lantern/examples/input-otp-separator";
+import E70 from "@/registry/lantern/examples/label-demo";
+import E71 from "@/registry/lantern/examples/native-select-demo";
+import E72 from "@/registry/lantern/examples/native-select-groups";
+import E73 from "@/registry/lantern/examples/native-select-states";
+import E74 from "@/registry/lantern/examples/radio-group-demo";
+import E75 from "@/registry/lantern/examples/radio-group-cards";
+import E76 from "@/registry/lantern/examples/select-demo";
+import E77 from "@/registry/lantern/examples/select-grouped";
+import E78 from "@/registry/lantern/examples/select-states";
+import E79 from "@/registry/lantern/examples/slider-demo";
+import E80 from "@/registry/lantern/examples/slider-range";
+import E81 from "@/registry/lantern/examples/switch-demo";
+import E82 from "@/registry/lantern/examples/switch-settings";
+import E83 from "@/registry/lantern/examples/tag-input-demo";
+import E84 from "@/registry/lantern/examples/tag-input-max";
+import E85 from "@/registry/lantern/examples/textarea-demo";
+import E86 from "@/registry/lantern/examples/textarea-states";
+import E87 from "@/registry/lantern/examples/toggle-demo";
+import E88 from "@/registry/lantern/examples/toggle-outline";
+import E89 from "@/registry/lantern/examples/toggle-text";
+import E90 from "@/registry/lantern/examples/toggle-group-demo";
+import E91 from "@/registry/lantern/examples/toggle-group-multiple";
+import E92 from "@/registry/lantern/examples/accordion-demo";
+import E93 from "@/registry/lantern/examples/aspect-ratio-demo";
+import E94 from "@/registry/lantern/examples/aspect-ratio-square";
+import E95 from "@/registry/lantern/examples/avatar-demo";
+import E96 from "@/registry/lantern/examples/avatar-fallback";
+import E97 from "@/registry/lantern/examples/avatar-group";
+import E98 from "@/registry/lantern/examples/badge-demo";
+import E99 from "@/registry/lantern/examples/card-demo";
+import E100 from "@/registry/lantern/examples/card-art";
+import E101 from "@/registry/lantern/examples/carousel-demo";
+import E102 from "@/registry/lantern/examples/carousel-sizes";
+import E103 from "@/registry/lantern/examples/carousel-vertical";
+import E104 from "@/registry/lantern/examples/item-demo";
+import E105 from "@/registry/lantern/examples/item-link";
+import E106 from "@/registry/lantern/examples/item-avatar";
+import E107 from "@/registry/lantern/examples/kbd-demo";
+import E108 from "@/registry/lantern/examples/separator-demo";
+import E109 from "@/registry/lantern/examples/table-demo";
+import E110 from "@/registry/lantern/examples/table-compact";
+import E111 from "@/registry/lantern/examples/timeline-demo";
+import E112 from "@/registry/lantern/examples/timeline-compact";
+import E113 from "@/registry/lantern/examples/typography-demo";
+import E114 from "@/registry/lantern/examples/typography-prose";
+import E115 from "@/registry/lantern/examples/chart-demo";
+import E116 from "@/registry/lantern/examples/chart-bar";
+import E117 from "@/registry/lantern/examples/chart-line";
+import E118 from "@/registry/lantern/examples/chart-donut";
+import E119 from "@/registry/lantern/examples/chart-radial";
+import E120 from "@/registry/lantern/examples/data-table-demo";
+import E121 from "@/registry/lantern/examples/data-table-minimal";
+import E122 from "@/registry/lantern/examples/collapsible-demo";
+import E123 from "@/registry/lantern/examples/collapsible-file-tree";
+import E124 from "@/registry/lantern/examples/direction-demo";
+import E125 from "@/registry/lantern/examples/drawer-demo";
+import E126 from "@/registry/lantern/examples/drawer-responsive";
+import E127 from "@/registry/lantern/examples/resizable-demo";
+import E128 from "@/registry/lantern/examples/resizable-vertical";
+import E129 from "@/registry/lantern/examples/resizable-editor";
+import E130 from "@/registry/lantern/examples/scroll-area-demo";
+import E131 from "@/registry/lantern/examples/scroll-area-horizontal";
+import E132 from "@/registry/lantern/examples/sidebar-demo";
+import E133 from "@/registry/lantern/examples/sidebar-icon";
+import E134 from "@/registry/lantern/examples/sidebar-floating";
+import E135 from "@/registry/lantern/examples/alert-dialog-demo";
+import E136 from "@/registry/lantern/examples/context-menu-demo";
+import E137 from "@/registry/lantern/examples/dialog-demo";
+import E138 from "@/registry/lantern/examples/dialog-scrollable";
+import E139 from "@/registry/lantern/examples/dropdown-menu-demo";
+import E140 from "@/registry/lantern/examples/dropdown-menu-checkboxes";
+import E141 from "@/registry/lantern/examples/dropdown-menu-radio-group";
+import E142 from "@/registry/lantern/examples/hover-card-demo";
+import E143 from "@/registry/lantern/examples/popover-demo";
+import E144 from "@/registry/lantern/examples/sheet-demo";
+import E145 from "@/registry/lantern/examples/sheet-sides";
+import E146 from "@/registry/lantern/examples/tooltip-demo";
+import E147 from "@/registry/lantern/examples/breadcrumb-demo";
+import E148 from "@/registry/lantern/examples/breadcrumb-dropdown";
+import E149 from "@/registry/lantern/examples/command-demo";
+import E150 from "@/registry/lantern/examples/command-dialog";
+import E151 from "@/registry/lantern/examples/file-tree-demo";
+import E152 from "@/registry/lantern/examples/file-tree-selection";
+import E153 from "@/registry/lantern/examples/menubar-demo";
+import E154 from "@/registry/lantern/examples/navigation-menu-demo";
+import E155 from "@/registry/lantern/examples/pagination-demo";
+import E156 from "@/registry/lantern/examples/stepper-demo";
+import E157 from "@/registry/lantern/examples/stepper-horizontal";
+import E158 from "@/registry/lantern/examples/tabs-demo";
+import E159 from "@/registry/lantern/examples/tabs-boxed";
+import E160 from "@/registry/lantern/examples/alert-demo";
+import E161 from "@/registry/lantern/examples/alert-variants";
+import E162 from "@/registry/lantern/examples/announcement-bar-demo";
+import E163 from "@/registry/lantern/examples/announcement-bar-variants";
+import E164 from "@/registry/lantern/examples/empty-demo";
+import E165 from "@/registry/lantern/examples/progress-demo";
+import E166 from "@/registry/lantern/examples/progress-labeled";
+import E167 from "@/registry/lantern/examples/skeleton-demo";
+import E168 from "@/registry/lantern/examples/sonner-demo";
+import E169 from "@/registry/lantern/examples/spinner-demo";
+import E170 from "@/registry/lantern/examples/spinner-button";
+import E171 from "@/registry/lantern/examples/attachment-demo";
+import E172 from "@/registry/lantern/examples/attachment-states";
+import E173 from "@/registry/lantern/examples/bubble-demo";
+import E174 from "@/registry/lantern/examples/bubble-variants";
+import E175 from "@/registry/lantern/examples/bubble-reactions";
+import E176 from "@/registry/lantern/examples/marker-demo";
+import E177 from "@/registry/lantern/examples/message-demo";
+import E178 from "@/registry/lantern/examples/message-scroller-demo";
+import E179 from "@/registry/lantern/examples/account-chip-demo";
+import E180 from "@/registry/lantern/examples/app-rail-demo";
+import E181 from "@/registry/lantern/examples/bottom-tab-bar-demo";
+import E182 from "@/registry/lantern/examples/code-frame-demo";
+import E183 from "@/registry/lantern/examples/entity-card-demo";
+import E184 from "@/registry/lantern/examples/entity-card-links";
+import E185 from "@/registry/lantern/examples/job-card-demo";
+import E186 from "@/registry/lantern/examples/step-list-demo";
+import E187 from "@/registry/lantern/examples/step-list-error";
+import E188 from "@/registry/lantern/examples/stream-box-demo";
+import E189 from "@/registry/lantern/examples/stream-box-summary";
+import E190 from "@/registry/lantern/examples/usage-meter-demo";
+import E191 from "@/registry/lantern/examples/usage-meter-allowance";
+import B0 from "@/registry/lantern/blocks/ai-panel/ai-panel";
+import B1 from "@/registry/lantern/blocks/app-shell/app-shell";
+import B2 from "@/registry/lantern/blocks/create-from-prompt/create-from-prompt";
+import B3 from "@/registry/lantern/blocks/dashboard/dashboard";
+import B4 from "@/registry/lantern/blocks/docs-layout/docs-layout";
+import B5 from "@/registry/lantern/blocks/editor-workspace/editor-workspace";
+import B6 from "@/registry/lantern/blocks/faq/faq";
+import B7 from "@/registry/lantern/blocks/feature-grid/feature-grid";
+import B8 from "@/registry/lantern/blocks/footer/footer";
+import B9 from "@/registry/lantern/blocks/hero/hero";
+import B10 from "@/registry/lantern/blocks/login/login";
+import B11 from "@/registry/lantern/blocks/not-found/not-found";
+import B12 from "@/registry/lantern/blocks/pricing/pricing";
+import B13 from "@/registry/lantern/blocks/settings/settings";
+import B14 from "@/registry/lantern/blocks/signup/signup";
 
 export const examples: Record<string, ComponentType> = {
   "ambient-demo": E0,
@@ -218,169 +236,187 @@ export const examples: Record<string, ComponentType> = {
   "server-card-offline": E24,
   "server-card-grid": E25,
   "stat-demo": E26,
-  "status-dot-demo": E27,
-  "status-pill-demo": E28,
-  "status-pill-list": E29,
-  "terminal-demo": E30,
-  "typewriter-demo": E31,
-  "typewriter-standalone": E32,
-  "button-demo": E33,
-  "button-variants": E34,
-  "button-sizes": E35,
-  "button-states": E36,
-  "button-group-demo": E37,
-  "button-group-input": E38,
-  "button-group-split": E39,
-  "calendar-demo": E40,
-  "calendar-range": E41,
-  "calendar-dropdown": E42,
-  "checkbox-demo": E43,
-  "checkbox-disabled": E44,
-  "checkbox-checklist": E45,
-  "combobox-demo": E46,
-  "combobox-multi": E47,
-  "combobox-form": E48,
-  "copy-button-demo": E49,
-  "copy-button-input": E50,
-  "date-picker-demo": E51,
-  "date-picker-range": E52,
-  "date-picker-presets": E53,
-  "field-demo": E54,
-  "field-login": E55,
-  "field-signup": E56,
-  "field-settings": E57,
-  "field-contact": E58,
-  "field-newsletter": E59,
-  "form-demo": E60,
-  "form-controls": E61,
-  "input-demo": E62,
-  "input-types": E63,
-  "input-group-demo": E64,
-  "input-group-affixes": E65,
-  "input-group-button": E66,
-  "input-otp-demo": E67,
-  "input-otp-separator": E68,
-  "label-demo": E69,
-  "native-select-demo": E70,
-  "native-select-groups": E71,
-  "native-select-states": E72,
-  "radio-group-demo": E73,
-  "radio-group-cards": E74,
-  "select-demo": E75,
-  "select-grouped": E76,
-  "select-states": E77,
-  "slider-demo": E78,
-  "slider-range": E79,
-  "switch-demo": E80,
-  "switch-settings": E81,
-  "tag-input-demo": E82,
-  "tag-input-max": E83,
-  "textarea-demo": E84,
-  "textarea-states": E85,
-  "toggle-demo": E86,
-  "toggle-outline": E87,
-  "toggle-text": E88,
-  "toggle-group-demo": E89,
-  "toggle-group-multiple": E90,
-  "accordion-demo": E91,
-  "aspect-ratio-demo": E92,
-  "aspect-ratio-square": E93,
-  "avatar-demo": E94,
-  "avatar-fallback": E95,
-  "avatar-group": E96,
-  "badge-demo": E97,
-  "card-demo": E98,
-  "card-art": E99,
-  "carousel-demo": E100,
-  "carousel-sizes": E101,
-  "carousel-vertical": E102,
-  "item-demo": E103,
-  "item-link": E104,
-  "item-avatar": E105,
-  "kbd-demo": E106,
-  "separator-demo": E107,
-  "table-demo": E108,
-  "table-compact": E109,
-  "timeline-demo": E110,
-  "timeline-compact": E111,
-  "typography-demo": E112,
-  "typography-prose": E113,
-  "chart-demo": E114,
-  "chart-bar": E115,
-  "chart-line": E116,
-  "chart-donut": E117,
-  "chart-radial": E118,
-  "data-table-demo": E119,
-  "data-table-minimal": E120,
-  "collapsible-demo": E121,
-  "collapsible-file-tree": E122,
-  "direction-demo": E123,
-  "drawer-demo": E124,
-  "drawer-responsive": E125,
-  "resizable-demo": E126,
-  "resizable-vertical": E127,
-  "resizable-editor": E128,
-  "scroll-area-demo": E129,
-  "scroll-area-horizontal": E130,
-  "sidebar-demo": E131,
-  "sidebar-icon": E132,
-  "sidebar-floating": E133,
-  "alert-dialog-demo": E134,
-  "context-menu-demo": E135,
-  "dialog-demo": E136,
-  "dialog-scrollable": E137,
-  "dropdown-menu-demo": E138,
-  "dropdown-menu-checkboxes": E139,
-  "dropdown-menu-radio-group": E140,
-  "hover-card-demo": E141,
-  "popover-demo": E142,
-  "sheet-demo": E143,
-  "sheet-sides": E144,
-  "tooltip-demo": E145,
-  "breadcrumb-demo": E146,
-  "breadcrumb-dropdown": E147,
-  "command-demo": E148,
-  "command-dialog": E149,
-  "file-tree-demo": E150,
-  "file-tree-selection": E151,
-  "menubar-demo": E152,
-  "navigation-menu-demo": E153,
-  "pagination-demo": E154,
-  "stepper-demo": E155,
-  "stepper-horizontal": E156,
-  "tabs-demo": E157,
-  "tabs-boxed": E158,
-  "alert-demo": E159,
-  "alert-variants": E160,
-  "announcement-bar-demo": E161,
-  "announcement-bar-variants": E162,
-  "empty-demo": E163,
-  "progress-demo": E164,
-  "progress-labeled": E165,
-  "skeleton-demo": E166,
-  "sonner-demo": E167,
-  "spinner-demo": E168,
-  "spinner-button": E169,
-  "attachment-demo": E170,
-  "attachment-states": E171,
-  "bubble-demo": E172,
-  "bubble-variants": E173,
-  "bubble-reactions": E174,
-  "marker-demo": E175,
-  "message-demo": E176,
-  "message-scroller-demo": E177,
+  "stat-tiles": E27,
+  "status-dot-demo": E28,
+  "status-pill-demo": E29,
+  "status-pill-list": E30,
+  "terminal-demo": E31,
+  "typewriter-demo": E32,
+  "typewriter-standalone": E33,
+  "button-demo": E34,
+  "button-variants": E35,
+  "button-sizes": E36,
+  "button-states": E37,
+  "button-group-demo": E38,
+  "button-group-input": E39,
+  "button-group-split": E40,
+  "calendar-demo": E41,
+  "calendar-range": E42,
+  "calendar-dropdown": E43,
+  "checkbox-demo": E44,
+  "checkbox-disabled": E45,
+  "checkbox-checklist": E46,
+  "combobox-demo": E47,
+  "combobox-multi": E48,
+  "combobox-form": E49,
+  "copy-button-demo": E50,
+  "copy-button-input": E51,
+  "date-picker-demo": E52,
+  "date-picker-range": E53,
+  "date-picker-presets": E54,
+  "field-demo": E55,
+  "field-login": E56,
+  "field-signup": E57,
+  "field-settings": E58,
+  "field-contact": E59,
+  "field-newsletter": E60,
+  "form-demo": E61,
+  "form-controls": E62,
+  "input-demo": E63,
+  "input-types": E64,
+  "input-group-demo": E65,
+  "input-group-affixes": E66,
+  "input-group-button": E67,
+  "input-otp-demo": E68,
+  "input-otp-separator": E69,
+  "label-demo": E70,
+  "native-select-demo": E71,
+  "native-select-groups": E72,
+  "native-select-states": E73,
+  "radio-group-demo": E74,
+  "radio-group-cards": E75,
+  "select-demo": E76,
+  "select-grouped": E77,
+  "select-states": E78,
+  "slider-demo": E79,
+  "slider-range": E80,
+  "switch-demo": E81,
+  "switch-settings": E82,
+  "tag-input-demo": E83,
+  "tag-input-max": E84,
+  "textarea-demo": E85,
+  "textarea-states": E86,
+  "toggle-demo": E87,
+  "toggle-outline": E88,
+  "toggle-text": E89,
+  "toggle-group-demo": E90,
+  "toggle-group-multiple": E91,
+  "accordion-demo": E92,
+  "aspect-ratio-demo": E93,
+  "aspect-ratio-square": E94,
+  "avatar-demo": E95,
+  "avatar-fallback": E96,
+  "avatar-group": E97,
+  "badge-demo": E98,
+  "card-demo": E99,
+  "card-art": E100,
+  "carousel-demo": E101,
+  "carousel-sizes": E102,
+  "carousel-vertical": E103,
+  "item-demo": E104,
+  "item-link": E105,
+  "item-avatar": E106,
+  "kbd-demo": E107,
+  "separator-demo": E108,
+  "table-demo": E109,
+  "table-compact": E110,
+  "timeline-demo": E111,
+  "timeline-compact": E112,
+  "typography-demo": E113,
+  "typography-prose": E114,
+  "chart-demo": E115,
+  "chart-bar": E116,
+  "chart-line": E117,
+  "chart-donut": E118,
+  "chart-radial": E119,
+  "data-table-demo": E120,
+  "data-table-minimal": E121,
+  "collapsible-demo": E122,
+  "collapsible-file-tree": E123,
+  "direction-demo": E124,
+  "drawer-demo": E125,
+  "drawer-responsive": E126,
+  "resizable-demo": E127,
+  "resizable-vertical": E128,
+  "resizable-editor": E129,
+  "scroll-area-demo": E130,
+  "scroll-area-horizontal": E131,
+  "sidebar-demo": E132,
+  "sidebar-icon": E133,
+  "sidebar-floating": E134,
+  "alert-dialog-demo": E135,
+  "context-menu-demo": E136,
+  "dialog-demo": E137,
+  "dialog-scrollable": E138,
+  "dropdown-menu-demo": E139,
+  "dropdown-menu-checkboxes": E140,
+  "dropdown-menu-radio-group": E141,
+  "hover-card-demo": E142,
+  "popover-demo": E143,
+  "sheet-demo": E144,
+  "sheet-sides": E145,
+  "tooltip-demo": E146,
+  "breadcrumb-demo": E147,
+  "breadcrumb-dropdown": E148,
+  "command-demo": E149,
+  "command-dialog": E150,
+  "file-tree-demo": E151,
+  "file-tree-selection": E152,
+  "menubar-demo": E153,
+  "navigation-menu-demo": E154,
+  "pagination-demo": E155,
+  "stepper-demo": E156,
+  "stepper-horizontal": E157,
+  "tabs-demo": E158,
+  "tabs-boxed": E159,
+  "alert-demo": E160,
+  "alert-variants": E161,
+  "announcement-bar-demo": E162,
+  "announcement-bar-variants": E163,
+  "empty-demo": E164,
+  "progress-demo": E165,
+  "progress-labeled": E166,
+  "skeleton-demo": E167,
+  "sonner-demo": E168,
+  "spinner-demo": E169,
+  "spinner-button": E170,
+  "attachment-demo": E171,
+  "attachment-states": E172,
+  "bubble-demo": E173,
+  "bubble-variants": E174,
+  "bubble-reactions": E175,
+  "marker-demo": E176,
+  "message-demo": E177,
+  "message-scroller-demo": E178,
+  "account-chip-demo": E179,
+  "app-rail-demo": E180,
+  "bottom-tab-bar-demo": E181,
+  "code-frame-demo": E182,
+  "entity-card-demo": E183,
+  "entity-card-links": E184,
+  "job-card-demo": E185,
+  "step-list-demo": E186,
+  "step-list-error": E187,
+  "stream-box-demo": E188,
+  "stream-box-summary": E189,
+  "usage-meter-demo": E190,
+  "usage-meter-allowance": E191,
 };
 
 export const blocks: Record<string, ComponentType> = {
-  "dashboard": B0,
-  "docs-layout": B1,
-  "faq": B2,
-  "feature-grid": B3,
-  "footer": B4,
-  "hero": B5,
-  "login": B6,
-  "not-found": B7,
-  "pricing": B8,
-  "settings": B9,
-  "signup": B10,
+  "ai-panel": B0,
+  "app-shell": B1,
+  "create-from-prompt": B2,
+  "dashboard": B3,
+  "docs-layout": B4,
+  "editor-workspace": B5,
+  "faq": B6,
+  "feature-grid": B7,
+  "footer": B8,
+  "hero": B9,
+  "login": B10,
+  "not-found": B11,
+  "pricing": B12,
+  "settings": B13,
+  "signup": B14,
 };

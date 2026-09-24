@@ -21,7 +21,7 @@ export type ComponentMeta = {
 const all = metas as ComponentMeta[];
 export const components = all.filter((m) => m.type !== "block");
 export const blockItems = all.filter((m) => m.type === "block");
-export const categories = ["Lantern", "Forms", "Display", "Data", "Layout", "Overlays", "Navigation", "Feedback", "Chat"];
+export const categories = ["Lantern", "Forms", "Display", "Data", "Layout", "Overlays", "Navigation", "Feedback", "Chat", "App"];
 
 export const guides = [
   { title: "Introduction", href: "/docs" },

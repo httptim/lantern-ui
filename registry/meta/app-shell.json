@@ -1,0 +1,43 @@
+{
+  "name": "app-shell",
+  "type": "block",
+  "title": "App Shell",
+  "category": "Blocks",
+  "description": "A full-height app layout: a top bar with logo, context pickers and the account chip, a workspace rail, an optional list column, the main area and an optional inspector. On phones it becomes top bar, main and a bottom tab bar. The preview is the TurtleDeck dashboard.",
+  "files": [
+    "blocks/app-shell/app-shell.tsx",
+    "blocks/app-shell/shell.tsx",
+    "blocks/app-shell/fleet.tsx",
+    "blocks/app-shell/inspector.tsx",
+    "blocks/app-shell/data.ts"
+  ],
+  "dependencies": [
+    "lucide-react",
+    "sonner"
+  ],
+  "registryDependencies": [
+    "account-chip",
+    "app-rail",
+    "bottom-tab-bar",
+    "button",
+    "control-pad",
+    "dropdown-menu",
+    "entity-card",
+    "eyebrow",
+    "input-group",
+    "inventory-grid",
+    "job-card",
+    "select",
+    "sheet",
+    "sonner",
+    "stat",
+    "status-dot",
+    "status-pill",
+    "usage-meter"
+  ],
+  "notes": [
+    "The layout lives in shell.tsx as AppShell and takes logo, context, actions, nav, pinnedNav, active, onNavigate, list, inspector and children. app-shell.tsx, fleet.tsx, inspector.tsx and data.ts are the TurtleDeck example built on it; replace them with your own content.",
+    "Breakpoints: the rail shows from 768px, the list column from 1024px (a left sheet opened from the top bar below that) and the inspector column from 1280px (stacked under the main content below that). Under 768px the rail becomes a bottom tab bar; with more than five destinations the last tab is More, which opens a sheet with the rest.",
+    "The shell is h-svh with its own scroll areas, so render it as the whole page. Put the world, turtle and similar pickers in context or actions as Select components."
+  ]
+}

@@ -1,5 +1,28 @@
-{ "name": "select", "title": "Select", "category": "Forms",
+{
+  "name": "select",
+  "title": "Select",
+  "category": "Forms",
   "description": "A dropdown for picking one value from a list, with groups, labels, icons and full keyboard support.",
-  "dependencies": ["radix-ui", "lucide-react"],
-  "examples": [{ "name": "select-demo" }, { "name": "select-grouped", "title": "Groups and icons" }, { "name": "select-states", "title": "Invalid, disabled and small" }],
-  "usage": "<Select>\n  <SelectTrigger className=\"w-48\">\n    <SelectValue placeholder=\"Pick a theme\" />\n  </SelectTrigger>\n  <SelectContent>\n    <SelectItem value=\"lantern\">Lantern</SelectItem>\n    <SelectItem value=\"moss\">Moss</SelectItem>\n  </SelectContent>\n</Select>" }
+  "dependencies": [
+    "radix-ui",
+    "lucide-react"
+  ],
+  "examples": [
+    {
+      "name": "select-demo"
+    },
+    {
+      "name": "select-grouped",
+      "title": "Groups and icons"
+    },
+    {
+      "name": "select-states",
+      "title": "Invalid, disabled and small"
+    }
+  ],
+  "usage": "<Select>\n  <SelectTrigger className=\"w-48\">\n    <SelectValue placeholder=\"Pick a theme\" />\n  </SelectTrigger>\n  <SelectContent>\n    <SelectItem value=\"lantern\">Lantern</SelectItem>\n    <SelectItem value=\"moss\">Moss</SelectItem>\n  </SelectContent>\n</Select>",
+  "notes": [
+    "Select is the default dropdown in Lantern UI and what every block uses for pickers such as models, worlds and turtles. Reach for Native Select only when you need the platform's own picker, such as a very long list on phones.",
+    "SelectTrigger is w-fit by default; pass className=\"w-full\" or a width. The list opens in a popover below the trigger and flips when there is no room."
+  ]
+}

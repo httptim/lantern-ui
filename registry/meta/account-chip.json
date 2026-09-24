@@ -1,0 +1,24 @@
+{
+  "name": "account-chip",
+  "title": "Account Chip",
+  "category": "App",
+  "description": "The top bar account control: allowance meters, avatar, name and plan tag, opening a dropdown menu with the account links.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "avatar",
+    "dropdown-menu",
+    "usage-meter"
+  ],
+  "examples": [
+    {
+      "name": "account-chip-demo"
+    }
+  ],
+  "usage": "<AccountChip>\n  <AccountChipTrigger name=\"Tim\" plan=\"Pro\" fallback=\"TH\">\n    <UsageMeterGroup aria-label=\"AI allowance\">...</UsageMeterGroup>\n  </AccountChipTrigger>\n  <AccountChipContent>\n    <AccountChipLabel name=\"Tim\" email=\"tim@thultz.dev\" plan=\"Pro\" />\n    <DropdownMenuSeparator />\n    <DropdownMenuItem asChild><a href=\"/account\">Profile</a></DropdownMenuItem>\n  </AccountChipContent>\n</AccountChip>",
+  "notes": [
+    "AccountChip is a DropdownMenu, so build the menu from the dropdown-menu parts. Use DropdownMenuItem asChild with an a or Link for account links.",
+    "Children of AccountChipTrigger (usually a UsageMeterGroup) sit to the left of the avatar and hide below 768px; the name and plan hide below 640px. Put full-size meters in AccountChipLabel so phones still see the allowance inside the menu."
+  ]
+}

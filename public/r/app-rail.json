@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "app-rail",
+  "title": "App Rail",
+  "description": "A narrow vertical workspace nav: icon over a mono label, the active item marked with an orange left border, with pinned items at the bottom.",
+  "dependencies": [
+    "radix-ui"
+  ],
+  "registryDependencies": [
+    "utils",
+    "https://ui.thultz.dev/r/lantern-theme.json"
+  ],
+  "files": [
+    {
+      "path": "registry/lantern/ui/app-rail.tsx",
+      "content": "import * as React from \"react\";\nimport { Slot } from \"radix-ui\";\n\nimport { cn } from \"@/lib/utils\";\n\n/**\n * Vertical workspace navigation: icon over a mono label, the active item marked with an\n * orange left border. Put the main items in AppRailContent and pinned items in AppRailFooter.\n * Pair it with BottomTabBar on phones.\n */\nfunction AppRail({ className, ...props }: React.ComponentProps<\"nav\">) {\n  return (\n    <nav\n      data-slot=\"app-rail\"\n      className={cn(\"flex h-full w-[4.5rem] shrink-0 flex-col border-r bg-card py-2\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction AppRailContent({ className, ...props }: React.ComponentProps<\"ul\">) {\n  return (\n    <ul\n      data-slot=\"app-rail-content\"\n      className={cn(\"flex min-h-0 flex-1 flex-col items-stretch gap-0.5 overflow-y-auto [scrollbar-width:none]\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction AppRailFooter({ className, ...props }: React.ComponentProps<\"ul\">) {\n  return (\n    <ul\n      data-slot=\"app-rail-footer\"\n      className={cn(\"mt-auto flex flex-col items-stretch gap-0.5 pt-2\", className)}\n      {...props}\n    />\n  );\n}\n\n/**\n * One rail link. Renders a button, or pass asChild to render your own link.\n * Put an icon and a short label inside.\n */\nfunction AppRailItem({\n  className,\n  isActive = false,\n  asChild = false,\n  type,\n  ...props\n}: React.ComponentProps<\"button\"> & { isActive?: boolean; asChild?: boolean }) {\n  const Comp = asChild ? Slot.Root : \"button\";\n  return (\n    <li className=\"flex\">\n      <Comp\n        data-slot=\"app-rail-item\"\n        type={asChild ? type : (type ?? \"button\")}\n        data-active={isActive || undefined}\n        aria-current={isActive ? \"page\" : undefined}\n        className={cn(\n          \"relative flex w-full cursor-pointer flex-col items-center gap-1 border-l-2 border-transparent px-1 py-2.5 text-muted-foreground transition-colors outline-none\",\n          \"hover:bg-secondary/60 hover:text-foreground focus-visible:bg-secondary focus-visible:text-foreground focus-visible:ring-2 focus-visible:ring-ring/40 focus-visible:ring-inset\",\n          \"data-[active]:border-primary data-[active]:bg-secondary data-[active]:text-primary\",\n          \"[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-5\",\n          \"[&>span]:max-w-full [&>span]:truncate [&>span]:font-mono [&>span]:text-[9px] [&>span]:leading-none [&>span]:tracking-[0.08em] [&>span]:uppercase\",\n          className,\n        )}\n        {...props}\n      />\n    </li>\n  );\n}\n\nexport { AppRail, AppRailContent, AppRailFooter, AppRailItem };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

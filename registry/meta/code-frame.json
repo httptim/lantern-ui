@@ -1,0 +1,19 @@
+{
+  "name": "code-frame",
+  "title": "Code Frame",
+  "category": "App",
+  "description": "Editor chrome: a file bar with an unsaved tag and a toolbar, a line-numbered code area and an optional status bar. Static for docs and previews, or a frame to mount a real editor in.",
+  "dependencies": [
+    "class-variance-authority"
+  ],
+  "examples": [
+    {
+      "name": "code-frame-demo"
+    }
+  ],
+  "usage": "<CodeFrame className=\"h-[460px]\">\n  <CodeFrameHeader>\n    <CodeFrameTitle>strip_mine.lua</CodeFrameTitle>\n    <CodeFrameTag>Unsaved</CodeFrameTag>\n    <CodeFrameToolbar aria-label=\"File actions\">\n      <Button size=\"sm\">Run on Testy</Button>\n    </CodeFrameToolbar>\n  </CodeFrameHeader>\n  <CodeFrameBody code={source} />\n</CodeFrame>",
+  "notes": [
+    "CodeFrameBody with code renders static, line-numbered text and dims comment lines (--, // and #). It scrolls both ways inside the frame. To edit, leave out code and put your editor (CodeMirror, Monaco, a textarea) inside CodeFrameBody; it fills the remaining height.",
+    "CodeFrameTag takes tone warning (default), primary, success or muted. Use Code Block instead when you only need to show a snippet with a copy button."
+  ]
+}

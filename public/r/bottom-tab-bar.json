@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "bottom-tab-bar",
+  "title": "Bottom Tab Bar",
+  "description": "The phone version of App Rail: equal-width icon tabs along the bottom of the screen with an orange top bar on the active tab.",
+  "dependencies": [
+    "radix-ui"
+  ],
+  "registryDependencies": [
+    "utils",
+    "https://ui.thultz.dev/r/lantern-theme.json"
+  ],
+  "files": [
+    {
+      "path": "registry/lantern/ui/bottom-tab-bar.tsx",
+      "content": "import * as React from \"react\";\nimport { Slot } from \"radix-ui\";\n\nimport { cn } from \"@/lib/utils\";\n\n/**\n * The phone version of AppRail: equal-width icon tabs along the bottom of the screen,\n * with room for the home indicator. Position it yourself, e.g. `fixed inset-x-0 bottom-0 md:hidden`.\n */\nfunction BottomTabBar({ className, children, ...props }: React.ComponentProps<\"nav\">) {\n  return (\n    <nav\n      data-slot=\"bottom-tab-bar\"\n      className={cn(\"border-t bg-card pb-[max(env(safe-area-inset-bottom),0.5rem)]\", className)}\n      {...props}\n    >\n      <ul className=\"flex\">{children}</ul>\n    </nav>\n  );\n}\n\n/** One tab. Renders a button, or pass asChild for a link. Put an icon and a short label inside. */\nfunction BottomTabBarItem({\n  className,\n  isActive = false,\n  asChild = false,\n  type,\n  ...props\n}: React.ComponentProps<\"button\"> & { isActive?: boolean; asChild?: boolean }) {\n  const Comp = asChild ? Slot.Root : \"button\";\n  return (\n    <li className=\"flex min-w-0 flex-1\">\n      <Comp\n        data-slot=\"bottom-tab-bar-item\"\n        type={asChild ? type : (type ?? \"button\")}\n        data-active={isActive || undefined}\n        aria-current={isActive ? \"page\" : undefined}\n        className={cn(\n          \"relative flex min-h-12 w-full min-w-0 cursor-pointer flex-col items-center justify-center gap-1 px-1 pt-2.5 pb-1 text-muted-foreground transition-colors outline-none\",\n          \"before:absolute before:inset-x-3 before:top-0 before:h-0.5 before:bg-transparent data-[active]:text-primary data-[active]:before:bg-primary\",\n          \"hover:text-foreground focus-visible:text-foreground focus-visible:ring-2 focus-visible:ring-ring/40 focus-visible:ring-inset\",\n          \"[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-5\",\n          \"[&>span]:max-w-full [&>span]:truncate [&>span]:font-mono [&>span]:text-[9px] [&>span]:leading-none [&>span]:tracking-[0.08em] [&>span]:uppercase\",\n          className,\n        )}\n        {...props}\n      />\n    </li>\n  );\n}\n\nexport { BottomTabBar, BottomTabBarItem };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

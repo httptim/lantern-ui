@@ -1,0 +1,27 @@
+{
+  "name": "entity-card",
+  "title": "Entity Card",
+  "category": "App",
+  "description": "A selectable list card for turtles, sites or scripts: status dot, title, right-side tag, a meta line and an optional fuel bar. The selected card gets an orange border and block shadow.",
+  "dependencies": [
+    "radix-ui"
+  ],
+  "registryDependencies": [
+    "progress",
+    "status-dot"
+  ],
+  "examples": [
+    {
+      "name": "entity-card-demo"
+    },
+    {
+      "name": "entity-card-links",
+      "title": "As links"
+    }
+  ],
+  "usage": "<EntityCard selected onClick={() => select(\"testy\")}>\n  <EntityCardHeader>\n    <StatusDot tone=\"online\" />\n    <EntityCardTitle>Testy</EntityCardTitle>\n    <EntityCardTag>Online</EntityCardTag>\n  </EntityCardHeader>\n  <EntityCardDescription>Strip mine 41/64</EntityCardDescription>\n  <EntityCardMeta>\n    <span>120 12 -352</span>\n    <span>Fuel 72%</span>\n  </EntityCardMeta>\n  <EntityCardBar value={72} />\n</EntityCard>",
+  "notes": [
+    "The card is a button with aria-pressed when selected is set. With asChild it renders your link and marks the selected one with aria-current. Do not put other buttons inside it.",
+    "EntityCardMeta pushes its last child to the right. EntityCardBar is green and turns red at or below lowAt (20)."
+  ]
+}

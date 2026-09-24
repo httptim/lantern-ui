@@ -1,5 +1,20 @@
-{ "name": "stat", "title": "Stat", "category": "Lantern",
+{
+  "name": "stat",
+  "title": "Stat",
+  "category": "Lantern",
   "description": "The numbers strip from the Lantern site: large orange figures with a muted caption, split by dividers and stacked on mobile.",
-  "examples": [{ "name": "stat-demo" }],
+  "examples": [
+    {
+      "name": "stat-demo"
+    },
+    {
+      "name": "stat-tiles",
+      "title": "Tiles"
+    }
+  ],
   "usage": "<StatGroup>\n  <Stat>\n    <StatLabel>sites on the network</StatLabel>\n    <StatValue>128</StatValue>\n  </Stat>\n</StatGroup>",
-  "notes": ["StatGroup renders a description list. Put StatLabel before StatValue in the markup so screen readers read the term first; the value is shown on top visually."] }
+  "notes": [
+    "StatGroup renders a description list. Put StatLabel before StatValue in the markup so screen readers read the term first; the value is shown on top visually.",
+    "variant=\"tiles\" draws small bordered tiles with mono labels, for inspectors and result cards. They fit as many columns as the width allows, at least 64px each."
+  ]
+}
