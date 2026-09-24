@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+env:
+  NEXT_TELEMETRY_DISABLED: 1
+
+jobs:
+  check:
+    name: Registry, typecheck, build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Registry is up to date
+        run: |
+          npm run registry
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "::error::npm run registry changed files. Run it locally and commit the result."
+            git status --porcelain
+            git diff --stat
+            exit 1
+          fi
+
+      - name: Typecheck
+        run: npx tsc --noEmit -p .
+
+      # `npm run build` would regenerate the registry again; it was just built and checked above.
+      - name: Build
+        run: npx next build
