@@ -38,6 +38,7 @@ jobs:
             "Lantern status API|https://lantern.thultz.dev/api/status|status"
             "Lantern UI|https://ui.thultz.dev/|page"
             "thultz.dev|https://thultz.dev/|page"
+            "Client portal|https://clients.thultz.dev/api/health|ok"
           )
 
           declare -a result code secs detail note
