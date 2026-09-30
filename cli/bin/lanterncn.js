@@ -3,6 +3,10 @@
 import { spawnSync } from "node:child_process";
 import { readFileSync } from "node:fs";
 
+const [command, ...rest] = process.argv.slice(2);
+const flags = rest.filter((a) => a.startsWith("-"));
+const names = rest.filter((a) => !a.startsWith("-"));
+
 const REGISTRY = (process.env.LANTERN_REGISTRY || "https://ui.thultz.dev/r").replace(/\/$/, "");
 const SITE = REGISTRY.replace(/\/r$/, "");
 const { version } = JSON.parse(readFileSync(new URL("../package.json", import.meta.url), "utf8"));
@@ -22,11 +26,19 @@ ${green("USAGE")}
   npx lanterncn list                 List available components and blocks
 
 Extra flags pass through to shadcn, e.g. ${muted("--overwrite")}, ${muted("--path")}, ${muted("-y")}.
+Without a terminal (agents, CI) nothing waits for input: init uses its defaults, and add keeps
+files you already have unless you pass ${muted("--overwrite")}.
 Docs: ${SITE}
 `;
 
-// Run shadcn with the same package manager that launched us.
-function shadcn(args) {
+// No terminal to ask in (an AI agent, CI, a script): shadcn's questions would wait forever, or end the run having
+// added nothing and still exit 0. Answer them the safe way instead: "no" to overwriting a file that is already there.
+const interactive = !!process.stdin.isTTY && !process.env.CI;
+const NO = "n\n".repeat(500);
+const has = (...names) => flags.some((f) => names.some((n) => f === n || f.startsWith(`${n}=`)));
+
+// Run shadcn with the same package manager that launched us. With answers, they are its keyboard.
+function shadcn(args, answers) {
   const agent = process.env.npm_config_user_agent || "";
   const [cmd, pre] = agent.startsWith("pnpm")
     ? ["pnpm", ["dlx", "shadcn@latest"]]
@@ -39,7 +51,12 @@ function shadcn(args) {
   const env = Object.fromEntries(
     Object.entries(process.env).filter(([k]) => !/^npm_(config_(package|call|yes)|command|lifecycle_)/i.test(k)),
   );
-  const res = spawnSync(cmd, [...pre, ...args], { stdio: "inherit", env, shell: process.platform === "win32" });
+  const res = spawnSync(cmd, [...pre, ...args], {
+    stdio: answers === undefined ? "inherit" : ["pipe", "inherit", "inherit"],
+    input: answers,
+    env,
+    shell: process.platform === "win32",
+  });
   if (res.error) {
     console.error(`Could not run ${cmd}: ${res.error.message}`);
     process.exit(1);
@@ -58,16 +75,21 @@ async function registry() {
 
 const toRef = (name) => (/^(https?:|@|\.|\/)/.test(name) || name.includes("/") ? name : `${REGISTRY}/${name}.json`);
 
-const [command, ...rest] = process.argv.slice(2);
-const flags = rest.filter((a) => a.startsWith("-"));
-const names = rest.filter((a) => !a.startsWith("-"));
-
 switch (command) {
   case "init": {
-    const base = flags.some((f) => f === "--base" || f.startsWith("--base=") || f === "-b") ? [] : ["--base", "radix"];
-    const code = shadcn(["init", ...base, ...rest]);
+    const base = has("--base", "-b") ? [] : ["--base", "radix"];
+    // Without a terminal, the questions init would ask get their defaults.
+    const quiet = interactive
+      ? []
+      : [
+          ...(has("-d", "--defaults", "-p", "--preset", "-t", "--template") ? [] : ["--defaults"]),
+          ...(has("--monorepo", "--no-monorepo") ? [] : ["--no-monorepo"]),
+          ...(has("--reinstall", "--no-reinstall") ? [] : ["--no-reinstall"]),
+        ];
+    if (quiet.length) console.error(muted(`No terminal to ask in: using ${quiet.join(" ")}.`));
+    const code = shadcn(["init", ...base, ...rest, ...quiet], interactive ? undefined : NO);
     if (code !== 0) process.exit(code);
-    process.exit(shadcn(["add", toRef("lantern-theme"), "-y"]));
+    process.exit(shadcn(["add", toRef("lantern-theme"), "-y"], interactive ? undefined : NO));
   }
   case "add": {
     let items = names;
@@ -79,7 +101,11 @@ switch (command) {
       console.error("Name at least one component, e.g. npx lanterncn add button");
       process.exit(1);
     }
-    process.exit(shadcn(["add", ...items.map(toRef), ...flags]));
+    // Without a terminal: no confirmation, and files already there are kept unless --overwrite says otherwise.
+    const quiet = interactive || has("-y", "--yes") ? [] : ["-y"];
+    const keep = !interactive && !has("-o", "--overwrite");
+    if (keep) console.error(muted("No terminal to ask in: files you already have are kept (add --overwrite to replace them)."));
+    process.exit(shadcn(["add", ...items.map(toRef), ...flags, ...quiet], keep ? NO : interactive ? undefined : ""));
   }
   case "list":
   case "ls": {

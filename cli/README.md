@@ -14,6 +14,10 @@ npx lanterncn list                # see components and blocks
 The source is copied into your `components/ui` folder, so you own it and can change anything.
 Flags such as `--overwrite` and `-y` are passed through to the shadcn CLI.
 
+Without a terminal (an AI agent, CI, a script) nothing waits for input: `init` uses the
+default setup (`--defaults --no-monorepo --no-reinstall`), and `add` keeps files you
+already have unless you pass `--overwrite`.
+
 Works with npm, pnpm (`pnpm dlx lanterncn`), yarn (`yarn dlx lanterncn`) and bun (`bunx lanterncn`).
 
 Source: https://github.com/httptim/lantern-ui
