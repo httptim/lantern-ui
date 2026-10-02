@@ -37,6 +37,7 @@ jobs:
             "Lantern Hub|https://lantern.thultz.dev/|page"
             "Lantern status API|https://lantern.thultz.dev/api/status|status"
             "Lantern UI|https://ui.thultz.dev/|page"
+            "Formicarium|https://formicarium.thultz.dev/|page"
             "thultz.dev|https://thultz.dev/|page"
             "Client portal|https://clients.thultz.dev/api/health|ok"
           )
