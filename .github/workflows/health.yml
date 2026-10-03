@@ -42,6 +42,7 @@ jobs:
             "Claude home (projects.json)|https://claude.thultz.dev/projects.json|json"
             "Asterisk|https://asterisk.claude.thultz.dev/|page"
             "Ropesight|https://ropesight.claude.thultz.dev/|page"
+            "Parhelion|https://parhelion.claude.thultz.dev/|page"
             "thultz.dev|https://thultz.dev/|page"
             "Client portal|https://clients.thultz.dev/api/health|ok"
           )
