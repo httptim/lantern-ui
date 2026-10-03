@@ -40,6 +40,7 @@ jobs:
             "Formicarium|https://formicarium.thultz.dev/|page"
             "Nestmind|https://nestmind.thultz.dev/|page"
             "Fathom|https://fathom.thultz.dev/|page"
+            "Wallacea|https://wallacea.thultz.dev/|page"
             "Claude home (projects.json)|https://claude.thultz.dev/projects.json|json"
             "Asterisk|https://asterisk.claude.thultz.dev/|page"
             "Ropesight|https://ropesight.claude.thultz.dev/|page"
