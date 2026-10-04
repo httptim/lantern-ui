@@ -42,6 +42,7 @@ jobs:
             "Fathom|https://fathom.thultz.dev/|page"
             "Wallacea|https://wallacea.thultz.dev/|page"
             "Headway|https://headway.thultz.dev/|page"
+            "Amber|https://amber.thultz.dev/|page"
             "Claude home (projects.json)|https://claude.thultz.dev/projects.json|json"
             "Asterisk|https://asterisk.claude.thultz.dev/|page"
             "Ropesight|https://ropesight.claude.thultz.dev/|page"
