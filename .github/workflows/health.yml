@@ -52,6 +52,7 @@ jobs:
             "Figures of Speech|https://figures.claude.thultz.dev/|page"
             "thultz.dev|https://thultz.dev/|page"
             "Client portal|https://clients.thultz.dev/api/health|ok"
+            "Mockups|https://mockups.thultz.dev/|page"
           )
 
           declare -a result code secs detail note
