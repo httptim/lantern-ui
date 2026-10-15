@@ -53,6 +53,7 @@ jobs:
             "thultz.dev|https://thultz.dev/|page"
             "Client portal|https://clients.thultz.dev/api/health|ok"
             "Mockups|https://mockups.thultz.dev/|page"
+            "Redwood Tasker|https://redwood.thultz.dev/|page"
           )
 
           declare -a result code secs detail note
