@@ -36,7 +36,10 @@ function MessageScrollerViewport({
       className={cn(
         "size-full min-h-0 min-w-0 overflow-y-auto overscroll-contain outline-none contain-content [scrollbar-color:var(--input)_transparent] [scrollbar-gutter:stable] [scrollbar-width:thin]",
         "focus-visible:ring-2 focus-visible:ring-ring/25 focus-visible:ring-inset",
-        "data-autoscrolling:[scrollbar-width:none] data-pending-scroll:invisible",
+        // While it follows new text the scroll bar is hidden by making it see-through, not by
+        // taking it away: without its width the text area grows by that much, and a centred
+        // chat moves sideways every time following starts and stops.
+        "data-autoscrolling:[scrollbar-color:transparent_transparent] data-pending-scroll:invisible",
         className,
       )}
       {...props}
