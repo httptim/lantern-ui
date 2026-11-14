@@ -67,7 +67,10 @@ jobs:
             : > "$body"
             out=$(curl -sS -L -o "$body" -w '%{http_code} %{time_total}' \
                     --connect-timeout 5 --max-time 20 \
-                    -H 'User-Agent: thultz-dev-health-check' "$url" 2>/dev/null)
+                    -H 'User-Agent: thultz-dev-health-check' "$url" 2>/dev/null) || true
+            # The step's shell stops at the first failing command, and curl fails when a host no
+            # longer resolves. Without "|| true" one dead host ended the run before the checks
+            # after it were made. It still counts as failed: its code stays 000.
             read -r c t <<< "${out:-000 0}"
             code[$i]=${c:-000}; secs[$i]=${t:-0}; result[$i]=ok; detail[$i]=""
 
