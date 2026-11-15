@@ -31,9 +31,7 @@ jobs:
           checks=(
             "Anvil|https://anvil.thultz.dev/|page"
             "Anvil models API|https://anvil.thultz.dev/api/ai/models|json"
-            "Anvil AI service|https://anvil-ai-8sbo4.ondigitalocean.app/health|ok"
             "TurtleDeck|https://turtledeck.thultz.dev/|page"
-            "TurtleDeck relay|https://lionfish-app-i8kz6.ondigitalocean.app/health|ok"
             "Lantern Hub|https://lantern.thultz.dev/|page"
             "Lantern status API|https://lantern.thultz.dev/api/status|status"
             "Lantern UI|https://ui.thultz.dev/|page"
